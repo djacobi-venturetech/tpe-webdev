@@ -5,8 +5,8 @@
       <webServer id="e0b7c140-a0ac-4872-892e-0aab03357d9d" name="TPE Dev (Web)" url="http://tpe-dev.venturetech.net/_files/Web">
         <fileTransfer mountedRoot="$USER_HOME$/mounts/tpe-dev/Web" accessType="MOUNT" />
       </webServer>
-      <webServer id="735ddcde-1a78-4331-89c3-6813c2051cc8" name="TPE Dev 2 (Web)" url="http://tpe-dev.venturetech.net/_files/Web">
-        <fileTransfer mountedRoot="$USER_HOME$/mounts/tpe-dev/Web" accessType="MOUNT" />
+      <webServer id="5b9e1e89-5189-469a-9709-347ccef70df0" name="TPE Release (Web)" url="http://tpe-release.venturetech.net/_files/Web">
+        <fileTransfer mountedRoot="$USER_HOME$/mounts/tpe-release/Web" accessType="MOUNT" />
       </webServer>
     </option>
   </component>
