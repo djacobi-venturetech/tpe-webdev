@@ -1,0 +1,159 @@
+@import "../config/base-vars";
+@import "../../../../bower_components/bootstrap/scss/mixins/buttons";
+
+/* ==========================================================================
+   Basic Styles for Property Editor/Viewer
+   baiken@vipasolutions.com, sbenes
+   Updated July 25, 2014
+   ========================================================================== */
+
+/* Form Elements
+   ========================================================================== */
+
+.prop-wrapper {
+	max-width: 50rem;
+
+	input,
+	textarea {
+		border: 1px solid #B7B7B5;
+		padding: 2px;
+		margin: 2px;
+	}
+
+	input:focus,
+	select:focus,
+	textarea:focus {
+		background-color: #feffdd;
+	}
+
+	button,
+	input[type="submit"],
+	input[type="reset"],
+	.constraints a[data-features~="submit"] {
+		text-transform: uppercase;
+		text-decoration: none;
+		white-space: nowrap;
+		box-shadow: 1px 1px 0 rgba(255, 255, 255, 0.8) inset,
+		-1px -1px 0 rgba(0, 0, 0, 0.05) inset;
+	}
+
+}
+
+/* Content
+	 ========================================================================== */
+.prop-wrapper {
+	.prop-header-title {
+		font-size: 22px;
+		font-weight: bold;
+		margin: 1em 0;
+	}
+
+	.prop-group-title {
+		font-weight: bold;
+		font-size: 18px;
+		margin: 10px 0;
+	}
+	span.ctb {
+		display: block;
+	}
+	.prop > label {
+		display: block;
+		font-weight: bold;
+		user-select: none;
+	}
+	.prop > label.tbl {
+		display: inline-block;
+		padding-right: 4px;
+	}
+	.prop > .val {
+		display: inline-block;
+	}
+
+	header .actions, footer .actions {
+		margin: 10px 0;
+		text-align: right;
+	}
+
+	.actions.bottom {
+		text-align: left;
+	}
+
+	.prop {
+		margin-bottom: 1rem;
+		padding: 5px;
+		> .actions, .selected-link {
+			.btn {
+				@include button-size($btn-padding-y-sm, $btn-padding-x-sm, $font-size-xs, $line-height-sm, $btn-border-radius-sm);
+			}
+		}
+	}
+	.prop-group {
+		margin-bottom: 0;
+	}
+
+	.user-entry-required label:after {
+		content: "*";
+		color: #ff0000;
+	}
+
+	.validation-error input[type="text"] {
+		border: 1px solid red;
+	}
+
+}
+
+.prop-viewer,
+.prop-editor {
+	padding: .5rem;
+}
+
+.prop-viewer {
+	.actions.top {
+		display: none;
+	}
+}
+
+.prop-editor {
+	.prop {
+		input[type=text],
+		input[type=email],
+		input[type=url],
+		input[type=tel],
+		textarea {
+			min-width: 25rem;
+		}
+
+		.actions {
+			@include button-size($btn-padding-y-sm, $btn-padding-x-sm, $font-size-sm, $line-height-sm, $btn-border-radius-sm);
+		}
+	}
+	.miwt-calendar {
+		input[type=text] {
+			min-width:8rem;
+		}
+	}
+}
+
+.user-picture.mode-view {
+	max-width: 325px;
+	box-sizing: content-box;
+	img {
+		max-width: 325px;
+	}
+}
+
+.resource-picture.mode-view {
+	max-width: 350px;
+	box-sizing: content-box;
+}
+
+.picture-editor .actions.bottom {
+	text-align: center;
+}
+
+.prop.picture {
+	img {
+		border-radius: 100%;
+		max-height: 200px;
+	}
+}

@@ -1,0 +1,130 @@
+@import "../config/base-vars";
+/*--sidebar toggle---*/
+
+#main-wrapper {
+	min-height: calc(100vh - 68px); // minus header height
+	display: flex;
+	flex-wrap: nowrap;
+
+	main {
+		flex:1;
+	}
+}
+
+.sidebar-closed,
+#body-wrapper:not(.sidebar-open){
+	#side-nav {
+		width: 55px;
+		overflow: hidden;
+		.menu {
+			.mi a.menuitemlabel {
+				padding: 8px 0 8px 8px;
+			}
+
+			span.mil {
+				opacity:0;
+			}
+		}
+	}
+}
+
+/*sidebar navigation*/
+
+#side-nav {
+	width: 210px;
+	min-height: 100%;
+	background: #2a3542;
+}
+.sidebar-open #main-content,
+.sidebar-open #side-nav,
+.sidebar-closed #main-content,
+.sidebar-closed #side-nav{
+	transition: all 0.5s ease;
+}
+.nav-collapse.collapse {
+	display: inline;
+}
+
+#side-nav .menu {
+	margin: 15px 0 0;
+	padding: 0;
+	list-style: none;
+}
+
+#side-nav .menu .mi{
+	/*line-height: 20px !important;*/
+	margin-bottom: 5px;
+	margin-left:10px;
+	margin-right:10px;
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+#side-nav .menu .mi span.mil {
+	display: inline-block;
+}
+
+#side-nav .menu .mi a.menuitemlabel{
+	color: #aeb2b7;
+	text-decoration: none;
+	display: block;
+	padding: 15px 0 15px 10px;
+	outline: none;
+	transition: all 0.3s ease;
+}
+
+#side-nav .menu .mi a.menuitemlabel.mi-active,
+#side-nav .menu .mi a.menuitemlabel:hover, 
+#side-nav .menu .mi a.menuitemlabel:focus {
+	background: #35404d;
+	color: #fff;
+	display: block;
+	border-radius: 4px;
+}
+
+
+#side-nav .menu .mi .menuitemlabel{
+	padding-right: 6px;
+}
+
+#side-nav .menu .mi a.menuitemlabel:hover:before,
+#side-nav .menu .mi a.menuitemlabel:focus:before,
+#side-nav .menu .mi-active a.menuitemlabel:before{
+	color: $menu-item-active;
+}
+#side-nav .menu .mi > .menuitemlabel:before{
+	font-family: FontAwesome;
+	padding-right: 4px;
+	min-width: 22px;
+	display: inline-block;
+}
+#side-nav .menu .my-quick-view > .menuitemlabel:before {
+	content: "\f1ea";
+}
+#side-nav .menu .participant-mgt > .menuitemlabel:before {
+	content: "\f19c";
+}
+#side-nav .menu .group-mgt > .menuitemlabel:before {
+	content: "\f0c0";
+}
+#side-nav .menu .task-mgt > .menuitemlabel:before {
+	content: "\f0ae";
+}
+#side-nav .menu .user-mgt > .menuitemlabel:before {
+	content: "\f007";
+}
+#side-nav .menu .coached-mgt > .menuitemlabel:before {
+	content: "\f0f7";
+}
+#side-nav .menu .activity-template-mgt > .menuitemlabel:before {
+	content: "\f247";
+}
+#side-nav .menu .process-mgt > .menuitemlabel:before {
+	content: "\f0ec";
+}
+#side-nav .menu .component-mgt > .menuitemlabel:before {
+	content: "\f1c0";
+}
+#side-nav .menu .resource-mgt > .menuitemlabel:before {
+	content: "\f03e";
+}

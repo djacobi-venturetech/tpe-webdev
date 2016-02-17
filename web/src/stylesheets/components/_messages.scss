@@ -1,0 +1,79 @@
+
+@import "../config/base-vars";
+@import "../mixins/styles";
+@import "../../../../bower_components/bootstrap/scss/mixins/buttons";
+/*
+	Partial -	Messages
+*/
+
+.message-container {
+	margin: 10px 0;
+	clear: both;
+
+	&.empty {
+		display: none;
+	}
+	.actionable-message {
+		display: flex;
+		.message-content{
+			flex:1;
+		}
+		.message-actions {
+			flex:0;
+			margin:0 !important;
+			text-align: inherit !important;
+			.btn {
+				@include button-size($btn-padding-y-sm, $btn-padding-x-sm, $font-size-sm, $line-height-sm, $btn-border-radius-sm);
+				font-size: .75rem;
+			}
+		}
+	}
+}
+
+div.message {
+	@include style-message-info;
+
+	&:before{
+		top:11px;
+	}
+
+	& + & {
+		margin-top: 5px;
+	}
+
+	&.error {
+		@include style-message-error;
+	}
+
+	&.success {
+		@include style-message-success;
+	}
+
+	&.important {
+		@include style-message-warning;
+	}
+
+	&.warning {
+		@include style-message-warning;
+	}
+
+	p {
+		&:first-child {
+			margin-top: 0;
+		}
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	.miwt-collapsable-content {
+		@include style-popup-box();
+		overflow-y: auto;
+		max-height: 500px;
+		z-index: 10000;
+	}
+}
+
+.picture-editor .message {
+	padding: 5px 5px 5px 16px !important;
+}

@@ -1,0 +1,28 @@
+@import "../components/miwt-procedure";
+@import "../mixins/miwt-switch";
+
+.edm-confirmation .ctb.label-before {
+	max-width: 30rem;
+	@include checkboxSwitchAbsolute;
+}
+
+.profile-roles {
+	.actions.bottom {
+		text-align: center;
+		margin-bottom: 2rem;
+	}
+	.entity-actions {
+		margin-top: -4.5rem;
+		margin-bottom: 1rem;
+	}
+}
+
+.membership-operation-search .search-bar {
+	display: none;
+}
+
+.miwt-procedure-card {
+	h1 {
+		margin-bottom: 2rem;
+	}
+}

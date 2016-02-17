@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="e0b7c140-a0ac-4872-892e-0aab03357d9d" name="TPE Dev (Web)" url="http://tpe-dev.venturetech.net/_files/Web">
+        <fileTransfer mountedRoot="$USER_HOME$/mounts/tpe-dev" accessType="MOUNT" />
+      </webServer>
+    </option>
+  </component>
+</project>

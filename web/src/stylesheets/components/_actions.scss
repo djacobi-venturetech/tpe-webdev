@@ -1,0 +1,17 @@
+@import "../config/base-vars";
+@import "../../../../bower_components/bootstrap/scss/buttons";
+
+.actions .btn {
+	margin-right:4px;
+}
+.actions .btn:first-child {
+	@include button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-border);
+}
+
+.actions .btn:not(:first-child) {
+	@include button-variant($btn-secondary-color, $btn-secondary-bg, $btn-secondary-border);
+}
+
+.action-column .btn {
+	@include button-size($btn-padding-y-sm, $btn-padding-x-sm, $font-size-xs, $line-height-sm, $btn-border-radius-sm);
+}

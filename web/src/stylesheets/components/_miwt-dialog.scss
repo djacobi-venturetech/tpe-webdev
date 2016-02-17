@@ -1,0 +1,72 @@
+@import "../config/base-vars";
+@import "../../../../bower_components/bootstrap/scss/mixins/buttons";
+
+div.window.dialog /*specificity*/ {
+	padding: 0;
+	background-color: $modal-content-bg;
+	background-clip: padding-box;
+	border: 1px solid $modal-content-border-color;
+	border-radius: $border-radius-lg;
+	@include box-shadow(0 3px 9px rgba(0,0,0,.5));
+	// Remove focus outline from opened modal
+	outline: 0;
+
+	.titlebar {
+		background-color: $modal-content-bg;
+		height: 70px;
+	}
+
+	td.activewindowtitle {
+		padding: $modal-title-padding;
+		border-bottom: 1px solid $modal-header-border-color;
+		text-align: left;
+		margin: 0;
+		line-height: 1.5;
+		font-size: 1.5rem;
+		font-weight: inherit;
+		color: $gray-dark;
+		height: auto;
+	}
+	td.windowbuttons {
+		color: inherit;
+		height: auto;
+		border-bottom: 1px solid $modal-header-border-color;
+		.btn { // assuming close - only 1 button currently
+			background-color: $modal-content-bg;
+			padding: 0 10px 0 0;
+		}
+	}
+	.windowcontent {
+		top: 70px;
+		padding:15px;
+		border:none;
+		background-color: $color-white;
+		color:inherit;
+		bottom:initial;
+		left:initial;
+		right:initial;
+		width: 100%;
+	}
+	.actions.bottom {
+		width: 100%;
+		text-align: center;
+		border-top: 1px #ccc solid;
+		padding: $modal-inner-padding;
+		border-top: 1px solid $modal-footer-border-color;
+		@include clearfix(); // clear it in case folks use .pull-* classes on buttons
+
+		// Properly space out buttons
+		.btn + .btn {
+			margin-bottom: 0; // account for input[type="submit"] which gets the bottom margin like all other inputs
+			margin-left: 5px;
+		}
+		// but override that for button groups
+		.btn-group .btn + .btn {
+			margin-left: -1px;
+		}
+		// and override it for block buttons as well
+		.btn-block + .btn-block {
+			margin-left: 0;
+		}
+	}
+}

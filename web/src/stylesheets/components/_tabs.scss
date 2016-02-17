@@ -1,0 +1,55 @@
+@import "../config/base-vars";
+
+@mixin style-tab-elements {
+	$color-bg: $color-smokey-white;
+	$color-bg-selected: $color-white;
+	$color-fg: $color-darker-grey;
+
+	.tab-items {
+		margin-bottom: -1px;
+		padding-left:0;
+
+		.ti {
+			display: inline-block;
+			vertical-align: bottom;
+			border: 1px solid $color-lighter-grey;
+			margin-right: 5px;
+			font-family: $font-family-sans-serif;
+
+			a {
+				background-color: $color-bg;
+				color: $color-fg;
+				text-decoration: none;
+				display: block;
+				padding: 5px 10px;
+			}
+			&:hover {
+				a {
+					color: $color-light-charcoal;
+					background-color: $color-almost-white;
+				}
+			}
+			&.tab-selected {
+				border-bottom-color: $color-bg-selected;
+
+				a {
+					color: $color-fg;
+					background-color: $color-bg-selected;
+				}
+			}
+		}
+	}
+
+	.tab-content {
+		background-color: $color-white;
+		border: 1px solid $color-lighter-grey;
+		padding: 15px;
+	}
+}
+.nav-actions {
+	text-align: right;
+	margin-bottom: -1.75rem;
+}
+.tab-container {
+	@include style-tab-elements;
+}
