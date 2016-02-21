@@ -1,0 +1,46 @@
+
+.breadcrumb_path {
+  padding: 0 20px;
+  display: none;
+}
+
+.breadcrumb_path ol {
+  padding: 0;
+  margin: 0;
+}
+
+.breadcrumb_path li {
+  display: inline-block;
+  zoom: 1;
+  *display: inline;
+  margin-bottom: 15px;
+  font-size: 16px;
+}
+
+.breadcrumb_path li + li {
+  margin-left: 7px;
+}
+
+.breadcrumb_path li + li:before {
+  content: "»";
+  margin-right: 7px;
+}
+
+.breadcrumb_path li.current a {
+  color: #000;
+}
+
+.breadcrumb_path li a {
+  color: #747474;
+}
+
+.breadcrumb_path li a:hover {
+  color: #000000;
+}
+
+@media (min-width: 1024px) {
+  .breadcrumb_path {
+    padding: 0 20px;
+    display: block;
+  }
+}
