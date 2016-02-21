@@ -15,8 +15,7 @@
 @import "../components/breadcrumbs";
 
 ::selection {
-	background: #FF6C60;
-	color: #fff;
+	// background: #FF6C60;
 }
 
 .update-password-dialog {
@@ -43,7 +42,7 @@ section {
 		border: none;
 		background: inherit;
 		visibility: hidden;
-		color: $color-lr-light-grey;
+		color: $color-tpe-light-grey;
 
 		&:before {
 			visibility: visible;
@@ -56,7 +55,7 @@ section {
 			content: "\f073";
 		}
 		&:hover {
-			color: $color-lr-black;
+			color: $color-tpe-black;
 		}
 	}
 	button.clear {

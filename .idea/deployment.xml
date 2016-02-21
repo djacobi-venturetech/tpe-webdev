@@ -21,6 +21,7 @@
             <mapping deploy="Stylesheets/Entropy/FlatLab" local="$PROJECT_DIR$/web/build/stylesheets/FlatLab" web="/Stylesheets/Entropy/FlatLab" />
             <mapping deploy="Javascript/Entropy/FlatLab" local="$PROJECT_DIR$/web/build/javascript/FlatLab" web="/Javascript/Entropy/FlatLab" />
             <mapping deploy="Design/Entropy/font" local="$PROJECT_DIR$/web/build/design/fonts" web="/Design/Entropy/font" />
+            <mapping deploy="Stylesheets/Entropy/pages" local="$PROJECT_DIR$/web/build/stylesheets/pages" />
           </mappings>
         </serverdata>
       </paths>

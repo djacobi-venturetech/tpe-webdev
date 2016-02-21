@@ -1,20 +1,20 @@
-$color-lr-brand: #02549d;
-$color-lr-yellow: #F9BB29;
-$color-lr-blue: #4AB0D5;
-$color-lr-cyan: #6CCAC9;
-$color-lr-red: #EE695B;
-$color-lr-black: #343940;
-$color-lr-grey: #515B6B;
-$color-lr-light-grey: #9699A6;
-$color-lr-canceled: rgba(214, 14, 255, 0.66);
+$color-tpe-brand: #02549d;
+$color-tpe-yellow: #F9BB29;
+$color-tpe-blue: #4AB0D5;
+$color-tpe-cyan: #6CCAC9;
+$color-tpe-red: #EE695B;
+$color-tpe-black: #343940;
+$color-tpe-grey: #515B6B;
+$color-tpe-light-grey: #9699A6;
+$color-tpe-canceled: rgba(214, 14, 255, 0.66);
 
-$lr-page-bg: #F1F2F7;
+$tpe-page-bg: #F1F2F7;
 
-$body-bg: $lr-page-bg;
-$brand-primary:                  $color-lr-brand;
-$brand-danger:                   $color-lr-red;
-$brand-warning:                  $color-lr-yellow;
-$brand-info:                     $color-lr-cyan;
+$body-bg: $tpe-page-bg;
+$brand-primary:                  $color-tpe-brand;
+$brand-danger:                   $color-tpe-red;
+$brand-warning:                  $color-tpe-yellow;
+$brand-info:                     $color-tpe-cyan;
 
 $btn-primary-color:              #fff;
 $btn-primary-bg:                 $brand-primary;
@@ -28,8 +28,8 @@ $enable-shadows:                 true;
 @import "../../../../bower_components/bootstrap/scss/variables";
 
 
-$menu-item-active: $color-lr-red;
-$menu-item-inactive: $color-lr-light-grey;
+$menu-item-active: $color-tpe-red;
+$menu-item-inactive: $color-tpe-light-grey;
 
 $header-bg: #A8ABBA;
 
