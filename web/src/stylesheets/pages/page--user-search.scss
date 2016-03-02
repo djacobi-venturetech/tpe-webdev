@@ -1,0 +1,36 @@
+#column2{
+  width: 100%;
+  padding: 0 10%;
+}
+.search-bar{
+  margin: 0;
+  background-color: white;
+  padding: 20px;
+}
+.search .add{
+  margin: 10px 10px 0 0;
+}
+.miwt-table, .search-bar, .miwt-table td{
+  border: 1px solid #aaa;
+  border-radius: 3px;
+}
+.miwt-table td{
+  border: 1px solid #aaa;
+}
+.miwt-table td:last-child {
+  text-align:center;
+}
+.miwt-table .control > *{
+  display: inline-block;
+  vertical-align: middle;
+}
+.miwt-table-data tr{
+  height: 50px;
+}
+.miwt-table-data tr .first-column{
+  padding-left: 15px;
+}
+thead tr{
+  border-bottom: 1px solid grey;
+  height: 50px;
+}
