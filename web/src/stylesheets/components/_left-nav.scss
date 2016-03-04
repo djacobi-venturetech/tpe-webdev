@@ -1,0 +1,27 @@
+
+#column1{
+  position: relative;
+}
+
+#column1 > .miwt{
+  position: absolute;
+  left: 10px;
+  top: 40px;
+  border: 1px solid #aaa;
+  width: 150px;
+  padding-left:10px;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+
+}
+
+
+
+.nav-stacked li{
+  margin: 5px 0;
+  font-weight: bold;
+  width: 100%;
+}

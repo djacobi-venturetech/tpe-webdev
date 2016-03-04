@@ -1,27 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" serverName="TPE Release (Web)" showExcludedInSync="true">
+  <component name="PublishConfigData" promptOnRemoteOverwrite="CHECK_TIMESTAMP" serverName="TPE Live (Web)" preserveTimestamps="false" showExcludedInSync="true">
     <serverData>
-      <paths name="TPE Dev (Web)">
+      <paths name="TPE Live (Web)">
         <serverdata>
           <mappings>
-            <mapping deploy="Stylesheets/Entropy/pages" local="$PROJECT_DIR$/web/build/stylesheets/pages" web="/Stylesheets/Entropy/pages" />
-            <mapping deploy="Stylesheets/Entropy/templates" local="$PROJECT_DIR$/web/build/stylesheets/templates" web="/Stylesheets/Entropy/templates" />
-            <mapping deploy="Stylesheets/Entropy/FlatLab" local="$PROJECT_DIR$/web/build/stylesheets/FlatLab" web="/Stylesheets/Entropy/FlatLab" />
-            <mapping deploy="Javascript/Entropy/FlatLab" local="$PROJECT_DIR$/web/build/javascript/FlatLab" web="/Javascript/Entropy/FlatLab" />
-            <mapping deploy="Design/Entropy/font" local="$PROJECT_DIR$/web/build/design/fonts" web="/Design/Entropy/font" />
-            <mapping deploy="Javascript/Entropy/components" local="$PROJECT_DIR$/web/build/javascript/components" web="Javascript/Entropy/components" />
-          </mappings>
-        </serverdata>
-      </paths>
-      <paths name="TPE Release (Web)">
-        <serverdata>
-          <mappings>
-            <mapping deploy="Stylesheets/Entropy/templates" local="$PROJECT_DIR$/web/build/stylesheets/templates" web="/Stylesheets/Entropy/templates" />
-            <mapping deploy="Stylesheets/Entropy/FlatLab" local="$PROJECT_DIR$/web/build/stylesheets/FlatLab" web="/Stylesheets/Entropy/FlatLab" />
-            <mapping deploy="Javascript/Entropy/FlatLab" local="$PROJECT_DIR$/web/build/javascript/FlatLab" web="/Javascript/Entropy/FlatLab" />
-            <mapping deploy="Design/Entropy/font" local="$PROJECT_DIR$/web/build/design/fonts" web="/Design/Entropy/font" />
-            <mapping deploy="Stylesheets/Entropy/pages" local="$PROJECT_DIR$/web/build/stylesheets/pages" />
+            <mapping deploy="Web\Stylesheets\Entropy" local="$PROJECT_DIR$/web/build/stylesheets/Entropy" web="/" />
+            <mapping deploy="Web\Javascript\Entropy" local="$PROJECT_DIR$/web/build/javascript/Entropy" web="/" />
+            <mapping deploy="Web\FavIcons" local="$PROJECT_DIR$/web/build/favicons" web="/" />
           </mappings>
         </serverdata>
       </paths>
