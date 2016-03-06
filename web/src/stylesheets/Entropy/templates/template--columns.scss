@@ -1,0 +1,14 @@
+$coloumnOneBackGroundColor:#02549d;
+$columnTextColor: #fff;
+
+#column1{
+  width: 15%;
+  min-height: 900px;
+  background-color:  $coloumnOneBackGroundColor;
+  color:$columnTextColor;
+  padding-top:30px;
+}
+
+#column2{
+  width: 85%;
+  }

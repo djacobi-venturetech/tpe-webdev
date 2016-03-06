@@ -1,5 +1,31 @@
 
+// Note: openSidebar function is declared in the HTML of the page (header)
+
+
 jQuery(function () {
+
+	if(!window.openSidebar) {
+		window.SIDE_BAR_OPEN="FIXME-SIDE-BAR-OPEN";
+		window.openSidebar = function(open) {
+			// Needs to be declared in the HTML of the page (header)
+		} ;
+	}
+
+//    sidebar toggle
+
+	function responsiveView() {
+		var wSize = $(window).width();
+		if (sessionStorage[SIDE_BAR_OPEN] === undefined)
+			openSidebar(!(wSize <= 768));
+	}
+
+	$(window).on('load', responsiveView);
+	$('.fa-bars').click(function () {
+		var $body = $("#body-wrapper"),
+			open = !$body.hasClass("sidebar-open");
+		openSidebar(open);
+	});
+
 
 	/*const*/
 	var SELECT2_INIT = "select2-init";
@@ -18,8 +44,10 @@ jQuery(function () {
 				})
 				.addClass(SELECT2_INIT)
 				.filter('[data-features~="watch"]');
-			if (window.miwt)
+			if (window.miwt){
+				//noinspection JSUnresolvedVariable
 				$result.on('change', miwt.observerFormSubmit);
+			}
 		}
 	}
 
@@ -60,6 +88,7 @@ jQuery(function () {
 		});
 	}
 
+	switchSupport();
 
 	function enableTooltips(ctx) {
 		var $ctx = $(ctx || document);
@@ -80,6 +109,31 @@ jQuery(function () {
 
 	enableTooltips();
 
+	var PLUS_CLASS = 'fa-plus-circle';
+	var MINUS_CLASS = 'fa-minus-circle';
+	function registerActivityToggle(idx, element) {
+		var $element = $(element);
+		var $target = $($element.data('target'));
+		$target.on('show.bs.collapse', function onShow(){
+			$element.removeClass('collapsed').addClass('expanded');
+			$element.find('i').removeClass(PLUS_CLASS).addClass(MINUS_CLASS);
+		});
+		$target.on('hide.bs.collapse', function onHide(){
+			$element.removeClass('expanded').addClass('collapsed');
+			$element.find('i').removeClass(MINUS_CLASS).addClass(PLUS_CLASS);
+		});
+	}
+
+	/**
+	 * Setup the bootstrap expand-collapse persistence.
+	 * @param ctx the context such as a DIV or document.
+	 */
+	function setupExpandCollapse(ctx) {
+		var $ctx = $(ctx || document);
+		$ctx.find('[data-toggle="collapse"]').each(registerActivityToggle);
+	}
+
+	setupExpandCollapse();
 
 	$('form.miwt-form').each(function (idx, form) {
 		form.submit_options = {
@@ -92,6 +146,8 @@ jQuery(function () {
 					initSelect2(d.node);
 					handleDataDownload(d.node);
 					enableTooltips(d.node);
+					setupExpandCollapse(d.node);
+					switchSupport(d.node);
 				});
 			},
 			postUpdate: function () {
@@ -99,5 +155,19 @@ jQuery(function () {
 			}
 		};
 	});
+
+	(function (w) {
+		var $body = $("#body-wrapper");
+		if ($body.length === 0) return;
+		w.addEventListener("orientationchange", function () {
+			if (w.orientation === 0)
+				openSidebar(false);
+		}, false);
+		//noinspection JSUnresolvedVariable
+		if (w.orientation && w.orientation === 0 && sessionStorage[SIDE_BAR_CLOSED] === undefined) {
+			openSidebar(false);
+		}
+	})(window);
+
 
 });

@@ -1,0 +1,30 @@
+.breadcrumb_path{
+  height: 45px;
+  display: flex;
+  align-items: center;
+  background-color:   #02549d;
+}
+
+.breadcrumb_path .current{
+  color:white;
+  font-weight: bold;
+}
+
+.breadcrumb_path li a{
+  color: white;
+  font-size: .8em;
+}
+
+.breadcrumb_path li a:hover{
+  color: #cccc99;
+  text-decoration: none;
+  font-size: 1em;
+  font-weight: bold;
+}
+
+.breadcrumb_path li {
+margin-bottom: 0;
+}
+
+
+
