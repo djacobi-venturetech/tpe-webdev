@@ -1,34 +1,22 @@
-
-
-#column2 .miwt {
-  width: 70%;
+#column2 .miwt{
+  padding-left: 10%;
   background-color: #fff;
-  border: 1px solid #aaa;
-  padding: 60px 0;
 }
 
 #column2 h1 {
-  display: block;
-  margin: auto;
-  text-align: center;
+  margin-top: 50px;
   font-size: 1.55em;
-  width: 100%;
-  padding: 0 10%;
   color: #02549d;
-  font-weight: bold;
-  margin-bottom: 50px;
 }
 
 #column2 h2 {
   font-size: 1.3em;
-  margin: 30px 10%;
+  margin-top: 40px
 }
 
 .user-roles div > span {
-  display: block;
-  margin: 10px 0px 10px 10%;
-  width: 200px;
-  padding: 5px;
+  margin: 10px 30px 10px  0;
+  min-width: 150px;
 }
 
 .message-container > div > span.brief {
@@ -40,7 +28,6 @@
 }
 
 .message-container{
+  width: 50%;
   margin: 0;
 }
-
-
