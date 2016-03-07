@@ -1,0 +1,26 @@
+
+$hover-background-color-left-nav: #fff;
+$hover-text-color-left-nav:#02549d;
+$text-color-left-nav: #fff;
+$border-color: #aaa;
+
+.nav-stacked li{
+  font-weight: bold;
+  width: 100%;
+}
+
+.nav-stacked li a{
+  width: 100%;
+  display: block;
+  padding: 15px 0 15px 5%;
+  color: $text-color-left-nav;
+}
+
+.nav-stacked li:hover a{
+  text-decoration: none;
+  background-color: $hover-background-color-left-nav;
+  color: $hover-text-color-left-nav;
+}
+
+.nav-stacked {
+}

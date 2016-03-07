@@ -1,0 +1,35 @@
+@media (max-width: 900px) {
+  #column2{
+	width: 81%;
+  }
+  #header .mi{
+	margin-right: 2%;
+  }
+}
+
+@media (max-width: 768px)  {
+  #column1, #column2{
+	width: 100%;
+  }
+  #column1{
+	padding-top: 0;
+	text-align: center;
+	font-size: 1.5em;
+  }
+
+  #header .menu{
+	display: none;
+  }
+}
+
+@media (max-width: 515px){
+  #column2{
+	padding: 0px;
+  }
+
+
+}
+
+
+
+

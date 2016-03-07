@@ -1,18 +1,18 @@
-@import "../config/base-import";
-@import "../components/messages";
-@import "../components/top-menu";
-@import "../components/side-nav";
-@import "../components/miwt";
-@import "../components/miwt-tables";
-@import "../components/miwt-menu";
-@import "../components/miwt-dialog";
-@import "../components/tabs";
-@import "../components/search-ui";
-@import "../components/pager";
-@import "../components/prop-ui";
-@import "../components/file-chooser";
-@import "../components/actions";
-@import "../components/breadcrumbs";
+@import "../../config/base-import";
+@import "../../components/messages";
+@import "../../components/top-menu";
+@import "../../components/side-nav";
+@import "../../components/miwt";
+@import "../../components/miwt-tables";
+@import "../../components/miwt-menu";
+@import "../../components/miwt-dialog";
+@import "../../components/tabs";
+@import "../../components/search-ui";
+@import "../../components/pager";
+@import "../../components/prop-ui";
+@import "../../components/file-chooser";
+@import "../../components/actions";
+@import "../../components/breadcrumbs";
 
 ::selection {
 	// background: #FF6C60;

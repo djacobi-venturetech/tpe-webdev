@@ -1,0 +1,26 @@
+$coloumnOneBackGroundColor:#02549d;
+$columnTextColor: #fff;
+
+
+.enclosing{
+  overflow: hidden;
+}
+#column1{
+  width: 15%;
+  min-width: 130px;
+  min-height: 400px;
+  height: 100%;
+  background-color:  $coloumnOneBackGroundColor;
+  color:$columnTextColor;
+  padding-top:45px;
+  padding-bottom: 1200px;
+  margin-bottom: -1200px;
+}
+
+#column2{
+  width: 85%;
+  }
+
+
+
+

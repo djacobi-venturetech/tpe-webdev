@@ -1,0 +1,47 @@
+$header-hover-link: #aaa;
+
+#header {
+  width: 100%;
+  background-color: white;
+  position: relative;
+  padding: 50px 100px 0px 15%;
+}
+
+#header ul, body {
+  margin-top: 0px;
+  margin-left: 0px;
+}
+
+#header img.logo {
+  position: absolute;
+  top: 10px;
+  left: 5px;
+  height: 50px;
+}
+
+#header .logout {
+  position: absolute;
+  top: 30px;
+  right: 15px;
+}
+
+#header ul li {
+  display: inline-block;
+  margin-right: 30px;
+}
+
+#header .menuitemlabel {
+  text-decoration: none;
+  color: #02539F;
+  font-weight: bold;
+}
+
+#header .menuitemlabel:hover span {
+  color: #CCCC99;
+  text-decoration: none;
+}
+
+#header .menuitemlabel:visited {
+  color: #02539F;
+  text-decoration: none;
+}
