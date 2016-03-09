@@ -1,3 +1,5 @@
+
+
 .search-bar{
   background-color: #CCCC99;
   color: black;
@@ -68,3 +70,12 @@ tbody tr:hover td, .search-wrapper .miwt-table tbody tr:hover td {
 .result-actions{
   margin-right: 30px;
 }
+
+.pager{
+  margin-top: 0;
+}
+
+.miwt-table-con.search-wrapper, .miwt-table-con .miwt-table{
+  margin-top: 0;
+}
+

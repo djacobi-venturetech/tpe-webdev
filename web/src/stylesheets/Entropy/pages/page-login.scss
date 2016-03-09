@@ -1,0 +1,88 @@
+body{
+  background-color: #aaa;
+}
+
+#login-body .column{
+  padding-top: 50px;
+  min-height: 700px;
+}
+
+
+.composite{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.composite .form-signin{
+
+  border-radius: 4px;
+  width: 370px;
+
+}
+
+.fields .field{
+  background-color: #fff;
+}
+
+.field{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 15px;
+}
+
+.form-content{
+  display: flex;
+  flex-direction: column;
+  color: black;
+}
+
+.form-content .title{
+  height: 55px;
+  background-color: #02549d;
+  text-align: center;
+  color: white;
+  font-size: 1.6em;
+  vertical-align: center;
+  text-transform: uppercase;
+  padding-top: 10px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+
+}
+
+.form-content label{
+  color: black;
+  font-size: 1.3em
+}
+
+.form-content .actions{
+  text-align:center;
+  padding-top: 20px;
+  background-color: #fff;
+}
+
+.form-signin .retrieve-password p{
+  padding-top: 15px;
+  background-color: #fff;
+  font-size: 1.1em;
+  margin: 0;
+  height: 60px;
+  vertical-align: center;
+  text-align: center;
+  border-bottom-left-radius: 10px;
+
+  border-bottom-right-radius: 10px;
+}
+
+.form-signin .retrieve-password p a:hover{
+  text-decoration: none;
+  font-weight: bold;
+  color: #02549d;
+}
+
+.form-signin input{
+  padding-left: 5px;
+}

@@ -4,21 +4,19 @@ $header-hover-link: #aaa;
   width: 100%;
   background-color: white;
   position: relative;
-  padding: 50px 100px 0px 15%;
+  padding: 50px 100px 0px 20%;
 }
 
 #header ul, body {
   margin-top: 0px;
   margin-left: 0px;
 }
-
 #header img.logo {
   position: absolute;
-  top: 10px;
-  left: 5px;
-  height: 50px;
+  top: 20px;
+  left: 0px;
+  width: 300px;
 }
-
 #header .logout {
   position: absolute;
   top: 30px;
@@ -41,7 +39,35 @@ $header-hover-link: #aaa;
   text-decoration: none;
 }
 
+#header li, #header .menuitemlabel {
+  color: #CCCC99;
+  display: block;
+  width: 100%;
+  text-decoration: none;
+}
+
 #header .menuitemlabel:visited {
   color: #02539F;
   text-decoration: none;
+}
+
+#header .menu li{
+  height: 45px;
+  width: 150px;
+  background-color: #fff;
+  display: block;
+}
+
+#header .menu li span{
+  margin-left: 10px;
+}
+
+#header .menu li ul {
+  padding-top: 10px;
+}
+
+#header .menu li ul li {
+  border: 1px solid #02549d;
+  padding-top: 10px;
+  z-index: 100;
 }

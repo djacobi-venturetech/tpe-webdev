@@ -15,16 +15,39 @@
 	padding-top: 0;
 	text-align: center;
 	font-size: 1.5em;
+	padding-bottom: 0;
+	margin-bottom: 0;
   }
 
-  #header .menu{
-	display: none;
+  .breadcrumb_path ol{
+	margin: auto;
+  }
+  #header{
+	padding:100px 0 0 0;
+  }
+  #header .mi {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: #fff;
+	width: 100%;
+	border: 1px solid #aaa;
+	min-height: 45px;
+	font-size: 1.2em;
+  }
+
+  #header .mi a{
+	text-align: center;
+	width: 100%;
+  }
+  .enclosing{
+	overflow: visible;
   }
 }
 
 @media (max-width: 515px){
   #column2{
-	padding: 0px;
+	padding: 0;
   }
 
 
