@@ -1,5 +1,4 @@
 .listing-viewer .prop-body  .prop + .note{
-  max-height: 200px;
   width: 100%;
   text-align: left;
   border: none;
@@ -9,7 +8,6 @@
   display: block;
   width: 100%;
   border: none;
-
 }
 
 .listing-viewer .prop-body .prop + .listing-time{
@@ -20,24 +18,22 @@
 
 .listing-viewer .prop-body .prop{
   display: inline-block;
-  width: 19%;
-  text-align: center;
+  width: 16%;
+  text-align: left;
+  margin-right: 0;
+  vertical-align: top;
 }
 
 
-.listing-viewer .prop-body .location, .listing-viewer .prop-body .lot-number{
-  display: inline-block;
-  text-align: center;
-  width: 50%;
-  font-size: 1.6em;
-  margin-bottom: 50px;
-  border: none;
+.listing-viewer .prop-body .location{
+  display: block;
+  text-align: left;
+  width: 100%;
+  font-size: 2em;
+  margin-bottom: 30px;
 }
 
 .listing-viewer .prop-body  .prop + .note span{
   text-align: left;
-  border: 1px solid #aaa;
   width: 100%;
-  padding: 10px;
-
 }

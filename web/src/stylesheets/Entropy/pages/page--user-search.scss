@@ -52,6 +52,8 @@ thead tr{
   font-size:1.1em;
 
 }
+
+
 .miwt-table > tbody > tr:nth-child(even) > td{
   background-color: #cccc99;
 }
@@ -79,3 +81,8 @@ tbody tr:hover td, .search-wrapper .miwt-table tbody tr:hover td {
   margin-top: 0;
 }
 
+
+//removes hyperlink line from view buttons
+.actions a.view:hover{
+  text-decoration: none;
+}

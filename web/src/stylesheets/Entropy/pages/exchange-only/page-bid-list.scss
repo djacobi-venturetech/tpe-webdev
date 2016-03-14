@@ -1,0 +1,85 @@
+
+
+table{
+ max-width: 90%;
+}
+
+.prop-wrapper{
+  display: flex;
+  width: 100%;
+  max-width: 100%;
+}
+
+.odd, .even{
+  border: 1px solid #aaa;
+  width: 90%;
+}
+
+.prop-wrapper label{
+  text-transform: uppercase;
+}
+
+.overview .prop{
+}
+
+.prop-wrapper > div:first-child{
+  width: 12%;
+  //When an image is added
+}
+
+.miwt-table-data .overview{
+}
+
+.prop-wrapper .overview{
+  width: 30%!important;
+}
+
+.prop-wrapper .overview .prop> label, .prop-wrapper .overview .prop> span{
+  display: inline-block;
+  width: 50%;
+}
+
+.miwt-table-data .bids{
+  padding-top: 50px;
+  width: 30%!important;
+}
+
+.prop-wrapper .bids > div:nth-child(1), .prop-wrapper .bids > div:nth-child(2) {
+  display:inline-block;
+  width: 50%;
+  text-align: center;
+}
+
+
+.bids span{
+  font-size: 1.3em;
+  color: red;
+}
+
+.bids .actions{
+  margin-top: 20px;
+  text-align:center;
+}
+
+
+.prop-wrapper .details{
+  border-left: 1px solid #aaa;
+	//Padding is holding the position for the image
+  padding-top: 50px;
+  padding-left: 30px;
+  width: 30%;
+}
+
+
+.prop-wrapper .details .prop span, .prop-wrapper .details .prop label{
+  display: inline-block;
+  width: 48%;
+}
+
+
+.prop-wrapper .prop{
+  margin-bottom: .01rem;
+}
+
+
+

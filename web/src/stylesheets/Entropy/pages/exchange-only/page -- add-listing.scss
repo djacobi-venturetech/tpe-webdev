@@ -1,14 +1,24 @@
 
-
-#column2 .miwt, #column2 .location-edit, #column2.user-editor{
-  width: 100%;
-  background-color: #fff;
-  border: 1px solid #aaa;
-  padding: 20px 5%;;
-}
-
 .prop{
-  width: 49%;
-  display: inline-block;
+  display:inline-block;
+  vertical-align: top;
 }
+
+.prop-body .packaging{
+  display: block;
+}
+
+.lot-number label{
+  margin-bottom: .2rem;
+}
+
+.lot-number, .volume, .weight{
+  margin-left: 20px;
+}
+
+.prop-editor .prop input[type=text]{
+  min-width: 200px!important;
+  width: 50px!important;
+}
+
 
