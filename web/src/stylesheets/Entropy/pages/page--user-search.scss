@@ -1,3 +1,5 @@
+
+
 .search-bar{
   background-color: #CCCC99;
   color: black;
@@ -50,6 +52,8 @@ thead tr{
   font-size:1.1em;
 
 }
+
+
 .miwt-table > tbody > tr:nth-child(even) > td{
   background-color: #cccc99;
 }
@@ -67,4 +71,18 @@ tbody tr:hover td, .search-wrapper .miwt-table tbody tr:hover td {
 }
 .result-actions{
   margin-right: 30px;
+}
+
+.pager{
+  margin-top: 0;
+}
+
+.miwt-table-con.search-wrapper, .miwt-table-con .miwt-table{
+  margin-top: 0;
+}
+
+
+//removes hyperlink line from view buttons
+.actions a.view:hover{
+  text-decoration: none;
 }

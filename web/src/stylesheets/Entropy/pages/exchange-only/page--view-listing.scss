@@ -1,0 +1,39 @@
+.listing-viewer .prop-body  .prop + .note{
+  width: 100%;
+  text-align: left;
+  border: none;
+}
+
+.listing-viewer .prop-body .prop + .status{
+  display: block;
+  width: 100%;
+  border: none;
+}
+
+.listing-viewer .prop-body .prop + .listing-time{
+  display: block;
+  width: 100%;
+  border: none;
+}
+
+.listing-viewer .prop-body .prop{
+  display: inline-block;
+  width: 16%;
+  text-align: left;
+  margin-right: 0;
+  vertical-align: top;
+}
+
+
+.listing-viewer .prop-body .location{
+  display: block;
+  text-align: left;
+  width: 100%;
+  font-size: 2em;
+  margin-bottom: 30px;
+}
+
+.listing-viewer .prop-body  .prop + .note span{
+  text-align: left;
+  width: 100%;
+}
