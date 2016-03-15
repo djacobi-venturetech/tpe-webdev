@@ -1,24 +1,25 @@
+.listing-add {
+margin-left: 30px;
+  .prop {
+    display: inline-block;
+    vertical-align: top;
+  }
 
-.prop{
-  display:inline-block;
-  vertical-align: top;
+  .prop-body .packaging {
+    display: block;
+  }
+
+  .lot-number label {
+    margin-bottom: .2rem;
+  }
+
+  .lot-number, .volume, .weight {
+    margin-left: 20px;
+  }
+
+  .prop-editor .prop input[type=text] {
+    min-width: 200px !important;
+    width: 50px !important;
+  }
+
 }
-
-.prop-body .packaging{
-  display: block;
-}
-
-.lot-number label{
-  margin-bottom: .2rem;
-}
-
-.lot-number, .volume, .weight{
-  margin-left: 20px;
-}
-
-.prop-editor .prop input[type=text]{
-  min-width: 200px!important;
-  width: 50px!important;
-}
-
-

@@ -4,21 +4,25 @@ $hover-text-color-left-nav:#02549d;
 $text-color-left-nav: #fff;
 $border-color: #aaa;
 
-.sub-nav li{
-  font-weight: bold;
+.sub-nav.element{
+
   width: 100%;
 }
 
-.sub-nav div.element a {
+.sub-nav .element a{
   width: 100%;
   display: block;
   padding: 15px 0 15px 10%;
   font-size: 1.2em;
   color: $text-color-left-nav;
+  font-weight: bold;
+
 }
 
-.sub-nav div:hover a {
+.sub-nav .element:hover a{
   text-decoration: none;
+  font-weight: bold;
   background-color: $hover-background-color-left-nav;
   color: $hover-text-color-left-nav;
 }
+
