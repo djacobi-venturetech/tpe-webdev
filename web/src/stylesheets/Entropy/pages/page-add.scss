@@ -16,15 +16,18 @@ section.user-edit{
   margin-right: 15px;
 }
 
-.location-add, .company-add, .user-editor, .company-edit{
+.location-add, .company-add, .user-editor, .company-edit, .user-edit{
   margin-left: 30px;
+  .email-address .prop label::after{
+    content: "*";
+    color: red;
+  }
 }
 
 
 .company-add .prop-body> .prop:last-of-type, .company-add .prop-body> div:nth-child(5){
   display: block;
 }
-
 
 
 
