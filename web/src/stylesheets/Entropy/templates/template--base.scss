@@ -12,7 +12,33 @@
 @import "../../components/prop-ui";
 @import "../../components/file-chooser";
 @import "../../components/actions";
-@import "../../components/breadcrumbs";
+@import "../../components/breadcrumbs";  ;
+//import my files
+@import "../components/comp -- breadcrumb";
+@import "../components/comp--left-side-nav";
+@import "../components/comp-header";
+@import "../components/base";
+
+//import template files
+@import "../templates/template--columns";
+@import "../templates/style-responsive";
+@import "../templates/template-media-queries";  ;
+//import admin pages files
+@import "../pages/page--user-search";
+@import "../pages/page-login";
+@import "../pages/page-user-view";
+@import "../pages/page--edit";
+@import "../pages/page---roles";
+@import "../pages/page-add";
+//import exchange pages
+@import "../pages/exchange-only/page-bid-list";
+@import "../pages/exchange-only/page--view-listing";
+@import "../pages/exchange-only/page -- add-listing";
+
+
+
+
+
 
 ::selection {
 	// background: #FF6C60;

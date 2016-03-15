@@ -6,6 +6,14 @@
   max-width: 100%;
 }
 
+.user-viewer .prop, .location-viewer .prop, .company-viewer .prop {
+  display: block;
+}
+
+.location-viewer .company,.company-viewer .name {
+  font-size: 1.5em;
+}
+
 
 
 
