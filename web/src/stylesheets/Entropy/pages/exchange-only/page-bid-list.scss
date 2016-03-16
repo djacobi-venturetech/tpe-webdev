@@ -1,6 +1,4 @@
-
-
-
+@import "../../components/base";
 
 .listing-search{
 
@@ -69,7 +67,7 @@
 
 
   .prop-wrapper .details{
-    border-left: 1px solid #aaa;
+    border-left: 1px solid $GreyBorder;
     //Padding is holding the position for the image
     width: 30%;
   }

@@ -1,7 +1,8 @@
+@import "../components/base";
 
 #column2 .miwt, #column2 .location-edit{
-  background-color: #fff;
-  border: 1px solid #aaa;
+  background-color: $WhiteColor;
+  border: 1px solid $GreyBorder;
 }
 
 .prop, .prop-group{
@@ -16,14 +17,9 @@
   max-width: none;
 }
 
-
-
-
-
 section.user-edit{
   padding-left: 50px;
 }
-
 
 .user-edit .prop input{
   padding-left: 10px;

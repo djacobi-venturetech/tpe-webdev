@@ -1,11 +1,6 @@
-
-$hover-background-color-left-nav: #fff;
-$hover-text-color-left-nav:#02549d;
-$text-color-left-nav: #fff;
-$border-color: #aaa;
+@import "../components/base";
 
 .sub-nav.element{
-
   width: 100%;
 }
 
@@ -14,7 +9,7 @@ $border-color: #aaa;
   display: block;
   padding: 15px 0 15px 10%;
   font-size: 1.2em;
-  color: $text-color-left-nav;
+  color: $WhiteColor;
   font-weight: bold;
 
 }
@@ -22,7 +17,7 @@ $border-color: #aaa;
 .sub-nav .element:hover a{
   text-decoration: none;
   font-weight: bold;
-  background-color: $hover-background-color-left-nav;
-  color: $hover-text-color-left-nav;
+  background-color: $WhiteColor;
+  color: $PoultryExchangeBlue;
 }
 

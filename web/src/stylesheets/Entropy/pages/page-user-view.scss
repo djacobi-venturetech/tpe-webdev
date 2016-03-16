@@ -1,6 +1,8 @@
+@import "../components/base";
+
 .user-viewer, .location-viewer, .company-viewer, .listing-viewer{
-  background-color: #fff;
-  border:1px solid #aaa;
+  background-color: $WhiteColor;
+  border:1px solid $GreyBorder;
   padding: 20px 60px;
   width: 100%;
   max-width: 100%;

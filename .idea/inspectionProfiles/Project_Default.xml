@@ -1448,6 +1448,7 @@
     <inspection_tool class="JspTagBodyContent" enabled="false" level="WARNING" enabled_by_default="true" />
     <inspection_tool class="JspUnescapedEl" enabled="false" level="WARNING" enabled_by_default="false" />
     <inspection_tool class="KDocUnresolvedReference" enabled="false" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="KarmaConfigFile" enabled="false" level="WARNING" enabled_by_default="true" />
     <inspection_tool class="KeySetIterationMayUseEntrySet" enabled="true" level="WARNING" enabled_by_default="true" />
     <inspection_tool class="KotlinDeprecation" enabled="false" level="WARNING" enabled_by_default="true" />
     <inspection_tool class="KotlinInvalidBundleOrProperty" enabled="false" level="ERROR" enabled_by_default="true" />
@@ -1991,20 +1992,20 @@
     <inspection_tool class="RuntimeExec" enabled="false" level="WARNING" enabled_by_default="false" />
     <inspection_tool class="RuntimeExecWithNonConstantString" enabled="false" level="WARNING" enabled_by_default="false" />
     <inspection_tool class="SSBasedInspection" enabled="true" level="WARNING" enabled_by_default="true">
-      <replaceConfiguration name="TextSources.create deprecated" text="TextSources.create($Parameter$)" recursive="false" caseInsensitive="true" type="JAVA" reformatAccordingToStyle="true" shortenFQN="true" useStaticImport="true" replacement="TextSources.createText($Parameter$)">
+      <replaceConfiguration name="TextSources.create deprecated" text="TextSources.create($Parameter$)" recursive="false" caseInsensitive="true" type="XML" reformatAccordingToStyle="true" shortenFQN="true" useStaticImport="true" replacement="TextSources.createText($Parameter$)">
         <constraint name="Parameter" script="&quot;&quot;" minCount="0" maxCount="2147483647" within="" contains="" />
       </replaceConfiguration>
-      <replaceConfiguration name="StandardCharsets replacement" text="Charsets.$FIELD$" recursive="false" caseInsensitive="true" type="JAVA" reformatAccordingToStyle="true" shortenFQN="true" useStaticImport="true" replacement="StandardCharsets.$FIELD$">
+      <replaceConfiguration name="StandardCharsets replacement" text="Charsets.$FIELD$" recursive="false" caseInsensitive="true" type="XML" reformatAccordingToStyle="true" shortenFQN="true" useStaticImport="true" replacement="StandardCharsets.$FIELD$">
         <constraint name="Parameter" script="&quot;&quot;" minCount="0" maxCount="2147483647" within="" contains="" />
         <constraint name="FIELD" within="" contains="" />
       </replaceConfiguration>
-      <replaceConfiguration name="FOR Address.getRegions deprecated" text="for ($Type$ $Var1$ : $Var2$.getRegions()) {&#10;  $Statement$;&#10;}" recursive="false" caseInsensitive="false" type="JAVA" reformatAccordingToStyle="true" shortenFQN="true" useStaticImport="true" replacement="for ($Type$ $Var1$ : $Var2$.getRegionList()) {&#10;  $Statement$;&#10;}">
+      <replaceConfiguration name="FOR Address.getRegions deprecated" text="for ($Type$ $Var1$ : $Var2$.getRegions()) {&#10;  $Statement$;&#10;}" recursive="false" caseInsensitive="false" type="XML" reformatAccordingToStyle="true" shortenFQN="true" useStaticImport="true" replacement="for ($Type$ $Var1$ : $Var2$.getRegionList()) {&#10;  $Statement$;&#10;}">
         <constraint name="Type" within="" contains="" />
         <constraint name="Statement" minCount="0" maxCount="2147483647" within="" contains="" />
         <constraint name="Var1" within="" contains="" />
         <constraint name="Var2" within="" contains="" />
       </replaceConfiguration>
-      <replaceConfiguration name="FOR Address.getAddressLines deprecated" text="for ($Type$ $Var1$ : $Var2$.getAddressLines()) {&#10;  $Statement$;&#10;}" recursive="false" caseInsensitive="false" type="JAVA" reformatAccordingToStyle="true" shortenFQN="true" useStaticImport="true" replacement="for ($Type$ $Var1$ : $Var2$.getAddressLineList()) {&#10;  $Statement$;&#10;}">
+      <replaceConfiguration name="FOR Address.getAddressLines deprecated" text="for ($Type$ $Var1$ : $Var2$.getAddressLines()) {&#10;  $Statement$;&#10;}" recursive="false" caseInsensitive="false" type="XML" reformatAccordingToStyle="true" shortenFQN="true" useStaticImport="true" replacement="for ($Type$ $Var1$ : $Var2$.getAddressLineList()) {&#10;  $Statement$;&#10;}">
         <constraint name="Type" within="" contains="" />
         <constraint name="Statement" minCount="0" maxCount="2147483647" within="" contains="" />
         <constraint name="Var1" within="" contains="" />

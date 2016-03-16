@@ -1,13 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" promptOnRemoteOverwrite="CHECK_TIMESTAMP" serverName="TPE Live (Web)" preserveTimestamps="false" showExcludedInSync="true">
+  <component name="PublishConfigData" promptOnRemoteOverwrite="CHECK_TIMESTAMP" preserveTimestamps="false" showExcludedInSync="true">
     <serverData>
-      <paths name="TPE Live (Web)">
+      <paths name="TPE Dev (Web)">
         <serverdata>
           <mappings>
-            <mapping deploy="Web\Stylesheets\Entropy" local="$PROJECT_DIR$/web/build/stylesheets/Entropy" web="/" />
-            <mapping deploy="Web\Javascript\Entropy" local="$PROJECT_DIR$/web/build/javascript/Entropy" web="/" />
-            <mapping deploy="Web\FavIcons" local="$PROJECT_DIR$/web/build/favicons" web="/" />
+            <mapping deploy="tpe-release.venturetech.net\Web\Stylesheets\Entropy" local="$PROJECT_DIR$/web/build/stylesheets/Entropy" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="TPE Release (Web)">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" web="/" />
           </mappings>
         </serverdata>
       </paths>

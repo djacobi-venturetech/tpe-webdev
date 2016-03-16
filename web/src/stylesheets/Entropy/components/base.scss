@@ -1,12 +1,29 @@
+$PoultryExchangeBlue: #02549d;
+$BrownColor:  #cccc99;
+$WhiteColor: #ffffff;
+$GreyBorder: #aaa;
+$BlackFontColor: black;
+$TableEvenRows:  #cccc99;
+$TableOddRows: #D9D9B3;
+$TableHoverColor: #EDEDDA;
+$LoginScreenBackGroundColor: #aaaaaa;
+
+
+
 #column2 h1{
   margin: 30px 0;
   display: block;
   text-align: center;
-  color: #02549d;
+  color: $PoultryExchangeBlue;
   font-size: 1.55em;
 }
 
 #column2 h2 {
   font-size: 1.5em;
   margin-top: 20px;
+}
+
+body{
+  margin-top: 0px;
+  margin-left: 0px;
 }

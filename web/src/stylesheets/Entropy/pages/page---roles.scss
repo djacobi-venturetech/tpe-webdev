@@ -1,6 +1,8 @@
+@import "../components/base";
+
 #column2 .miwt{
-  background-color: #fff;
-  border: 1px solid #aaa;
+  background-color: $WhiteColor;
+  border: 1px solid $GreyBorder;
 }
 
 //For the roles page only
@@ -22,7 +24,7 @@
 }
 
 input[type=checkbox]:checked + label{
-  color: #02549d;
+  color: $PoultryExchangeBlue;
 }
 
 
@@ -37,6 +39,5 @@ input[type=checkbox]:checked + label{
 .message-container{
   width: 50%;
   margin: 10px 0;
-
 }
 
