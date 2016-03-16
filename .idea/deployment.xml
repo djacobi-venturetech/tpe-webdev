@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" promptOnRemoteOverwrite="CHECK_TIMESTAMP" preserveTimestamps="false" showExcludedInSync="true">
+  <component name="PublishConfigData" promptOnRemoteOverwrite="CHECK_TIMESTAMP" serverName="TPE Live (Web)" preserveTimestamps="false" showExcludedInSync="true">
     <serverData>
       <paths name="TPE Dev (Web)">
         <serverdata>
           <mappings>
-            <mapping deploy="tpe-release.venturetech.net\Web\Stylesheets\Entropy" local="$PROJECT_DIR$/web/build/stylesheets/Entropy" web="/" />
+            <mapping local="$PROJECT_DIR$" web="/" />
           </mappings>
         </serverdata>
       </paths>
