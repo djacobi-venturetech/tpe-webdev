@@ -1,0 +1,63 @@
+@import "../components/base";
+
+.prop-editor{
+  margin-left: 30px;
+  width: 100%;
+  max-width:none;
+
+  .name-editor{
+    display: block;
+  }
+
+  .prop{
+	display: inline-block;
+  }
+
+  .address-line-2{
+	width: 49%;
+  }
+  .phone{
+	display: inline-block;
+  }
+
+  .payment-info, .certification{
+	display:block;
+  }
+}
+
+//Temp until I get class names that I want
+//For adding and editing location for PE admin
+.location-add, .location-edit{
+
+ .prop-body > .prop:nth-of-type(6) {
+	width: 60%;
+  }
+  .prop-body >.prop:last-of-type{
+	display:block
+  }
+}
+.prop-editor .postal-code input[type=text]{
+  width: 180px;
+  min-width: 60px;
+}
+
+//When edting a listing
+.listing-edit .prop-body{
+
+  .location{
+	display: block;
+  }
+
+  .grade{
+	width: 50%;
+  }
+
+  .note{
+	width: 40%;
+	//This needs to be altered with media query
+	margin-right: 10%;
+  }
+
+
+
+}

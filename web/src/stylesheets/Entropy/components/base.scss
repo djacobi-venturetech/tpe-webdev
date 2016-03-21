@@ -27,3 +27,31 @@ body{
   margin-top: 0px;
   margin-left: 0px;
 }
+
+
+//Add buttons throughout the TPE
+.add{
+  height: 50px;
+  width: 100px;
+  font-size: 1.3em;
+}
+
+.add:before{
+  content: "+  ";
+  font-weight: bold;
+}
+
+//This should only be for the listing mark ready dialog
+//But it may work for other dialog boxes
+div.window.dialog{
+  width: 600px;
+  top: 550px;
+  left: 18%;
+  height: 162px;
+  border: 1px solid $PoultryExchangeBlue;
+}
+
+.windowbuttons button{
+  font-weight: bold;
+  height: 100%;
+}
