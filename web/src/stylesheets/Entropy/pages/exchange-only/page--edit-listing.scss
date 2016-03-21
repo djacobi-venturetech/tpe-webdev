@@ -1,0 +1,29 @@
+@import "../../components/base";
+
+.listing-edit, .location-edit {
+  .prop-footer, .prop-body {
+  margin-left: 30px;
+  }
+
+  .prop-body > .packaging{
+    display: block;
+  }
+
+  .prop-body .note{
+    display: block;
+    .rte{
+      width: 500px;
+    }
+
+    .prop-body {
+        .weight, .volume{
+          display: block;
+        }
+    }
+  }
+}
+
+
+
+
+

@@ -1,85 +1,196 @@
+@import "../../components/base";
+
+.listing-search{
+  line-height: 1.3;
 
 
-table{
- max-width: 90%;
+  table{
+    max-width: 100%;
+  }
+  .prop-wrapper{
+    display: flex;
+    width: 100%;
+    max-width: 100%;
+  }
+
+
+  .odd, .even{
+    border: 1px solid #aaa;
+    width: 100%;
+  }
+
+  .prop-wrapper label{
+    text-transform: uppercase;
+  }
+
+  .overview .prop{
+    display: block;
+    text-align: left;
+  }
+
+  //.prop-wrapper > div:first-child{
+   // width: 12%;
+    //When an image is added
+ // }
+
+  .miwt-table-data .overview{
+  }
+
+  .prop-wrapper .overview{
+    width: 30%;
+  margin-left: 10%;
+  }
+
+  .prop-wrapper .overview .prop> label, .prop-wrapper .overview .prop> span{
+    display: inline-block;
+    width: 50%;
+  }
+
+  .miwt-table-data .bids{
+    padding-top: 50px;
+    width: 25%;
+  }
+
+  .prop-wrapper .bids > div:nth-child(1), .prop-wrapper .bids > div:nth-child(2) {
+    display:inline-block;
+    width: 50%;
+    text-align: center;
+  }
+
+
+  .bids span{
+    font-size: 1.3em;
+    color: red;
+  }
+
+  .bids .actions{
+    margin-top: 20px;
+    text-align:center;
+  }
+
+
+  .prop-wrapper .details{
+    border-left: 1px solid $BlackFontColor;
+    //Padding is holding the position for the image
+    width: 35%;
+  }
+
+  .prop, .prop-group{
+    display: block;
+  }
+
+  .prop-wrapper .details .prop span, .prop-wrapper .details .prop label{
+    display: inline-block;
+    width: 48%;
+
+  }
+
+  .details{
+    text-align: left;
+    padding-left: 20px;
+  }
+
+
+  .prop-wrapper .prop{
+    margin-bottom: .01rem;
+  }
 }
 
-.prop-wrapper{
-  display: flex;
-  width: 100%;
-  max-width: 100%;
+.search-results .overview .lot-number a{
+   height: 40px;
+   border: 1px solid black;
+   display: flex;
+   width: 230px;
+   justify-content: center;
+   align-content: center;
+   font-size: 1.1em;
+   color: $WhiteColor;
+   background-color: $PoultryExchangeBlue;
+   border-radius: 5px;
+   padding-top: 5px;
+   //Shadow color
+   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 1px 1px rgba(0, 0, 0, 0.075);
+ }
+
+//Hover button color.
+.search-results .overview .lot-number a:hover{
+  background-color: #01396B;
+  text-decoration: none;
 }
 
-.odd, .even{
-  border: 1px solid #aaa;
-  width: 90%;
+.search-results .overview .lot-number a:before{
+  content: "Lot #";
+  margin-right: 5px;
 }
 
-.prop-wrapper label{
-  text-transform: uppercase;
+.listing-search {
+  .miwt-table > tbody > tr:nth-child(odd) > td {
+    background-color: #D3D3D3;
+  }
+  .miwt-table > tbody > tr:nth-child(even) > td {
+    background-color: #ADADAD;
+  }
+
+  .quick-filter {
+    display: inlne-block;
+    margin: 0;
+    width: 20%;
+    text-align: center;
+    margin-bottom: 20px;
+
+  }
+
+  .constraints button {
+    height: 90px;
+    width: 130px;
+    margin: 10px 0;
+  }
+
+  .constraints .active button {
+    background-color: white;
+    border: 1px solid $BlackFontColor;
+
+  }
+
+  .ending button {
+    background-color: #FFCA00;
+    color: white;
+  }
+
+  .leading button {
+    background-color: #25CF2E;
+    color: white;
+  }
+
+  .losing button {
+    background-color: #FF5800;
+    color: white;
+  }
+
+  .won button {
+    background-color: #FFFF93;
+    color: #006619;
+    border-radius: 100%;
+    width: 90px;
+  }
+
+
+  .search-bar {
+    background-color: white;
+  }
+
+  .quick-filter:first-of-type {
+    border: 1px solid #aaa;
+    border-right: none;
+  }
+
+  .quick-filter:nth-of-type(2), .quick-filter:nth-of-type(3), .quick-filter:nth-of-type(4) {
+    border-top: 1px solid #aaa;
+    border-bottom: 1px solid #aaa;
+  }
+
+  .quick-filter:nth-of-type(5) {
+    border: 1px solid #aaa;
+    border-left: none;
+  }
 }
-
-.overview .prop{
-}
-
-.prop-wrapper > div:first-child{
-  width: 12%;
-  //When an image is added
-}
-
-.miwt-table-data .overview{
-}
-
-.prop-wrapper .overview{
-  width: 30%!important;
-}
-
-.prop-wrapper .overview .prop> label, .prop-wrapper .overview .prop> span{
-  display: inline-block;
-  width: 50%;
-}
-
-.miwt-table-data .bids{
-  padding-top: 50px;
-  width: 30%!important;
-}
-
-.prop-wrapper .bids > div:nth-child(1), .prop-wrapper .bids > div:nth-child(2) {
-  display:inline-block;
-  width: 50%;
-  text-align: center;
-}
-
-
-.bids span{
-  font-size: 1.3em;
-  color: red;
-}
-
-.bids .actions{
-  margin-top: 20px;
-  text-align:center;
-}
-
-
-.prop-wrapper .details{
-  border-left: 1px solid #aaa;
-	//Padding is holding the position for the image
-  padding-top: 50px;
-  padding-left: 30px;
-  width: 30%;
-}
-
-
-.prop-wrapper .details .prop span, .prop-wrapper .details .prop label{
-  display: inline-block;
-  width: 48%;
-}
-
-
-.prop-wrapper .prop{
-  margin-bottom: .01rem;
-}
-
-
-

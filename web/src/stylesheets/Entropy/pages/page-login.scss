@@ -1,10 +1,9 @@
-body{
-  background-color: #aaa;
-}
+@import "../components/base";
 
 #login-body .column{
   padding-top: 50px;
   min-height: 700px;
+  background-color: $LoginScreenBackGroundColor;
 }
 
 
@@ -14,16 +13,13 @@ body{
   justify-content: center;
 }
 
-
 .composite .form-signin{
-
   border-radius: 4px;
   width: 370px;
-
 }
 
 .fields .field{
-  background-color: #fff;
+  background-color: $WhiteColor;
 }
 
 .field{
@@ -41,9 +37,9 @@ body{
 
 .form-content .title{
   height: 55px;
-  background-color: #02549d;
+  background-color: $PoultryExchangeBlue;
   text-align: center;
-  color: white;
+  color: $WhiteColor;
   font-size: 1.6em;
   vertical-align: center;
   text-transform: uppercase;
@@ -61,12 +57,12 @@ body{
 .form-content .actions{
   text-align:center;
   padding-top: 20px;
-  background-color: #fff;
+  background-color: $WhiteColor;
 }
 
 .form-signin .retrieve-password p{
   padding-top: 15px;
-  background-color: #fff;
+  background-color: $WhiteColor;
   font-size: 1.1em;
   margin: 0;
   height: 60px;
@@ -80,7 +76,7 @@ body{
 .form-signin .retrieve-password p a:hover{
   text-decoration: none;
   font-weight: bold;
-  color: #02549d;
+  color: $PoultryExchangeBlue;
 }
 
 .form-signin input{

@@ -1,23 +1,25 @@
+@import "../components/base";;
+
 .breadcrumb_path{
   min-height: 45px;
   display: flex;
   align-items: center;
-  background-color:   #02549d;
+  background-color: $PoultryExchangeBlue;
 }
 
 .breadcrumb_path .current{
-  color:white;
+  color:$WhiteColor;
   font-weight: bold;
   font-size: 1.5em;
 }
 
 .breadcrumb_path li a{
-  color: white;
+  color: $WhiteColor;
   font-size: 1.1em;
 }
 
 .breadcrumb_path li a:hover{
-  color: #cccc99;
+  color: $BrownColor;
   text-decoration: none;
   font-size: 1.5em;
   font-weight: bold;

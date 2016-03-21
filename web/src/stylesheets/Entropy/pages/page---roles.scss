@@ -1,14 +1,16 @@
+@import "../components/base";
+
 #column2 .miwt{
-  padding: 30px 0;
-  background-color: #fff;
-  border: 1px solid #aaa;
+  background-color: $WhiteColor;
+  border: 1px solid $GreyBorder;
 }
 
-#column2 h1 {
-  font-size: 1.55em;
-  color: #02549d;
-  padding-left: 6%;
-  margin-bottom: 20px;
+//For the roles page only
+#column2 .user-roles h1{
+	font-weight: bold;
+	font-size: 1.8em;
+	margin: 50px 0 50px 6%;
+  text-align: left;
 }
 
 .user-roles > div{
@@ -22,14 +24,9 @@
 }
 
 input[type=checkbox]:checked + label{
-  color: #02549d;
+  color: $PoultryExchangeBlue;
 }
 
-#column2 h2 {
-  font-size: 1.3em;
-  margin-top: 20px;
-  padding: 10px 0;
-}
 
 .message-container > div > span.brief {
   display: inline-block;
@@ -42,6 +39,5 @@ input[type=checkbox]:checked + label{
 .message-container{
   width: 50%;
   margin: 10px 0;
-
 }
 

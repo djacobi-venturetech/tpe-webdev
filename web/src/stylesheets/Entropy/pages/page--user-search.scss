@@ -1,8 +1,8 @@
-
+@import "../components/base";
 
 .search-bar{
-  background-color: #CCCC99;
-  color: black;
+  background-color: $BrownColor;
+  color: $BlackFontColor;
   font-size: 1.1em;
   margin: 0;
   padding: 20px;
@@ -11,11 +11,11 @@
   margin: 10px 10px 0 0;
 }
 .miwt-table, .search-bar, .miwt-table td{
-  border: 1px solid #aaa;
+  border: 1px solid $GreyBorder;
   border-radius: 3px;
 }
 .miwt-table td{
-  border: 1px solid #aaa;
+  border: 1px solid $GreyBorder;
 }
 .miwt-table td:last-child {
   text-align:center;
@@ -35,7 +35,7 @@ thead tr{
 }
 
 .dnd-target{
-  border: 1px solid #aaa;
+  border: 1px solid $GreyBorder;
 }
 
 
@@ -44,30 +44,30 @@ thead tr{
 }
 
 .miwt-table thead > tr > th{
-  background-color: black;
-  border: 1px solid white;
+  background-color: $BlackFontColor;
+  border: 1px solid $WhiteColor;
 }
 .miwt-table thead > tr > th span{
-  color: white;
+  color:$WhiteColor;
   font-size:1.1em;
 
 }
 
-
+//These two colors will change when designer picks colors
 .miwt-table > tbody > tr:nth-child(even) > td{
-  background-color: #cccc99;
+  background-color: $TableEvenRows;
 }
 
 .miwt-table > tbody > tr:nth-child(odd) > td{
-  background-color: #D9D9B3;
+  background-color: $TableOddRows;
 }
 
 .miwt-table * td {
-  border: 1px solid white;
+  border: 1px solid $WhiteColor;
 }
 
 tbody tr:hover td, .search-wrapper .miwt-table tbody tr:hover td {
-  background-color: #EDEDDA;
+  background-color: $TableHoverColor;
 }
 .result-actions{
   margin-right: 30px;

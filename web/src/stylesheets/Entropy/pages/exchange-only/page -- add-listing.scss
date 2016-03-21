@@ -1,24 +1,36 @@
+@import "../../components/base";
 
-.prop{
-  display:inline-block;
-  vertical-align: top;
+.listing-add {
+margin-left: 30px;
+  .prop {
+    display: inline-block;
+    vertical-align: top;
+  }
+
+  .prop-body .packaging {
+    display: block;
+  }
+  .prop-body {
+
+    .volume, .weight, .location {
+      display: block;
+      margin-left: 0px;
+    }
+  }
+
+
+
+  .lot-number label {
+    margin-bottom: .2rem;
+  }
+
+  .lot-number {
+    margin-right: 30px;
+  }
+
+  .prop-editor .prop input[type=text] {
+    min-width: 200px !important;
+    width: 50px !important;
+  }
+
 }
-
-.prop-body .packaging{
-  display: block;
-}
-
-.lot-number label{
-  margin-bottom: .2rem;
-}
-
-.lot-number, .volume, .weight{
-  margin-left: 20px;
-}
-
-.prop-editor .prop input[type=text]{
-  min-width: 200px!important;
-  width: 50px!important;
-}
-
-

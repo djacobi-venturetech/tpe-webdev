@@ -1,3 +1,5 @@
+@import "../components/base";
+
 @media (max-width: 900px) {
   #column2{
 	width: 81%;
@@ -29,9 +31,9 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	background-color: #fff;
+	background-color: $WhiteColor;
 	width: 100%;
-	border: 1px solid #aaa;
+	border: 1px solid $GreyBorder;
 	min-height: 45px;
 	font-size: 1.2em;
   }

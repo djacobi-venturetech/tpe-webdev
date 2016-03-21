@@ -1,17 +1,18 @@
-$coloumnOneBackGroundColor:#02549d;
-$columnTextColor: #fff;
+@import "../components/base";
+
+
 
 
 .enclosing{
   overflow: hidden;
-  background-color: #fff;
+  background-color: $WhiteColor;
 }
 #column1{
   width: 15%;
   min-width: 130px;
   height: 100%;
-  background-color:  $coloumnOneBackGroundColor;
-  color:$columnTextColor;
+  background-color:  $PoultryExchangeBlue;
+  color: $WhiteColor;
   padding-top:45px;
   padding-bottom: 1200px;
   margin-bottom: -1200px;

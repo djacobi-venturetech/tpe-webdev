@@ -1,0 +1,57 @@
+$PoultryExchangeBlue: #02549d;
+$BrownColor:  #cccc99;
+$WhiteColor: #ffffff;
+$GreyBorder: #aaa;
+$BlackFontColor: black;
+$TableEvenRows:  #cccc99;
+$TableOddRows: #D9D9B3;
+$TableHoverColor: #EDEDDA;
+$LoginScreenBackGroundColor: #aaaaaa;
+
+
+
+#column2 h1{
+  margin: 30px 0;
+  display: block;
+  text-align: center;
+  color: $PoultryExchangeBlue;
+  font-size: 1.55em;
+}
+
+#column2 h2 {
+  font-size: 1.5em;
+  margin-top: 20px;
+}
+
+body{
+  margin-top: 0px;
+  margin-left: 0px;
+}
+
+
+//Add buttons throughout the TPE
+.add{
+  height: 50px;
+  width: 100px;
+  font-size: 1.3em;
+}
+
+.add:before{
+  content: "+  ";
+  font-weight: bold;
+}
+
+//This should only be for the listing mark ready dialog
+//But it may work for other dialog boxes
+div.window.dialog{
+  width: 600px;
+  top: 550px;
+  left: 18%;
+  height: 162px;
+  border: 1px solid $PoultryExchangeBlue;
+}
+
+.windowbuttons button{
+  font-weight: bold;
+  height: 100%;
+}
