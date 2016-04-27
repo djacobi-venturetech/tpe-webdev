@@ -63,6 +63,7 @@
 		  background: $tpe-page-bg;
 		  box-shadow: 0 3px 5px rgba(0,0,0,0.1);
 		  border-bottom: 3px solid $color-tpe-yellow;
+		  z-index: 999;
 
 		  li {
 			line-height: 2;
