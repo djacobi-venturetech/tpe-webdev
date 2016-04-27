@@ -1,0 +1,19 @@
+@import "../../config/base-vars";
+
+.search-bar {
+  background: #fff;
+  border-radius: 0;
+  border-top: 3px solid #cecbcf;
+  border-bottom: 3px solid #cecbcf;
+}
+
+.constraints {
+  display: flex;
+  justify-content: space-between;
+
+  .quick-filter {
+	display: flex;
+	flex: 2;
+  }
+
+}
