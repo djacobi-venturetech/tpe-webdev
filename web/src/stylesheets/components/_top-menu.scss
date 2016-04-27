@@ -1,44 +1,86 @@
 @import "../config/base-vars";
 
-#header{
-	height: 70px;
-	width: 100%;
-	background-color: white;
-	position: relative;
+#header {
+  background: $color-white;
+  padding: .75rem 1rem;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-flow: row wrap;
+  box-shadow: 0 2px 2px rgba(0,0,0,0.1);
 
-	padding: 30px 100px 10px 300px;
-	margin-bottom: 30px;
-}
-#header ul, body{;
-	margin-top: 0px;
-	margin-left: 0px;
-}
-#header img.logo{
-	position: absolute;
-	top: 10px;
-	left: 5px;
-	min-height: 47px;
-}
-#header .logout{
-	position: absolute;
-	top:30px;
-	right: 15px;
-}
-#header ul li{
-	display: inline-block;
-	margin-right: 30px;
-}
-#header .menuitemlabel{
-	text-decoration: none;
-	color: #02539F;
-	font-weight: bold;
-}
-#header .menuitemlabel:hover span{
-	color: lightblue;
-	text-decoration: none;
-}
+  > div {
+	display: flex;
+  }
 
-#header .menuitemlabel:visited{
-	color: #02539F;
-	text-decoration: none;
+  .html {
+	flex: 1;
+	justify-content: flex-start;
+
+	a {
+	  display: block;
+	}
+
+  }
+
+  div.menu {
+	flex: 2;
+	justify-content: center;
+	font-family: $font-raleway;
+	font-weight: 400;
+
+	ul.menubeanh li, ul.menubeanh-persistent li {
+	  float: none;
+	}
+
+	> ul.menu {
+	  display: flex;
+	  width: 100%;
+	  justify-content: space-around;
+
+	  > li {
+		align-self: center;
+
+		a {
+		  border-bottom: 3px solid transparent;
+
+		  &:hover {
+			text-decoration: none;
+			font-weight: 600;
+			border-bottom: 3px solid $color-tpe-yellow;
+		  }
+
+		}
+
+		&.mi-active a {
+		  @extend a:hover;
+		}
+
+	  }
+
+	  a {
+		text-transform: uppercase;
+		color: $color-tpe-dark-grey;
+	  }
+
+	}
+
+  }
+
+  div.logout {
+	flex: 1;
+	justify-content: flex-end;
+	align-items: center;
+	font-size: 85%;
+
+	.username {
+	  &::after {
+		content: '|';
+		padding: 0 5px;
+		display: inline-block;
+	  }
+	}
+
+  }
+
 }
