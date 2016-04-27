@@ -44,17 +44,12 @@
 		> a {
 		  border-bottom: 3px solid transparent;
 		  text-transform: uppercase;
-
-		  &:hover {
-			text-decoration: none;
-			font-weight: 600;
-			border-bottom: 3px solid $color-tpe-yellow;
-		  }
-
 		}
 
-		&.mi-active > a {
-		  @extend a:hover;
+		&.mi-active > a, &.mi-parent > a, > a:hover {
+		  text-decoration: none;
+		  font-weight: 600;
+		  border-bottom: 3px solid $color-tpe-yellow;
 		  color: $color-tpe-dark-grey;
 		}
 
