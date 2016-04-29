@@ -5,15 +5,27 @@ div.window.dialog /*specificity*/ {
 	padding: 0;
 	background-color: $modal-content-bg;
 	background-clip: padding-box;
-	border: 1px solid $modal-content-border-color;
-	border-radius: $border-radius-lg;
 	@include box-shadow(0 3px 9px rgba(0,0,0,.5));
 	// Remove focus outline from opened modal
 	outline: 0;
 
+	&::before {
+	  content: '';
+	  background: rgba(98, 100, 102, .9);
+	  display: block;
+	  height: 100%;
+	  width: 100%;
+	  z-index: -1;
+	  position: fixed;
+	  top: 0;
+	  left: 0;
+	}
+
 	.titlebar {
-		background-color: $modal-content-bg;
-		height: 70px;
+	  background-color: $color-tpe-grey;
+	  height: 70px;
+	  color: $color-white;
+
 	}
 
 	td.activewindowtitle {
@@ -22,9 +34,9 @@ div.window.dialog /*specificity*/ {
 		text-align: left;
 		margin: 0;
 		line-height: 1.5;
-		font-size: 1.5rem;
+		font-size: 1.25rem;
 		font-weight: inherit;
-		color: $gray-dark;
+		color: $color-white;
 		height: auto;
 	}
 	td.windowbuttons {
@@ -32,7 +44,7 @@ div.window.dialog /*specificity*/ {
 		height: auto;
 		border-bottom: 1px solid $modal-header-border-color;
 		.btn { // assuming close - only 1 button currently
-			background-color: $modal-content-bg;
+			background-color: transparent;
 			padding: 0 10px 0 0;
 		}
 	}
@@ -40,7 +52,7 @@ div.window.dialog /*specificity*/ {
 		top: 70px;
 		padding:15px;
 		border:none;
-		background-color: $color-white;
+		background-color: $tpe-page-bg;
 		color:inherit;
 		bottom:initial;
 		left:initial;
@@ -49,10 +61,8 @@ div.window.dialog /*specificity*/ {
 	}
 	.actions.bottom {
 		width: 100%;
-		text-align: center;
-		border-top: 1px #ccc solid;
+		text-align: right;
 		padding: $modal-inner-padding;
-		border-top: 1px solid $modal-footer-border-color;
 		@include clearfix(); // clear it in case folks use .pull-* classes on buttons
 
 		// Properly space out buttons
@@ -69,4 +79,13 @@ div.window.dialog /*specificity*/ {
 			margin-left: 0;
 		}
 	}
+
+	.btn.select {
+	  @include button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-border);
+	  border-bottom: 3px solid $btn-primary-border;
+	  float: right;
+	}
+
+
+
 }
