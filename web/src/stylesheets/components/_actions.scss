@@ -4,12 +4,31 @@
 .actions .btn {
 	margin-right:4px;
 }
-.actions .btn:first-child {
-	@include button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-border);
-}
 
-.actions .btn:not(:first-child) {
-	@include button-variant($btn-secondary-color, $btn-secondary-bg, $btn-secondary-border);
+.actions {
+
+  .btn {
+	font-family: $font-open-sans;
+	font-weight: 600;
+	text-transform: uppercase;
+
+	&:first-child {
+	  @include button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-border);
+	  border-bottom: 3px solid $btn-primary-border;
+	}
+
+	&:not(:first-child) {
+	  @include button-variant($btn-secondary-color, $btn-secondary-bg, $btn-secondary-border);
+	  border-bottom: 3px solid $btn-secondary-border;
+	}
+
+	&.add {
+	  @include button-size($btn-padding-y-sm, $btn-padding-x-sm, $font-size-root, $line-height-sm, $btn-border-radius-sm);
+	  height: auto;
+	}
+
+  }
+
 }
 
 .action-column .btn {
