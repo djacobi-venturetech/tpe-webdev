@@ -1,4 +1,5 @@
 @import "../../config/base-import";
+@import "../../config/base-vars";
 @import "../../components/messages";
 @import "../../components/top-menu";
 @import "../../components/side-nav";
@@ -12,34 +13,67 @@
 @import "../../components/prop-ui";
 @import "../../components/file-chooser";
 @import "../../components/actions";
-@import "../../components/breadcrumbs";  ;
-//import my files
-@import "../components/comp -- breadcrumb";
-@import "../components/comp--left-side-nav";
-@import "../components/comp-header";
-@import "../components/base";
+@import "../../components/breadcrumbs";
+@import "../components/tables";
+@import "../components/manage-edit";
+@import "../components/manage-viewer";
 
 //import template files
-@import "../templates/template--columns";
 @import "../templates/style-responsive";
-@import "../templates/template-media-queries";  ;
+
 //import admin pages files
-@import "../pages/page--user-search";
+//@import "../pages/page--user-search";
 @import "../pages/page-login";
-@import "../pages/page-user-view";
-@import "../pages/page---roles";
-@import "../pages/page--AddOrEdit";
-//import exchange pages
-@import "../pages/exchange-only/page-bid-list";
-@import "../pages/exchange-only/page--view-listing";
-@import "../pages/exchange-only/page -- add-listing";
-@import "../pages/exchange-only/page--edit-listing";
-@import "../pages/exchange-only/page--add-customer";
+//@import "../pages/page-user-view";
+//@import "../pages/page---roles";
 
 
+body {
+  background: $body-bg;
+  font-family: $font-open-sans;
+  font-weight: 400;
+  color: $color-tpe-black;
+}
 
+a {
+  color: $color-tpe-brand;
+}
 
+#e-COLUMN-0 {
+  padding-top: 4.75rem;
+  display: flex;
+  flex-flow: row wrap;
+  max-width: 70rem;
+  margin: 0 auto;
+}
 
+.enclosing {
+
+  #column1 {
+	float: none;
+	flex: 1;
+  }
+  #column2 {
+	flex: 4;
+	float: none;
+	//margin: 0 auto;
+	//width: 100%;
+	//max-width: 70rem;
+  }
+
+}
+
+h1, h2, h3 {
+  font-family: $font-raleway;
+  text-transform: uppercase;
+  color: $color-tpe-black;
+  font-weight: 700;
+}
+
+h1 {
+  font-size: 2.5rem;
+  line-height: 1.5;
+}
 
 ::selection {
 	// background: #FF6C60;
@@ -93,48 +127,17 @@ section {
 	}
 }
 
-.miwt .menu-component .menu-items {
-	.default, .meeting, .group-meeting,
-	.plan-start-date, .email, .reminder, .email-login-info, .assign-eg, .confirmation,
-	.fileentity, .uri {
-		a.menu-item{
-			display: inline-block;
-			width: calc(100% - 30px);
-		}
-		&:before {
-			display: inline-block;
-			font: normal normal normal 14px/1 FontAwesome;
-			font-size: inherit;
-			text-rendering: auto;
-			-webkit-font-smoothing: antialiased;
-			-moz-osx-font-smoothing: grayscale;
-			content: '\f096';
-		}
-	}
-	.plan-start-date:before {content: "\f271";}
-	.email:before {content: "\f003";}
-	.reminder:before {content: "\f274";}
-	.email-login-info:before {content: "\f090";}
-	.assign-eg:before {content: "\f234";}
-	.confirmation:before {content: "\f087";}
-
-	.default:before {content: "\f012";}
-	.meeting:before {content: "\f007";}
-	.group-meeting:before {content: "\f0c0";}
-
-	.fileentity:before {content: "\f016";}
-	.uri:before {content: "\f0c1";}
-}
-
-/*
 .select2-container {
-	font-size: .98rem;
+  .select2-selection--single {
+	height: 30px !important;
+  }
+
+  .select2-selection {
+	border: 2px solid $color-tpe-lightest-grey !important;
+  }
+
+  .select2-selection__choice {
+	font-size: .8rem;
+  }
+
 }
-.select2-container span.select2-selection--multiple,
-.select2-container--default span.select2-selection--multiple {
-	display: inline-block;
-}
-.select2-selection--multiple .select2-search__field {
-	width: 100% !important;
-}
-*/
