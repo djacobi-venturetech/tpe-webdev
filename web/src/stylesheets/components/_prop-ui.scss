@@ -15,7 +15,7 @@
 
 	input,
 	textarea {
-		border: 1px solid #B7B7B5;
+	  	border: 2px solid $color-tpe-lightest-grey;
 		padding: 2px;
 		margin: 2px;
 	}
@@ -58,8 +58,12 @@
 	}
 	.prop > label {
 		display: block;
-		font-weight: bold;
-		user-select: none;
+		font-family: $font-raleway;
+		color: $color-tpe-black;
+		font-weight: 400;
+		font-size: .85rem;
+		margin-bottom: .15rem;
+		text-transform: uppercase;
 	}
 	.prop > label.tbl {
 		display: inline-block;
