@@ -58,12 +58,8 @@
 	}
 	.prop > label {
 		display: block;
-		font-family: $font-raleway;
-		color: $color-tpe-black;
-		font-weight: 400;
-		font-size: .85rem;
-		margin-bottom: .15rem;
-		text-transform: uppercase;
+		font-weight: bold;
+		user-select: none;
 	}
 	.prop > label.tbl {
 		display: inline-block;
