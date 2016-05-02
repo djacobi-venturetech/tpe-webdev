@@ -1,0 +1,115 @@
+.user-viewer,
+.customer-viewer,
+.location-viewer,
+.company-viewer {
+  width: 100%;
+  max-width: 100%;
+  padding: 2rem;
+  background: #fff;
+  /*background: lighten($tpe-page-bg, 5%);*/
+  border: 1px solid $color-tpe-beige;
+}
+
+.user-viewer,
+.customer-viewer {
+
+  .prop-body {
+    display: flex;
+    flex-flow: row nowrap;
+
+    .prop {
+      margin-bottom: 2rem;
+    }
+
+  }
+
+  .prop.picture {
+    flex: 1 0 30%;
+    text-align: center;
+  }
+
+  .prop-group.contact {
+    flex: 2 0 70%;
+    display: flex;
+    flex-flow: row wrap;
+    padding-left: 1rem;
+
+    .name-editor, .prop-group {
+      display: flex;
+      flex-flow: row wrap;
+      flex: 1 0 100%;
+
+      .val {
+        display: block;
+      }
+
+    }
+
+    label {
+      margin-bottom: .15rem;
+    }
+
+    .name-editor > div{
+      flex: 1;
+    }
+
+    .address {
+      > div {
+        flex: 2 0 50%;
+      }
+    }
+
+    > .phone {
+      flex: 1 0 50%;
+    }
+
+  }
+
+  .persistence-actions.actions {
+    text-align: right;
+  }
+
+}
+
+.customer-viewer {
+
+  .prop-body {
+    flex-flow: column nowrap;
+
+    > div:not(.locations) {
+      display: flex;
+      flex-flow: row nowrap;
+    }
+
+    .prop.locations {
+      margin-left: 32%;
+    }
+
+  }
+
+}
+
+.user-roles {
+
+  h1 {
+    font-size: 1.75rem;
+  }
+
+  .company-roles, .location-roles {
+    h2 {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-top: 1rem;
+    }
+  }
+
+  span.ctb {
+    display: block;
+
+    label {
+      margin-left: .25rem;
+    }
+
+  }
+
+}

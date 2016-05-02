@@ -1,0 +1,39 @@
+@import "../../../config/base-vars";
+@import "../../components/exchange-search-filters";
+
+.listing-search {
+  .search-results > thead { display: none; }
+
+  .miwt-table > tbody > tr {
+    display: flex;
+
+    > td {
+      display: flex;
+      flex: 1;
+      background: #fff;
+      border: 1px solid $color-tpe-beige;
+      padding: 0;
+    }
+
+    &:hover > td {
+      background: transparent;
+    }
+
+  }
+
+  .miwt-table-data tr {
+    height: auto !important;
+  }
+
+  .listing {
+    width: 100%;
+    flex: 1;
+    display: flex;
+
+    &.prop-wrapper {
+      max-width: none;
+    }
+
+  }
+
+}

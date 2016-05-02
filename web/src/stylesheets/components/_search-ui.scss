@@ -21,9 +21,6 @@
    ========================================================================== */
 .search-bar {
 	margin: 10px 0;
-	padding: 10px;
-	//background-color: #F9F9F7;
-	//border: 1px dotted #CBC8B9;
 }
 
 .search-bar .constraint {
@@ -31,15 +28,23 @@
 	white-space: nowrap;
 	margin: 5px;
 	padding: 5px;
+  vertical-align: top;
 }
 
 .search-bar .constraint label {
 	display: block;
+  font-family: $font-raleway;
+  color: $color-tpe-black;
+  font-weight: 400;
+  font-size: .85rem;
+  margin-bottom: .15rem;
+  text-transform: uppercase;
 }
 
 .search-bar .search-actions {
 	display: inline-block;
 	padding: 10px;
+  	margin-top: 22px;
 }
 
 .constraint-input-conjunction {
@@ -51,6 +56,7 @@
 .search-wrapper .entity-actions,
 .search .entity-actions {
 	float: right;
+  	margin-top: -3.25rem; //This may have to get more specific
 }
 
 .search-wrapper .result-actions,
@@ -130,21 +136,45 @@ select.bulk_actions {
 	min-width: 8rem;
 }
 
-.search-bar .range-constraint {
+
+
+.search-bar {
+
+  input[type="text"] {
+	border: 2px solid $color-tpe-lightest-grey;
+  }
+
+  .range-constraint {
 	white-space: normal;
 	select {
-		min-width: 6rem;
+	  min-width: 6rem;
 	}
 	.constraint-label {
-		display: block;
+	  display: block;
 	}
 	.miwt-calendar{
-		margin-top:4px;
+	  margin-top:4px;
 	}
 	.constraint-operator,
 	.miwt-calendar,
 	.constraint-input-conjunction {
-		white-space: nowrap;
-		display: inline-block;
+	  white-space: nowrap;
+	  display: inline-block;
 	}
+  }
+
+  .constraint.specialty_labels {
+	.select2-container {
+	  width: auto !important;
+	  max-width: 20rem;
+	  min-width: 8rem;
+	}
+  }
+
+  .actions.search-actions {
+	.btn {
+	  @include button-size($btn-padding-y-sm, $btn-padding-x-sm, $font-size-sm, $line-height-sm, $border-radius-sm);
+	}
+  }
+
 }

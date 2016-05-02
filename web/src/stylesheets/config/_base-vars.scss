@@ -1,14 +1,19 @@
 $color-tpe-brand: #02549d;
-$color-tpe-yellow: #F9BB29;
-$color-tpe-blue: #4AB0D5;
+$color-tpe-yellow: #ca9300;
+$color-tpe-green: #66a76a;
+$color-tpe-light-blue: #3e70a2;
 $color-tpe-cyan: #6CCAC9;
-$color-tpe-red: #EE695B;
+$color-tpe-red: #d55345;
 $color-tpe-black: #343940;
-$color-tpe-grey: #515B6B;
-$color-tpe-light-grey: #9699A6;
+$color-tpe-dark-grey: #53565c;
+$color-tpe-grey: #71767c;
+$color-tpe-light-grey: #9a9da2;
+$color-tpe-lighter-grey: #a7a7a7;
+$color-tpe-lightest-grey: #a9a7aa;
+$color-tpe-beige: #dbd5cb;
 $color-tpe-canceled: rgba(214, 14, 255, 0.66);
 
-$tpe-page-bg: #F1F2F7;
+$tpe-page-bg: #ebeae6;
 
 $body-bg: $tpe-page-bg;
 $brand-primary:                  $color-tpe-brand;
@@ -18,11 +23,11 @@ $brand-info:                     $color-tpe-cyan;
 
 $btn-primary-color:              #fff;
 $btn-primary-bg:                 $brand-primary;
-$btn-primary-border:             darken($brand-primary, 5%);
+$btn-primary-border:             darken($brand-primary, 8%);
 
-$btn-secondary-color:            $brand-primary;
-$btn-secondary-bg:               #fff;
-$btn-secondary-border:           $brand-primary;
+$btn-secondary-color:            #fff;
+$btn-secondary-bg:               $color-tpe-yellow;
+$btn-secondary-border:           darken($color-tpe-yellow, 5%);
 $enable-shadows:                 true;
 
 @import "../../../../bower_components/bootstrap/scss/variables";
@@ -50,9 +55,11 @@ $color-charcoal: #333;
 
 $color-cornsilk: cornsilk;
 
+$font-raleway: "raleway", sans-serif;
+$font-open-sans: "open-sans",sans-serif;
+$font-source-sans: "source-sans-pro",sans-serif;
 $font-monospace: monospace;
 $font-arial: $font-family-sans-serif;
-$font-open-sans: Open Sans, $font-arial;
 
 $font-default-color: $color-black;
 $font-default-size: 13px;
