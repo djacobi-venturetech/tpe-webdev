@@ -1,0 +1,87 @@
+@import "../../../config/base-vars";
+@import "../../components/exchange-search-filters";
+
+.header {
+  display: flex;
+  align-items: center;
+
+  .title {
+	font-family: $font-raleway;
+	font-weight: 700;
+	font-size: 3rem;
+	color: $color-tpe-black;
+	text-transform: uppercase;
+  }
+  .add-listing {
+	text-align: right;
+	flex: 1;
+
+	.btn {
+	  align-self: flex-end;
+
+	}
+
+  }
+
+}
+
+.filter-bar {
+  font-size: 1.25rem;
+  letter-spacing: 1px;
+  color: $color-tpe-grey;
+  text-transform: uppercase;
+  display: flex;
+  font-weight: 700;
+  font-family: $font-raleway;
+
+  .listing-counts {
+	flex: 1;
+	text-align: right;
+
+	span {
+	  color: $color-tpe-black;
+	  margin-right: 1rem;
+	  font-size: 1.5rem;
+	  label {
+		font-size: 1.25rem;
+		font-weight: 400;
+		&::after {
+		  content: ':';
+		  padding-right: 3px;
+		}
+	  }
+	}
+
+  }
+
+}
+
+.listing-info {
+  .location, .listing-type {
+	display: block;
+  }
+  .listing-type {
+	color: $color-tpe-grey;
+	font-size: .8rem;
+  }
+}
+
+.miwt-table > tbody > tr {
+  > td.strike-price, > td.reserve-price {
+	font-weight: 700;
+	font-size: 1.5rem;
+	text-align: center;
+  }
+
+  > td.reserve-price {
+	color: $color-tpe-grey;
+  }
+
+  > td.interval {
+	text-align: center;
+	font-style: italic;
+	color: $color-tpe-grey;
+	font-size: .8rem;
+  }
+
+}
