@@ -11,12 +11,13 @@
       display: flex;
       flex: 1;
       background: #fff;
-      border: 1px solid $color-tpe-beige;
+      border: 2px solid $color-tpe-beige;
       padding: 0;
+      margin-bottom: 2rem;
     }
 
     &:hover > td {
-      background: transparent;
+      background: #fff;
     }
 
   }
@@ -28,12 +29,198 @@
   .listing {
     width: 100%;
     flex: 1;
+	flex-shrink: 0;
     display: flex;
+	padding: 0;
 
     &.prop-wrapper {
       max-width: none;
     }
 
+  }
+
+}
+
+.listing-main-wrapper, .listing-bid-wrapper {
+  display: flex;
+}
+
+.listing-main-wrapper {
+  flex: 2 0 70%;
+  flex-flow: row wrap;
+  padding: 0 1.5rem .5rem 1.75rem;
+
+  > div {
+	display: flex;
+  }
+
+  .prop {
+	padding: 0;
+	margin: 0;
+  }
+
+  .listing-basics-info-wrapper {
+	display: flex;
+	flex: 2 0 50%;
+	flex-flow: column nowrap;
+
+	.listing-name, .location {
+	  > label {
+		display: none;
+	  }
+	}
+
+	.listing-name {
+	  flex-shrink: 0;
+
+	  .val {
+		text-transform: uppercase;
+		font-family: $font-raleway;
+		font-weight: 700;
+		font-size: 1.75rem;
+	  }
+
+	}
+
+	.listing-title {
+	  display: flex;
+	}
+
+	.listing-tags {
+	  align-self: center;
+	  flex-shrink: 2;
+
+	  .tag {
+		font-size: .75rem;
+		font-weight: 600;
+		background: $color-tpe-beige;
+		border-radius: $border-radius-sm;
+		text-transform: uppercase;
+		line-height: 1;
+		margin-left: .3rem;
+		padding: .125rem .45rem;
+		display: inline-block;
+	  }
+
+	}
+
+  }
+
+  .listing-info {
+	display: flex;
+	flex-flow: row wrap;
+	width: 75%;
+	flex: 1;
+	align-content: flex-end;
+
+	.prop {
+	  flex: 1 0 45%;
+	  }
+
+  }
+
+  .listing-info, .listing-notes, .listing-company {
+	  label, span.val {
+		display: inline;
+	  }
+
+	  label {
+		text-transform: uppercase;
+		&::after {
+		  content: ':';
+		  padding-right: 3px;
+		}
+
+	   }
+
+  }
+
+  .listing-company-wrapper {
+	display: flex;
+	flex-flow: column nowrap;
+	flex: 1 0 20%;
+	padding-top: 2.575rem;
+	font-size: 85%;
+	justify-content: space-between;
+
+	.id {
+	  text-align: center;
+	  font-style: italic;
+	}
+
+	.listing-company {
+	  color: $color-tpe-grey;
+	  label {
+		text-transform: none;
+	  }
+	}
+
+  }
+
+  .listing-notes {
+	flex: 2 0 100%;
+	border-top: 1px solid $color-tpe-beige;
+	margin-top: 1rem;
+	padding-top: .75rem;
+	font-size: 90%;
+	color: $color-tpe-grey;
+	.val {
+	  font-style: italic;
+	}
+  }
+
+  .listing-flags {
+	margin-bottom: .75rem;
+
+	.flag {
+	  font-size: .65rem;
+	  line-height: 1;
+	  margin-right: .3rem;
+	  padding: .25rem .375rem;
+	  color: $color-white;
+	  font-weight: 700;
+	  border-bottom-left-radius: $border-radius-sm;
+	  border-bottom-right-radius: $border-radius-sm;
+
+	  &.new-flag {
+		background: $color-tpe-brand;
+	  }
+	  &.leading-flag {
+		background: $color-tpe-green;
+	  }
+	  &.losing-flag {
+		background: $color-tpe-yellow;
+	  }
+	  &.ending-flag {
+		background: $color-tpe-red;
+	  }
+
+	}
+
+  }
+
+}
+
+.listing-bid-wrapper {
+  flex: 1 0 20%;
+  flex-flow: column nowrap;
+  border-left: 2px solid $color-tpe-beige;
+
+  .strike-price {
+	align-self: center;
+	display: flex;
+	flex-direction: column;
+	label {
+	  order: 2;
+	  text-transform: uppercase;
+	  font-size: .65rem;
+	  font-weight: 300;
+	}
+	.val {
+	  order: 1;
+	  font-weight: 700;
+	  font-size: 1.5rem;
+	}
   }
 
 }
