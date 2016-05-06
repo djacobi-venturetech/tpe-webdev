@@ -20,6 +20,7 @@
 	  display: flex;
 	  flex: 1 0 0;
 	  flex-flow: row wrap;
+	  width: 100%;
 
 	  .prop {
 		margin: 0;
@@ -166,6 +167,10 @@
 	  margin-top: 2rem;
 	}
 
+	.logo, .image {
+	  flex: 1 1 auto;
+	}
+
 	.grade, .packaging, .volume, .note {
 	  font-size: .75rem;
 	  color: $color-tpe-grey;
@@ -200,7 +205,6 @@
 	  border-width: 1px 1px 2px 1px;
 	  border-style: solid;
 	  padding: 1rem 0;
-	  //flex: 1 0 0;
 
 	  label {
 		padding-right: 0;
@@ -217,6 +221,7 @@
 	  margin-bottom: 1rem;
 	  border: 2px solid $color-tpe-yellow;
 	  border-radius: $border-radius-lg;
+	  flex: 0 1 auto;
 
 	  .packaging.warning {
 		color: $color-tpe-black;
@@ -304,6 +309,24 @@
 
 	}
 
+	.mybid {
+
+	  .reserve {
+
+		&.warning {
+		  color: $color-tpe-red;
+		}
+
+		p {
+		  font-size: .75rem;
+		  font-style: italic;
+		  font-weight: 400;
+		}
+
+	  }
+
+	}
+
 	.maxbid {
 	  position: relative;
 	}
@@ -356,6 +379,7 @@
 		&.bid {
 		  order: 2;
 		  flex: 2 0 60%;
+		  margin-top: -4.75rem;
 		}
 
 	  }
@@ -367,10 +391,17 @@
 	  .prevailing {
 		padding: 3rem;
 		border-bottom: 2px solid $color-tpe-beige;
+		flex: 1 1 34%;
+
+		+ .mybid {
+		  flex: 1 1 34%;
+		}
+
+
 	  }
 
 	  .mybid, .maxbid {
-		flex: 1 0 50%;
+		flex: 1 0 34%;
 	  }
 
 	}
@@ -410,6 +441,22 @@
 		  width: 40%;
 		}
 
+	  }
+
+	}
+
+  }
+
+}
+
+@media (min-width: 1025px) {
+
+  .listing-viewer {
+
+	.prop-group.bid {
+
+	  > div:not(.buyer-warning) {
+		flex: 1 0 auto;
 	  }
 
 	}
