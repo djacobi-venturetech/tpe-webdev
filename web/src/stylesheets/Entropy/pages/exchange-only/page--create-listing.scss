@@ -1,0 +1,89 @@
+@import "../../../config/base-vars";
+
+.prop-header-actions {
+  display: none;
+}
+
+.prop-wrapper {
+  width: 100% !important;
+  max-width: none;
+
+  .persistence-actions.bottom {
+	text-align: right;
+	margin-top: 5rem;
+  }
+
+}
+
+.prop-body {
+  display: flex;
+  flex-flow: flex-row;
+
+  .prop-group {
+	flex: 1;
+	padding: 0 2rem;
+  }
+
+}
+
+.prop-editor {
+  .prop {
+	input[type="text"], textarea, .select2-container {
+	  min-width: auto;
+	  width: 100% !important;
+	}
+
+	label {
+	  text-transform: uppercase;
+
+	  &.tbl {
+		padding-left: 5px;
+		text-transform: none;
+	  }
+
+	}
+
+	&.packaging {
+	  .val {
+		width: 100%;
+	  }
+	}
+
+	&.freshness {
+	  &::before {
+		content: 'Fresnhess';
+		display: block;
+		font-weight: 700;
+		margin-bottom: .25rem;
+		text-transform: uppercase;
+	  }
+	  span:nth-of-type(1) {
+		margin-right: 1rem;
+	  }
+	}
+
+  }
+
+  .picture-editor {
+	font-weight: 700;
+	text-transform: uppercase;
+	padding: .5rem;
+	text-align: left;
+
+	.drop-zone {
+	  margin-top: .25rem;
+	  //background-color: $color-tpe-beige;
+	  text-align: center;
+	}
+
+	.actions.bottom {
+	  .btn {
+		padding: .375rem .75rem;
+		font-size: .75rem;
+		line-height: 1;
+	  }
+	}
+
+  }
+
+}
