@@ -152,9 +152,19 @@
 
 	.listing-company {
 	  color: $color-tpe-grey;
+	  display: flex;
+	  flex-flow: column nowrap;
+
 	  label {
 		text-transform: none;
 	  }
+
+	  .company-logo {
+		max-width: 60%;
+		align-self: center;
+		margin-bottom: .25rem;
+	  }
+
 	}
 
   }
