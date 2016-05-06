@@ -2,6 +2,7 @@
 @import "../../components/exchange-search-filters";
 
 .listing-search {
+
   .search-results > thead { display: none; }
 
   .miwt-table > tbody > tr {
@@ -27,6 +28,7 @@
   }
 
   .listing {
+	text-align: left;
     width: 100%;
     flex: 1;
 	flex-shrink: 0;
@@ -166,6 +168,8 @@
 	color: $color-tpe-grey;
 	.val {
 	  font-style: italic;
+	  word-break: break-word;
+	  hyphens: auto;
 	}
   }
 
@@ -205,22 +209,45 @@
   flex: 1 0 20%;
   flex-flow: column nowrap;
   border-left: 2px solid $color-tpe-beige;
+  padding: 1rem 0;
 
-  .strike-price {
+  > div {
 	align-self: center;
 	display: flex;
 	flex-direction: column;
+
+	&:not(.actions) { width: 55%; }
+
 	label {
-	  order: 2;
 	  text-transform: uppercase;
 	  font-size: .65rem;
-	  font-weight: 300;
+	  font-weight: 500 !important;
+	  margin-bottom: 0;
+	}
+
+	.val {
+	  font-weight: 700;
+	  font-size: 1.5rem;
+	  line-height: 1;
+	}
+
+  }
+
+  .strike-price {
+
+	label {
+	  order: 2;
 	}
 	.val {
 	  order: 1;
-	  font-weight: 700;
-	  font-size: 1.5rem;
+
 	}
+
+  }
+
+  .actions {
+	flex: 1;
+	justify-content: flex-end;
   }
 
 }
