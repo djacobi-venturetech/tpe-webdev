@@ -1,0 +1,420 @@
+@import "../../../config/base-vars";
+@import "../../../../../../bower_components/bootstrap/scss/variables";
+@import "../../../../../../bower_components/bootstrap/scss/mixins";
+@import "../../../../../../bower_components/bootstrap/scss/buttons";
+
+.listing-viewer {
+
+  &.prop-wrapper {
+	width: 100%;
+	max-width: none;
+	padding: 0;
+	display: flex;
+	flex-flow: column nowrap;
+  }
+
+  .prop-header {
+	display: flex;
+
+	.prop-header-title {
+	  display: flex;
+	  flex: 1 0 0;
+	  flex-flow: row wrap;
+
+	  .prop {
+		margin: 0;
+		padding: 0;
+
+	  }
+
+	}
+
+	.type {
+	  flex: 0 0 auto;
+
+	  label {
+		display: none;
+	  }
+
+	  .val {
+		font-family: $font-raleway;
+		font-size: 2.5rem;
+		text-transform: uppercase;
+	  }
+
+	}
+
+	.specialty-labels, .start-time {
+	  > label { display: none !important; }
+	}
+
+	.specialty-labels {
+	  flex: 1 0 auto;
+	  align-self: center;
+
+	  span.val {
+		font-size: .75rem;
+		font-weight: 600;
+		background: $color-tpe-beige;
+		border-radius: $border-radius-sm;
+		text-transform: uppercase;
+		line-height: 1;
+		margin-left: .3rem;
+		padding: .125rem .45rem;
+		display: inline-block;
+		vertical-align: middle;
+	  }
+
+	}
+
+	.id, .start-time {
+	  font-size: .8rem;
+	  display: flex;
+	  align-self: center;
+	  justify-content: flex-end;
+
+	  &.prop > .val, label {
+		font-weight: 300;
+		font-style: italic;
+		display: inline-block;
+		margin: 0;
+	  }
+	}
+
+	.id {
+	  flex: 1 0 auto;
+	}
+	.start-time {
+	  flex: 0 0 auto;
+	}
+
+	.location, .plant-id {
+	  flex: 1 0 100%;
+	  width: 100%;
+	  font-weight: 300;
+
+	  label {
+		display: none;
+	  }
+
+	  span.val {
+		font-size: 1.25rem;
+		color: $color-tpe-grey;
+	  }
+
+	}
+
+  }
+
+  .prop-body {
+	display: flex;
+	flex: 1;
+	flex-flow: column nowrap;
+
+	> .prop-group {
+	  display: flex;
+	  flex-flow: column nowrap;
+
+	  &.listing-detail {
+		padding: 2rem 0 0;
+		flex: 1 0 auto;
+		order: 2;
+	  }
+
+	  &.bid {
+		flex: 1 0 auto;
+		order: 1;
+	  }
+
+	  label {
+		padding-right: 5px;
+	  }
+
+	}
+
+	.live-weight, .freshness, .kill-date, .seller {
+	  &.prop {
+		padding: 0;
+		margin: 0 0 .25rem;
+	  }
+
+	  label, span.val {
+		display: inline-block;
+	  }
+
+	  label {
+		margin: 0;
+		text-transform: uppercase;
+	  }
+
+	}
+
+	.logo, .image {
+	  label {
+		display: none;
+	  }
+	  div.val {
+		max-width: 60%;
+		img {
+		  //border: 2px solid darken($body-bg, 5%);
+		}
+	  }
+
+	}
+
+	.logo {
+	  margin-top: 2rem;
+	}
+
+	.grade, .packaging, .volume, .note {
+	  font-size: .75rem;
+	  color: $color-tpe-grey;
+
+	  &.prop {
+		padding: 0;
+		margin: 0 0 .35rem;
+	  }
+	  label {
+		margin: 0;
+	  }
+
+	}
+
+	.grade, .packaging, .volume {
+
+	  label, span.val {
+		display: inline-block;
+	  }
+
+	}
+
+  }
+
+  .prop-group.bid {
+
+	> div:not(.buyer-warning) {
+	  display: flex;
+	  flex-flow: row wrap;
+	  background: $color-white;
+	  border-color: $color-tpe-beige;
+	  border-width: 1px 1px 2px 1px;
+	  border-style: solid;
+	  padding: 1rem 0;
+	  //flex: 1 0 0;
+
+	  label {
+		padding-right: 0;
+		margin-bottom: 0;
+		text-transform: uppercase;
+		font-weight: 700;
+	  }
+
+	}
+
+	.buyer-warning {
+	  background-color: $color-white;
+	  padding: 1rem;
+	  margin-bottom: 1rem;
+	  border: 2px solid $color-tpe-yellow;
+	  border-radius: $border-radius-lg;
+
+	  .packaging.warning {
+		color: $color-tpe-black;
+	  }
+
+	  .message {
+		border: none;
+		font-weight: 700;
+		background: transparent;
+		color: $color-tpe-black;
+		padding: 0;
+
+		&::before {
+		  display: none;
+		}
+
+	  }
+
+	  ul {
+		margin: .5rem 0 0;
+		padding: 0;
+
+		li {
+		  display: inline-block;
+		  list-style: none;
+		  margin-right: 1rem;
+
+		  &::after {
+			content: '|';
+			color: $color-tpe-light-grey;
+			padding-left: .75rem;
+		  }
+
+		  &:last-child {
+			&::after {
+			  display: none;
+			}
+
+		  }
+
+		}
+
+	  }
+
+	}
+
+	.prevailing, .mybid, .maxbid {
+	  display: flex;
+	  flex-flow: column nowrap;
+	}
+
+	.prevailing {
+	  text-align: center;
+	  font-family: $font-raleway;
+	  font-weight: 700;
+	  font-size: 2.25rem;
+	  border-bottom: 2px solid $color-tpe-beige;
+	  padding: 2rem 1rem;
+	  flex: 1 1 50%;
+
+	  label {
+		font-size: 1.1rem;
+	  }
+
+	  + .mybid {
+		@extend .prevailing;
+	  }
+
+	}
+
+	.mybid, .maxbid {
+	  padding: 2rem 1rem;
+	  flex: 1 0 100%;
+
+	  /*input[type="number"] {
+		&::before {
+		  content: '\f155';
+		  font-family: FontAwesome;
+		  display: inline-block;
+		  padding-right: 5px;
+		  font-size: .8rem;
+		}
+
+	  }*/
+
+	}
+
+	.maxbid {
+	  position: relative;
+	}
+
+	.buy.strike {
+	  display: flex;
+	  flex: 1 0 auto;
+	  padding: 2rem 1rem;
+	  flex-direction: column;
+	  font-size: 2rem;
+	  font-weight: 700;
+
+	  label {
+		color: $color-tpe-grey;
+	  }
+
+	  .btn {
+		width: 60%;
+	  }
+
+	}
+
+	.btn {
+	  margin-top: 1rem;
+	  @include button-size($btn-padding-y-sm, $btn-padding-x-sm, $font-size-sm, $line-height-sm, $border-radius-sm);
+	  @include button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-border);
+	  border-bottom: 3px solid $btn-primary-border;
+	  width: 50%;
+	}
+
+  }
+
+}
+
+@media (min-width: 768px) {
+
+  .listing-viewer {
+
+	.prop-body {
+	  flex-flow: row nowrap;
+
+	  > .prop-group {
+
+		&.listing-detail {
+		  order: 1;
+		  flex: 1 0 40%;
+		  padding: 0 3rem 0 0;
+		}
+
+		&.bid {
+		  order: 2;
+		  flex: 2 0 60%;
+		}
+
+	  }
+
+	}
+
+	.prop-group.bid {
+
+	  .prevailing {
+		padding: 3rem;
+		border-bottom: 2px solid $color-tpe-beige;
+	  }
+
+	  .mybid, .maxbid {
+		flex: 1 0 50%;
+	  }
+
+	}
+
+  }
+
+}
+
+@media (min-width: 1024px) {
+
+  .listing-viewer {
+
+	.prop-group.bid {
+
+	  .mybid, .maxbid, .buy.strike {
+		padding: 3rem;
+	  }
+
+	  .maxbid {
+
+		&::before {
+		  content: 'OR';
+		  display: inline-block;
+		  position: absolute;
+		  top: 4.25rem;
+		  left: -2.75rem;
+		  font-size: 1.75rem;
+		  font-weight: 700;
+		  color: $color-tpe-grey;
+		}
+
+	  }
+
+	  .buy.strike {
+
+		.btn {
+		  width: 40%;
+		}
+
+	  }
+
+	}
+
+  }
+
+}
+
