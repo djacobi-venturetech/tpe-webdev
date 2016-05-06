@@ -1,5 +1,5 @@
 @import "../../../config/base-vars";
-@import "../../components/exchange-search-filters";
+//@import "../../components/exchange-search-filters";
 
 .header {
   display: flex;
@@ -33,6 +33,7 @@
   display: flex;
   font-weight: 700;
   font-family: $font-raleway;
+  margin-top: 1.5rem;
 
   .listing-counts {
 	flex: 1;
@@ -67,7 +68,7 @@
 }
 
 .miwt-table > tbody > tr {
-  > td.strike-price, > td.reserve-price {
+  > td.strike-price, > td.reserve-price, > td.current-bid {
 	font-weight: 700;
 	font-size: 1.5rem;
 	text-align: center;
@@ -82,6 +83,72 @@
 	font-style: italic;
 	color: $color-tpe-grey;
 	font-size: .8rem;
+  }
+
+  > td.current-bid {
+	.above-reserve {
+	  color: $color-tpe-red;
+	}
+	.below-reserve {
+	  color: $color-tpe-green;
+	}
+  }
+
+}
+
+.search-bar {
+  display: flex;
+  justify-content: center;
+  background: #fff;
+  border-top: 3px solid #cecbcf;
+  border-bottom: 3px solid #cecbcf;
+  margin: 0 0 1.25rem;
+  padding: 1rem 0;
+
+  > span {
+	display: flex;
+	flex: 0 0 17%;
+	margin: 0;
+
+	.btn {
+	  background: transparent;
+	  font-size: .8rem;
+	  text-transform: uppercase;
+	  font-family: $font-raleway;
+	  font-weight: 500;
+	  margin: 0 auto;
+	  position: relative;
+	  z-index: 10;
+	}
+
+	&.active-items {
+	  .btn {
+		/*&::before {
+		  content: '';
+		  background: $color-tpe-yellow;
+		  display: block;
+		  height: 130%;
+		  left: 0;
+		  position: absolute;
+		  top: -16px;
+		  width: 100%;
+		  z-index: -1;
+		}
+
+		&::after {
+		  content: '';
+		  display: block;
+		  position: absolute;
+		  bottom: auto;
+		  top: 99%;
+		  left: 0;
+		  border-left: 39px solid transparent;
+		  border-right: 38px solid transparent;
+		  border-top: 20px solid $color-tpe-yellow;
+		}*/
+	  }
+	}
+
   }
 
 }
