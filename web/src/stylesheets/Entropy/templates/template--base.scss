@@ -118,9 +118,10 @@ img {
 	button.open,
 	button.clear {
 		border: none;
-		background: inherit;
-		visibility: hidden;
-		color: $color-tpe-light-grey;
+		background: transparent;
+		//visibility: hidden;
+		color: transparent;
+	  	box-shadow: none;
 
 		&:before {
 			visibility: visible;
@@ -131,9 +132,14 @@ img {
 			-webkit-font-smoothing: antialiased;
 			-moz-osx-font-smoothing: grayscale;
 			content: "\f073";
+		  	color: $color-tpe-light-grey;
 		}
 		&:hover {
-			color: $color-tpe-black;
+			color: transparent;
+		  	background: transparent;
+		  	&::before {
+			  color: $color-tpe-black;
+			}
 		}
 	}
 	button.clear {
