@@ -254,8 +254,8 @@ div.bids {
 	}
 
 	div.instructions {
-	  flex: 2 1 auto;
-	  max-width: 75%;
+	  flex: 1 1 auto;
+	  max-width: 70%;
 	}
 
 	div.actions.schedule-actions {
@@ -303,6 +303,7 @@ div.bids {
 	  .actions.interval-actions {
 		flex: 0 1 auto;
 		max-width: 55px;
+		overflow: hidden;
 
 		.btn {
 		  display: block;
