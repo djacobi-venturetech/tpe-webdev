@@ -163,4 +163,19 @@ img {
 #footer {
   height: auto;
   margin-top: 0;
+  background: $color-tpe-grey;
+  color: $color-white;
+  padding: 1.5rem 0;
+
+  .text {
+	max-width: 70rem;
+	margin: 0 auto;
+	text-align: center;
+
+	p {
+	  margin: 0;
+	}
+
+  }
+
 }
