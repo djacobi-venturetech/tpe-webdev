@@ -103,12 +103,16 @@
   border-top: 3px solid #cecbcf;
   border-bottom: 3px solid #cecbcf;
   margin: 0 0 1.25rem;
-  padding: 1rem 0;
+  padding: .5rem 0;
 
   > span {
 	display: flex;
-	flex: 0 0 17%;
-	margin: 0;
+	flex: 0 0 10%;
+	margin: 0 1rem;
+	flex-flow: column nowrap;
+	position: relative;
+	min-width: 8rem;
+	max-width: 8rem;
 
 	.btn {
 	  background: transparent;
@@ -119,34 +123,46 @@
 	  margin: 0 auto;
 	  position: relative;
 	  z-index: 10;
+
+	  &.count {
+		font-size: 2.5rem;
+		line-height: 1;
+		font-weight: 700;
+	  }
+
+	  &:focus {
+		box-shadow: none;
+	  }
+
 	}
 
-	&.active-items {
-	  .btn {
-		/*&::before {
-		  content: '';
-		  background: $color-tpe-yellow;
-		  display: block;
-		  height: 130%;
-		  left: 0;
-		  position: absolute;
-		  top: -16px;
-		  width: 100%;
-		  z-index: -1;
-		}
+	&.active {
+	  color: $color-white;
 
-		&::after {
-		  content: '';
-		  display: block;
-		  position: absolute;
-		  bottom: auto;
-		  top: 99%;
-		  left: 0;
-		  border-left: 39px solid transparent;
-		  border-right: 38px solid transparent;
-		  border-top: 20px solid $color-tpe-yellow;
-		}*/
+	  &::before {
+		content: '';
+		background: $color-tpe-yellow;
+		display: block;
+		height: 120%;
+		left: 0;
+		position: absolute;
+		top: -16px;
+		width: 100%;
+		z-index: 0;
 	  }
+
+	  &::after {
+		content: '';
+		display: block;
+		position: absolute;
+		bottom: auto;
+		top: 102%;
+		left: 0;
+		border-left: 64px solid transparent;
+		border-right: 64px solid transparent;
+		border-top: 20px solid $color-tpe-yellow;
+	  }
+
 	}
 
   }
