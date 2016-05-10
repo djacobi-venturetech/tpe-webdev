@@ -33,6 +33,18 @@ body {
   font-family: $font-open-sans;
   font-weight: 400;
   color: $color-tpe-black;
+
+  div.page {
+	display: flex;
+	flex-flow: column nowrap;
+  }
+
+}
+
+#e-content {
+  flex: 1 0 auto;
+  min-height: 100vh;
+  padding-bottom: 3rem;
 }
 
 a {
@@ -149,5 +161,6 @@ img {
 
 /* ---- THIS WILL EVENTUALLY GET REMOVED/CHANGED */
 #footer {
-  display: none;
+  height: auto;
+  margin-top: 0;
 }
