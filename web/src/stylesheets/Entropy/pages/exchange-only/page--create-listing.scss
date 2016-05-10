@@ -33,6 +33,10 @@
 	  width: 100% !important;
 	}
 
+	.miwt-calendar input[type="text"] {
+	  width: 83% !important;
+	}
+
 	label {
 	  text-transform: uppercase;
 
@@ -84,6 +88,27 @@
 	  }
 	}
 
+  }
+
+  .multiple-packaging {
+	> div {
+	  border-top: 1px solid $color-tpe-light-grey;
+	  padding-top: 1.25rem;
+	  margin-top: 1.25rem;
+
+	  label {
+		margin-bottom: 0;
+	  }
+
+	  label:not(.tbl) {
+		font-weight: 700;
+	  }
+
+	  .prop {
+		padding: 0;
+	  }
+
+	}
   }
 
 }
