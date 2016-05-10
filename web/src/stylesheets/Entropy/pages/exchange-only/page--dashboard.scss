@@ -1,0 +1,170 @@
+@import "../../../config/base-vars";
+//@import "../../components/exchange-search-filters";
+
+.header {
+  display: flex;
+  align-items: center;
+
+  .title {
+	font-family: $font-raleway;
+	font-weight: 700;
+	font-size: 3rem;
+	color: $color-tpe-black;
+	text-transform: uppercase;
+  }
+  .add-listing {
+	text-align: right;
+	flex: 1;
+
+	.btn {
+	  align-self: flex-end;
+
+	}
+
+  }
+
+}
+
+.filter-bar {
+  font-size: 1.25rem;
+  letter-spacing: 1px;
+  color: $color-tpe-grey;
+  text-transform: uppercase;
+  display: flex;
+  font-weight: 700;
+  font-family: $font-raleway;
+  margin-top: 1.5rem;
+
+  .listing-counts {
+	flex: 1;
+	text-align: right;
+
+	span {
+	  color: $color-tpe-black;
+	  margin-right: 1rem;
+	  font-size: 1.5rem;
+	  label {
+		font-size: 1.25rem;
+		font-weight: 400;
+		&::after {
+		  content: ':';
+		  padding-right: 3px;
+		}
+	  }
+	}
+
+  }
+
+}
+
+.listing-info {
+  .location, .listing-type {
+	display: block;
+  }
+  .listing-type {
+	color: $color-tpe-grey;
+	font-size: .8rem;
+  }
+}
+
+.miwt-table > tbody > tr {
+  > td.strike-price, > td.reserve-price, > td.current-bid {
+	font-weight: 700;
+	font-size: 1.5rem;
+	text-align: center;
+  }
+
+  > td.reserve-price {
+	color: $color-tpe-grey;
+  }
+
+  > td.interval {
+	text-align: center;
+	font-style: italic;
+	color: $color-tpe-grey;
+	font-size: .8rem;
+  }
+
+  > td.current-bid {
+	.above-reserve {
+	  color: $color-tpe-red;
+	}
+	.below-reserve {
+	  color: $color-tpe-green;
+	}
+  }
+
+}
+
+.search-bar {
+  display: flex;
+  justify-content: center;
+  background: #fff;
+  border-top: 3px solid #cecbcf;
+  border-bottom: 3px solid #cecbcf;
+  margin: 0 0 1.25rem;
+  padding: .5rem 0;
+
+  > span {
+	display: flex;
+	flex: 0 0 10%;
+	margin: 0 1rem;
+	flex-flow: column nowrap;
+	position: relative;
+	min-width: 8rem;
+	max-width: 8rem;
+
+	.btn {
+	  background: transparent;
+	  font-size: .8rem;
+	  text-transform: uppercase;
+	  font-family: $font-raleway;
+	  font-weight: 500;
+	  margin: 0 auto;
+	  position: relative;
+	  z-index: 10;
+
+	  &.count {
+		font-size: 2.5rem;
+		line-height: 1;
+		font-weight: 700;
+	  }
+
+	  &:focus {
+		box-shadow: none;
+	  }
+
+	}
+
+	&.active {
+	  color: $color-white;
+
+	  &::before {
+		content: '';
+		background: $color-tpe-yellow;
+		display: block;
+		height: 120%;
+		left: 0;
+		position: absolute;
+		top: -16px;
+		width: 100%;
+		z-index: 0;
+	  }
+
+	  &::after {
+		content: '';
+		display: block;
+		position: absolute;
+		bottom: auto;
+		top: 102%;
+		left: 0;
+		border-left: 64px solid transparent;
+		border-right: 64px solid transparent;
+		border-top: 20px solid $color-tpe-yellow;
+	  }
+
+	}
+
+  }
+
+}

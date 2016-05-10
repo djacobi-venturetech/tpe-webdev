@@ -33,6 +33,18 @@ body {
   font-family: $font-open-sans;
   font-weight: 400;
   color: $color-tpe-black;
+
+  div.page {
+	display: flex;
+	flex-flow: column nowrap;
+  }
+
+}
+
+#e-content {
+  flex: 1 0 auto;
+  min-height: 100vh;
+  padding-bottom: 3rem;
 }
 
 a {
@@ -40,7 +52,7 @@ a {
 }
 
 #e-COLUMN-0 {
-  padding-top: 4.75rem;
+  padding: 4.75rem 1.25rem 0;
   display: flex;
   flex-flow: row wrap;
   max-width: 70rem;
@@ -97,13 +109,19 @@ section {
 	}
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+}
+
 .miwt-calendar {
 	button.open,
 	button.clear {
 		border: none;
-		background: inherit;
-		visibility: hidden;
-		color: $color-tpe-light-grey;
+		background: transparent;
+		//visibility: hidden;
+		color: transparent;
+	  	box-shadow: none;
 
 		&:before {
 			visibility: visible;
@@ -114,9 +132,14 @@ section {
 			-webkit-font-smoothing: antialiased;
 			-moz-osx-font-smoothing: grayscale;
 			content: "\f073";
+		  	color: $color-tpe-light-grey;
 		}
 		&:hover {
-			color: $color-tpe-black;
+			color: transparent;
+		  	background: transparent;
+		  	&::before {
+			  color: $color-tpe-black;
+			}
 		}
 	}
 	button.clear {
@@ -138,6 +161,31 @@ section {
 
   .select2-selection__choice {
 	font-size: .8rem;
+  }
+
+}
+
+/* ---- THIS WILL EVENTUALLY GET REMOVED/CHANGED */
+#footer {
+  display: block;
+  min-height: 4.625rem;
+  height: auto;
+  margin-top: 0;
+  background-color: $color-tpe-grey;
+  color: $color-white;
+  //flex: 1;
+  width: 100%;
+
+  .text {
+	padding: 1.5rem 0;
+	max-width: 70rem;
+	margin: 0 auto;
+	text-align: center;
+
+	p {
+	  margin: 0;
+	}
+
   }
 
 }

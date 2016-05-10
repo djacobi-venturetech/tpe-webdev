@@ -13,8 +13,8 @@
 	display: flex;
   }
 
-  .html {
-	flex: 1;
+  .logo-con {
+	flex: 1 2 0;
 	justify-content: flex-start;
 
 	a {
@@ -96,12 +96,27 @@
 	align-items: center;
 	font-size: 85%;
 
-	.username {
-	  &::after {
-		content: '|';
-		padding: 0 5px;
-		display: inline-block;
+	> ul.menu {
+	  justify-content: flex-end;
+
+	  > li.mi-parent {
+		cursor: pointer;
+
+		> div.menuitemlabel:hover span {
+		  font-weight: 600;
+		}
+
+		&:hover {
+
+		  ul.menu-t2 {
+			display: block;
+			right: 0;
+		  }
+
+		}
+
 	  }
+
 	}
 
   }
