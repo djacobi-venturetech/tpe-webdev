@@ -5,6 +5,11 @@
 
 .listing-viewer {
 
+  > .message-container {
+	display: flex;
+	width: 100%;
+  }
+
   &.prop-wrapper {
 	width: 100%;
 	max-width: none;
@@ -53,7 +58,7 @@
 	  flex: 1 0 auto;
 	  align-self: center;
 
-	  span.val {
+	  span.val span {
 		font-size: .75rem;
 		font-weight: 600;
 		background: $color-tpe-beige;
@@ -133,10 +138,11 @@
 
 	}
 
-	.live-weight, .freshness, .kill-date, .seller {
+	.live-weight, .freshness, .kill-date,
+	.seller, .ship-date, .warehouse-location {
 	  &.prop {
 		padding: 0;
-		margin: 0 0 .25rem;
+		margin: 0 0 .5rem;
 	  }
 
 	  label, span.val {
@@ -148,6 +154,15 @@
 		text-transform: uppercase;
 	  }
 
+	}
+
+	.freshness, .kill-date, .ship-date,
+	.warehouse-location {
+	  label {
+		&::after {
+		  content: ':';
+		}
+	  }
 	}
 
 	.logo, .image {
@@ -164,11 +179,11 @@
 	}
 
 	.logo {
-	  margin-top: 2rem;
+	  margin: 0;
 	}
 
 	.logo, .image {
-	  flex: 1 1 auto;
+	  flex: 0 1 auto;
 	}
 
 	.grade, .packaging, .volume, .note {
@@ -197,6 +212,11 @@
 
   .prop-group.bid {
 
+	.message-container {
+	  width: 100%;
+	  margin: 10px 1rem;
+	}
+
 	> div:not(.buyer-warning) {
 	  display: flex;
 	  flex-flow: row wrap;
@@ -215,7 +235,24 @@
 
 	}
 
+	.prop-group-title.title {
+	  margin: 0;
+	  padding: .5rem 0;
+	  background: $color-tpe-light-grey;
+	  color: $color-white;
+	  font-size: .85rem;
+	  text-transform: uppercase;
+	  justify-content: center;
+	  border: none;
+	  order: 2;
+	}
+
+	> .props {
+	  order: 3;
+	}
+
 	.buyer-warning {
+	  order: 1;
 	  background-color: $color-white;
 	  padding: 1rem;
 	  margin-bottom: 1rem;
@@ -275,21 +312,21 @@
 
 	.prevailing {
 	  text-align: center;
-	  font-family: $font-raleway;
 	  font-weight: 700;
-	  font-size: 2.25rem;
+	  font-size: 2.5rem;
 	  border-bottom: 2px solid $color-tpe-beige;
 	  padding: 2rem 1rem;
-	  flex: 1 1 50%;
+	  flex: 1 0 100%;
 
 	  label {
 		font-size: 1.1rem;
+		font-family: $font-raleway;
 	  }
 
-	  + .mybid {
-		@extend .prevailing;
-	  }
+	}
 
+	.mybid.view {
+	  @extend .prevailing;
 	}
 
 	.mybid, .maxbid {
@@ -309,7 +346,7 @@
 
 	}
 
-	.mybid {
+	.mybid.view {
 
 	  .reserve {
 
@@ -331,16 +368,29 @@
 	  position: relative;
 	}
 
+	.purchase-now-title, .enter-bid-title {
+	  flex: 1 0 100%;
+	  padding: 2rem 1rem 0;
+	  font-size: 1.65rem;
+	  font-weight: 700;
+	  color: $color-tpe-lighter-grey;
+
+	  &::after {
+	  	content: ':';
+	  }
+
+	}
+
 	.buy.strike {
 	  display: flex;
 	  flex: 1 0 auto;
-	  padding: 2rem 1rem;
+	  padding: 0 1rem 2rem;
 	  flex-direction: column;
-	  font-size: 2rem;
+	  font-size: 2.25rem;
 	  font-weight: 700;
 
 	  label {
-		color: $color-tpe-grey;
+		display: none;
 	  }
 
 	  .btn {
@@ -364,6 +414,10 @@
 @media (min-width: 768px) {
 
   .listing-viewer {
+
+	> .message-container {
+	  width: 35%;
+	}
 
 	.prop-body {
 	  flex-flow: row nowrap;
@@ -416,8 +470,16 @@
 
 	.prop-group.bid {
 
-	  .mybid, .maxbid, .buy.strike {
+	  .mybid, .maxbid {
 		padding: 3rem;
+	  }
+
+	  .purchase-now-title {
+		padding: 3rem 3rem 0;
+	  }
+
+	  .buy.strike {
+		padding: 0 3rem 3rem;
 	  }
 
 	  .maxbid {
@@ -430,7 +492,7 @@
 		  left: -2.75rem;
 		  font-size: 1.75rem;
 		  font-weight: 700;
-		  color: $color-tpe-grey;
+		  color: $color-tpe-lighter-grey;
 		}
 
 	  }
