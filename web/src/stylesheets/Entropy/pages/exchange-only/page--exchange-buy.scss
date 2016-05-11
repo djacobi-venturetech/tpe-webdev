@@ -1,6 +1,10 @@
 @import "../../../config/base-vars";
 @import "../../components/exchange-search-filters";
 
+.html.add-listing {
+  text-align: right;
+}
+
 .listing-search {
 
   .search-results > thead { display: none; }
