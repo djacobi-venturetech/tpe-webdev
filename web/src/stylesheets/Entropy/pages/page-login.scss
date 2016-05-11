@@ -1,89 +1,159 @@
-@import "../components/base";
-
-#login-body .column{
-  padding-top: 50px;
-  min-height: 700px;
-  background-color: $LoginScreenBackGroundColor;
-}
-
+@import "../../config/base-vars";
+@import "../../../../../bower_components/bootstrap/scss/mixins";
+@import "../../../../../bower_components/bootstrap/scss/buttons";
 
 .composite{
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  width: 100%;
+  max-width: 370px;
+  margin: 0 auto;
 }
 
 .composite .form-signin{
-  border-radius: 4px;
-  width: 370px;
+  border-radius: $border-radius-lg;
+  margin-top: 5rem;
 }
 
 .fields .field{
-  background-color: $WhiteColor;
+  background-color: $color-white;
 }
 
-.field{
+.field {
   display: flex;
-  align-items: center;
   flex-direction: column;
-  padding-top: 15px;
+  padding: 1.5rem 3.5rem 0;
+  text-align: left;
+
+  .label {
+    padding: 0;
+    display: block;
+    border-radius: 0;
+    text-align: left;
+  }
+
 }
 
 .form-content{
   display: flex;
   flex-direction: column;
   color: black;
+  background: $color-white;
+
+  .message-container {
+    margin: 10px;
+  }
+
+  .title{
+    background-color: $color-tpe-brand;
+    text-align: center;
+    color: $color-white;
+    font-size: 1.6em;
+    vertical-align: center;
+    text-transform: uppercase;
+    padding: .5rem 0;
+    border-top-left-radius: $border-radius-lg;
+    border-top-right-radius: $border-radius-lg;
+    font-family: $font-raleway;
+    font-weight: 700;
+  }
+
+  label{
+    color: black;
+    font-size: .85rem;
+    text-transform: uppercase;
+    font-family: $font-open-sans;
+    margin-bottom: .25rem;
+  }
+
+  .actions{
+    text-align:center;
+    padding-top: 20px;
+    background-color: $color-white;
+
+    .btn {
+      max-width: 10rem;
+      line-height: 1rem;
+      padding: .65rem 1rem .375rem;
+    }
+
+  }
+
 }
 
-.form-content .title{
-  height: 55px;
-  background-color: $PoultryExchangeBlue;
-  text-align: center;
-  color: $WhiteColor;
-  font-size: 1.6em;
-  vertical-align: center;
-  text-transform: uppercase;
-  padding-top: 10px;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
+.form-signin  {
+
+  .retrieve-password p {
+    padding: 1.25rem 0 1rem;
+    background-color: $color-white;
+    font-size: .85rem;
+    margin: 0;
+    border-bottom-left-radius: $border-radius-lg;
+    border-bottom-right-radius: $border-radius-lg;
+    text-align: center;
+  }
+
+  input[type="text"], input[type="password"] {
+    padding-left: 5px;
+    border: 2px solid $color-tpe-grey;
+    width: 100%;
+  }
 
 }
 
-.form-content label{
-  color: black;
-  font-size: 1.3em
-}
+.retrieve-password-con {
+  background: $color-white;
+  font-family: $font-open-sans;
+  border-radius: $border-radius-lg;
+  margin-top: 5rem;
 
-.form-content .actions{
-  text-align:center;
-  padding-top: 20px;
-  background-color: $WhiteColor;
-}
+  .html {
+    font-size: .85rem;
+    padding: 0;
 
-.form-signin .retrieve-password p{
-  padding-top: 15px;
-  background-color: $WhiteColor;
-  font-size: 1.1em;
-  margin: 0;
-  height: 60px;
-  vertical-align: center;
-  text-align: center;
-  border-bottom-left-radius: 10px;
+    .title{
+      background-color: $color-tpe-brand;
+      text-align: center;
+      color: $color-white;
+      font-size: 1.6em;
+      vertical-align: center;
+      text-transform: uppercase;
+      padding: .5rem 0;
+      border-top-left-radius: $border-radius-lg;
+      border-top-right-radius: $border-radius-lg;
+      font-family: $font-raleway;
+      font-weight: 700;
+    }
 
-  border-bottom-right-radius: 10px;
-}
+    p {
+      padding: 2rem 2rem 0;
+    }
 
-.form-signin .retrieve-password p a:hover{
-  text-decoration: none;
-  font-weight: bold;
-  color: $PoultryExchangeBlue;
-}
+  }
 
-.form-signin input{
-  padding-left: 5px;
-}
+  span.email {
+    display: block;
+    font-weight: 700;
+    margin-bottom: .25rem;
+  }
 
-input[type=submit]{
-  width: 150px;
-  padding-left: 15px
+  input[type="text"] {
+    border: 2px solid $color-tpe-grey;
+    width: 100%;
+  }
+
+  .retrieve-password {
+    padding: 0 3rem 2rem;
+
+    button {
+      display: block;
+      margin: .5rem auto 0;
+      font-weight: 700;
+      text-transform: uppercase;
+      border-width: 1px;
+      border-style: solid;
+      @include button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-border);
+      @include button-size($btn-padding-y-sm, $btn-padding-x-sm, $font-size-sm, $line-height-sm, $border-radius-sm);
+    }
+
+  }
+
 }
