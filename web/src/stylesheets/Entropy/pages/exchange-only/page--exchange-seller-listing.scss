@@ -291,13 +291,27 @@ div.bids {
 	  flex-flow: row nowrap;
 	  margin-top: 2rem;
 
+	  &.editor {
+		.reserve-price, .strike-price {
+		  position: relative;
+
+		  label {
+			&::before {
+			  content: '$';
+			  font-weight: 300;
+			  position: absolute;
+			  font-size: 1rem;
+			  left: -5px;
+			  top: 29px;
+			}
+		  }
+		}
+	  }
+
 
 	  label {
 		text-transform: uppercase;
 		margin-bottom: 0;
-		&::after {
-		  content: ':';
-		}
 	  }
 
 	  .interval-props {
@@ -496,6 +510,7 @@ div.bids {
 			padding-right: 5px;
 		  }
 		}
+
 	  }
 
 	}
@@ -510,6 +525,13 @@ div.bids {
 
 	  .prop.note {
 		margin-bottom: 1.5rem;
+
+		.val {
+		  display: inline-block;
+		  word-break: break-all;
+		  word-break: break-word;
+		}
+
 	  }
 
 	}
