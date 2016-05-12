@@ -1,9 +1,5 @@
-
-// Note: openSidebar function is declared in the HTML of the page (header)
-
-
 jQuery(function () {
 
-
+	$('.constraints span.quick-filter').wrapAll('<div class="quick-filter-con" />');
 
 });
