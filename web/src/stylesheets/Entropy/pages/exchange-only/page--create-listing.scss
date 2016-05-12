@@ -76,8 +76,33 @@
 
 	.drop-zone {
 	  margin-top: .25rem;
-	  //background-color: $color-tpe-beige;
 	  text-align: center;
+	  position: relative;
+	}
+
+	&.no-image-selected.mode-view {
+	  .drop-zone {
+		background-color: lighten($color-tpe-lightest-grey, 20%);
+		min-height: 8rem;
+		border: 1px solid $color-tpe-grey;
+
+		&::after {
+		  content: 'No image selected.';
+		  color: $color-tpe-grey;
+		  position: absolute;
+		  font-size: .85rem;
+		  top: 45%;
+		  width: 100%;
+		  left: 0;
+		  font-weight: 300;
+		  font-style: italic;
+		}
+
+	  }
+	}
+
+	input[type="file"] {
+	  font-size: .85rem;
 	}
 
 	.actions.bottom {
