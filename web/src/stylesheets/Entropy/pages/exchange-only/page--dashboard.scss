@@ -168,3 +168,23 @@
   }
 
 }
+
+.definition {
+  display: flex;
+  flex-flow: row wrap;
+  font-size: .75rem;
+  margin-top: 4rem;
+
+  > div {
+	flex: 1;
+	padding: 0 1rem 1rem;
+	font-style: italic;
+	color: $color-tpe-grey;
+
+	span {
+	  font-weight: 700;
+	}
+
+  }
+
+}
