@@ -97,6 +97,10 @@
     width: 100%;
   }
 
+  .title p {
+    margin: 0;
+  }
+
 }
 
 .retrieve-password-con {
@@ -152,6 +156,54 @@
       border-style: solid;
       @include button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-border);
       @include button-size($btn-padding-y-sm, $btn-padding-x-sm, $font-size-sm, $line-height-sm, $border-radius-sm);
+    }
+
+  }
+
+}
+
+.password-reset {
+  background: $color-white;
+  font-family: $font-open-sans;
+  border-radius: $border-radius-lg;
+  margin-top: 5rem;
+
+  .title {
+    background-color: $color-tpe-brand;
+    text-align: center;
+    color: $color-white;
+    font-size: 1.6em;
+    vertical-align: center;
+    text-transform: uppercase;
+    padding: .5rem 0;
+    border-top-left-radius: $border-radius-lg;
+    border-top-right-radius: $border-radius-lg;
+    font-family: $font-raleway;
+    font-weight: 700;
+  }
+
+  p {
+    padding: 2rem 2rem 0;
+  }
+
+  .label {
+    font-size: .85rem;
+    color: $color-tpe-black;
+    text-transform: uppercase;
+    font-family: $font-open-sans;
+
+    label {
+      margin-bottom: .25rem;
+    }
+
+  }
+
+  .actions {
+    padding: 0 3rem 2rem;
+
+    .btn {
+      margin: .5rem auto 0;
+      display: block;
     }
 
   }
