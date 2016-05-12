@@ -1,12 +1,12 @@
 .user-viewer,
 .customer-viewer,
 .location-viewer,
-.company-viewer {
+.company-viewer,
+.user-roles {
   width: 100%;
   max-width: 100%;
   padding: 2rem;
   background: #fff;
-  /*background: lighten($tpe-page-bg, 5%);*/
   border: 1px solid $color-tpe-beige;
 }
 
@@ -99,9 +99,17 @@
 }
 
 .user-roles {
+  display: flex;
+  flex-flow: row wrap;
 
   h1 {
-    font-size: 1.75rem;
+    font-size: 1.5rem;
+    flex: 1 0 100%;
+    text-transform: none;
+  }
+
+  > div {
+    flex: 1 0 50%;
   }
 
   .company-roles, .location-roles {
@@ -121,4 +129,19 @@
 
   }
 
+}
+
+@media (max-width: 600px) {
+  .user-roles {
+    flex-flow: column nowrap;
+
+    > h1 {
+      flex: 1 0 auto;
+    }
+
+    > div {
+      flex: 1 0 auto;
+    }
+
+  }
 }
