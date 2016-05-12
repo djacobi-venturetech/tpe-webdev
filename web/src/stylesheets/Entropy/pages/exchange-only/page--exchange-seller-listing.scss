@@ -134,6 +134,19 @@ div.bids {
 	  padding: 5px 8px;
 	}
 
+	td.no-data-con {
+	  padding: .5rem;
+	  font-size: .85rem;
+	  font-style: italic;
+	  color: #aaa;
+	  background: #f7f7f7;
+
+	  + td {
+		background: #f7f7f7;
+	  }
+
+	}
+
 	div.bid {
 	  background: $color-white;
 	  border-bottom: 1px solid $body-bg;
@@ -211,6 +224,15 @@ div.bids {
 
 	.miwt-table-con {
 	  width: 100%;
+
+	  tr > th.type-price-schedule-interval {
+		text-align: left;
+	  }
+
+	  tr > td.type-big-decimal {
+		text-align: center;
+	  }
+
 	}
 
 	.miwt-table > thead > tr > th.first-column,
@@ -401,14 +423,19 @@ div.bids {
 
 			> div {
 			  display: inline;
-			  padding-left: 5px;
+			}
+
+			input[type="radio"] {
+			  display: none;
 			}
 
 			.btn.remove {
-			  @include button-size($btn-padding-y-sm, $btn-padding-x-sm, $font-size-sm, $line-height-sm, $border-radius-sm);
 			  @include button-variant($color-tpe-red, $color-white, $color-tpe-red);
 			  display: block;
 			  margin: .25rem 0 .5rem;
+			  padding: .125rem .5rem;
+			  font-size: .675rem;
+			  border-radius: $border-radius-sm;
 			}
 
 		  }
@@ -487,6 +514,38 @@ div.bids {
 
 	}
 
+  }
+
+}
+
+div.window.dialog.ready-confirmation { /* Very, real, super specific */
+  width: 100% !important;
+  max-width: 40rem !important;
+
+  .confirm-listing-time {
+	margin: 1.25rem 0;
+
+	label {
+	  display: block;
+	  font-weight: 700;
+	  text-transform: uppercase;
+	  color: $color-tpe-black;
+	  margin-bottom: .25rem;
+	}
+
+	input[type="text"] {
+	  border: 2px solid $color-tpe-light-grey;
+	}
+
+	.select2-container {
+	  width: 200px !important;
+	  margin-top: -6px;
+	}
+
+  }
+
+  .actions {
+	text-align: right;
   }
 
 }
