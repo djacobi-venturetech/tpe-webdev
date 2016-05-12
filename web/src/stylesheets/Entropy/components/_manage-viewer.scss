@@ -81,6 +81,15 @@
       flex-flow: row nowrap;
     }
 
+    > div.prop-group.contact {
+      flex-flow: row wrap;
+
+      + .prop.locations {
+        margin-left: 1rem;
+      }
+
+    }
+
     .prop.locations {
       margin-left: 32%;
     }
