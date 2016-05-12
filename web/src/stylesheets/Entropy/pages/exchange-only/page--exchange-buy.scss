@@ -25,6 +25,11 @@
       background: #fff;
     }
 
+	&.no_data > td {
+	  padding: .5rem;
+	  justify-content: center;
+	}
+
   }
 
   .miwt-table-data tr {
