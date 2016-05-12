@@ -369,9 +369,16 @@
 	  }
 
 	  .reserve {
+		padding: 7px;
+		text-align: left;
+		position: relative;
 
 		&.warning {
-		  color: $color-tpe-red;
+		  border: 1px solid $color-error-dark;
+		  background: $color-error-light;
+		  color: $color-error-dark;
+		  font-weight: 300;
+		  font-size: .75rem;
 		}
 
 		p {
