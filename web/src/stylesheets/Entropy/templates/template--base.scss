@@ -82,6 +82,37 @@ span.title {
 
 }
 
+#column1 {
+  .sub-nav {
+	margin-top: 2.5rem;
+
+	.element {
+	  text-align: right;
+	  border-bottom: 1px solid $color-tpe-grey;
+
+	  a {
+		padding: .5rem .75rem .5rem 0;
+		font-family: $font-raleway;
+		font-weight: 400;
+		color: $color-tpe-dark-grey;
+		text-transform: uppercase;
+		display: block;
+		border-bottom: 2px solid transparent;
+
+		&:hover {
+		  font-weight: 600;
+		  border-bottom: 2px solid $color-tpe-yellow;
+		  text-decoration: none;
+		}
+
+	  }
+
+	}
+
+  }
+
+}
+
 h1, h2, h3 {
   font-family: $font-raleway;
   text-transform: uppercase;
@@ -90,7 +121,7 @@ h1, h2, h3 {
 }
 
 h1 {
-  font-size: 2.5rem;
+  font-size: 3rem;
   line-height: 1.5;
 }
 
