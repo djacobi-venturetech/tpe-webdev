@@ -1,6 +1,7 @@
 .user-edit,
 .customer-editor,
-.location-edit {
+.location-edit,
+.customer-add {
   max-width: 100%;
   padding: 0 5rem;
 
@@ -97,6 +98,11 @@
 }
 
 .customer-editor {
+  width: 100%;
+  max-width: 100%;
+  padding: 2rem;
+  background: #fff;
+  border: 1px solid $color-tpe-beige;
 
   .prop-body {
     display: flex;
@@ -112,6 +118,10 @@
 
   }
 
+  .prop-header-actions {
+    display: none;
+  }
+
 }
 
 .location-edit {
@@ -122,6 +132,24 @@
 
   .persistence-actions.actions {
     padding: 0;
+  }
+
+}
+
+.customer-add {
+  width: 100%;
+  max-width: 100%;
+  padding: 2rem;
+  background: #fff;
+  border: 1px solid $color-tpe-beige;
+
+  .prop-body > div > div:not(.prop) {
+    display: flex;
+    flex-flow: row wrap;
+  }
+
+  .prop-header-actions {
+    display: none;
   }
 
 }
