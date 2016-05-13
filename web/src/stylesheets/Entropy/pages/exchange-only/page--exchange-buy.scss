@@ -1,8 +1,18 @@
 @import "../../../config/base-vars";
 @import "../../components/exchange-search-filters";
 
+.text.title {
+  + .html.add-listing {
+	margin-top: -3.5rem;
+  }
+}
+
 .html.add-listing {
   text-align: right;
+}
+
+#column1 > .miwt {
+  margin-top: 3.5rem;
 }
 
 .listing-search {
@@ -75,7 +85,7 @@
 	flex: 2 0 50%;
 	flex-flow: column nowrap;
 
-	.listing-name, .location {
+	.listing-name {
 	  > label {
 		display: none;
 	  }
@@ -111,6 +121,21 @@
 		margin-left: .3rem;
 		padding: .125rem .45rem;
 		display: inline-block;
+	  }
+
+	}
+
+	.listing-usda, .location {
+
+	  label, span.val {
+		display: inline;
+	  }
+
+	  label {
+		&::after {
+		  content: ':';
+		  padding-right: 5px;
+		}
 	  }
 
 	}
