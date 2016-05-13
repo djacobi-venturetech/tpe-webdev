@@ -580,7 +580,7 @@ div.bids {
 
 }
 
-div.window.dialog.ready-confirmation { /* Very, real, super specific */
+div.window.dialog {
   width: 100% !important;
   max-width: 40rem !important;
 
@@ -604,6 +604,10 @@ div.window.dialog.ready-confirmation { /* Very, real, super specific */
 	  margin-top: -6px;
 	}
 
+  }
+
+  div.high-bid.warning {
+	margin-bottom: 1rem;
   }
 
   .actions {
