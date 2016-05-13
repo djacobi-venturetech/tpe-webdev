@@ -466,6 +466,20 @@
 
 }
 
+div.window.dialog {
+  width: 100% !important;
+  max-width: 40rem !important;
+
+  div.warning {
+	margin-bottom: 1rem;
+  }
+
+  .actions {
+	text-align: right;
+  }
+
+}
+
 @media (min-width: 768px) {
 
   .listing-viewer {
