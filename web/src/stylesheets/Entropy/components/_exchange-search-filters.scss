@@ -99,15 +99,18 @@
 	flex: 1 1 auto;
 	margin-right: 1rem;
 	align-self: flex-end;
-	max-width: 25% !important;
+	max-width: 20% !important;
+  }
+
+  .constraint.location, .constraint.company {
+	flex: 1;
+	max-width: 19.75% !important;
+	margin: 2rem 0 0;
+	padding: 1px 0 1px 5px;
   }
 
   .constraint.location {
-	flex: 1;
-	max-width: 30% !important;
-	margin: 2rem 0 0;
-	padding: 1px 0 1px 5px;
-
+	margin: 2rem 1rem 0 0;
   }
 
 }
