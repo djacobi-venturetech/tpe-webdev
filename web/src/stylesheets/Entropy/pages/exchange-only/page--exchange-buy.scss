@@ -86,13 +86,13 @@
 	flex-flow: column nowrap;
 
 	.listing-name {
+	  flex-shrink: 0;
+	  margin-right: .3rem;
+	  max-width: 75%;
+
 	  > label {
 		display: none;
 	  }
-	}
-
-	.listing-name {
-	  flex-shrink: 0;
 
 	  .val {
 		text-transform: uppercase;
@@ -105,6 +105,7 @@
 
 	.listing-title {
 	  display: flex;
+	  flex-flow: row wrap;
 	}
 
 	.listing-tags {
@@ -118,7 +119,7 @@
 		border-radius: $border-radius-sm;
 		text-transform: uppercase;
 		line-height: 1;
-		margin-left: .3rem;
+		margin-right: .3rem;
 		padding: .125rem .45rem;
 		display: inline-block;
 	  }
@@ -138,6 +139,10 @@
 		}
 	  }
 
+	}
+
+	.location {
+	  margin-top: .5rem;
 	}
 
   }
@@ -273,18 +278,6 @@
 	  font-weight: 700;
 	  font-size: 1.5rem;
 	  line-height: 1;
-	}
-
-  }
-
-  .strike-price {
-
-	label {
-	  order: 2;
-	}
-	.val {
-	  order: 1;
-
 	}
 
   }
