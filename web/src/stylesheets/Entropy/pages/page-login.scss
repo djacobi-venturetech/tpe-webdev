@@ -37,6 +37,7 @@
   flex-direction: column;
   color: black;
   background: $color-white;
+  padding-bottom: 1.5rem;
 
   .message-container {
     margin: 10px;
@@ -82,7 +83,7 @@
 .form-signin  {
 
   .retrieve-password p {
-    padding: 1.25rem 0 1rem;
+    padding: 0 0 1rem;
     background-color: $color-white;
     font-size: .85rem;
     margin: 0;
