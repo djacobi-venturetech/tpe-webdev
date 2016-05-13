@@ -88,7 +88,7 @@
 	.listing-name {
 	  flex-shrink: 0;
 	  margin-right: .3rem;
-	  max-width: 75%;
+	  max-width: 70%;
 
 	  > label {
 		display: none;
@@ -105,7 +105,7 @@
 
 	.listing-title {
 	  display: flex;
-	  flex-flow: row wrap;
+	  //flex-flow: row wrap;
 	}
 
 	.listing-tags {
@@ -113,7 +113,7 @@
 	  flex-shrink: 2;
 
 	  .tag {
-		font-size: .75rem;
+		font-size: .7rem;
 		font-weight: 600;
 		background: $color-tpe-beige;
 		border-radius: $border-radius-sm;
@@ -179,7 +179,7 @@
   .listing-company-wrapper {
 	display: flex;
 	flex-flow: column nowrap;
-	flex: 1 0 20%;
+	flex: 1 0 17%;
 	padding-top: 2.575rem;
 	font-size: 85%;
 	justify-content: space-between;
