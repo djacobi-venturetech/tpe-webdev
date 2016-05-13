@@ -75,7 +75,7 @@
   }
 
   > td.reserve-price {
-	color: $color-tpe-grey;
+	color: $color-tpe-light-grey;
   }
 
   > td.interval {
@@ -87,10 +87,11 @@
 
   > td.current-bid {
 	.above-reserve {
-	  color: $color-tpe-red;
+	  color: $color-tpe-green;
+
 	}
 	.below-reserve {
-	  color: $color-tpe-green;
+	  color: $color-tpe-red;
 	}
   }
 
