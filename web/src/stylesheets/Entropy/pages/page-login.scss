@@ -2,15 +2,23 @@
 @import "../../../../../bower_components/bootstrap/scss/mixins";
 @import "../../../../../bower_components/bootstrap/scss/buttons";
 
-.composite{
+.composite {
   width: 100%;
   max-width: 370px;
   margin: 0 auto;
 }
 
-.composite .form-signin{
+.composite .form-signin, .logged-in {
   border-radius: $border-radius-lg;
   margin-top: 5rem;
+}
+
+.logged-in {
+  background: $color-white;
+  padding: 2rem;
+  p {
+    margin-bottom: 0;
+  }
 }
 
 .fields .field{
