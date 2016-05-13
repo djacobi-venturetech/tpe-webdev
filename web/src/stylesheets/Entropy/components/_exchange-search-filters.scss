@@ -32,6 +32,32 @@
 	border-top: 3px solid #cecbcf;
 	border-bottom: 3px solid #cecbcf;
 	padding: .5rem 0;
+	margin-bottom: 1.25rem;
+	position: relative;
+
+	&::before, &::after {
+	  font-size: 1.25rem;
+	  letter-spacing: 1px;
+	  color: $color-tpe-grey;
+	  text-transform: uppercase;
+	  font-weight: 700;
+	  font-family: $font-raleway;
+	  display: block;
+	  position: absolute;
+	  left: 0;
+	}
+
+	&::before {
+	  content: 'Show Activity:';
+	  top: -2.25rem;
+
+	}
+
+	&::after {
+	  content: 'Filter All Items:';
+	  bottom: -3.25rem;
+	}
+
   }
 
   .quick-filter {
