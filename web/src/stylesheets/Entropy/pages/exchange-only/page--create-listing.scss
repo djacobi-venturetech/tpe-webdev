@@ -66,6 +66,19 @@
 	  }
 	}
 
+	&.lot-number, &.volume, &.weight {
+	  margin-bottom: 0;
+	}
+
+  }
+
+  .hint {
+	padding: 0 5px 5px;
+	font-size: .85rem;
+	font-style: italic;
+	margin-bottom: 1rem;
+	color: $color-tpe-grey;
+	display: block;
   }
 
   .picture-editor {
