@@ -26,7 +26,23 @@
 	}
 
 	+ .prop-body {
-	  margin-top: 1.5rem;
+	  margin-top: -2.5rem;
+	}
+
+  }
+
+  .listing-time {
+	margin-top: 1rem;
+	label {
+	  font-weight: 700;
+	  &::after {
+		content: ':';
+		padding-right: 5px;
+	  }
+	}
+
+	+ div {
+	  margin-top: .75rem;
 	}
 
   }
@@ -147,12 +163,16 @@ div.bids {
 
 	}
 
+	td.bid-con:not(.header-con) {
+	  background: $color-white;
+	}
+
 	div.bid {
 	  background: $color-white;
-	  border-bottom: 1px solid $body-bg;
 	  color: $color-tpe-black;
 	  font-size: .9rem;
 	  padding: 8px;
+	  border-top: 1px solid $body-bg;
 
 	  span.amount {
 		font-weight: 700;
@@ -163,6 +183,12 @@ div.bids {
 		font-size: .75rem;
 	  }
 
+	}
+
+	tr:nth-of-type(2) {
+	  td.bid-con div.bid {
+		border-top: none;
+	  }
 	}
 
 	td.interval-con {
@@ -466,6 +492,20 @@ div.bids {
 
 .prop-body {
   margin-top: 4.5rem;
+
+  &::before {
+	content: 'Listing Details';
+	display: block;
+	width: 100%;
+	font-size: 2rem;
+	border-bottom: 2px solid $color-tpe-grey;
+	padding-bottom: .25rem;
+	margin-bottom: 1rem;
+	font-weight: 700;
+	font-family: $font-raleway;
+	color: $color-tpe-black;
+	text-transform: uppercase;
+  }
 
   > div {
 	background: $color-white;
