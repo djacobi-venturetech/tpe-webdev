@@ -125,6 +125,16 @@
 
 	}
 
+	.id {
+	  label {
+		padding-right: 5px;
+
+		&::after {
+		  display: none;
+		}
+	  }
+	}
+
   }
 
   .prop-body {
@@ -132,11 +142,11 @@
 	flex: 1;
 	flex-flow: column nowrap;
 
-	> .prop-group {
+	> div {
 	  display: flex;
 	  flex-flow: column nowrap;
 
-	  &.listing-detail {
+	  > .prop-group.listing-detail {
 		padding: 2rem 0 0;
 		flex: 1 0 auto;
 		order: 2;
@@ -488,12 +498,20 @@ div.window.dialog {
 	  width: 35%;
 	}
 
+	.prop-header {
+	  .prop.location, .prop.plant-id {
+		padding-right: 63%;
+	  }
+	}
+
 	.prop-body {
 	  flex-flow: row nowrap;
 
-	  > .prop-group {
+	  > div {
+		display: flex;
+		flex-flow: column nowrap;
 
-		&.listing-detail {
+		> .prop-group.listing-detail {
 		  order: 1;
 		  flex: 1 0 40%;
 		  padding: 0 3rem 0 0;
