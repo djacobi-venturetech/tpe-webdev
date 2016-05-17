@@ -84,6 +84,7 @@
 		font-style: italic;
 		display: inline-block;
 		margin: 0;
+		text-transform: uppercase;
 	  }
 	}
 
@@ -480,8 +481,14 @@ div.window.dialog {
   width: 100% !important;
   max-width: 40rem !important;
 
+  .windowcontent {
+	padding: 1.5rem;
+  }
+
   div.warning {
-	margin-bottom: 1rem;
+	margin: .75rem 0 2.25rem;
+	font-weight: 700;
+	font-style: italic;
   }
 
   .actions {
