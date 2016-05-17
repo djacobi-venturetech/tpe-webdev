@@ -1,6 +1,8 @@
 .user-edit,
 .customer-editor,
-.location-edit {
+.location-edit,
+.customer-add,
+.user-editor {
   max-width: 100%;
   padding: 0 5rem;
 
@@ -44,7 +46,7 @@
 
 }
 
-.user-edit {
+.user-edit, .user-editor {
 
   .picture-editor {
     .btn {
@@ -97,6 +99,11 @@
 }
 
 .customer-editor {
+  width: 100%;
+  max-width: 100%;
+  padding: 2rem;
+  background: #fff;
+  border: 1px solid $color-tpe-beige;
 
   .prop-body {
     display: flex;
@@ -124,4 +131,19 @@
     padding: 0;
   }
 
+}
+
+.customer-add {
+
+  .prop-body > div > div:not(.prop) {
+    display: flex;
+    flex-flow: row wrap;
+  }
+
+}
+
+.customer-add, .customer-editor, .user-editor, .edit-user {
+  .prop-header-actions {
+    display: none;
+  }
 }

@@ -23,7 +23,6 @@
 
 //import admin pages files
 //@import "../pages/page--user-search";
-@import "../pages/page-login";
 //@import "../pages/page-user-view";
 //@import "../pages/page---roles";
 
@@ -43,7 +42,7 @@ body {
 
 #e-content {
   flex: 1 0 auto;
-  min-height: 100vh;
+  min-height: calc(100vh - 90px);
   padding-bottom: 3rem;
 }
 
@@ -57,6 +56,14 @@ a {
   flex-flow: row wrap;
   max-width: 70rem;
   margin: 0 auto;
+}
+
+span.title {
+	font-family: $font-raleway;
+	font-weight: 700;
+	font-size: 3rem;
+	color: $color-tpe-black;
+	text-transform: uppercase;
 }
 
 .enclosing {
@@ -75,6 +82,37 @@ a {
 
 }
 
+#column1 {
+  .sub-nav {
+	margin-top: 2.5rem;
+
+	.element {
+	  text-align: right;
+	  border-bottom: 1px solid $color-tpe-grey;
+
+	  a {
+		padding: .5rem .75rem .5rem 0;
+		font-family: $font-raleway;
+		font-weight: 400;
+		color: $color-tpe-dark-grey;
+		text-transform: uppercase;
+		display: block;
+		border-bottom: 2px solid transparent;
+
+		&:hover {
+		  font-weight: 600;
+		  border-bottom: 2px solid $color-tpe-yellow;
+		  text-decoration: none;
+		}
+
+	  }
+
+	}
+
+  }
+
+}
+
 h1, h2, h3 {
   font-family: $font-raleway;
   text-transform: uppercase;
@@ -83,7 +121,7 @@ h1, h2, h3 {
 }
 
 h1 {
-  font-size: 2.5rem;
+  font-size: 3rem;
   line-height: 1.5;
 }
 

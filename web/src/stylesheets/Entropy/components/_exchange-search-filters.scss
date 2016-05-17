@@ -6,12 +6,14 @@
   margin-bottom: 2rem;
   display: flex;
   flex-direction: column;
+  position: relative;
   @include clearfix();
 
   .actions.search-actions {
-	float: right;
+	position: absolute;
+	right: 0;
+	bottom: -9px;
 	padding: .5rem 0;
-	margin-top: -2.5rem;
 	text-align: right;
   }
 
@@ -22,13 +24,82 @@
   //justify-content: space-between;
   flex-flow: row wrap;
 
-  .quick-filter {
+  .quick-filter-con {
 	display: flex;
-	flex: 2 0 19%;
-	margin: 0;
+	flex: 1 0 100%;
+	justify-content: center;
 	background: #fff;
 	border-top: 3px solid #cecbcf;
 	border-bottom: 3px solid #cecbcf;
+	padding: .5rem 0;
+	margin-bottom: 1.25rem;
+	position: relative;
+
+	&::before, &::after {
+	  font-size: 1.25rem;
+	  letter-spacing: 1px;
+	  color: $color-tpe-grey;
+	  text-transform: uppercase;
+	  font-weight: 700;
+	  font-family: $font-raleway;
+	  display: block;
+	  position: absolute;
+	  left: 0;
+	}
+
+	&::before {
+	  content: 'Show Activity:';
+	  top: -2.25rem;
+
+	}
+
+	&::after {
+	  content: 'Filter All Items:';
+	  bottom: -3.25rem;
+	}
+
+  }
+
+  .quick-filter {
+	display: flex;
+	flex: 0 0 10%;
+	margin: 0 1rem;
+	flex-flow: column nowrap;
+	position: relative;
+	min-width: 8rem;
+	max-width: 8rem;
+
+	&.selected {
+	  .btn {
+		position: relative;
+		color: $color-white;
+	  }
+
+	  &::before {
+		content: '';
+		background: $color-tpe-yellow;
+		display: block;
+		height: 120%;
+		left: 0;
+		position: absolute;
+		top: -16px;
+		width: 100%;
+		z-index: 0;
+	  }
+
+	  &::after {
+		content: '';
+		display: block;
+		position: absolute;
+		bottom: auto;
+		top: 100%;
+		left: 0;
+		border-left: 64px solid transparent;
+		border-right: 64px solid transparent;
+		border-top: 20px solid $color-tpe-yellow;
+	  }
+
+	}
 
 	.btn {
 	  background: transparent;
@@ -40,29 +111,11 @@
 	  position: relative;
 	  z-index: 10;
 
-	  /*&::before {
-		content: '';
-		background: $color-tpe-yellow;
-		display: block;
-		height: 130%;
-		left: 0;
-		position: absolute;
-		top: -16px;
-		width: 100%;
-		z-index: -1;
+	  &::first-letter {
+		font-size: 2.5rem;
+		font-weight: 700;
+		line-height: 1;
 	  }
-
-	  &::after {
-		content: '';
-	  	display: block;
-		position: absolute;
-		bottom: auto;
-		top: 99%;
-		left: 0;
-		border-left: 39px solid transparent;
-		border-right: 38px solid transparent;
-		border-top: 20px solid $color-tpe-yellow;
-	  }*/
 
 	}
 
@@ -72,19 +125,18 @@
 	flex: 1 1 auto;
 	margin-right: 1rem;
 	align-self: flex-end;
-	max-width: 25% !important;
+	max-width: 20% !important;
+  }
+
+  .constraint.location, .constraint.company {
+	flex: 1;
+	max-width: 19.75% !important;
+	margin: 2rem 0 0;
+	padding: 1px 0 1px 5px;
   }
 
   .constraint.location {
-	flex: 1;
-	max-width: 30% !important;
-	margin: 2rem 0 0;
-	padding: 0;
-
-	input {
-	  width: 100%;
-	}
-
+	margin: 2rem 1rem 0 0;
   }
 
 }

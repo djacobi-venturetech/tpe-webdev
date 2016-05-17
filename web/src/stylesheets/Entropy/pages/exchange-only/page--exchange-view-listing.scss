@@ -5,6 +5,11 @@
 
 .listing-viewer {
 
+  > .message-container {
+	display: flex;
+	width: 100%;
+  }
+
   &.prop-wrapper {
 	width: 100%;
 	max-width: none;
@@ -53,7 +58,7 @@
 	  flex: 1 0 auto;
 	  align-self: center;
 
-	  span.val {
+	  span.val span {
 		font-size: .75rem;
 		font-weight: 600;
 		background: $color-tpe-beige;
@@ -68,7 +73,7 @@
 
 	}
 
-	.id, .start-time {
+	.start-time {
 	  font-size: .8rem;
 	  display: flex;
 	  align-self: center;
@@ -83,26 +88,51 @@
 	}
 
 	.id {
-	  flex: 1 0 auto;
-	}
-	.start-time {
-	  flex: 0 0 auto;
+	  order: 4;
 	}
 
-	.location, .plant-id {
+	.start-time {
+	  flex: 0 0 auto;
+	  order: 3;
+	}
+
+	.location {
+	  order: 5;
+	}
+
+	.plant-id {
+	  order: 6;
+	}
+
+	.location, .plant-id, .id {
 	  flex: 1 0 100%;
 	  width: 100%;
 	  font-weight: 300;
 
-	  label {
-		display: none;
-	  }
-
-	  span.val {
-		font-size: 1.25rem;
+	  label, span.val {
 		color: $color-tpe-grey;
+		font-size: 1.25rem;
+		display: inline;
 	  }
 
+	  label {
+		font-weight: 700;
+		&::after {
+		  content: ':';
+		  padding-right: 5px;
+		}
+	  }
+
+	}
+
+	.id {
+	  label {
+		padding-right: 5px;
+
+		&::after {
+		  display: none;
+		}
+	  }
 	}
 
   }
@@ -112,11 +142,11 @@
 	flex: 1;
 	flex-flow: column nowrap;
 
-	> .prop-group {
+	> div {
 	  display: flex;
 	  flex-flow: column nowrap;
 
-	  &.listing-detail {
+	  > .prop-group.listing-detail {
 		padding: 2rem 0 0;
 		flex: 1 0 auto;
 		order: 2;
@@ -133,10 +163,12 @@
 
 	}
 
-	.live-weight, .freshness, .kill-date, .seller {
+	.live-weight, .freshness, .kill-date,
+	.seller, .ship-date, .warehouse-location,
+	.pick-up-date, .pick-up-time {
 	  &.prop {
 		padding: 0;
-		margin: 0 0 .25rem;
+		margin: 0 0 .5rem;
 	  }
 
 	  label, span.val {
@@ -148,6 +180,15 @@
 		text-transform: uppercase;
 	  }
 
+	}
+
+	.freshness, .kill-date, .ship-date, .warehouse-location,
+	.pick-up-date, .pick-up-time {
+	  label {
+		&::after {
+		  content: ':';
+		}
+	  }
 	}
 
 	.logo, .image {
@@ -164,11 +205,11 @@
 	}
 
 	.logo {
-	  margin-top: 2rem;
+	  margin: 0;
 	}
 
 	.logo, .image {
-	  flex: 1 1 auto;
+	  flex: 0 1 auto;
 	}
 
 	.grade, .packaging, .volume, .note {
@@ -193,9 +234,22 @@
 
 	}
 
+	.grade, .packaging, .note:last-of-type {
+	  label {
+		&::after {
+		  content: ':';
+		}
+	  }
+	}
+
   }
 
   .prop-group.bid {
+
+	.message-container {
+	  width: 100%;
+	  margin: 10px 1rem;
+	}
 
 	> div:not(.buyer-warning) {
 	  display: flex;
@@ -215,7 +269,24 @@
 
 	}
 
+	.prop-group-title.title {
+	  margin: 0;
+	  padding: .5rem 0;
+	  background: $color-tpe-light-grey;
+	  color: $color-white;
+	  font-size: .85rem;
+	  text-transform: uppercase;
+	  justify-content: center;
+	  border: none;
+	  order: 2;
+	}
+
+	> .props {
+	  order: 3;
+	}
+
 	.buyer-warning {
+	  order: 1;
 	  background-color: $color-white;
 	  padding: 1rem;
 	  margin-bottom: 1rem;
@@ -274,47 +345,50 @@
 	}
 
 	.prevailing {
+	  order: 1;
 	  text-align: center;
-	  font-family: $font-raleway;
 	  font-weight: 700;
-	  font-size: 2.25rem;
+	  font-size: 2.5rem;
 	  border-bottom: 2px solid $color-tpe-beige;
-	  padding: 2rem 1rem;
-	  flex: 1 1 50%;
-
-	  label {
-		font-size: 1.1rem;
-	  }
-
-	  + .mybid {
-		@extend .prevailing;
-	  }
-
-	}
-
-	.mybid, .maxbid {
 	  padding: 2rem 1rem;
 	  flex: 1 0 100%;
 
-	  /*input[type="number"] {
-		&::before {
-		  content: '\f155';
-		  font-family: FontAwesome;
-		  display: inline-block;
-		  padding-right: 5px;
-		  font-size: .8rem;
-		}
-
-	  }*/
+	  label {
+		font-size: 1.1rem;
+		font-family: $font-raleway;
+	  }
 
 	}
 
-	.mybid {
+	.enter-bid-title {
+	  order: 3;
+	}
+
+	.mybid, .maxbid {
+	  padding: 1rem 1rem 2rem;
+	  flex: 1 0 100%;
+	}
+
+	.mybid.view {
+	  @extend .prevailing;
+	  order: 2;
+	  color: $color-tpe-green;
+
+	  label {
+		color: $color-tpe-black;
+	  }
 
 	  .reserve {
+		padding: 7px;
+		text-align: left;
+		position: relative;
 
 		&.warning {
-		  color: $color-tpe-red;
+		  border: 1px solid $color-error-dark;
+		  background: $color-error-light;
+		  color: $color-error-dark;
+		  font-weight: 300;
+		  font-size: .75rem;
 		}
 
 		p {
@@ -327,20 +401,61 @@
 
 	}
 
+	.mybid.edit, .maxbid {
+	  label {
+		position: relative;
+
+		&::before {
+		  content: '\f155';
+		  font-family: FontAwesome;
+		  display: block;
+		  padding-right: 5px;
+		  font-size: .8rem;
+		  position: absolute;
+		  font-weight: 300;
+		  top: 33px;
+		  left: -10px;
+		}
+	  }
+	}
+
+	.mybid.edit {
+	  order: 4;
+	}
+
 	.maxbid {
 	  position: relative;
+	  order: 5;
+	}
+
+	.purchase-now-title, .enter-bid-title {
+	  flex: 1 0 100%;
+	  padding: 2rem 1rem 0;
+	  font-size: 1.65rem;
+	  font-weight: 700;
+	  color: $color-tpe-lighter-grey;
+
+	  &::after {
+	  	content: ':';
+	  }
+
+	}
+
+	.purchase-now-title {
+	  order: 6;
 	}
 
 	.buy.strike {
+	  order: 7;
 	  display: flex;
 	  flex: 1 0 auto;
-	  padding: 2rem 1rem;
+	  padding: 0 1rem 2rem;
 	  flex-direction: column;
-	  font-size: 2rem;
+	  font-size: 2.25rem;
 	  font-weight: 700;
 
 	  label {
-		color: $color-tpe-grey;
+		display: none;
 	  }
 
 	  .btn {
@@ -361,16 +476,42 @@
 
 }
 
+div.window.dialog {
+  width: 100% !important;
+  max-width: 40rem !important;
+
+  div.warning {
+	margin-bottom: 1rem;
+  }
+
+  .actions {
+	text-align: right;
+  }
+
+}
+
 @media (min-width: 768px) {
 
   .listing-viewer {
 
+	> .message-container {
+	  width: 35%;
+	}
+
+	.prop-header {
+	  .prop.location, .prop.plant-id {
+		padding-right: 63%;
+	  }
+	}
+
 	.prop-body {
 	  flex-flow: row nowrap;
 
-	  > .prop-group {
+	  > div {
+		display: flex;
+		flex-flow: column nowrap;
 
-		&.listing-detail {
+		> .prop-group.listing-detail {
 		  order: 1;
 		  flex: 1 0 40%;
 		  padding: 0 3rem 0 0;
@@ -379,7 +520,7 @@
 		&.bid {
 		  order: 2;
 		  flex: 2 0 60%;
-		  margin-top: -4.75rem;
+		  margin-top: -8.25rem;
 		}
 
 	  }
@@ -388,19 +529,13 @@
 
 	.prop-group.bid {
 
-	  .prevailing {
-		padding: 3rem;
+	  .prevailing, .mybid.view {
+		padding: 2rem 3rem 3rem;
 		border-bottom: 2px solid $color-tpe-beige;
 		flex: 1 1 34%;
-
-		+ .mybid {
-		  flex: 1 1 34%;
-		}
-
-
 	  }
 
-	  .mybid, .maxbid {
+	  .mybid.edit, .maxbid {
 		flex: 1 0 34%;
 	  }
 
@@ -416,22 +551,35 @@
 
 	.prop-group.bid {
 
-	  .mybid, .maxbid, .buy.strike {
-		padding: 3rem;
+	  .mybid, .maxbid {
+		padding: 1rem 3rem 3rem;
 	  }
 
-	  .maxbid {
+	  .purchase-now-title {
+		padding: 1rem 3rem 0;
+	  }
 
-		&::before {
+	  .enter-bid-title {
+		padding: 3rem 3rem 0;
+	  }
+
+	  .buy.strike {
+		padding: 0 3rem 3rem;
+	  }
+
+	  .mybid.edit {
+		position: relative;
+
+		/*&::after {
 		  content: 'OR';
 		  display: inline-block;
 		  position: absolute;
 		  top: 4.25rem;
-		  left: -2.75rem;
+		  right: 0;
 		  font-size: 1.75rem;
 		  font-weight: 700;
-		  color: $color-tpe-grey;
-		}
+		  color: $color-tpe-lighter-grey;
+		}*/
 
 	  }
 

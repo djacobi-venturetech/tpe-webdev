@@ -75,7 +75,7 @@
   }
 
   > td.reserve-price {
-	color: $color-tpe-grey;
+	color: $color-tpe-light-grey;
   }
 
   > td.interval {
@@ -87,10 +87,11 @@
 
   > td.current-bid {
 	.above-reserve {
-	  color: $color-tpe-red;
+	  color: $color-tpe-green;
+
 	}
 	.below-reserve {
-	  color: $color-tpe-green;
+	  color: $color-tpe-red;
 	}
   }
 
@@ -156,13 +157,52 @@
 		display: block;
 		position: absolute;
 		bottom: auto;
-		top: 102%;
+		top: 101%;
 		left: 0;
 		border-left: 64px solid transparent;
 		border-right: 64px solid transparent;
 		border-top: 20px solid $color-tpe-yellow;
 	  }
 
+	}
+
+  }
+
+}
+
+.definition {
+  display: flex;
+  flex-flow: row wrap;
+  font-size: .75rem;
+  margin-top: 4rem;
+
+  > div {
+	flex: 1;
+	padding: 0 1rem 1rem;
+	font-style: italic;
+	color: $color-tpe-grey;
+
+	span {
+	  font-weight: 700;
+	}
+
+  }
+
+}
+.definition {
+  display: flex;
+  flex-flow: row wrap;
+  font-size: .75rem;
+  margin-top: 4rem;
+
+  > div {
+	flex: 1;
+	padding: 0 1rem 1rem;
+	font-style: italic;
+	color: $color-tpe-grey;
+
+	span {
+	  font-weight: 700;
 	}
 
   }
