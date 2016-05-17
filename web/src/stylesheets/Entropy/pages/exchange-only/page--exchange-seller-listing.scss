@@ -359,24 +359,6 @@ div.bids {
 		}
 	  }
 
-	  &.editor {
-		.reserve-price, .strike-price {
-		  position: relative;
-
-		  label {
-			&::before {
-			  content: '$';
-			  font-weight: 300;
-			  position: absolute;
-			  font-size: 1rem;
-			  left: -5px;
-			  top: 29px;
-			}
-		  }
-		}
-	  }
-
-
 	  label {
 		text-transform: uppercase;
 		margin-bottom: 0;
