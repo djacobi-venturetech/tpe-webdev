@@ -156,7 +156,27 @@
 
 	.prop {
 	  flex: 1 0 45%;
-	  }
+	}
+
+	.freshness {
+	  order: 1;
+	}
+
+	.kill-date {
+	  order: 2;
+	}
+
+	.weight {
+	  order: 3;
+	}
+
+	.ship-date, .pick-up-date {
+	  order: 4;
+	}
+
+	.warehouse-location, .pick-up-time {
+	  order: 5;
+	}
 
   }
 
