@@ -19,6 +19,15 @@
 
 	.btn {
 	  @include button-size($btn-padding-y-sm, $btn-padding-x-sm, $font-size-sm, $line-height-sm, $border-radius-sm);
+
+	  &.edit {
+		@include button-variant($btn-secondary-color, $btn-secondary-bg, $btn-secondary-border);
+	  }
+
+	  &.mark-ready, &.cancel-listing {
+		@include button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-border);
+	  }
+
 	}
 
 	+ div.bids {
@@ -32,7 +41,9 @@
   }
 
   .listing-time {
+	font-size: .9rem;
 	margin-top: 1rem;
+
 	label {
 	  font-weight: 700;
 	  &::after {
@@ -64,8 +75,16 @@ div.header {
 	  color: $color-tpe-brand;
 	}
 
-	&.Live {
+	&.Not.Sold, &.Live {
 	  color: $color-tpe-green;
+	}
+
+	&.Cancelled {
+	  color: $color-tpe-yellow;
+	}
+
+	&.Draft {
+	  color: $color-tpe-light-grey;
 	}
 
 	label {
@@ -78,20 +97,17 @@ div.header {
 
   }
 
-  .status, .type {
+  .status, .location {
 	font-size: 1.15rem;
   }
 
-  .location {
+  .type {
+	font-size: 2rem;
 	font-family: $font-raleway;
-	font-size: 2.5rem;
-	text-transform: uppercase;
-	line-height: 1.25;
 	font-weight: 700;
-	color: $color-tpe-black;
   }
 
-  .type {
+  .type, .location {
 	color: $color-tpe-grey;
   }
 
@@ -304,18 +320,27 @@ div.bids {
 	div.instructions {
 	  flex: 1 1 auto;
 	  max-width: 70%;
+	  line-height: 1;
+	  align-self: center;
+	  font-size: .9rem;
+
+	  &.ready-instructions {
+		text-align: right;
+	  }
+
 	}
 
 	div.actions.schedule-actions {
 	  flex: 1;
 	  text-align: right;
+	  margin-top: -5.5rem;
 	}
 
 	div.interval {
 	  flex: 1 0 100%;
 	  display: flex;
 	  flex-flow: row nowrap;
-	  margin-top: 2rem;
+	  margin-top: 1.5rem;
 
 	  &.editor {
 		.reserve-price, .strike-price {
