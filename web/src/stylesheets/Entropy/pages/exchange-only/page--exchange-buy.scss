@@ -9,6 +9,22 @@
 
 .html.add-listing {
   text-align: right;
+
+  a.btn.add {
+	color: transparent;
+	width: 35px;
+	overflow: hidden;
+
+	&:hover {
+	  color: transparent !important;
+	}
+
+	&::before {
+	  color: $color-white !important;
+	}
+
+  }
+
 }
 
 #column1 > .miwt {
@@ -67,9 +83,9 @@
 }
 
 .listing-main-wrapper {
-  flex: 2 0 70%;
-  flex-flow: row wrap;
-  padding: 0 1.5rem .5rem 1.75rem;
+  flex: 1 0 50%;
+  flex-flow: column nowrap;
+  padding: 0 .75rem .5rem;
 
   > div {
 	display: flex;
@@ -82,7 +98,7 @@
 
   .listing-basics-info-wrapper {
 	display: flex;
-	flex: 2 0 50%;
+	flex: 1 0 0;
 	flex-flow: column nowrap;
 
 	.listing-name {
@@ -98,18 +114,19 @@
 		text-transform: uppercase;
 		font-family: $font-raleway;
 		font-weight: 700;
-		font-size: 1.75rem;
+		font-size: 1.35rem;
 	  }
 
 	}
 
 	.listing-title {
 	  display: flex;
+	  flex-direction: column;
 	  //flex-flow: row wrap;
 	}
 
 	.listing-tags {
-	  align-self: center;
+	  align-self: flex-start;
 	  flex-shrink: 2;
 
 	  .tag {
@@ -150,12 +167,12 @@
   .listing-info {
 	display: flex;
 	flex-flow: row wrap;
-	width: 75%;
+	width: 100%;
 	flex: 1 0 auto;
 	align-content: flex-end;
 
 	.prop {
-	  flex: 1 0 45%;
+	  flex: 1 0 100%;
 	}
 
 	.freshness {
@@ -199,7 +216,7 @@
   .listing-company-wrapper {
 	display: flex;
 	flex-flow: column nowrap;
-	flex: 1 0 17%;
+	flex: 1 0 0;
 	padding-top: 2.575rem;
 	font-size: 85%;
 	justify-content: space-between;
@@ -247,7 +264,7 @@
   }
 
   .listing-notes {
-	flex: 2 0 100%;
+	flex: 2 0 0;
 	border-top: 1px solid $color-tpe-beige;
 	margin-top: 1rem;
 	padding-top: .75rem;
@@ -293,17 +310,17 @@
 }
 
 .listing-bid-wrapper {
-  flex: 1 0 20%;
+  flex: 1 0 30%;
   flex-flow: column nowrap;
   border-left: 2px solid $color-tpe-beige;
-  padding: 1rem 0;
+  padding: 1rem 0 1rem .5rem;
 
   > div {
-	align-self: center;
+	align-self: flex-start;
 	display: flex;
 	flex-direction: column;
 
-	&:not(.actions) { width: 55%; }
+	&:not(.actions) { width: 100%; }
 
 	label {
 	  text-transform: uppercase;
@@ -314,7 +331,7 @@
 
 	.val {
 	  font-weight: 700;
-	  font-size: 1.5rem;
+	  font-size: 1.15rem;
 	  line-height: 1;
 	}
 
@@ -329,7 +346,7 @@
 
 .definition {
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: column  nowrap;
   font-size: .75rem;
 
   > div {
@@ -340,6 +357,98 @@
 
 	span {
 	  font-weight: 700;
+	}
+
+  }
+
+}
+
+@media (min-width: 768px) {
+
+  .html.add-listing {
+	text-align: right;
+
+	a.btn.add {
+	  color: $color-white;
+	  width: auto;
+	  overflow: visible;
+	}
+
+  }
+
+  .listing-main-wrapper {
+	flex-flow: row wrap;
+	flex: 2 0 70%;
+	padding: 0 1.5rem .5rem 1.75rem;
+
+	.listing-basics-info-wrapper {
+	  flex: 2 0 50%;
+
+	  .listing-title {
+		flex-direction: row;
+	  }
+
+	  .listing-name {
+		.val {
+		  font-size: 1.75rem;
+		}
+	  }
+
+	  .listing-tags {
+		align-self: center;
+	  }
+
+	}
+
+	.listing-info {
+	  width: 75%;
+	}
+
+	.listing-company-wrapper {
+	  flex: 1 0 17%;
+	}
+
+	.listing-notes {
+	  flex: 2 0 100%;
+	}
+
+  }
+
+  .listing-bid-wrapper {
+	flex: 1 0 20%;
+	padding: 1rem 0;
+
+	> div {
+	  align-self: center;
+
+	  &:not(.actions) { width: 55%; }
+
+	  .val {
+		font-size: 1.5rem;
+	  }
+
+	}
+
+  }
+
+  .definition {
+	flex-flow: row wrap;
+  }
+
+}
+
+@media (min-width: 1024px) {
+
+  .listing-main-wrapper {
+
+	.listing-info {
+	  flex-flow: row wrap;
+	  flex: 1 0 auto;
+
+	  .prop {
+		flex: 1 0 45%;
+	  }
+
 	}
 
   }
