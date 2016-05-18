@@ -51,19 +51,11 @@ a {
 }
 
 #e-COLUMN-0 {
-  padding: 4.75rem 1.25rem 0;
+  padding: 2.5rem 1.25rem 0;
   display: flex;
   flex-flow: row wrap;
   max-width: 70rem;
   margin: 0 auto;
-}
-
-span.title {
-	font-family: $font-raleway;
-	font-weight: 700;
-	font-size: 3rem;
-	color: $color-tpe-black;
-	text-transform: uppercase;
 }
 
 .enclosing {
@@ -120,9 +112,13 @@ h1, h2, h3 {
   font-weight: 700;
 }
 
-h1 {
-  font-size: 3rem;
+h1, span.title {
+  font-size: 2rem;
   line-height: 1.5;
+  font-family: $font-raleway;
+  font-weight: 700;
+  color: $color-tpe-black;
+  text-transform: uppercase;
 }
 
 ::selection {
@@ -226,4 +222,10 @@ img {
 
   }
 
+}
+
+@media (min-width: 1024px) {
+  h1, span.title {
+	font-size: 3rem;
+  }
 }
