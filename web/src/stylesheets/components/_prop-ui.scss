@@ -91,7 +91,7 @@
 		margin-bottom: 0;
 	}
 
-	.user-entry-required label:after {
+	.user-entry-required > label:after {
 		content: "*";
 		color: #ff0000;
 	}
