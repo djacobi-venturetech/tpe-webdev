@@ -14,12 +14,21 @@
   }
 
   .logo-con {
-	flex: 1 1 0;
-	justify-content: flex-start;
-	margin-right: 5rem;
+	flex: 1 0 100%;
+	justify-content: space-between;
 
 	a {
 	  display: block;
+	  min-width: 12rem;
+	  max-width: 14rem;
+	}
+
+	.fa.fa-bars {
+	  display: block;
+	  align-self: center;
+	  font-weight: 300;
+	  font-size: 1.5rem;
+	  cursor: pointer;
 	}
 
   }
@@ -27,6 +36,22 @@
   .nav-profile-con {
 	flex: 2 1 auto;
 	align-items: center;
+	display: flex;
+	flex-flow: column nowrap;
+	height: calc(100vh - 60px);
+	background: #fff;
+	position: absolute;
+	top: 60px;
+	right: 0;
+	z-index: 99;
+	width: 0;
+	overflow: hidden;
+
+	.sidebar-open & {
+	  width: auto;
+	  min-width: 50%;
+	}
+
   }
 
   div.menu {
@@ -34,6 +59,8 @@
 	justify-content: center;
 	font-family: $font-raleway;
 	font-weight: 400;
+	align-self: flex-end;
+	width: 100%;
 
 	ul.menubeanh li, ul.menubeanh-persistent li {
 	  float: none;
@@ -43,32 +70,38 @@
 	  display: flex;
 	  width: 100%;
 	  justify-content: flex-start;
+	  flex-flow: column nowrap;
+	  text-align: right;
 
 	  > li {
-		align-self: center;
+		align-self: flex-end;
+		width: 100%;
 
 		+ li {
-		  margin-left: 5.5rem;
+		  margin-left: 0;
 		}
 
 		> .menuitemlabel {
 		  border-bottom: 3px solid transparent;
 		  text-transform: uppercase;
+		  padding: .25rem .5rem;
+		  display: block;
 		}
 
 		&.mi-active > a, > a:hover {
 		  text-decoration: none;
 		  font-weight: 600;
 		  border-bottom: 3px solid $color-tpe-yellow;
-		  color: $color-tpe-dark-grey;
+		  color: $color-white;
+		  background: $color-tpe-light-grey;
 		}
 
 		ul {
-		  width: 13rem;
-		  background: $tpe-page-bg;
-		  box-shadow: 0 3px 5px rgba(0,0,0,0.1);
-		  border-bottom: 3px solid $color-tpe-yellow;
+		  width: auto;
+		  border-right: 3px solid $color-tpe-yellow;
 		  z-index: 999;
+		  display: block;
+		  position: relative;
 
 		  li {
 			line-height: 2;
@@ -105,6 +138,7 @@
 	justify-content: flex-end;
 	align-items: center;
 	font-size: 85%;
+	max-width: 12rem;
 
 	> ul.menu {
 	  justify-content: flex-end;
@@ -121,6 +155,133 @@
 		  ul.menu-t2 {
 			display: block;
 			right: 0;
+		  }
+
+		}
+
+	  }
+
+	}
+
+  }
+
+}
+
+@media (max-width: 768px) {
+  #header {
+	.nav-profile-con {
+	  .sidebar-open & {
+		width: auto;
+		min-width: 30%;
+	  }
+	}
+  }
+}
+
+@media (min-width: 1024px) {
+
+  #header {
+
+	.logo-con {
+	  flex: 1 0 0;
+	  justify-content: flex-start;
+	  margin-right: 5rem;
+	  max-width: 13rem;
+
+	  a {
+		max-width: 18rem;
+	  }
+
+	  .fa.fa-bars {
+		display: none;
+	  }
+
+	}
+
+	.nav-profile-con {
+	  flex: 2 1 auto;
+	  align-items: center;
+	  display: flex;
+	  flex-flow: row nowrap;
+	  height: auto;
+	  min-width: 0;
+	  background: transparent;
+	  position: relative;
+	  top: auto;
+	  right: auto;
+	  overflow: visible;
+	  width: auto;
+	}
+
+	div.menu {
+	  align-self: center;
+	  width: auto;
+
+	  > ul.menu {
+		flex-flow: row nowrap;
+		text-align: left;
+
+		> li {
+		  align-self: center;
+		  width: auto;
+
+		  + li {
+			margin-left: 2.5rem;
+		  }
+
+		  > a.menuitemlabel {
+			padding: 0;
+		  }
+
+		  &.mi-active > a, > a:hover {
+			background: transparent;
+			color: $color-tpe-dark-grey;
+		  }
+
+		  ul {
+			width: 13rem;
+			border-right: none;
+			border-bottom: 3px solid $color-tpe-yellow;
+			background: $body-bg;
+			box-shadow: 0 3px 5px rgba(0,0,0,0.1);
+			display: none;
+			position: absolute;
+		  }
+
+		  &.over {
+
+			ul {
+			  display: block;
+			}
+
+		  }
+
+		}
+
+	  }
+
+	}
+
+  }
+
+}
+
+@media (min-width: 1150px) {
+
+  #header {
+
+	.logo-con {
+	  max-width: 18rem;
+	}
+
+	div.menu {
+
+	  > ul.menu {
+
+		> li {
+
+		  + li {
+			margin-left: 5.5rem;
 		  }
 
 		}
