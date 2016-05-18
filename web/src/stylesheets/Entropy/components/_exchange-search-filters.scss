@@ -23,6 +23,7 @@
   display: flex;
   //justify-content: space-between;
   flex-flow: row wrap;
+  padding-bottom: 3rem;
 
   .quick-filter-con {
 	display: flex;
@@ -32,8 +33,9 @@
 	border-top: 3px solid #cecbcf;
 	border-bottom: 3px solid #cecbcf;
 	padding: .5rem 0;
-	margin-bottom: 1.25rem;
+	margin-bottom: 3.25rem;
 	position: relative;
+	flex-flow: row wrap;
 
 	&::before, &::after {
 	  font-size: 1.25rem;
@@ -62,12 +64,10 @@
 
   .quick-filter {
 	display: flex;
-	flex: 0 0 10%;
-	margin: 0 1rem;
+	flex: 0 0 25%;
+	margin: 0 .5rem;
 	flex-flow: column nowrap;
 	position: relative;
-	min-width: 8rem;
-	max-width: 8rem;
 
 	&.selected {
 	  .btn {
@@ -87,18 +87,6 @@
 		z-index: 0;
 	  }
 
-	  &::after {
-		content: '';
-		display: block;
-		position: absolute;
-		bottom: auto;
-		top: 100%;
-		left: 0;
-		border-left: 64px solid transparent;
-		border-right: 64px solid transparent;
-		border-top: 20px solid $color-tpe-yellow;
-	  }
-
 	}
 
 	.btn {
@@ -110,6 +98,8 @@
 	  margin: 0 auto;
 	  position: relative;
 	  z-index: 10;
+	  padding: 0 .25em;
+	  white-space: normal;
 
 	  &::first-letter {
 		font-size: 2.5rem;
@@ -122,16 +112,20 @@
   }
 
   .select2-container {
-	flex: 1 1 auto;
-	margin-right: 1rem;
+	flex: 1 1 47%;
 	align-self: flex-end;
-	max-width: 20% !important;
+	width: 100%;
+	max-width: 45% !important;
+	&:nth-of-type(1) {
+	  margin-right: 1rem;
+	}
   }
 
   .constraint.location, .constraint.company {
-	flex: 1;
-	max-width: 19.75% !important;
+	flex: 1 1 47%;
+	max-width: 45% !important;
 	margin: 2rem 0 0;
+	width: 100%;
 	padding: 1px 0 1px 5px;
   }
 
@@ -139,4 +133,86 @@
 	margin: 2rem 1rem 0 0;
   }
 
+}
+
+@media (min-width: 768px) {
+
+  .constraints {
+	padding-bottom: 0;
+
+	.quick-filter-con {
+	  margin-bottom: 1.25rem;
+	  flex-flow: row nowrap;
+	}
+
+	.quick-filter {
+	  min-width: 6.5rem;
+	  max-width: 6.5rem;
+	  margin: 0 1rem;
+
+	  .btn {
+		padding: .375rem 1rem;
+	  }
+
+	  &.selected {
+		.btn {
+		  position: relative;
+		  color: $color-white;
+		}
+
+		&::after {
+		  content: '';
+		  display: block;
+		  position: absolute;
+		  bottom: auto;
+		  top: 104%;
+		  left: 0;
+		  border-left: 52px solid transparent;
+		  border-right: 52px solid transparent;
+		  border-top: 20px solid $color-tpe-yellow;
+		}
+
+	  }
+	}
+
+	.select2-container {
+	  max-width: 20% !important;
+	  margin-right: 1rem;
+	  flex: 1 1 0;
+	}
+
+	.constraint.location, .constraint.company {
+	  max-width: 19.75% !important;
+	  flex: 1 1 0;
+	}
+
+  }
+
+}
+
+@media (min-width: 1024px) {
+  .constraints {
+
+	.quick-filter {
+	  min-width: 8rem;
+	  max-width: 8rem;
+
+	  .btn {
+		white-space: nowrap;
+	  }
+
+	  &.selected {
+
+		&::after {
+		  top: 100%;
+		  border-left: 64px solid transparent;
+		  border-right: 64px solid transparent;
+		  border-top: 20px solid $color-tpe-yellow;
+		}
+
+	  }
+
+	}
+
+  }
 }
