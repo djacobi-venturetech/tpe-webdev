@@ -16,7 +16,7 @@
 	overflow: hidden;
 
 	&:hover {
-	  color: transparent !important;
+	  color: transparent;
 	}
 
 	&::before {
@@ -372,6 +372,11 @@
 	  color: $color-white;
 	  width: auto;
 	  overflow: visible;
+
+	  &:hover {
+		color: $color-white;
+	  }
+
 	}
 
   }
