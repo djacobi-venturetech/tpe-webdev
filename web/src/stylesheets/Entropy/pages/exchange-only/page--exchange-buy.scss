@@ -96,15 +96,20 @@
 	margin: 0;
   }
 
-  .listing-basics-info-wrapper {
+  .title {
+	flex-flow: row wrap;
+	width: 100%;
+	justify-content: space-between;
+  }
+
+  .listing-title {
 	display: flex;
-	flex: 1 0 0;
-	flex-flow: column nowrap;
+	flex-direction: column;
 
 	.listing-name {
 	  flex-shrink: 0;
 	  margin-right: .3rem;
-	  max-width: 70%;
+	  align-self: center;
 
 	  > label {
 		display: none;
@@ -114,15 +119,9 @@
 		text-transform: uppercase;
 		font-family: $font-raleway;
 		font-weight: 700;
-		font-size: 1.35rem;
+		font-size: 1.45rem;
 	  }
 
-	}
-
-	.listing-title {
-	  display: flex;
-	  flex-direction: column;
-	  //flex-flow: row wrap;
 	}
 
 	.listing-tags {
@@ -143,115 +142,15 @@
 
 	}
 
-	.listing-usda, .location {
-
-	  label, span.val {
-		display: inline;
-	  }
-
-	  label {
-		&::after {
-		  content: ':';
-		  padding-right: 5px;
-		}
-	  }
-
-	}
-
-	.location {
-	  margin-top: .5rem;
-	}
-
   }
 
-  .listing-info {
-	display: flex;
-	flex-flow: row wrap;
-	width: 100%;
-	flex: 1 0 auto;
-	align-content: flex-end;
+  .id-time {
+	text-align: right;
+	font-style: italic;
+	font-size: .7rem;
 
-	.prop {
-	  flex: 1 0 100%;
-	}
-
-	.freshness {
-	  order: 1;
-	}
-
-	.kill-date {
-	  order: 2;
-	}
-
-	.weight {
-	  order: 3;
-	}
-
-	.ship-date, .pick-up-date {
-	  order: 4;
-	}
-
-	.warehouse-location, .pick-up-time {
-	  order: 5;
-	}
-
-  }
-
-  .listing-info, .listing-notes, .listing-company {
-	  label, span.val {
-		display: inline;
-	  }
-
-	  label {
-		text-transform: uppercase;
-		&::after {
-		  content: ':';
-		  padding-right: 3px;
-		}
-
-	   }
-
-  }
-
-  .listing-company-wrapper {
-	display: flex;
-	flex-flow: column nowrap;
-	flex: 1 0 0;
-	padding-top: 2.575rem;
-	font-size: 85%;
-	justify-content: space-between;
-
-	div.id-time {
-	  text-align: center;
-	  font-style: italic;
-
-	  > span {
-		display: block;
-	  }
-
-	}
-
-	.listing-company {
-	  color: $color-tpe-grey;
-	  display: flex;
-	  flex-flow: column nowrap;
-
-	  label {
-		text-transform: none;
-	  }
-
-	  .company-logo {
-		max-width: 60%;
-		align-self: center;
-		margin-bottom: .25rem;
-	  }
-
-	  .volume {
-		span::after {
-		  content: " lbs";
-		}
-	  }
-
+	> span {
+	  display: block;
 	}
 
 	.listing-time {
@@ -263,22 +162,9 @@
 
   }
 
-  .listing-notes {
-	flex: 2 0 0;
-	border-top: 1px solid $color-tpe-beige;
-	margin-top: 1rem;
-	padding-top: .75rem;
-	font-size: 90%;
-	color: $color-tpe-grey;
-	.val {
-	  font-style: italic;
-	  word-break: break-word;
-	  hyphens: auto;
-	}
-  }
-
   .listing-flags {
 	margin-bottom: .75rem;
+	flex: 1 0 100%;
 
 	.flag {
 	  font-size: .65rem;
@@ -305,6 +191,101 @@
 
 	}
 
+  }
+
+  .body-con {
+	flex-flow: column nowrap;
+	flex: 1 0 100%;
+
+	> .column {
+	  flex: 2 0 30%;
+	  padding-top: 1rem;
+
+	  &.right.logo-wrapper {
+		flex: 1 0 10%;
+		padding-top: .5rem;
+	  }
+
+	}
+
+	.prop {
+
+	  label, .val {
+		display: inline;
+	  }
+
+	}
+
+	.volume, .weight {
+	  span::after {
+		content: " lbs";
+	  }
+	}
+
+  }
+
+  .prop {
+	margin-bottom: .25rem;
+	label {
+	  margin-bottom: 0;
+	  &::after {
+		content: ':';
+		padding-right: 5px;
+	  }
+	}
+
+  }
+
+  .warehouse-location, .pick-up-time {
+	flex-direction: column;
+	flex: 1 0 100%;
+
+	label, span.val {
+	  display: block;
+	}
+  }
+
+  .listing-info, .listing-dates {
+	display: flex;
+	flex-flow: row wrap;
+	width: 100%;
+	flex: 1 0 auto;
+	align-content: flex-end;
+
+	.prop {
+	  flex: 1 0 100%;
+	}
+
+  }
+
+  .listing-info, .listing-notes, .listing-company, .listing-dates {
+	  label, span.val {
+		display: inline;
+	  }
+
+	  label {
+		text-transform: uppercase;
+		&::after {
+		  content: ':';
+		  padding-right: 3px;
+		}
+
+	   }
+
+  }
+
+  .listing-notes {
+	flex: 2 0 0;
+	border-top: 1px solid $color-tpe-beige;
+	margin-top: 1rem;
+	padding-top: .75rem;
+	font-size: 90%;
+	color: $color-tpe-grey;
+	.val {
+	  font-style: italic;
+	  word-break: break-word;
+	  hyphens: auto;
+	}
   }
 
 }
@@ -339,7 +320,7 @@
 
   .actions {
 	flex: 1;
-	justify-content: flex-end;
+	justify-content: flex-start;
   }
 
 }
@@ -387,11 +368,7 @@
 	padding: 0 1.5rem .5rem 1.75rem;
 
 	.listing-basics-info-wrapper {
-	  flex: 2 0 50%;
-
-	  .listing-title {
-		flex-direction: row;
-	  }
+	  flex: 1 0 40%;
 
 	  .listing-name {
 		.val {
@@ -399,18 +376,14 @@
 		}
 	  }
 
-	  .listing-tags {
-		align-self: center;
-	  }
-
 	}
 
-	.listing-info {
-	  width: 75%;
+	.listing-info, .listing-dates {
+	  width: 100%;
 	}
 
 	.listing-company-wrapper {
-	  flex: 1 0 17%;
+	  flex: 1 0 40%;
 	}
 
 	.listing-notes {
@@ -420,7 +393,7 @@
   }
 
   .listing-bid-wrapper {
-	flex: 1 0 20%;
+	flex: 1 0 17%;
 	padding: 1rem 0;
 
 	> div {
@@ -446,7 +419,17 @@
 
   .listing-main-wrapper {
 
-	.listing-info {
+	.listing-title {
+	  flex-flow: row nowrap;
+	  max-width: 75%;
+
+	  .listing-tags {
+		align-self: center;
+	  }
+
+	}
+
+	.listing-info, .listing-dates {
 	  flex-flow: row wrap;
 	  flex: 1 0 auto;
 
@@ -454,6 +437,10 @@
 		flex: 1 0 45%;
 	  }
 
+	}
+
+	.body-con {
+	  flex-flow: row nowrap;
 	}
 
   }
