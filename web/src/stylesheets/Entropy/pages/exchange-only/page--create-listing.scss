@@ -52,6 +52,14 @@
 	  .val {
 		width: 100%;
 	  }
+
+	  .packaging .price label {
+		font-weight: 300;
+		margin-top: .25rem;
+		padding-left: 3px;
+		text-transform: none;
+	  }
+
 	}
 
 	&.freshness {
