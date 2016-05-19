@@ -177,4 +177,10 @@ select.bulk_actions {
 	}
   }
 
+  .constraint.company_customer {
+	.select2-container {
+	  width: 100% !important;
+	}
+  }
+
 }
