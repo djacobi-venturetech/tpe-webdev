@@ -183,10 +183,10 @@
   #header {
 
 	.logo-con {
-	  flex: 1 0 0;
+	  flex: 1 0 auto;
 	  justify-content: flex-start;
 	  margin-right: 5rem;
-	  max-width: 13rem;
+	  max-width: 11rem;
 
 	  a {
 		max-width: 18rem;
