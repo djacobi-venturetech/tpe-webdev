@@ -145,7 +145,8 @@
   }
 
   .id-time {
-	text-align: right;
+	text-align: left;
+	margin-top: .75rem;
 	font-style: italic;
 	font-size: .7rem;
 
@@ -195,14 +196,13 @@
 
   .body-con {
 	flex-flow: column nowrap;
-	flex: 1 0 100%;
+	flex: 1 0 auto;
 
 	> .column {
-	  flex: 2 0 30%;
+	  flex: 0 1 auto;
 	  padding-top: 1rem;
 
 	  &.right.logo-wrapper {
-		flex: 1 0 10%;
 		padding-top: .5rem;
 	  }
 
@@ -238,7 +238,7 @@
 
   .warehouse-location, .pick-up-time {
 	flex-direction: column;
-	flex: 1 0 100%;
+	flex: 1 0 auto;
 
 	label, span.val {
 	  display: block;
@@ -275,7 +275,7 @@
   }
 
   .listing-notes {
-	flex: 2 0 0;
+	flex: 2 0 auto;
 	border-top: 1px solid $color-tpe-beige;
 	margin-top: 1rem;
 	padding-top: .75rem;
@@ -363,31 +363,25 @@
   }
 
   .listing-main-wrapper {
-	flex-flow: row wrap;
-	flex: 2 0 70%;
 	padding: 0 1.5rem .5rem 1.75rem;
 
-	.listing-basics-info-wrapper {
-	  flex: 1 0 40%;
+	.body-con {
+	  flex-flow: row wrap;
 
-	  .listing-name {
-		.val {
-		  font-size: 1.75rem;
-		}
+	  > .column {
+		flex: 1 0 45%;
 	  }
 
 	}
 
-	.listing-info, .listing-dates {
+	.listing-notes {
+	  flex: 1 0 auto;
 	  width: 100%;
 	}
 
-	.listing-company-wrapper {
-	  flex: 1 0 40%;
-	}
-
-	.listing-notes {
-	  flex: 2 0 100%;
+	.warehouse-location, .pick-up-time {
+	  flex: 1 0 auto;
+	  width: 100%;
 	}
 
   }
@@ -418,6 +412,25 @@
 @media (min-width: 1024px) {
 
   .listing-main-wrapper {
+	flex: 2 0 70%;
+
+	.body-con {
+	  flex-flow: row nowrap;
+	  flex: 1 0 auto;
+	  width: 100%;
+
+	  > .column {
+		flex: 2 0 30%;
+		padding-top: 1rem;
+
+		&.right.logo-wrapper {
+		  flex: 1 0 10%;
+		  padding-top: .5rem;
+		}
+
+	  }
+
+	}
 
 	.listing-title {
 	  flex-flow: row nowrap;
@@ -427,6 +440,21 @@
 		align-self: center;
 	  }
 
+	  .listing-notes {
+		flex: 2 0 100%;
+		width: 100%;
+	  }
+
+	  .warehouse-location, .pick-up-time {
+		flex: 1 0 100%;
+		width: 100%;
+	  }
+
+	}
+
+	.id-time {
+	  text-align: right;
+	  margin-top: 0;
 	}
 
 	.listing-info, .listing-dates {
@@ -437,10 +465,6 @@
 		flex: 1 0 45%;
 	  }
 
-	}
-
-	.body-con {
-	  flex-flow: row nowrap;
 	}
 
   }
