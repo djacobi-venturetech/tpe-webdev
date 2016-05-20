@@ -766,6 +766,10 @@ div.window.dialog {
 			.prop {
 			  flex: 1 0 40%;
 
+			  .selec2-container, input[type="text"] {
+				width: 11.4rem;
+			  }
+
 			  &.buyers {
 				.select2-container {
 				  width: 11.4rem !important;
