@@ -149,8 +149,13 @@
 
   }
 
-  .customer-viewer {
+  .customer-viewer, .user-viewer {
+    .prop.picture {
+      flex: 1 0 0;
+    }
     .prop-body  {
+      flex-flow: column nowrap;
+
       > div:not(.locations), > div:not(.company-customer) {
         flex-flow: column nowrap;
       }
@@ -163,7 +168,30 @@
     .prop-group.contact {
       padding-left: 0;
       flex: 1 0 auto;
+      flex-flow: column nowrap;
+      > .prop {
+        flex: 1 0 auto;
+      }
+    }
+  }
+
+  .user-viewer {
+    .prop-group.contact {
+      .name-editor, .prop-group, .name-editor > div,
+      .address > div, > .phone {
+        flex: 1 0 auto;
+      }
     }
   }
 
 }
+
+/*@media (min-width: 768px) {
+  .user-viewer,
+  .customer-viewer {
+
+    .prop-body {
+      flex-flow: row nowrap;
+    }
+  }
+}*/
