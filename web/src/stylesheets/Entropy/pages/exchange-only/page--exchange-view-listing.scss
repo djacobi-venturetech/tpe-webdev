@@ -173,6 +173,7 @@
 	  &.prop {
 		padding: 0;
 		margin: 0 0 .5rem;
+		flex: 1 0 auto;
 	  }
 
 	  label, span.val {
@@ -213,12 +214,13 @@
 	}
 
 	.logo, .image {
-	  flex: 0 1 auto;
+	  flex: 0 0 auto;
 	}
 
 	.grade, .packaging, .volume, .note {
 	  font-size: .75rem;
 	  color: $color-tpe-grey;
+	  flex: 1 0 auto;
 
 	  &.prop {
 		padding: 0;
@@ -365,12 +367,26 @@
 	}
 
 	.enter-bid-title {
-	  order: 3;
+	  order: 4;
 	}
 
 	div.mybid, .maxbid {
 	  padding: 1rem 1rem 2rem;
 	  flex: 1 0 100%;
+	}
+
+	.instructions {
+	  order: 3;
+	  padding: 1rem;
+	  flex: 1 0 auto;
+
+	  > div {
+		font-size: .7rem;
+		text-align: center;
+		padding: 0;
+		font-style: italic;
+	  }
+
 	}
 
 	.mybid.view {
@@ -442,12 +458,12 @@
 	}
 
 	.mybid.edit {
-	  order: 4;
+	  order: 5;
 	}
 
 	.maxbid {
 	  position: relative;
-	  order: 5;
+	  order: 6;
 	}
 
 	.purchase-now-title, .enter-bid-title {
@@ -464,11 +480,11 @@
 	}
 
 	.purchase-now-title {
-	  order: 6;
+	  order: 7;
 	}
 
 	.buy.strike {
-	  order: 7;
+	  order: 8;
 	  display: flex;
 	  flex: 1 0 auto;
 	  padding: 0 1rem 2rem;
@@ -547,6 +563,8 @@ div.window.dialog {
 		  order: 1;
 		  flex: 1 0 40%;
 		  padding: 0 3rem 0 0;
+		  display: flex;
+		  flex-flow: column nowrap;
 		}
 
 		&.bid {
@@ -587,12 +605,16 @@ div.window.dialog {
 		padding: 1rem 3rem 3rem;
 	  }
 
+	  .instructions {
+		padding: 1rem 3rem;
+	  }
+
 	  .purchase-now-title {
 		padding: 1rem 3rem 0;
 	  }
 
 	  .enter-bid-title {
-		padding: 3rem 3rem 0;
+		padding: 0 3rem;
 	  }
 
 	  .buy.strike {
@@ -601,18 +623,6 @@ div.window.dialog {
 
 	  .mybid.edit {
 		position: relative;
-
-		/*&::after {
-		  content: 'OR';
-		  display: inline-block;
-		  position: absolute;
-		  top: 4.25rem;
-		  right: 0;
-		  font-size: 1.75rem;
-		  font-weight: 700;
-		  color: $color-tpe-lighter-grey;
-		}*/
-
 	  }
 
 	  .buy.strike {
