@@ -53,7 +53,7 @@ a {
 #e-COLUMN-0 {
   padding: 2.5rem 1.25rem 0;
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: column nowrap;
   max-width: 70rem;
   margin: 0 auto;
 }
@@ -77,9 +77,10 @@ a {
 #column1 {
   .sub-nav {
 	margin-top: 2.5rem;
+	margin-bottom: 1rem;
 
 	.element {
-	  text-align: right;
+	  text-align: center;
 	  border-bottom: 1px solid $color-tpe-grey;
 
 	  a {
@@ -222,6 +223,28 @@ img {
 
   }
 
+}
+
+@media (max-width: 768px) {
+  .sidebar-open #e-COLUMN-0 {
+	opacity: .25;
+  }
+}
+
+@media (min-width: 768px) {
+  #e-COLUMN-0 {
+	flex-flow: row wrap;
+  }
+  #column1 {
+	.sub-nav {
+
+	  .element {
+		text-align: right;
+	  }
+
+	}
+
+  }
 }
 
 @media (min-width: 1024px) {
