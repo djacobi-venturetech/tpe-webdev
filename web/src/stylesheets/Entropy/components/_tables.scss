@@ -42,3 +42,23 @@
   }
 
 }
+
+@media (max-width: 768px) {
+  .miwt-table {
+
+    > thead > tr > th {
+      font-size: .65rem;
+    }
+
+    .action-column {
+      a.btn {
+        display: block;
+
+        + a.btn {
+          margin-top: .5rem;
+        }
+
+      }
+    }
+  }
+}

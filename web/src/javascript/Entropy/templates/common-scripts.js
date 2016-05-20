@@ -21,9 +21,8 @@ jQuery(function () {
 
 	$(window).on('load', responsiveView);
 	$('.fa-bars').click(function () {
-		var $body = $("#body-wrapper"),
-			open = !$body.hasClass("sidebar-open");
-		openSidebar(open);
+		var $body = $("body");
+		$body.toggleClass('sidebar-open');
 	});
 
 
@@ -157,7 +156,8 @@ jQuery(function () {
 	});
 
 	(function (w) {
-		var $body = $("#body-wrapper");
+		var $body = $("body");
+		var $window = $(window);
 		if ($body.length === 0) return;
 		w.addEventListener("orientationchange", function () {
 			if (w.orientation === 0)
@@ -167,6 +167,11 @@ jQuery(function () {
 		if (w.orientation && w.orientation === 0 && sessionStorage[SIDE_BAR_CLOSED] === undefined) {
 			openSidebar(false);
 		}
+		$window.resize(function(){
+			if ($window.width() > 1024) {
+				$body.removeClass("sidebar-open");
+			}
+		});
 	})(window);
 
 

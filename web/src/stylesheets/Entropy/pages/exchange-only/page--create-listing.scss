@@ -17,11 +17,11 @@
 
 .prop-body {
   display: flex;
-  flex-flow: flex-row;
+  flex-flow: column nowrap;
 
   .prop-group {
 	flex: 1;
-	padding: 0 2rem;
+	padding: 0;
   }
 
 }
@@ -29,7 +29,7 @@
 .prop-editor {
   .prop {
 	input[type="text"], textarea, .select2-container {
-	  min-width: auto;
+	  min-width: 0;
 	  width: 100% !important;
 	}
 
@@ -43,6 +43,7 @@
 	  &.tbl {
 		padding-left: 5px;
 		text-transform: none;
+		display: inline;
 	  }
 
 	}
@@ -51,9 +52,19 @@
 	  .val {
 		width: 100%;
 	  }
+
+	  .packaging .price label {
+		font-weight: 300;
+		margin-top: .25rem;
+		padding-left: 3px;
+		text-transform: none;
+	  }
+
 	}
 
 	&.freshness {
+	  position: relative;
+
 	  &::before {
 		content: 'Fresh/Frozen';
 		display: block;
@@ -61,22 +72,34 @@
 		margin-bottom: .25rem;
 		text-transform: uppercase;
 	  }
+	  &::after {
+		content: '*';
+		position: absolute;
+		top: 4px;
+		left: 14ch;
+		color: red;
+	  }
 	  > span:nth-of-type(1) {
 		margin-right: 1rem;
+	  }
+	  label::after {
+		display: none;
 	  }
 	}
 
 	&.lot-number, &.volume, &.weight {
-	  margin-bottom: 0;
+	  label {
+		margin-bottom: 0;
+	  }
 	}
 
   }
 
   .hint {
-	padding: 0 5px 5px;
+	padding: 0 0 5px;
 	font-size: .85rem;
 	font-style: italic;
-	margin-bottom: 1rem;
+	margin-top: .25rem;
 	color: $color-tpe-grey;
 	display: block;
   }
@@ -149,4 +172,15 @@
 	}
   }
 
+}
+
+@media (min-width: 768px) {
+  .prop-body {
+	flex-flow: row nowrap;
+
+	.prop-group {
+	  padding: 0 2rem;
+	}
+
+  }
 }

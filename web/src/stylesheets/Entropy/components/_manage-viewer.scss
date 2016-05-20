@@ -76,7 +76,7 @@
   .prop-body {
     flex-flow: column nowrap;
 
-    > div:not(.locations) {
+    > div:not(.locations), > div:not(.company-customer) {
       display: flex;
       flex-flow: row nowrap;
     }
@@ -92,6 +92,10 @@
 
     .prop.locations {
       margin-left: 32%;
+    }
+
+    .prop.company-customer {
+      margin-left: 31%;
     }
 
   }
@@ -144,4 +148,50 @@
     }
 
   }
+
+  .customer-viewer, .user-viewer {
+    .prop.picture {
+      flex: 1 0 0;
+    }
+    .prop-body  {
+      flex-flow: column nowrap;
+
+      > div:not(.locations), > div:not(.company-customer) {
+        flex-flow: column nowrap;
+      }
+      .prop.locations, .prop.company-customer {
+        margin-left: 0;
+      }
+    }
+  }
+  .customer-viewer, .user-viewer {
+    .prop-group.contact {
+      padding-left: 0;
+      flex: 1 0 auto;
+      flex-flow: column nowrap;
+      > .prop {
+        flex: 1 0 auto;
+      }
+    }
+  }
+
+  .user-viewer {
+    .prop-group.contact {
+      .name-editor, .prop-group, .name-editor > div,
+      .address > div, > .phone {
+        flex: 1 0 auto;
+      }
+    }
+  }
+
 }
+
+/*@media (min-width: 768px) {
+  .user-viewer,
+  .customer-viewer {
+
+    .prop-body {
+      flex-flow: row nowrap;
+    }
+  }
+}*/

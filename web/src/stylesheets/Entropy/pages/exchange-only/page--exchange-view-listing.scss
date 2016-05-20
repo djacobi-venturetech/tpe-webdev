@@ -58,7 +58,7 @@
 	  flex: 1 0 auto;
 	  align-self: center;
 
-	  span.val span {
+	  .val span {
 		font-size: .75rem;
 		font-weight: 600;
 		background: $color-tpe-beige;
@@ -84,6 +84,7 @@
 		font-style: italic;
 		display: inline-block;
 		margin: 0;
+		text-transform: uppercase;
 	  }
 	}
 
@@ -94,6 +95,11 @@
 	.start-time {
 	  flex: 0 0 auto;
 	  order: 3;
+
+	  .val::before {
+		content: 'Listed at: ';
+	  }
+
 	}
 
 	.location {
@@ -364,7 +370,7 @@
 	  order: 3;
 	}
 
-	.mybid, .maxbid {
+	div.mybid, .maxbid {
 	  padding: 1rem 1rem 2rem;
 	  flex: 1 0 100%;
 	}
@@ -372,29 +378,47 @@
 	.mybid.view {
 	  @extend .prevailing;
 	  order: 2;
-	  color: $color-tpe-green;
+
+	  .amount {
+		&.winning {
+		  color: $color-tpe-green;
+		}
+		&.losing, &.belowreserve {
+		  color: $color-tpe-red;
+		}
+	  }
 
 	  label {
 		color: $color-tpe-black;
 	  }
 
-	  .reserve {
+	  .messages {
 		padding: 7px;
-		text-align: left;
 		position: relative;
+		font-weight: 300;
+		font-size: .75rem;
+		text-align: center;
+		margin-top: .75rem;
 
-		&.warning {
-		  border: 1px solid $color-error-dark;
-		  background: $color-error-light;
-		  color: $color-error-dark;
-		  font-weight: 300;
-		  font-size: .75rem;
+		&.belowreserve, &.warning, &.losing {
+		  border: 1px solid darken($color-tpe-red, 8%);
+		  background: lighten($color-tpe-red, 30%);
+		  color: darken($color-tpe-red, 8%);
+		}
+
+		&.winning {
+		  border: 1px solid $color-success-dark;
+		  background: $color-success-light;
+		  color: $color-success-dark;
 		}
 
 		p {
 		  font-size: .75rem;
 		  font-style: italic;
 		  font-weight: 400;
+		  &:last-child {
+			margin-bottom: 0;
+		  }
 		}
 
 	  }
@@ -480,8 +504,14 @@ div.window.dialog {
   width: 100% !important;
   max-width: 40rem !important;
 
+  .windowcontent {
+	padding: 1.5rem;
+  }
+
   div.warning {
-	margin-bottom: 1rem;
+	margin: .75rem 0 2.25rem;
+	font-weight: 700;
+	font-style: italic;
   }
 
   .actions {
@@ -551,7 +581,7 @@ div.window.dialog {
 
 	.prop-group.bid {
 
-	  .mybid, .maxbid {
+	  div.mybid, .maxbid {
 		padding: 1rem 3rem 3rem;
 	  }
 
