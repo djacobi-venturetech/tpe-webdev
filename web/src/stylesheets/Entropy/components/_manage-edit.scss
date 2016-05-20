@@ -121,10 +121,11 @@
 
 }
 
-.location-edit {
+.location-edit, .company-edit {
   textarea {
     width: 100%;
     height: 10rem;
+    min-width: 0 !important;
   }
 
   .persistence-actions.actions {
@@ -142,8 +143,38 @@
 
 }
 
-.customer-add, .customer-editor, .user-editor, .edit-user {
+.customer-add, .customer-editor, .user-editor, .edit-user, .company-edit {
   .prop-header-actions {
     display: none;
   }
+}
+
+@media (max-width: 600px) {
+
+  .user-edit,
+  .customer-editor,
+  .location-edit,
+  .customer-add,
+  .user-editor {
+    padding: 0;
+
+    .name-editor, .prop-group {
+      flex: 1 0 auto;
+    }
+    .address {
+      flex-flow: column nowrap;
+      > div {
+        flex: 1 0 auto;
+      }
+    }
+
+    .prop-group.email-address {
+      span.val {
+        word-break: break-all;
+        word-break: break-word;
+      }
+    }
+
+  }
+
 }
