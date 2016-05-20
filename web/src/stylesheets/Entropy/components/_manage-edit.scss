@@ -121,7 +121,7 @@
 
 }
 
-.location-edit, .company-edit {
+.location-edit, .company-edit, .company-add {
   textarea {
     width: 100%;
     height: 10rem;
@@ -143,7 +143,7 @@
 
 }
 
-.customer-add, .customer-editor, .user-editor, .edit-user, .company-edit {
+.customer-add, .customer-editor, .user-editor, .edit-user, .company-edit, .company-add {
   .prop-header-actions {
     display: none;
   }
@@ -175,6 +175,18 @@
       }
     }
 
+  }
+
+  .company-add {
+    input {
+      &[type="text"],
+      &[type="tel"],
+      &[type="email"],
+      &[type="url"] {
+        width: 100% !important;
+        min-width: 0 !important;
+      }
+    }
   }
 
 }
