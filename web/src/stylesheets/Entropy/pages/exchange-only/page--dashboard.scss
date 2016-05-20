@@ -1,5 +1,4 @@
 @import "../../../config/base-vars";
-//@import "../../components/exchange-search-filters";
 
 .header {
   display: flex;
@@ -8,7 +7,7 @@
   .title {
 	font-family: $font-raleway;
 	font-weight: 700;
-	font-size: 3rem;
+	font-size: 2rem;
 	color: $color-tpe-black;
 	text-transform: uppercase;
   }
@@ -16,8 +15,19 @@
 	text-align: right;
 	flex: 1;
 
-	.btn {
+	.btn.add {
+	  color: transparent;
+	  width: 35px;
+	  overflow: hidden;
 	  align-self: flex-end;
+
+	  &:hover {
+		color: transparent;
+	  }
+
+	  &::before {
+		color: $color-white !important;
+	  }
 
 	}
 
@@ -34,10 +44,16 @@
   font-weight: 700;
   font-family: $font-raleway;
   margin-top: 1.5rem;
+  flex-flow: column nowrap;
+
+  > span:not(.listing-counts) {
+	order: 2;
+  }
 
   .listing-counts {
+	order: 1;
 	flex: 1;
-	text-align: right;
+	text-align: left;
 
 	span {
 	  color: $color-tpe-black;
@@ -70,7 +86,7 @@
 .miwt-table > tbody > tr {
   > td.strike-price, > td.reserve-price, > td.current-bid {
 	font-weight: 700;
-	font-size: 1.5rem;
+	font-size: 1rem;
 	text-align: center;
   }
 
@@ -109,11 +125,11 @@
   > span {
 	display: flex;
 	flex: 0 0 10%;
-	margin: 0 1rem;
+	margin: 0 .25rem;
 	flex-flow: column nowrap;
 	position: relative;
-	min-width: 8rem;
-	max-width: 8rem;
+	min-width: 5rem;
+	max-width: 5rem;
 
 	.btn {
 	  background: transparent;
@@ -124,6 +140,8 @@
 	  margin: 0 auto;
 	  position: relative;
 	  z-index: 10;
+	  padding: .375rem .25rem;
+	  white-space: normal;
 
 	  &.count {
 		font-size: 2.5rem;
@@ -147,21 +165,124 @@
 		height: 120%;
 		left: 0;
 		position: absolute;
-		top: -16px;
+		top: -11px;
 		width: 100%;
 		z-index: 0;
 	  }
 
-	  &::after {
-		content: '';
-		display: block;
-		position: absolute;
-		bottom: auto;
-		top: 101%;
-		left: 0;
-		border-left: 64px solid transparent;
-		border-right: 64px solid transparent;
-		border-top: 20px solid $color-tpe-yellow;
+	}
+
+  }
+
+}
+
+.definition {
+  display: flex;
+  flex-flow: column nowrap;
+  font-size: .75rem;
+  margin-top: 4rem;
+
+  > div {
+	flex: 1;
+	padding: 0 1rem 1rem;
+	font-style: italic;
+	color: $color-tpe-grey;
+
+	span {
+	  font-weight: 700;
+	}
+
+  }
+
+}
+
+@media(max-width: 600px) {
+
+  .miwt-table > tbody > tr, .miwt-table > thead > tr {
+	td.interval, th.interval,
+	td.type-string, th.type-string {
+	  display: none;
+	}
+  }
+
+}
+
+@media (min-width: 768px) {
+  .header {
+
+	.title {
+	  font-size: 3rem;
+	}
+
+	.add-listing {
+	  .btn.add {
+		color: $color-white;
+		width: auto;
+		overflow: visible;
+
+		&:hover {
+		  color: $color-white;
+		}
+
+	  }
+
+	}
+
+  }
+
+  .filter-bar {
+	flex-flow: row nowrap;
+	align-items: center;
+
+	> span:not(.listing-counts) {
+	  order: 1;
+	}
+
+	.listing-counts {
+	  order: 2;
+	  text-align: right;
+	}
+
+  }
+
+  .miwt-table > tbody > tr {
+	> td.strike-price, > td.reserve-price, > td.current-bid {
+	  font-size: 1.15rem;
+	}
+  }
+
+  .definition {
+	flex-flow: row wrap;
+  }
+
+  .search-bar {
+	> span {
+	  flex: 0 0 10%;
+	  margin: 0 1rem;
+	  min-width: 8rem;
+	  max-width: 8rem;
+
+	  .btn {
+		padding: .375rem 1rem;
+		white-space: nowrap;
+	  }
+
+	  &.active {
+		&::before {
+		  top: -16px;
+		}
+
+		&::after {
+		  content: '';
+		  display: block;
+		  position: absolute;
+		  bottom: auto;
+		  top: 101%;
+		  left: 0;
+		  border-left: 64px solid transparent;
+		  border-right: 64px solid transparent;
+		  border-top: 20px solid $color-tpe-yellow;
+		}
 	  }
 
 	}
@@ -170,41 +291,10 @@
 
 }
 
-.definition {
-  display: flex;
-  flex-flow: row wrap;
-  font-size: .75rem;
-  margin-top: 4rem;
-
-  > div {
-	flex: 1;
-	padding: 0 1rem 1rem;
-	font-style: italic;
-	color: $color-tpe-grey;
-
-	span {
-	  font-weight: 700;
+@media (min-width: 1024px) {
+  .miwt-table > tbody > tr {
+	> td.strike-price, > td.reserve-price, > td.current-bid {
+	  font-size: 1.5rem;
 	}
-
   }
-
-}
-.definition {
-  display: flex;
-  flex-flow: row wrap;
-  font-size: .75rem;
-  margin-top: 4rem;
-
-  > div {
-	flex: 1;
-	padding: 0 1rem 1rem;
-	font-style: italic;
-	color: $color-tpe-grey;
-
-	span {
-	  font-weight: 700;
-	}
-
-  }
-
 }
