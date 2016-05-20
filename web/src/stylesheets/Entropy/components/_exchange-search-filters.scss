@@ -64,8 +64,8 @@
 
   .quick-filter {
 	display: flex;
-	flex: 0 0 25%;
-	margin: 0 .5rem;
+	flex: 0 0 20%;
+	margin: 0 .25rem;
 	flex-flow: column nowrap;
 	position: relative;
 
@@ -82,7 +82,7 @@
 		height: 120%;
 		left: 0;
 		position: absolute;
-		top: -16px;
+		top: -9px;
 		width: 100%;
 		z-index: 0;
 	  }
@@ -159,6 +159,10 @@
 		.btn {
 		  position: relative;
 		  color: $color-white;
+		}
+
+		&::before {
+		  top: -16px;
 		}
 
 		&::after {
