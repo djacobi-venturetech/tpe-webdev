@@ -146,6 +146,11 @@
 	  > li.mi-parent {
 		cursor: pointer;
 
+		> div.menuitemlabel {
+		  text-align: right;
+		  font-size: .75rem;
+		}
+
 		> div.menuitemlabel:hover span {
 		  font-weight: 600;
 		}
@@ -271,7 +276,35 @@
   #header {
 
 	.logo-con {
-	  max-width: 18rem;
+	  max-width: 16rem;
+	}
+
+	div.menu {
+
+	  > ul.menu {
+
+		> li {
+
+		  + li {
+			margin-left: 3.5rem;
+		  }
+
+		}
+
+	  }
+
+	}
+
+  }
+
+}
+
+@media (min-width: 1285px) {
+
+  #header {
+
+	.logo-con {
+	  max-width: 16rem;
 	}
 
 	div.menu {
