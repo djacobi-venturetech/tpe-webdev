@@ -151,7 +151,7 @@
 
   .customer-viewer, .user-viewer {
     .prop.picture {
-      flex: 1 0 0;
+      flex: 1 0 auto;
     }
     .prop-body  {
       flex-flow: column nowrap;
@@ -159,12 +159,13 @@
       > div:not(.locations), > div:not(.company-customer) {
         flex-flow: column nowrap;
       }
+
       .prop.locations, .prop.company-customer {
         margin-left: 0;
       }
+
     }
-  }
-  .customer-viewer, .user-viewer {
+
     .prop-group.contact {
       padding-left: 0;
       flex: 1 0 auto;
@@ -172,16 +173,27 @@
       > .prop {
         flex: 1 0 auto;
       }
-    }
-  }
-
-  .user-viewer {
-    .prop-group.contact {
       .name-editor, .prop-group, .name-editor > div,
       .address > div, > .phone {
         flex: 1 0 auto;
       }
+
+      .prop-group.email-address {
+        span.val {
+          word-break: break-all;
+          word-break: break-word;
+        }
+      }
+
+      .address {
+        flex-flow: column nowrap;
+        > div {
+          flex: 1 0 auto;
+        }
+      }
+
     }
+
   }
 
 }
