@@ -31,6 +31,7 @@
 		padding-right: 5px;
 		font-weight: 300;
 		font-size: 85%;
+		color: $color-white;
 	  }
 	}
 
@@ -44,4 +45,23 @@
 
 .action-column .btn {
 	@include button-size($btn-padding-y-sm, $btn-padding-x-sm, $font-size-xs, $line-height-sm, $btn-border-radius-sm);
+}
+
+@media (max-width: 600px) {
+  .actions, .add-listing {
+	.btn.add {
+	  color: transparent;
+	  width: 35px;
+	  overflow: hidden;
+
+	  &:hover {
+		color: transparent;
+	  }
+
+	  &::before {
+		color: $color-white !important;
+	  }
+
+	}
+  }
 }
