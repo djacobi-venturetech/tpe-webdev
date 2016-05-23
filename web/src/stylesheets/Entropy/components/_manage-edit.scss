@@ -2,7 +2,9 @@
 .customer-editor,
 .location-edit,
 .customer-add,
-.user-editor {
+.user-editor,
+.company-edit,
+.company-add {
   max-width: 100%;
   padding: 0 5rem;
 
@@ -27,12 +29,12 @@
 
   .address {
     > div {
-      flex: 2 0 50%;
+      flex: 2 0 45%;
     }
   }
 
   .phone {
-    flex: 1 0 50%;
+    flex: 1 0 45%;
   }
 
   label {
@@ -42,6 +44,16 @@
   .persistence-actions.actions {
     text-align: right;
     padding-right: 5rem;
+  }
+
+  input[type="text"], input[type="tel"] {
+    max-width: 100%;
+    min-width: 0 !important;
+    width: 100%;
+  }
+
+  .prop.postal-code {
+    max-width: 50%;
   }
 
 }
@@ -155,7 +167,9 @@
   .customer-editor,
   .location-edit,
   .customer-add,
-  .user-editor {
+  .user-editor,
+  .company-edit,
+  .company-add {
     padding: 0;
 
     .name-editor, .prop-group {
