@@ -86,6 +86,24 @@ div.window.dialog /*specificity*/ {
 	  float: right;
 	}
 
+  &.option-dialog {
+	width: 100% !important;
+	max-width: 40rem !important;
+
+	.windowcontent {
+	  padding: 1.5rem;
+	}
+
+	.option-dialog-message {
+	  margin: 1.25rem 0;
+	}
+
+	.actions {
+	  text-align: right;
+	}
+
+  }
+
 
 
 }
