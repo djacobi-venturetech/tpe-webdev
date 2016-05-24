@@ -174,8 +174,9 @@
 
     .name-editor, .prop-group {
       flex: 1 0 auto;
+      flex-flow: column nowrap;
     }
-    .address {
+    .address, .phone {
       flex-flow: column nowrap;
       > div {
         flex: 1 0 auto;
@@ -189,6 +190,18 @@
       }
     }
 
+  }
+
+  .user-edit, .user-editor {
+    .prop-body {
+      flex-flow: column nowrap;
+      > div {
+        flex: 1 0 auto;
+      }
+      > div:last-child {
+        flex: 1 0 auto;
+      }
+    }
   }
 
   .company-add {
