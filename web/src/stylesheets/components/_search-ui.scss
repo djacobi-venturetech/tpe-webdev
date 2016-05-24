@@ -197,6 +197,10 @@ select.bulk_actions {
 	top: 5px;
 	right: 0;
 	margin-top: 0;
+
+	#admin-template & {
+	  top: -20px;
+	}
   }
   .search-bar {
 	.constraints {
