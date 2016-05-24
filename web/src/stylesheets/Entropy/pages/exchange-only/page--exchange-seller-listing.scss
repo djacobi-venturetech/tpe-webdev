@@ -678,6 +678,12 @@ div.window.dialog {
 
 }
 
+@media (max-width: 767px) {
+  .intervals > div div.miwt-collapsable-content {
+	right: 0;
+  }
+}
+
 @media (min-width: 768px) {
 
   div.bids, div.intervals {
