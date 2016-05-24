@@ -63,6 +63,7 @@ a {
   #column1 {
 	float: none;
 	flex: 1;
+	position: relative;
   }
   #column2 {
 	flex: 4;
@@ -76,7 +77,7 @@ a {
 
 #column1 {
   .sub-nav {
-	margin-top: 4.5rem;
+	margin-top: 0;
 	margin-bottom: 1rem;
 
 	.element {
@@ -106,13 +107,9 @@ a {
 
 }
 
-#admin-template #column1 .sub-nav {
-  margin-top: 2.5rem;
-}
-
 .text.back-link {
   float: right;
-  margin-top: 1.55rem;
+  margin-top: 10px;
 
   p {
 	margin: 0;
@@ -122,22 +119,16 @@ a {
 	color: $color-tpe-brand;
 	font-size: .875rem;
 	text-decoration: none;
+	display: block;
+	width: 15px;
+	overflow: hidden;
+	white-space: nowrap;
 
 	&::before {
 	  content: '\f112';
 	  padding-right: 5px;
 	  font-family: FontAwesome;
 	  text-decoration: none;
-	}
-
-	&::after {
-	  content: '';
-	  height: 1px;
-	  background: $color-tpe-brand;
-	  display: block;
-	  width: 89%;
-	  margin-top: -5px;
-	  margin-left: 11%;
 	}
 
 	&:hover {
@@ -161,6 +152,7 @@ h1, span.title {
   font-weight: 700;
   color: $color-tpe-black;
   text-transform: uppercase;
+  padding-right: 40px;
 }
 
 ::selection {
@@ -276,8 +268,12 @@ img {
   #e-COLUMN-0 {
 	flex-flow: row wrap;
   }
+  h1, span.title {
+	padding-right: 0;
+  }
   #column1 {
 	.sub-nav {
+	  margin-top: 4.5rem;
 
 	  .element {
 		text-align: right;
@@ -285,6 +281,35 @@ img {
 
 	}
 
+  }
+  #admin-template #column1 .sub-nav {
+	margin-top: 2.5rem;
+  }
+  .text.back-link {
+	margin-top: 1.55rem;
+	a {
+	  color: $color-tpe-brand;
+	  font-size: .875rem;
+	  text-decoration: none;
+	  display: block;
+	  width: auto;
+	  overflow: hidden;
+	  white-space: nowrap;
+
+	  &::after {
+		content: '';
+		height: 1px;
+		background: $color-tpe-brand;
+		display: block;
+		width: 89%;
+		margin-top: -5px;
+		margin-left: 11%;
+	  }
+
+	  &:hover {
+		color: $color-tpe-grey;
+	  }
+	}
   }
 }
 
