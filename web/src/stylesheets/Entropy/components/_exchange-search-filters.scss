@@ -91,7 +91,7 @@
 
 	.btn {
 	  background: transparent;
-	  font-size: .8rem;
+	  font-size: .7rem;
 	  text-transform: uppercase;
 	  font-family: $font-raleway;
 	  font-weight: 500;
@@ -153,6 +153,7 @@
 
 	  .btn {
 		padding: .375rem 1rem;
+		font-size: .8rem;
 	  }
 
 	  &.selected {
