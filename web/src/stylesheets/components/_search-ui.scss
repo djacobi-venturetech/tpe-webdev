@@ -192,6 +192,12 @@ select.bulk_actions {
 }
 
 @media (max-width: 600px) {
+  .search .entity-actions, .search-wrapper .entity-actions {
+	position: absolute;
+	top: 10px;
+	right: 0;
+	margin-top: 0;
+  }
   .search-bar {
 	.constraints {
 	  .constraint {
