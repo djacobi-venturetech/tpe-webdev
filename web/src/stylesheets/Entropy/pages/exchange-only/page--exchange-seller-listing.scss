@@ -14,11 +14,13 @@
   span.persistence-actions.actions {
 	display: block;
 	width: 100%;
-	text-align: right;
-	margin-top: 4.5rem;
+	text-align: center;
+	margin-top: 3rem;
+	margin-bottom: .5rem;
 
 	.btn {
 	  @include button-size($btn-padding-y-sm, $btn-padding-x-sm, $font-size-sm, $line-height-sm, $border-radius-sm);
+	  font-size: .75rem;
 
 	  &.edit {
 		@include button-variant($btn-secondary-color, $btn-secondary-bg, $btn-secondary-border);
@@ -30,12 +32,8 @@
 
 	}
 
-	+ div.bids {
-	  margin-top: -2.5rem;
-	}
-
-	+ .prop-body {
-	  margin-top: -2.5rem;
+	+ div.bids, + .prop-body {
+	  margin-top: 0;
 	}
 
   }
@@ -116,7 +114,7 @@ div.header {
 div.bids, div.intervals {
 
   > label {
-	font-size: 2rem;
+	font-size: 1.75rem;
 	text-transform: uppercase;
 	font-family: $font-raleway;
 	color: $color-tpe-black;
@@ -197,6 +195,7 @@ div.bids {
 
 	  span.time {
 		font-size: .75rem;
+		display: block;
 	  }
 
 	}
@@ -228,7 +227,7 @@ div.bids {
 
   div.winner {
 	display: flex;
-	flex-flow: row nowrap;
+	flex-flow: column nowrap;
 	background: $color-white;
 	padding: 1rem;
 	border: 2px solid $color-tpe-yellow;
@@ -254,6 +253,7 @@ div.bids {
 
 .intervals {
   margin-top: 4.5rem;
+  position: relative;
 
   > div {
 	margin-top: 1.5rem;
@@ -319,21 +319,25 @@ div.bids {
 
 	div.instructions {
 	  flex: 1 1 auto;
-	  max-width: 70%;
+	  max-width: 100%;
 	  line-height: 1;
-	  align-self: center;
+	  align-self: flex-start;
 	  font-size: .9rem;
 
 	  &.ready-instructions {
-		text-align: right;
+		margin-top: .5rem;
+		text-align: left;
 	  }
 
 	}
 
 	div.actions.schedule-actions {
-	  flex: 1;
 	  text-align: right;
-	  margin-top: -5.5rem;
+	  //flex: 1;
+	  //margin-top: -8.5rem;
+	  position: absolute;
+	  top: 0;
+	  right: 0;
 	}
 
 	div.interval {
@@ -370,7 +374,7 @@ div.bids {
 		padding: 1rem;
 		flex: 3;
 		display: flex;
-		flex-flow: row wrap;
+		flex-flow: column nowrap;
 		font-size: .85rem;
 
 		.prop {
@@ -380,6 +384,11 @@ div.bids {
 			.element {
 			  margin-bottom: .5rem;
 			}
+		  }
+
+		  input[type="text"], .select2-container {
+			max-width: 100%;
+			width: 100%;
 		  }
 
 		}
@@ -443,9 +452,10 @@ div.bids {
 		}
 
 		.interval-props {
+		  max-width: 60%;
 
 		  .prop {
-			flex: 1 0 40%;
+			flex: 1 0 0;
 		  }
 
 		  .prop.buyers {
@@ -455,7 +465,7 @@ div.bids {
 			  font-weight: 700;
 			}
 			.select2-container {
-			  width: 11.4rem !important;
+			  width: 100% !important;
 			}
 		  }
 		}
@@ -521,7 +531,7 @@ div.bids {
 	content: 'Listing Details';
 	display: block;
 	width: 100%;
-	font-size: 2rem;
+	font-size: 1.75rem;
 	border-bottom: 2px solid $color-tpe-grey;
 	padding-bottom: .25rem;
 	margin-bottom: 1rem;
@@ -535,11 +545,11 @@ div.bids {
 	background: $color-white;
 	padding: 1rem;
 	display: flex;
-	flex-flow: row wrap;
+	flex-flow: column nowrap;
 	font-size: .85rem;
 
 	.prop-group.image {
-	  flex: 1 1 20%;
+	  flex: 1 0 0;
 
 	  label {
 		display: none;
@@ -556,7 +566,7 @@ div.bids {
 	}
 
 	.prop-group.overview, .prop-group.notes {
-	  flex: 1 1 30%;
+	  flex: 1 0 0;
 
 	  .prop {
 		margin-bottom: .5rem;
@@ -580,12 +590,12 @@ div.bids {
 	}
 
 	.prop-group.overview {
-	  padding-left: 3rem;
-	  padding-right: 2rem;
+	  padding-left: 0;
+	  padding-right: 0;
 	}
 
 	.prop-group.notes {
-	  padding-left: 1rem;
+	  padding-left: 0;
 
 	  .prop.note {
 		margin-bottom: 1.5rem;
@@ -640,6 +650,173 @@ div.window.dialog {
 
   .actions {
 	text-align: right;
+  }
+
+  &.buyer-chooser {
+	.search-bar {
+	  .constraints {
+		display: flex;
+		flex-flow: row nowrap;
+		justify-content: space-between;
+		.constraint {
+		  width: 31%;
+		  margin: 0;
+		  padding: 0;
+
+		  input[type="text"] {
+			max-width: 100%;
+		  }
+		}
+	  }
+	  .actions.search-actions {
+		margin-top: .25rem;
+		padding-right: 0;
+		width: 100%;
+	  }
+	}
+  }
+
+}
+
+@media (max-width: 767px) {
+  .intervals > div div.miwt-collapsable-content {
+	right: 0;
+  }
+}
+
+@media (min-width: 768px) {
+
+  div.bids, div.intervals {
+
+	> label {
+	  font-size: 2rem;
+	}
+
+  }
+
+  .prop-body {
+	margin-top: 4.5rem;
+
+	&::before {
+	  font-size: 2rem;
+	}
+
+  }
+
+  .listing {
+
+	span.persistence-actions.actions {
+	  text-align: right;
+	  margin-bottom: 0;
+	  margin-top: 4.5rem;
+
+	  .btn {
+		font-size: .875rem;
+	  }
+	  + div.bids, + .prop-body {
+		margin-top: -2.5rem;
+	  }
+	}
+  }
+
+  div.bids {
+
+	div.winner {
+	  display: flex;
+	  flex-flow: row nowrap;
+	}
+
+	.bids {
+	  div.bid {
+		span.time {
+		  font-size: .75rem;
+		  display: inline;
+		}
+	  }
+	}
+
+  }
+
+  .prop-body > div {
+	flex-flow: row wrap;
+
+	.prop-group.overview {
+	  padding-left: 3rem;
+	  padding-right: 2rem;
+	}
+
+	.prop-group.image {
+	  flex: 1 1 20%;
+	}
+
+	.prop-group.overview, .prop-group.notes {
+	  flex: 1 1 30%;
+	}
+
+	.prop-group.notes {
+	  padding-left: 1rem;
+	}
+
+  }
+
+  .intervals {
+
+	> div {
+
+	  div.instructions {
+		flex: 1 1 auto;
+		max-width: 70%;
+		line-height: 1;
+		align-self: center;
+		font-size: .9rem;
+
+		&.ready-instructions {
+		  margin-top: 0;
+		  text-align: right;
+		}
+
+	  }
+
+	  div.interval {
+
+		.interval-props {
+		  flex-flow: row wrap;
+		}
+
+		&.editor {
+		  flex-flow: row wrap;
+
+		  .message-container {
+			flex: 1 0 100%;
+		  }
+
+		  .interval-props {
+			max-width: none;
+
+			.prop {
+			  flex: 1 0 40%;
+
+			  .selec2-container, input[type="text"] {
+				width: 11.4rem;
+			  }
+
+			  &.buyers {
+				.select2-container {
+				  width: 11.4rem !important;
+				}
+
+			  }
+
+			}
+
+		  }
+
+		}
+
+	  }
+
+	}
+
   }
 
 }

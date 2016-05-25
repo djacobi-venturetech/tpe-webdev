@@ -2,7 +2,9 @@
 .customer-editor,
 .location-edit,
 .customer-add,
-.user-editor {
+.user-editor,
+.company-edit,
+.company-add {
   max-width: 100%;
   padding: 0 5rem;
 
@@ -27,12 +29,15 @@
 
   .address {
     > div {
-      flex: 2 0 50%;
+      flex: 2 0 45%;
     }
   }
 
   .phone {
-    flex: 1 0 50%;
+    flex: 1 0 45%;
+    .prop {
+      width: 100%;
+    }
   }
 
   label {
@@ -42,6 +47,16 @@
   .persistence-actions.actions {
     text-align: right;
     padding-right: 5rem;
+  }
+
+  input[type="text"], input[type="tel"] {
+    max-width: 100%;
+    min-width: 0 !important;
+    width: 100%;
+  }
+
+  .prop.postal-code {
+    max-width: 50%;
   }
 
 }
@@ -121,10 +136,11 @@
 
 }
 
-.location-edit {
+.location-edit, .company-edit, .company-add {
   textarea {
     width: 100%;
     height: 10rem;
+    min-width: 0 !important;
   }
 
   .persistence-actions.actions {
@@ -142,8 +158,65 @@
 
 }
 
-.customer-add, .customer-editor, .user-editor, .edit-user {
+.customer-add, .customer-editor, .user-editor, .edit-user, .company-edit, .company-add {
   .prop-header-actions {
     display: none;
   }
+}
+
+@media (max-width: 600px) {
+
+  .user-edit,
+  .customer-editor,
+  .location-edit,
+  .customer-add,
+  .user-editor,
+  .company-edit,
+  .company-add {
+    padding: 0;
+
+    .name-editor, .prop-group {
+      flex: 1 0 auto;
+      flex-flow: column nowrap;
+    }
+    .address, .phone {
+      flex-flow: column nowrap;
+      > div {
+        flex: 1 0 auto;
+      }
+    }
+
+    .prop-group.email-address {
+      span.val {
+        word-break: break-all;
+        word-break: break-word;
+      }
+    }
+
+  }
+
+  .user-edit, .user-editor {
+    .prop-body {
+      flex-flow: column nowrap;
+      > div {
+        flex: 1 0 auto;
+      }
+      > div:last-child {
+        flex: 1 0 auto;
+      }
+    }
+  }
+
+  .company-add {
+    input {
+      &[type="text"],
+      &[type="tel"],
+      &[type="email"],
+      &[type="url"] {
+        width: 100% !important;
+        min-width: 0 !important;
+      }
+    }
+  }
+
 }
