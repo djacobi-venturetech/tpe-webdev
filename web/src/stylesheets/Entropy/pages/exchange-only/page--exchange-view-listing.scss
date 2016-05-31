@@ -187,6 +187,12 @@
 
 	}
 
+	.warehouse-location {
+	  label, span.val {
+		display: block;
+	  }
+	}
+
 	.freshness, .kill-date, .ship-date, .warehouse-location,
 	.pick-up-date, .pick-up-time {
 	  label {

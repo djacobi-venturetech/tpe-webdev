@@ -110,6 +110,23 @@
     margin: 0;
   }
 
+  .field.eula {
+    flex-direction: row;
+    &.checkbox input[type="checkbox"] {
+      margin-left: 0;
+      position: relative;
+      margin-top: 0;
+    }
+    p {
+      color: $color-tpe-black;
+      margin-bottom: 0;
+    }
+    .label {
+      white-space: normal;
+      padding: 6px 0 0 6px;
+    }
+  }
+
 }
 
 .retrieve-password-con {
@@ -215,6 +232,27 @@
       display: block;
     }
 
+  }
+
+}
+
+.set-password-container {
+  max-width: 45rem;
+
+  .new-user-signin {
+    text-align: center;
+    margin-top: 5rem;
+
+    + .password-reset.form-signin {
+      width: 30rem;
+      margin: 0 auto;
+    }
+
+  }
+
+  .password-entry.form-signin {
+    max-width: 370px;
+    margin: 5rem auto 0;
   }
 
 }
