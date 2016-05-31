@@ -1,0 +1,113 @@
+@import "../../config/base-vars";
+@import "../../../../../bower_components/bootstrap/scss/mixins";
+@import "../../../../../bower_components/bootstrap/scss/buttons";
+
+#body {
+  width: 100%;
+  max-width: 70rem;
+  margin: 0 auto;
+  padding: 3rem .5rem;
+}
+
+.form_entry {
+
+  p {
+    margin-top: .5rem;
+    margin-bottom: 0;
+  }
+
+  .question {
+    display: flex;
+    flex-flow: column nowrap;
+
+    > div {
+      margin-bottom: 1rem;
+    }
+
+  }
+
+  .given_name_container{
+    margin-bottom: 1rem;
+  }
+
+  label, span.label {
+    display: block;
+    color: $color-tpe-black;
+    font-size: .85rem;
+    margin: 0 0 .25rem;
+    text-align: left;
+    padding: 0;
+  }
+
+  div.name_form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  input, textarea {
+    border: 2px solid $color-tpe-grey;
+    width: 100%;
+  }
+
+  .phone_number_form {
+    width: 100%;
+  }
+
+  span.submit_button {
+    float: right;
+
+    button.submit_button {
+      @include button-variant($color-white, $btn-primary-bg, $btn-primary-border);
+      border-bottom: 3px solid $btn-primary-border;
+      font-weight: 700;
+      font-family: $font-open-sans;
+    }
+
+  }
+
+}
+
+@media (min-width: 768px) {
+  #body {
+    padding: 3rem 0;
+  }
+
+  .form_entry {
+    padding: 0 5rem;
+
+    .question {
+      flex-flow: row wrap;
+
+      &:nth-of-type(2) {
+        > .user-entry-required {
+          flex: 1 0 100%;
+        }
+      }
+
+    }
+
+    .given_name_container, .email_field {
+      padding-right: 1rem;
+      margin-bottom: 0;
+    }
+
+    div.name_field {
+      flex: 1 0 100%;
+      div.name_form {
+        flex-direction: row;
+
+        .part {
+          flex: 1 0 50%;
+        }
+
+      }
+
+    }
+
+    .email_field, .phone_field {
+      flex: 1 0 50%;
+    }
+
+  }
+
+}
