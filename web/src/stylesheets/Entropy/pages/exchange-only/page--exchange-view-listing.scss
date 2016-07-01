@@ -412,6 +412,18 @@
 		color: $color-tpe-black;
 	  }
 
+	  .max.bid.amount {
+		font-size: .75rem;
+
+		label, span.mymaxbid {
+		  font-size: .75rem;
+		}
+
+		span.mymaxbid {
+		  margin-left: .5rem;
+		}
+	  }
+
 	  .messages {
 		padding: 7px;
 		position: relative;
