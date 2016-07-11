@@ -27,8 +27,15 @@
 
 }
 
-#column1 > .miwt {
-  margin-top: 3.5rem;
+.enclosing #column1 {
+  position: static;
+
+  > .miwt {
+	margin-top: 3.5rem;
+  }
+  > .text.title + .miwt {
+	margin-top: 3rem;
+  }
 }
 
 .listing-search {
@@ -96,6 +103,10 @@
 	}
   }
 
+}
+
+.text.title + .miwt .listing-search .actions.entity-actions {
+  top: -5.5rem;
 }
 
 .listing-main-wrapper, .listing-bid-wrapper {
@@ -391,6 +402,15 @@ div.window.dialog {
 
   .emails {
 	margin-bottom: 1rem;
+
+	label::after {
+	  content: '(Comma separated email addresses)';
+	  font-size: .6rem;
+	  font-style: italic;
+	  font-weight: normal;
+	  margin-left: .5rem;
+	  text-transform: none;
+	}
   }
   label {
 	color: $color-tpe-black;
@@ -401,10 +421,38 @@ div.window.dialog {
   }
   input {
 	border: 2px solid $color-tpe-light-grey;
+	width: 100%;
   }
 
   div.actions {
 	text-align: right;
+  }
+
+  div.sample.text {
+	padding: .75rem;
+	border: 1px dashed $color-tpe-light-grey;
+	margin: 2.5rem 0 1rem;
+	color: $color-tpe-grey;
+	position: relative;
+	font-style: italic;
+
+	p:last-child {
+	  margin-bottom: 0;
+	}
+
+	&::before {
+	  content: 'Email Content:';
+	  display: block;
+	  position: absolute;
+	  top: -25px;
+	  left: 0;
+	  font-weight: 800;
+	  font-size: .85rem;
+	  color: $color-tpe-black;
+	  font-style: normal;
+	  text-transform: uppercase;
+	}
+
   }
 
 }
@@ -427,14 +475,24 @@ div.window.dialog {
 
   }
 
+  .text.title {
+	+ .html.add-listing {
+	  padding-right: 9.5rem;
+	}
+  }
+
   .listing-search {
 	.actions.entity-actions {
-	  right: 11rem;
+	  right: 0;
 
 	  > button.btn {
 		font-size: 1rem;
 	  }
 	}
+  }
+
+  .text.title + .miwt .listing-search .actions.entity-actions {
+	top: -2.5rem;
   }
 
   .listing-main-wrapper {
