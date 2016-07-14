@@ -260,7 +260,8 @@
 
 	.message-container {
 	  width: 100%;
-	  margin: 10px 1rem;
+	  margin: 0 2rem;
+	  font-size: .75rem;
 	}
 
 	> div:not(.buyer-warning) {
@@ -424,18 +425,32 @@
 		}
 	  }
 
+	  .current.amount {
+		display: flex;
+		flex-flow: column nowrap;
+	  }
+
+	}
+
+	.reserve.warning {
+	  width: 100%;
+	  padding: 0 2rem;
+
 	  .messages {
 		padding: 7px;
 		position: relative;
 		font-weight: 300;
 		font-size: .75rem;
 		text-align: center;
-		margin-top: .75rem;
+		margin-top: 5px;
 
 		&.belowreserve, &.warning, &.losing {
-		  border: 1px solid darken($color-tpe-red, 8%);
+		  /*border: 1px solid darken($color-tpe-red, 8%);
 		  background: lighten($color-tpe-red, 30%);
-		  color: darken($color-tpe-red, 8%);
+		  color: darken($color-tpe-red, 8%);*/
+		  border: 1px solid $color-error-dark;
+		  background: $color-error-light;
+		  color: $color-error-dark;
 		}
 
 		&.winning {
@@ -446,15 +461,17 @@
 
 		p {
 		  font-size: .75rem;
-		  font-style: italic;
 		  font-weight: 400;
+		  margin-bottom: 0;
+		  + p {
+			margin-top: .5rem;
+		  }
 		  &:last-child {
 			margin-bottom: 0;
 		  }
 		}
 
 	  }
-
 	}
 
 	.mybid.edit, .maxbid {
