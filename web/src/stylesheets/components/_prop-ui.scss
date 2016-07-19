@@ -108,9 +108,43 @@
 }
 
 .prop-viewer {
-	.actions.top {
-		display: none;
+  .actions.top {
+	  display: none;
+  }
+  .prop {
+	display: block;
+
+	label, span, div.address {
+	  display: inline-block;
+	  vertical-align: top;
 	}
+
+	label {
+	  margin-bottom: 0;
+
+	  &::after {
+		content: ':';
+		margin-right: 8px;
+	  }
+
+	}
+
+	&.timezone > label {
+	  margin-top: 0;
+	}
+
+	&.email > div {
+	  margin: 0;
+	  padding: 0;
+	}
+
+	> .address {
+	  span {
+		margin-right: 8px;
+	  }
+	}
+
+  }
 }
 
 .prop-editor {
