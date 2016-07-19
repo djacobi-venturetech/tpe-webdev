@@ -15,11 +15,11 @@
 
   .prop-body {
     display: flex;
-    flex-flow: row nowrap;
+    flex-flow: column nowrap;
 
-    .prop {
+    /*.prop {
       margin-bottom: 2rem;
-    }
+    }*/
 
   }
 
@@ -78,7 +78,7 @@
 
     > div:not(.locations), > div:not(.company-customer) {
       display: flex;
-      flex-flow: row nowrap;
+      flex-flow: column nowrap;
     }
 
     > div.prop-group.contact {
@@ -90,13 +90,13 @@
 
     }
 
-    .prop.locations {
+    /*.prop.locations {
       margin-left: 32%;
     }
 
     .prop.company-customer {
       margin-left: 31%;
-    }
+    }*/
 
   }
 
