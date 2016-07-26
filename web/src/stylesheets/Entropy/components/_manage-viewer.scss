@@ -8,6 +8,58 @@
   padding: 2rem;
   background: #fff;
   border: 1px solid $color-tpe-beige;
+
+    .actions.top {
+      display: block;
+      margin-top: 0;
+    }
+    .prop {
+      display: block;
+
+      label, > span, div.address {
+        display: block;
+        vertical-align: top;
+        width: 100%;
+      }
+
+      label {
+        margin-bottom: 0;
+        text-align: left;
+        font-weight: normal;
+        color: $color-tpe-light-grey;
+
+        &::after {
+          content: ':';
+          margin-right: 15px;
+        }
+
+      }
+
+      &.timezone > label {
+        margin-top: 0;
+      }
+
+      &.email > div {
+        margin: 0;
+        padding: 0;
+      }
+
+      > .address {
+        span {
+          display: block;
+
+          /*&.address_line::after {
+			content: ',';
+		  }*/
+        }
+      }
+
+    }
+
+  .bottom.actions {
+    display: none;
+  }
+
 }
 
 .user-viewer,
@@ -26,6 +78,7 @@
   .prop.picture {
     flex: 1 0 30%;
     text-align: center;
+    position: relative;
   }
 
   .prop-group.contact {
@@ -65,8 +118,229 @@
 
   }
 
-  .persistence-actions.actions {
-    text-align: right;
+}
+
+.prop.cert-info {
+  padding: 1rem;
+  background-color: $body-bg;
+  border: 1px solid $color-tpe-beige;
+
+  > label {
+    font-weight: 600;
+    color: $color-tpe-black;
+    vertical-align: middle !important;
+  }
+
+  .certifications {
+  }
+
+  .btn.add.certification {
+    font-family: $font-open-sans;
+    font-weight: 600;
+    text-transform: uppercase;
+    @include button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-border);
+    border-bottom: 3px solid $btn-primary-border;
+    vertical-align: middle;
+  }
+
+  .certificate {
+    margin-top: .5rem;
+
+    .actions {
+
+      .btn {
+        display: inline-block;
+        margin-right: 0;
+        background: transparent;
+        border: none;
+        box-shadow: none;
+        color: transparent;
+        max-width: 55px;
+        overflow: hidden;
+        //width: 50%;
+
+        &::before {
+          font-family: FontAwesome;
+          color: $color-tpe-dark-grey;
+          font-weight: 300;
+        }
+
+        &:nth-of-type(1)::before {
+          content: '\f019';
+        }
+
+        &:nth-of-type(2)::before {
+          content: '\f044';
+        }
+
+        &:nth-of-type(3)::before {
+          content: '\f1f8';
+        }
+
+        &:hover {
+          color: transparent;
+          background: transparent;
+        }
+
+        &[disabled="disabled"] {
+          display: none;
+        }
+
+      }
+
+    }
+
+  }
+
+  label, .certificate > .actions {
+    vertical-align: middle;
+  }
+
+  label::after {
+    content: '';
+  }
+
+}
+
+div.window.dialog {
+  width: 100% !important;
+  max-width: 40rem !important;
+
+  .prop {
+
+    &.label, &.file {
+      display: block;
+    }
+
+    &.label {
+      text-align: left;
+      color: $color-tpe-black;
+      font-size: 1rem;
+      font-weight: normal;
+
+      > label {
+        font-style: italic;
+
+        &::after {
+          content: ':';
+        }
+      }
+
+      .select2-container {
+        display: block;
+        width: 10rem !important;
+      }
+
+    }
+
+    &.name {
+      padding: .25em 1.5em;
+      margin: .75rem 0 0;
+      label {
+        display: block;
+        font-weight: 600;
+        &::after {
+          content: ':';
+        }
+      }
+      input {
+        border: 2px solid $color-tpe-grey;
+      }
+    }
+
+    &.file {
+      height: auto;
+      padding: .25em 1.5em;
+      margin-top: .75rem;
+
+      .upload {
+        font-weight: 600;
+
+        input {
+          display: block;
+          opacity: 1;
+          margin: .75rem 0 1.5rem;
+          font-weight: normal;
+          line-height: 1;
+        }
+      }
+
+      .existing {
+        font-size: 90%;
+        margin-bottom: 1rem;
+        font-style: italic;
+
+        .btn {
+          @include button-size($btn-padding-y-sm, $btn-padding-x-sm, $font-size-sm, $line-height-sm, $border-radius-sm);
+          @include button-variant($btn-secondary-color, $btn-secondary-bg, $btn-secondary-border);
+          margin-left: 8px;
+          vertical-align: baseline;
+          font-style: normal;
+        }
+
+      }
+    }
+
+  }
+
+}
+
+.approved-locations-viewer {
+  width: 100%;
+  max-width: 100%;
+  padding: 2rem;
+  background: #fff;
+  border: 1px solid $color-tpe-beige;
+  margin-top: 2rem;
+
+  div.title {
+
+    span.title {
+      font-size: 2rem;
+    }
+  }
+
+  div.restrict {
+    label.tbl {
+      margin-right: .5rem;
+    }
+  }
+
+  div.locations {
+    .select.locations {
+      margin: .75rem 0 1.75rem;
+
+      label {
+        display: block;
+        font-weight: 600;
+        margin-bottom: 0;
+      }
+
+      .btn {
+        @include button-size($btn-padding-y-sm, $btn-padding-x-sm, $font-size-sm, $line-height-sm, $border-radius-sm);
+        @include button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-border);
+        font-weight: 600;
+        text-transform: uppercase;
+      }
+
+    }
+
+    .location {
+      span.name {
+        font-style: italic;
+      }
+      .actions .btn {
+        @include button-size($btn-padding-y-sm, $btn-padding-x-sm, $font-size-sm, $line-height-sm, $border-radius-sm);
+        @include button-variant($btn-secondary-color, $btn-secondary-bg, $btn-secondary-border);
+        margin-left: .75rem;
+      }
+
+      + .location {
+        margin-top: 1rem;
+      }
+
+    }
+
   }
 
 }
@@ -87,8 +361,11 @@
 
     .prop.company-customer {
       text-align: center;
-      > span, label {
+
+      > span, label, input[type="checkbox"] {
         width: auto;
+        color: $color-tpe-black;
+        display: inline-block;
       }
       label::after {
         content: '';
@@ -195,12 +472,28 @@
 
 }
 
-/*@media (min-width: 768px) {
+@media (min-width: 768px) {
   .user-viewer,
-  .customer-viewer {
-
-    .prop-body {
-      flex-flow: row nowrap;
+  .customer-viewer,
+  .location-viewer,
+  .company-viewer,
+  .user-roles {
+    .prop {
+      label, > span, div.address {
+        display: inline-block;
+        vertical-align: top;
+        width: 50%;
+      }
+      label {
+        text-align: right;
+      }
     }
   }
-}*/
+
+  .user-viewer,
+  .customer-viewer {
+    .prop.picture {
+      position: absolute;
+    }
+  }
+}
