@@ -192,6 +192,10 @@
 	  }
 	}
 
+	.remaining-time {
+	  display: none;
+	}
+
   }
 
   .listing-flags {
@@ -324,6 +328,21 @@
 	  font-style: italic;
 	  word-break: break-word;
 	  hyphens: auto;
+	}
+  }
+
+  .certifications {
+	span.certification {
+	  &::after {
+		content: ',';
+		margin-right: 5px;
+	  }
+
+	  &:last-child {
+		&::after {
+		  content: '';
+		}
+	  }
 	}
   }
 

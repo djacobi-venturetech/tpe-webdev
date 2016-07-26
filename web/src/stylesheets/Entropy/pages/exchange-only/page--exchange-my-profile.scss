@@ -1,0 +1,39 @@
+@import "../../../config/base-vars";
+
+ul.tab-items {
+  display: block;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.tab-items li {
+  background: transparent;
+  border-top: 1px solid $color-tpe-beige;
+  border-left: 1px solid $color-tpe-beige;
+  border-right: 1px solid $color-tpe-beige;
+  display: inline-block;
+  padding: 10px;
+  border-bottom: 0;
+  margin-bottom: -1px;
+  cursor: pointer;
+
+  &.tab-selected {
+	border-top: 3px solid $color-tpe-yellow;
+	background: $color-white;
+  }
+
+  + li {
+	margin-left: 5px;
+  }
+
+  .label {
+	color: $color-tpe-black;
+  }
+
+}
+
+.ctb.label-after {
+  input[type="checkbox"] {
+    margin-right: 8px;
+  }
+}

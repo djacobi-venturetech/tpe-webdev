@@ -58,7 +58,7 @@
 	}
 	.prop > label {
 		display: block;
-		font-weight: bold;
+		font-weight: 600;
 		user-select: none;
 	}
 	.prop > label.tbl {
@@ -105,12 +105,6 @@
 .prop-viewer,
 .prop-editor {
 	padding: .5rem;
-}
-
-.prop-viewer {
-	.actions.top {
-		display: none;
-	}
 }
 
 .prop-editor {
