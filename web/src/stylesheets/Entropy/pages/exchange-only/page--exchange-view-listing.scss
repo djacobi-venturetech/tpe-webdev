@@ -75,37 +75,68 @@
 
 	}
 
-	.start-time {
+	.remaining-time, .start-time {
 	  font-size: .8rem;
 	  display: flex;
 	  align-self: center;
 	  justify-content: flex-start;
 	  flex: 1 0 auto;
-	  order: 3;
 
 	  &.prop > .val, label {
 		font-weight: 300;
 		font-style: italic;
-		display: inline-block;
 		margin: 0;
 		text-transform: uppercase;
 	  }
+
+	}
+
+	.start-time {
+	  order: 3;
+
+	  &.prop > .val, label {
+		display: inline-block;
+	  }
+
 	  .val::before {
 		content: 'Listed at: ';
 	  }
 
 	}
 
+	.remaining-time {
+	  order: 5;
+	  text-align: left;
+
+	  &.prop > .val, label {
+		display: block;
+	  }
+
+	  label {
+		margin-right: .5rem;
+		&::after {
+		  content: ':';
+		}
+	  }
+
+	  &.ending-soon {
+		.val {
+		  color: $color-tpe-red;
+		}
+	  }
+
+	}
+
 	.id {
-	  order: 4;
+	  order: 6;
 	}
 
 	.location {
-	  order: 5;
+	  order: 6;
 	}
 
 	.plant-id {
-	  order: 6;
+	  order: 7;
 	}
 
 	.location, .plant-id, .id {
@@ -380,6 +411,11 @@
 	div.mybid, .maxbid {
 	  padding: 1rem 1rem 2rem;
 	  flex: 1 0 100%;
+
+	  button[disabled="disabled"] {
+		display: none;
+	  }
+
 	}
 
 	.instructions {
@@ -547,6 +583,21 @@
 
   }
 
+  &.NOT_SOLD, &.SOLD {
+	.mybid.edit, .maxbid.edit {
+	  span.val {
+		padding-top: 5px;
+		color: $color-tpe-grey;
+		font-style: italic;
+	  }
+	}
+
+	.prop-group.bid .maxbid label::before, .prop-group.bid .mybid.edit label::before {
+	  content: '';
+	}
+
+  }
+
 }
 
 div.window.dialog {
@@ -575,6 +626,9 @@ div.window.dialog {
 
 	> .message-container {
 	  width: 35%;
+	  &:not(.empty) {
+		margin-top: -1.25rem;
+	  }
 	}
 
 	.prop-header {
@@ -585,6 +639,15 @@ div.window.dialog {
 	  .start-time {
 		justify-content: flex-end;
 	  }
+
+	  .remaining-time {
+		justify-content: flex-end;
+		text-align: right;
+		margin-top: 0;
+		flex: 1 0 100%;
+		width: 100%;
+	  }
+
 	}
 
 	.prop-body {
