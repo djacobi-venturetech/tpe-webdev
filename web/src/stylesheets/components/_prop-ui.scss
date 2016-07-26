@@ -58,7 +58,7 @@
 	}
 	.prop > label {
 		display: block;
-		font-weight: bold;
+		font-weight: 600;
 		user-select: none;
 	}
 	.prop > label.tbl {
@@ -105,53 +105,6 @@
 .prop-viewer,
 .prop-editor {
 	padding: .5rem;
-}
-
-.prop-viewer {
-  .actions.top {
-	  display: none;
-  }
-  .prop {
-	display: block;
-
-	label, > span, div.address {
-	  display: inline-block;
-	  vertical-align: top;
-	  width: 50%;
-	}
-
-	label {
-	  margin-bottom: 0;
-	  text-align: right;
-	  font-weight: normal;
-
-	  &::after {
-		content: ':';
-		margin-right: 8px;
-	  }
-
-	}
-
-	&.timezone > label {
-	  margin-top: 0;
-	}
-
-	&.email > div {
-	  margin: 0;
-	  padding: 0;
-	}
-
-	> .address {
-	  span {
-		display: block;
-
-		/*&.address_line::after {
-		  content: ',';
-		}*/
-	  }
-	}
-
-  }
 }
 
 .prop-editor {
