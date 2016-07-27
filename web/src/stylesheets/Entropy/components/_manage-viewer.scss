@@ -298,12 +298,15 @@ div.window.dialog {
 }
 
 .approved-locations-viewer {
-  width: 100%;
-  max-width: 100%;
-  padding: 2rem;
-  background: #fff;
-  border: 1px solid $color-tpe-beige;
-  margin-top: 2rem;
+
+  .inlinewindow {
+    width: 100%;
+    max-width: 100%;
+    padding: 2rem;
+    background: #fff;
+    border: 1px solid $color-tpe-beige;
+    margin-top: 2rem;
+  }
 
   div.title {
 
