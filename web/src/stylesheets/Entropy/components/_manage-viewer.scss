@@ -124,11 +124,20 @@
   padding: 1rem;
   background-color: $body-bg;
   border: 1px solid $color-tpe-beige;
+  position: relative;
 
   > label {
     font-weight: 600;
     color: $color-tpe-black;
-    vertical-align: middle !important;
+    width: 100% !important;
+    text-align: center !important;
+  }
+
+  .instructions {
+    text-align: center;
+    margin: 10px 0;
+    font-style: italic;
+    color: $color-tpe-grey;
   }
 
   .certifications {
@@ -141,6 +150,9 @@
     @include button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-border);
     border-bottom: 3px solid $btn-primary-border;
     vertical-align: middle;
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
   }
 
   .certificate {
@@ -193,7 +205,7 @@
   }
 
   label, .certificate > .actions {
-    vertical-align: middle;
+    vertical-align: middle !important;
   }
 
   label::after {
