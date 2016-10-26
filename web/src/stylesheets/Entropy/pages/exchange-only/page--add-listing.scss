@@ -1,2 +1,6 @@
 @import "../../../config/base-vars";
 @import "../../components/search-filters";
+
+.single-package .single-packaging label {
+  display:none;
+}
