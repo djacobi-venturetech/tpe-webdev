@@ -11,8 +11,10 @@
 	font-family: $font-open-sans;
 	font-weight: 600;
 	text-transform: uppercase;
+	@include button-variant($color-white, $color-tpe-light-grey, darken($color-tpe-light-grey, 5%));
+	border-bottom: 3px solid darken($color-tpe-light-grey, 5%);
 
-	&:first-child {
+	/*&:first-child {
 	  @include button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-border);
 	  border-bottom: 3px solid $btn-primary-border;
 	}
@@ -20,10 +22,12 @@
 	&:not(:first-child) {
 	  @include button-variant($btn-secondary-color, $btn-secondary-bg, $btn-secondary-border);
 	  border-bottom: 3px solid $btn-secondary-border;
-	}
+	}*/
 
 	&.add {
 	  @include button-size($btn-padding-y-sm, $btn-padding-x-sm, $font-size-root, $line-height-sm, $btn-border-radius-sm);
+	  @include button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-border);
+	  border-bottom: 3px solid $btn-primary-border;
 	  height: auto;
 	  &::before {
 		content: '\f067';
@@ -35,12 +39,45 @@
 	  }
 	}
 
+	&.save, &.copy {
+	  @include button-variant($btn-secondary-color, $btn-secondary-bg, $btn-secondary-border);
+	  border-bottom: 3px solid $btn-secondary-border;
+	}
+
+	&.bid, &.accept-bid, &.yes, &.accept {
+	  @include button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-border);
+	  border-bottom: 3px solid $btn-primary-border;
+	}
+
+	&.mark-ready {
+	  @include button-variant($color-white, $color-tpe-green, darken($color-tpe-green, 5%));
+	  border-bottom: 3px solid darken($color-tpe-green, 5%);
+	}
+
 	&:hover {
 	  text-decoration: none;
 	}
 
   }
 
+}
+
+.purchase-now {
+  button.btn {
+	@include button-variant($color-white, $color-tpe-black, darken($color-tpe-black, 5%));
+	border-bottom: 3px solid darken($color-tpe-black, 5%);
+  }
+}
+
+.exchange-btn.request-product {
+  .btn {
+	font-family: $font-open-sans;
+	font-weight: 600;
+	text-transform: uppercase;
+	@include button-size($btn-padding-y-sm, $btn-padding-x-sm, $font-size-root, $line-height-sm, $btn-border-radius-sm);
+	@include button-variant($color-white, $color-tpe-light-grey, darken($color-tpe-light-grey, 5%));
+	border-bottom: 3px solid darken($color-tpe-light-grey, 5%);
+  }
 }
 
 .action-column .btn {

@@ -1,0 +1,118 @@
+@import "../../config/base-vars";
+@import "../../../../../bower_components/bootstrap/scss/mixins/clearfix";
+
+.help-center-container {
+  width: 260px;
+  background: #fff;
+  border-top-left-radius: $btn-border-radius-sm;
+  border-top-right-radius: $btn-border-radius-sm;
+  overflow: hidden;
+  border: 1px solid $color-tpe-light-grey;
+
+  &::before {
+	content: 'Help Center';
+	background: $color-tpe-light-grey;
+	color: #fff;
+	display: block;
+	width: 100%;
+	padding: .5rem 0;
+	text-align: center;
+  }
+
+  .text {
+
+	p, li {
+	  font-size: .8rem;
+	}
+
+	p {
+	  margin-bottom: 0;
+
+	  + p {
+		margin-top: .5rem;
+	  }
+
+	}
+
+	ul {
+	  padding-left: 1.5rem;
+	  margin-bottom: 0;
+
+	  li + li {
+		margin-top: .5rem;
+	  }
+
+	}
+
+  }
+
+  > .help-center-intro {
+	padding: 1rem .5rem;
+  }
+
+  .collapsible {
+
+	&:nth-of-type(even) .collapsible-control {
+	  background: lighten($color-tpe-light-grey, 7%);
+
+	  &:hover {
+		background-color: lighten($color-tpe-light-grey, 2%);
+	  }
+
+	}
+
+	&:nth-of-type(odd) .collapsible-control {
+	  background: lighten($color-tpe-light-grey, 20%);
+
+	  &:hover {
+		background-color: lighten($color-tpe-light-grey, 15%);
+	  }
+
+	}
+
+  }
+
+  .collapsible-control {
+	padding: 1rem .5rem;
+	border-top: 2px solid $color-tpe-light-grey;
+	cursor: pointer;
+	font-weight: 600;
+	position: relative;
+
+	&::after {
+	  font-family: FontAwesome;
+	  display: inline-block;
+	  vertical-align: middle;
+	  font-size: .9rem;
+	  position: absolute;
+	  right: 1rem;
+	  top: .9rem;
+	}
+
+	&.hidden {
+
+	  &::after {
+		content: '\f107';
+	  }
+
+	}
+
+	&.shown {
+
+	  &::after {
+		content: '\f106';
+	  }
+
+	}
+
+  }
+
+  .collapsible-shown {
+
+	.text {
+	  padding: .75rem .5rem;
+	}
+
+  }
+
+}

@@ -48,6 +48,20 @@
 
 	}
 
+	&.type {
+
+	  .custom-type {
+		margin-top: 1rem;
+		padding-left: 1.5rem;
+
+		label {
+		  font-weight: 600;
+		}
+
+	  }
+
+	}
+
 	&.packaging {
 	  .val {
 		width: 100%;
@@ -91,6 +105,16 @@
 	  label {
 		margin-bottom: 0;
 	  }
+	}
+
+	.single-package-other-name {
+	  padding-left: 1.5rem;
+	  margin: -.25rem 0 1rem;
+
+	  label {
+		font-weight: 600;
+	  }
+
 	}
 
   }
@@ -150,6 +174,8 @@
 	}
 
   }
+
+
 
   .multiple-packaging {
 	> div {

@@ -138,6 +138,17 @@ a {
 
 }
 
+.miwt-config-actions {
+
+  .close {
+	&::before {
+	  font-size: 1rem;
+	  padding: 5px;
+	}
+  }
+
+}
+
 h1, h2, h3 {
   font-family: $font-raleway;
   text-transform: uppercase;
