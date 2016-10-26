@@ -1,18 +1,32 @@
 @import "../../../config/base-vars";
 @import "../../components/exchange-search-filters";
+//@import "../../components/help-center";
 
 .text.title {
+
   + .html.add-listing {
-	margin-top: -3.5rem;
+	clear: both;
+	float: none;
+	display: block;
+	width: 100%;
+	height: 25px;
+	margin-top: 0;
+	padding: 0;
   }
+
+  + .html.add-listing {
+	margin-top: 3rem;
+  }
+
 }
 
 .html.add-listing {
   text-align: right;
 
   a.btn.add {
+
 	color: transparent;
-	width: 35px;
+	//width: 35px;
 	overflow: hidden;
 
 	&:hover {
@@ -27,11 +41,48 @@
 
 }
 
+.html.exchange-btn {
+
+  &.add-listing .btn, &.request-product .btn {
+	margin-bottom: 10px;
+	float: right;
+  }
+
+  &.request-product .btn {
+	&::before {
+	  content: '';
+	}
+  }
+
+}
+
+.request-product {
+  .btn {
+	/*@include button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-border);
+	border-bottom: 3px solid $btn-primary-border;*/
+	clear: both;
+	float: none;
+	display: block;
+	width: 100%;
+	//height: 25px;
+	margin-top: 0;
+	padding: 0;
+  }
+}
+
+.listing-search .actions.entity-actions>button.btn,
+.exchange-btn.request-product .btn,
+.html.add-listing a.btn.add {
+  width: 200px;
+  margin-right: 0;
+}
+
 .enclosing #column1 {
   position: static;
 
   > .miwt {
-	margin-top: 3.5rem;
+	clear: both;
+	margin-top: 4.5rem;
   }
   > .text.title + .miwt {
 	margin-top: 3rem;
@@ -87,12 +138,22 @@
   .actions.entity-actions {
 	position: absolute;
 	right: -3px;
-	top: -2.5rem;
+	top: -11.25rem;
 
 	> button.btn {
 	  padding: 0.25rem 0.75rem;
 	  font-size: .85rem;
 	}
+
+	&::before {
+	  content: 'I want to...';
+	  display: block;
+	  padding-bottom: .5rem;
+	  font-style: italic;
+	  font-size: .85rem;
+	  color: $color-tpe-light-grey;
+	}
+
   }
 
   .message-container {
@@ -353,6 +414,7 @@
   flex-flow: column nowrap;
   border-left: 2px solid $color-tpe-beige;
   padding: 1rem 0 1rem .5rem;
+  justify-content: center;
 
   > div {
 	align-self: flex-start;
@@ -391,6 +453,7 @@
 	font-style: italic;
 	text-align: center;
 	padding: 0 1rem;
+	display: none;
   }
 
 }
@@ -478,12 +541,17 @@ div.window.dialog {
 
 @media (min-width: 768px) {
 
+  .enclosing #column1 > .miwt {
+	clear: both;
+	margin-top: 1.75em;
+  }
+
   .html.add-listing {
 	text-align: right;
 
 	a.btn.add {
 	  color: $color-white;
-	  width: auto;
+	  //width: auto;
 	  overflow: visible;
 
 	  &:hover {
@@ -494,15 +562,30 @@ div.window.dialog {
 
   }
 
-  .text.title {
+  .text.title+.html.exchange-btn.add-listing {
+	margin-top: 0;
+  }
+
+  .text.title+.html.exchange-btn.add-listing,
+  .html.exchange-btn.request-product {
+	height: 45px;
+  }
+
+  .exchange-btn.request-product .btn,
+  .html.add-listing a.btn.add {
+	font-size: 1rem;
+  }
+
+  /*.text.title {
 	+ .html.add-listing {
 	  padding-right: 9.5rem;
 	}
-  }
+  }*/
 
   .listing-search {
 	.actions.entity-actions {
 	  right: 0;
+	  top: -8.75rem;
 
 	  > button.btn {
 		font-size: 1rem;

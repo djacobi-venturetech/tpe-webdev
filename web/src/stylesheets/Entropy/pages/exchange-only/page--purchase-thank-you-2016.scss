@@ -1,0 +1,175 @@
+@import "../../../config/base-vars";
+@import "../../../../../../bower_components/bootstrap/scss/variables";
+@import "../../../../../../bower_components/bootstrap/scss/mixins";
+@import "../../../../../../bower_components/bootstrap/scss/buttons";
+@import "../../components/listing-details-viewer";
+
+.win-message {
+  width: 100%;
+  padding: 2rem;
+  background: rgba(202, 147, 0, .75);
+  color: $color-white;
+  border: 1px solid $color-tpe-yellow;
+
+  h2 {
+    font-size: 1.5rem;
+    margin-top: 0;
+    color: $color-white;
+
+    @include breakpoint($bp-tablets-portrait) {
+      font-size: 2rem;
+    }
+
+  }
+
+  p {
+    margin-bottom: 0;
+  }
+
+}
+
+.listing-thanks-view {
+  background: #fff;
+  border-top-left-radius: $border-radius;
+  border-top-right-radius: $border-radius;
+  border: 1px solid $color-tpe-light-grey;
+  overflow: hidden;
+
+  > h1 {
+    background: $color-tpe-brand;
+    color: #fff;
+    font-size: 2rem;
+    line-height: 1;
+    margin: 0;
+    padding: .5rem;
+    text-align: center;
+    display: block;
+  }
+
+  div.buyer-warning {
+    margin: 1rem 1.75rem;
+    background: $color-white;
+    border: 2px solid $color-tpe-yellow;
+    font-size: .85rem;
+
+    div.warning {
+      padding: .5rem;
+
+      .warn-message {
+        font-weight: 600;
+      }
+
+    }
+
+    ul {
+      margin-bottom: 0;
+    }
+
+  }
+
+  section.bid-info {
+    display: flex;
+    flex-flow: column nowrap;
+
+    @include breakpoint($bp-tablets-portrait) {
+      flex-flow: row nowrap;
+    }
+
+    > * {
+      flex: 1;
+    }
+
+    .payment {
+      padding: 1.5rem;
+      order: 2;
+
+      @include breakpoint($bp-tablets-portrait) {
+        order: 1;
+      }
+
+      label {
+        display: block;
+        font-weight: 600;
+      }
+
+    }
+
+    .winning-bid {
+      background: lighten($color-tpe-light-grey, 25%);
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: center;
+      text-align: center;
+      order: 1;
+      padding: 1rem 0;
+
+      @include breakpoint($bp-tablets-portrait) {
+        order: 2;
+        padding: 0;
+      }
+
+      label {
+        font-weight: 600;
+      }
+
+      span.amt {
+        color: $color-tpe-grey;
+        font-size: 1.75rem;
+        font-weight: 600;
+      }
+
+    }
+
+  }
+
+}
+
+/* ----- LISTING CLOSED */
+.closed-message {
+  width: 100%;
+  padding: 2rem;
+  background: $color-error-light;
+  color: $color-error-dark;
+  border: 1px solid $color-error-dark;
+
+  a {
+    color: $color-error-dark;
+    text-decoration: underline;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    margin-top: 0;
+    color: $color-error-dark;
+
+    @include breakpoint($bp-tablets-portrait) {
+      font-size: 2rem;
+    }
+
+    &::before {
+      content: '\f071';
+      font-family: FontAwesome;
+      display: inline-block;
+      font-size: inherit;
+      font-weight: normal;
+      margin-right: 8px;
+    }
+
+  }
+
+  p {
+    margin-bottom: 0;
+
+    + p {
+      margin-top: .75rem;
+    }
+
+  }
+
+}
+
+.listing-closed-view {
+  h1 {
+    display: none;
+  }
+}

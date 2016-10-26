@@ -1,0 +1,330 @@
+@import "../../../config/base-vars";
+@import "../../../../../../bower_components/bootstrap/scss/variables";
+@import "../../../../../../bower_components/bootstrap/scss/mixins";
+@import "../../../../../../bower_components/bootstrap/scss/buttons";
+@import "../../components/listing-details-viewer";
+@import "../../components/help-center";
+
+
+.listing-detail-container {
+  display: block;
+  width: 100%;
+}
+
+.listing-detail-viewer {
+  padding-top: 1rem;
+  margin-bottom: 1rem;
+
+  .prop-header-actions {
+	position: absolute;
+	right: 0;
+	top: -28px;
+  }
+
+  .prop-footer {
+	.bottom.actions {
+	  display: none;
+	}
+  }
+
+}
+
+.listing-buyer-container,
+.help-center-container {
+  display: block;
+
+  @include breakpoint($bp-tablets-portrait) {
+	display: inline-block;
+	vertical-align: top;
+  }
+
+}
+
+.help-center-container {
+  width: 100%;
+  margin-top: 2rem;
+
+  @include breakpoint($bp-tablets-portrait) {
+	width: 260px;
+	margin-top: 0;
+  }
+
+}
+
+.listing-buyer-container {
+  width: 100%;
+
+  @include breakpoint($bp-tablets-portrait) {
+	width: calc(100% - 260px);
+	padding-right: 2rem;
+  }
+
+}
+
+.bid-view {
+
+  background: #fff;
+  border-top-left-radius: $border-radius;
+  border-top-right-radius: $border-radius;
+  border: 1px solid $color-tpe-light-grey;
+  overflow: hidden;
+
+  > h1 {
+	background: $color-tpe-brand;
+	color: #fff;
+	font-size: 2rem;
+	line-height: 1;
+	margin: 0;
+	padding: .5rem;
+	text-align: center;
+	display: block;
+  }
+
+  > h2, > div.instructions {
+	padding: 0 1.5rem;
+  }
+
+  h2 {
+	font-size: 1.5rem;
+	margin-top: 1.25rem;
+  }
+
+  div.instructions {
+	color: $color-tpe-grey;
+	font-style: italic;
+	font-size: .9rem;
+  }
+
+  div.buyer-warning {
+	margin: 1rem 1.75rem;
+	background: $color-white;
+	border: 2px solid $color-tpe-yellow;
+	font-size: .85rem;
+
+	div.warning {
+	  padding: .5rem;
+
+	  .warn-message {
+		font-weight: 600;
+	  }
+
+	}
+
+	ul {
+	  margin-bottom: 0;
+	}
+
+  }
+
+  section.bids {
+	padding: 1.5rem;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-around;
+
+	@include breakpoint($bp-tablets-portrait) {
+	  padding: 1.5rem 2rem;
+	  flex-flow: row nowrap;
+	}
+
+	.prevailing, div.bid-entry, .mybid {
+	  flex: 1 1 50%;
+	  padding: 1rem .25rem;
+	  text-align: center;
+
+	  @include breakpoint($bp-tablets-portrait) {
+		flex: 1 1 33%;
+	  }
+
+	  > label {
+		display: block;
+		font-weight: 600;
+		text-transform: uppercase;
+		margin-bottom: .75rem;
+	  }
+
+	}
+
+	.prevailing {
+
+	  	span.amt {
+		  font-size: 1.75rem;
+		  color: $color-tpe-grey;
+		  font-weight: 600;
+		}
+
+	}
+
+	.mybid {
+	  border-left: 2px solid $color-tpe-light-grey;
+
+	  span {
+		font-size: 1.75rem;
+		font-weight: 600;
+
+		&.winning {
+		  color: $color-tpe-green;
+		}
+
+		&.losing {
+		  color: $color-tpe-red;
+		}
+
+	  }
+
+	}
+
+	div.bid-entry {
+	  background: lighten($color-tpe-light-grey, 25%);
+	  flex: 2 1 100%;
+	  margin-top: 1rem;
+
+	  @include breakpoint($bp-tablets-portrait) {
+		flex: 2 1 40%;
+		margin-top: 0;
+	  }
+
+	  .bid-labels {
+		font-weight: 600;
+		display: block;
+		margin-bottom: .75rem;
+	  }
+
+	  input.val {
+		border: 2px solid $color-tpe-light-grey;
+		margin: 0 .5rem .5rem;
+		padding: 5px;
+		max-width: 6.25rem;
+
+		@include breakpoint($bp-in-between-tablet-desktop) {
+		  margin: 0 .5rem;
+		}
+
+	  }
+
+	  span.instructions {
+		display: block;
+		font-size: .75rem;
+		font-style: italic;
+
+		@include breakpoint($bp-in-between-tablet-desktop) {
+		  margin-left: -4.9rem;
+		}
+
+	  }
+
+	}
+
+  }
+
+  .enter-bid-hint {
+	padding: 0 2rem;
+	text-align: center;
+	font-weight: 600;
+	font-style: italic;
+	color: $color-tpe-green;
+	font-size: 1.15rem;
+
+	&::before {
+	  content: '\f017';
+	  font-family: FontAwesome;
+	  display: inline-block;
+	  vertical-align: middle;
+	  padding-right: 8px;
+	  font-style: normal;
+	  color: $color-tpe-green;
+	  font-weight: normal;
+	  font-size: 2rem;
+	  margin-top: -2px;
+	}
+
+  }
+
+  button.btn {
+	@include button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-border);
+	font-size: 16px;
+	line-height: 1.5;
+	padding: .35rem 1.25rem;
+	border-radius: .25rem;
+	vertical-align: top;
+  }
+
+  .purchase-now {
+	border-top: 2px solid $color-tpe-light-grey;
+	padding: 2rem;
+	margin-top: 1.5rem;
+
+	h2 {
+	  margin-top: 0;
+	}
+
+	.buy > * {
+	  vertical-align: middle;
+	}
+
+	label {
+	  display: block;
+	  width: 100%;
+	  padding-right: 1.5rem;
+	  font-size: .9rem;
+	  color: $color-tpe-grey;
+	  margin-bottom: .5rem;
+	  font-style: italic;
+
+	  @include breakpoint($bp-tablets-landscape) {
+		display: inline-block;
+		width: calc(100% - 256px);
+		margin-bottom: 0;
+	  }
+
+	}
+
+	span.amt {
+	  font-size: 1.75rem;
+	  color: $color-tpe-black;
+	  font-weight: 600;
+	}
+
+	button.btn {
+	  vertical-align: middle;
+	  margin-left: 1rem;
+	  @include button-variant($color-white, $color-tpe-black, darken($color-tpe-black, 5%));
+	  border-bottom: 3px solid darken($color-tpe-black, 5%);
+	}
+
+  }
+
+  div.message {
+	margin: 0 1.75rem;
+	font-family: $font-open-sans;
+
+	.summary {
+	  font-weight: 600;
+	}
+
+	.detail {
+	  font-size: .85rem;
+	}
+
+  }
+
+}
+
+div.window.dialog {
+  width: 95% !important;
+
+  @include breakpoint($bp-tablets-portrait) {
+	width: 100% !important;
+  }
+
+  .warning {
+	margin-bottom: 1rem;
+  }
+
+  .actions {
+	text-align: right;
+  }
+
+
+
+}

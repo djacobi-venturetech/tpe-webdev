@@ -1,0 +1,849 @@
+@import "../../../config/base-vars";
+@import "../../../../../../bower_components/bootstrap/scss/variables";
+@import "../../../../../../bower_components/bootstrap/scss/mixins";
+@import "../../../../../../bower_components/bootstrap/scss/buttons";
+@import "../../components/listing-details-viewer";
+@import "../../components/help-center";
+
+.seller-listing-manage,
+.help-center-container {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.listing-detail-container {
+  margin-bottom: 3rem;
+}
+
+.seller-listing-manage {
+  width: 100%;
+  padding-right: 0;
+
+  @include breakpoint($bp-tablets-portrait) {
+	width: calc(100% - 260px);
+	padding-right: 2rem;
+  }
+
+}
+
+.help-center-container {
+  width: 100%;
+  display: block;
+
+  @include breakpoint($bp-tablets-portrait) {
+	width: 260px;
+	display: inline-block;
+  }
+
+}
+
+.listing-detail-viewer {
+
+  .prop-body {
+	margin-top: 0;
+  }
+
+  .prop-header {
+	position: relative;
+  }
+
+  .overview .status {
+	display: block;
+	text-transform: uppercase;
+	font-weight: 600;
+	color: $color-tpe-grey;
+	font-size: 1rem;
+
+	&.Sold, &.SOLD {
+	  color: $color-tpe-brand;
+	}
+
+	&.Not.Sold, &.NOT_SOLD, &.Live, &.LIVE {
+	  color: $color-tpe-green;
+	}
+
+	&.Cancelled, &.CANCELLED, &.Withdrawn, &.WITHDRAWN {
+	  color: $color-tpe-yellow;
+	}
+
+	&.Draft, &.DRAFT {
+	  color: $color-tpe-light-grey;
+	}
+
+	label {
+	  margin-bottom: 0;
+	  &::after {
+		content: ':';
+		padding-right: 5px;
+	  }
+	}
+
+  }
+
+  .schedule {
+	margin-top: 2rem;
+  }
+
+  .prop-header-actions {
+	position: absolute;
+	right: 0;
+	top: -58px;
+
+	@include breakpoint($bp-tablets-portrait) {
+	  top: -28px;
+	}
+
+  }
+
+  .bottom.actions {
+	display: none;
+  }
+
+}
+
+.listing {
+
+  .instructions {
+	display: block;
+	font-size: .9rem;
+	font-style: italic;
+	line-height: 1;
+	color: $color-tpe-grey;
+  }
+
+  .bids, .intervals {
+	margin-bottom: 3rem;
+  }
+
+  &.prop-wrapper {
+	max-width: none;
+	width: 100%;
+	padding: 0;
+  }
+
+  span.persistence-actions.actions {
+	display: block;
+	width: 100%;
+	text-align: center;
+	//margin-top: 3rem;
+	margin-bottom: .5rem;
+
+	.btn {
+	  @include button-size($btn-padding-y-sm, $btn-padding-x-sm, $font-size-sm, $line-height-sm, $border-radius-sm);
+	  font-size: .75rem;
+
+	  &.edit {
+		@include button-variant($btn-secondary-color, $btn-secondary-bg, $btn-secondary-border);
+	  }
+
+	  &.mark-ready, &.cancel-listing {
+		@include button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-border);
+	  }
+
+	}
+
+	+ div.bids, + .prop-body {
+	  margin-top: 0;
+	}
+
+  }
+
+  .listing-time {
+	font-size: .9rem;
+	margin-top: 1rem;
+
+	label {
+	  font-weight: 700;
+	  &::after {
+		content: ':';
+		padding-right: 5px;
+	  }
+	}
+
+	+ div {
+	  margin-top: .75rem;
+	}
+
+  }
+
+  .prop-body {
+	clear: both;
+  }
+
+}
+
+div.bids, div.intervals {
+
+  > label {
+	font-size: 1.75rem;
+	text-transform: uppercase;
+	font-family: $font-raleway;
+	color: $color-tpe-black;
+	font-weight: 700;
+	display: block;
+	border-bottom: 2px solid $color-tpe-light-grey;
+	padding-bottom: .25rem;
+	margin-bottom: .5rem;
+  }
+
+}
+
+div.bids {
+  //margin-top: 4.5rem;
+
+  > label {
+	margin-bottom: 1rem;
+  }
+
+  .high-bid {
+	display: flex;
+	flex-flow: row nowrap;
+	color: $color-tpe-yellow;
+	font-size: 2.25rem;
+	align-items: center;
+	font-weight: 700;
+
+	> label {
+	  font-family: $font-raleway;
+	  font-size: .8rem;
+	  text-transform: uppercase;
+	  margin-bottom: 0;
+	  width: 4.5rem;
+	  line-height: 1.5;
+	  color: $color-tpe-black;
+	}
+
+  }
+
+  .bids {
+	width: 100%;
+	margin-top: 1.5rem;
+
+	td.header-con {
+	  background: $color-tpe-dark-grey;
+	  font-size: .75rem;
+	  color: $color-white;
+	  text-transform: uppercase;
+	  text-align: center;
+	  font-weight: 600;
+	  line-height: 1.25;
+	  padding: 5px 8px;
+	}
+
+	td.no-data-con {
+	  padding: .5rem;
+	  font-size: .85rem;
+	  font-style: italic;
+	  color: #aaa;
+	  background: #f7f7f7;
+
+	  + td {
+		background: #f7f7f7;
+	  }
+
+	}
+
+	td.bid-con:not(.header-con) {
+	  background: $color-white;
+	}
+
+	div.bid {
+	  background: $color-white;
+	  color: $color-tpe-black;
+	  font-size: .9rem;
+	  padding: 8px;
+	  border-top: 1px solid $body-bg;
+	  text-align: center;
+
+	  span.amount {
+		font-weight: 700;
+		padding-right: 5px;
+	  }
+
+	  span.time {
+		font-size: .75rem;
+		display: block;
+	  }
+
+	  &.winning-bid {
+		span.amount {
+		  font-size: 1.5rem;
+		  color: $color-tpe-yellow;
+		}
+		.high-bid-flag {
+		  font-weight: 600;
+		}
+		.actions {
+		  margin: .5rem 0;
+		}
+	  }
+
+	}
+
+	tr:nth-of-type(2) {
+	  td.bid-con div.bid {
+		border-top: none;
+	  }
+	}
+
+	td.interval-con {
+	  padding: 10px;
+	  text-align: center;
+	  color: $color-white;
+	  background: $color-tpe-light-grey;
+
+	  div.time {
+		font-size: .9rem;
+	  }
+
+	  div.price {
+		font-size: 1.5rem;
+		font-weight: 700;
+	  }
+
+	}
+
+  }
+
+  div.winner {
+	display: flex;
+	flex-flow: column nowrap;
+	background: $color-white;
+	padding: 1rem;
+	border: 2px solid $color-tpe-yellow;
+	border-radius: $border-radius-lg;
+	font-size: .85rem;
+	margin-top: 1rem;
+
+	> span {
+	  flex: 1;
+	}
+
+	label {
+	  display: block;
+	  font-weight: 700;
+	  text-transform: uppercase;
+	  &::after {
+		content: ':';
+	  }
+	}
+
+  }
+
+}
+
+.intervals {
+  //margin-top: 4.5rem;
+  position: relative;
+
+  .interval-instructions {
+
+	div.instructions-sub-title {
+	  font-weight: 600;
+	  margin-bottom: .25rem;
+	  font-style: normal;
+	}
+
+	ul {
+	  line-height: 1.5;
+	}
+
+  }
+
+  > div {
+	margin-top: 1.5rem;
+	display: flex;
+	flex-flow: row wrap;
+
+	tr > td:not(.type-price-schedule-interval) {
+	  font-weight: 700;
+	}
+
+	.miwt-table-con {
+	  width: 100%;
+
+	  tr > th.type-price-schedule-interval {
+		text-align: left;
+
+	  }
+
+	  tr > td.type-big-decimal {
+		text-align: center;
+	  }
+
+	  div.cycle {
+		font-weight: 600;
+	  }
+
+	  .duration, .remaining {
+		display: inline;
+		margin-right: .5rem;
+	  }
+
+	}
+
+	.miwt-table > thead > tr > th.first-column,
+	.miwt-table > tbody > tr > td.first-column {
+	  padding-left: 1rem;
+	}
+
+	div.miwt-collapsable {
+	  .btn {
+		background: transparent;
+		border: none;
+		box-shadow: none;
+		font-weight: 500;
+		font-size: .85rem;
+		padding: 0;
+		text-transform: none;
+		outline: none;
+
+		&::after {
+		  content: '\f078';
+		  font-family: FontAwesome;
+		  padding-left: 5px;
+		}
+	  }
+	}
+
+	div.miwt-collapsable-content {
+	  padding: 1rem;
+	  background: $body-bg;
+	  border-bottom: 3px solid $color-tpe-yellow;
+	  box-shadow: 0 3px 5px rgba(0,0,0,0.1);
+
+	  .buyer {
+
+		+ .buyer {
+		  margin-top: .5rem;
+		}
+
+	  }
+
+	}
+
+	.instructions {
+
+	  &.ready-instructions {
+		font-weight: 600;
+	  }
+
+	}
+
+	div.actions.schedule-actions {
+	  text-align: right;
+	  //flex: 1;
+	  //margin-top: -8.5rem;
+	  position: absolute;
+	  top: 0;
+	  right: 0;
+	}
+
+	div.interval {
+	  flex: 1 0 100%;
+	  display: flex;
+	  flex-flow: row nowrap;
+	  margin-bottom: 1.5rem;
+
+	  &.editor {
+		.reserve-price, .strike-price {
+		  position: relative;
+
+		  label {
+			&::before {
+			  content: '$';
+			  font-weight: 300;
+			  position: absolute;
+			  font-size: 1rem;
+			  left: -5px;
+			  top: 29px;
+			}
+		  }
+		}
+	  }
+
+	  label {
+		text-transform: uppercase;
+		margin-bottom: 0;
+		display: block;
+	  }
+
+	  .interval-props {
+		background: $color-white;
+		border: 2px solid $color-tpe-light-grey;
+		padding: 1rem;
+		flex: 3;
+		display: flex;
+		flex-flow: column nowrap;
+		font-size: .85rem;
+
+		> .title {
+		  font-weight: 600;
+		  font-size: 1.1rem;
+		  flex: 1 0 100%;
+		  padding-left: 5px;
+		}
+
+		.prop {
+		  flex: 1;
+
+		  &.buyers {
+			.element {
+			  margin-bottom: .5rem;
+			}
+		  }
+
+		  input[type="text"], .select2-container {
+			max-width: 100%;
+			width: 100%;
+		  }
+
+		}
+
+	  }
+
+	  .actions.interval-actions {
+		flex: 0 1 auto;
+		max-width: 55px;
+		overflow: hidden;
+
+		.btn {
+		  display: block;
+		  margin-right: 0;
+		  background: transparent;
+		  border: none;
+		  box-shadow: none;
+		  color: transparent;
+		  width: 50%;
+
+		  &::before {
+			font-family: FontAwesome;
+			color: $color-tpe-dark-grey;
+			font-weight: 300;
+		  }
+
+		  &.up::before {
+			content: '\f062';
+		  }
+
+		  &.down::before {
+			content: '\f063';
+		  }
+
+		  &.edit::before {
+			content: '\f044';
+		  }
+
+		  &.delete::before {
+			content: '\f1f8';
+		  }
+
+		  &:hover {
+			color: transparent;
+			background: transparent;
+		  }
+
+		  &[disabled="disabled"] {
+			display: none;
+		  }
+
+		}
+
+	  }
+
+	  &.editor {
+		flex-flow: row wrap;
+
+		.message-container {
+		  flex: 1 0 100%;
+		}
+
+		.interval-props {
+		  max-width: 60%;
+
+		  .prop {
+			flex: 1 0 0;
+		  }
+
+		  .prop.buyers {
+			label {
+			  display: block;
+			  text-transform: uppercase;
+			  font-weight: 700;
+			}
+			.select2-container {
+			  width: 100% !important;
+			}
+		  }
+		}
+
+		.actions {
+		  margin-left: 1rem;
+
+		  .btn {
+			display: block;
+			width: 100%;
+			margin-bottom: .35rem;
+		  }
+
+		}
+
+		div.customer-list {
+
+		  .btn.select {
+			margin: .75rem 0 .5rem;
+			@include button-size($btn-padding-y-sm, $btn-padding-x-sm, $font-size-sm, $line-height-sm, $border-radius-sm);
+			@include button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-border);
+		  }
+
+		  div.no_data {
+			font-style: italic;
+		  }
+
+		  .element {
+
+			> div {
+			  display: inline;
+			}
+
+			input[type="radio"] {
+			  display: none;
+			}
+
+			.btn.remove {
+			  @include button-variant($color-tpe-red, $color-white, $color-tpe-red);
+			  display: block;
+			  margin: .25rem 0 .5rem;
+			  padding: .125rem .5rem;
+			  font-size: .675rem;
+			  border-radius: $border-radius-sm;
+			}
+
+		  }
+
+		}
+
+	  }
+
+	}
+
+	.actions.cycle-actions {
+	  width: 100%;
+	  text-align: right;
+	  margin: -1rem 0 .5rem;
+
+	  /*button.btn.add {
+		background: transparent;
+		border: none;
+		font-weight: normal;
+		color: $color-tpe-brand;
+		text-decoration: none;
+		box-shadow: none;
+		padding: .5rem 0;
+		font-size: 1rem;
+		text-transform: none;
+
+		&::before {
+		  color: $color-tpe-brand;
+		}
+
+	  }*/
+
+	}
+
+  }
+
+}
+
+div.window.dialog {
+  width: 100% !important;
+  max-width: 40rem !important;
+
+  .windowcontent {
+	padding: 1.5rem;
+  }
+
+  .confirm-listing-time {
+	margin: 1.25rem 0;
+
+	label {
+	  display: block;
+	  font-weight: 700;
+	  text-transform: uppercase;
+	  color: $color-tpe-black;
+	  margin-bottom: .25rem;
+	}
+
+	input[type="text"] {
+	  border: 2px solid $color-tpe-light-grey;
+	}
+
+	.select2-container {
+	  width: 200px !important;
+	  margin-top: -6px;
+	}
+
+  }
+
+  div.high-bid.warning {
+	margin-bottom: 1rem;
+  }
+
+  .actions {
+	text-align: right;
+  }
+
+  &.buyer-chooser {
+	.search-bar {
+	  .constraints {
+		display: flex;
+		flex-flow: row nowrap;
+		justify-content: space-between;
+		.constraint {
+		  width: 31%;
+		  margin: 0;
+		  padding: 0;
+
+		  input[type="text"] {
+			max-width: 100%;
+		  }
+		}
+	  }
+	  .actions.search-actions {
+		margin-top: .25rem;
+		padding-right: 0;
+		width: 100%;
+	  }
+	}
+  }
+
+}
+
+@media (max-width: 767px) {
+  .intervals > div div.miwt-collapsable-content {
+	right: 0;
+  }
+}
+
+@media (min-width: 768px) {
+
+  div.bids, div.intervals {
+
+	> label {
+	  font-size: 2rem;
+	}
+
+  }
+
+  .prop-body {
+	//margin-top: 4.5rem;
+
+	&::before {
+	  font-size: 2rem;
+	}
+
+  }
+
+  .listing {
+
+	span.persistence-actions.actions {
+	  text-align: right;
+	  margin-bottom: 0;
+	  //margin-top: 4.5rem;
+
+	  .btn {
+		font-size: .875rem;
+	  }
+	  /*+ div.bids, + .prop-body {
+		margin-top: -2.5rem;
+	  }*/
+	}
+  }
+
+  div.bids {
+
+	div.winner {
+	  display: flex;
+	  flex-flow: row nowrap;
+	}
+
+	.bids {
+	  div.bid {
+		span.time {
+		  font-size: .75rem;
+		  display: inline;
+		}
+	  }
+	}
+
+  }
+
+  .prop-body > div {
+	flex-flow: row wrap;
+
+	.prop-group.overview {
+	  padding-left: 3rem;
+	  padding-right: 2rem;
+	}
+
+	.prop-group.image {
+	  flex: 1 1 20%;
+	}
+
+	.prop-group.overview, .prop-group.notes {
+	  flex: 1 1 30%;
+	}
+
+	.prop-group.notes {
+	  padding-left: 1rem;
+	}
+
+  }
+
+  .intervals {
+
+	> div {
+
+	  div.interval {
+
+		.interval-props {
+		  flex-flow: row wrap;
+		}
+
+		&.editor {
+		  flex-flow: row wrap;
+
+		  .message-container {
+			flex: 1 0 100%;
+		  }
+
+		  .interval-props {
+			max-width: none;
+
+			.prop {
+			  flex: 1 0 40%;
+
+			  .selec2-container, input[type="text"] {
+				width: 11.4rem;
+			  }
+
+			  &.buyers {
+				.select2-container {
+				  width: 11.4rem !important;
+				}
+
+			  }
+
+			}
+
+		  }
+
+		}
+
+	  }
+
+	}
+
+  }
+
+}
