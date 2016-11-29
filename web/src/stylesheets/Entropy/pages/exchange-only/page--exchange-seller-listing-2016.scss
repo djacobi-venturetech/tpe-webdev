@@ -40,7 +40,42 @@
 .listing-detail-viewer {
 
   .prop-body {
-	margin-top: 0;
+	overflow: hidden;
+	max-height: 1.1rem;
+	transition: all .75s ease-in-out;
+
+	&.shown {
+	  max-height: 50rem;
+	  transition: all .75s ease-in-out;
+	  .trigger::after {
+		content: '\f106';
+	  }
+	}
+
+	.trigger {
+	  cursor: pointer;
+	  flex: 1 0 auto;
+	  width: 100%;
+	  color: $color-tpe-brand;
+	  text-decoration: underline;
+	  padding-left: 5px;
+	  margin-top: -5px;
+	  &:hover {
+		text-decoration: none;
+	  }
+	  &::after {
+		content: '\f107';
+		font-family: $font-glyph-lib;
+		display: inline-block;
+		vertical-align: middle;
+		padding-left: 3px;
+	  }
+	}
+
+	@include breakpoint($bp-tablets-portrait) {
+	  flex-flow: row wrap;
+	}
+
   }
 
   .prop-header {
