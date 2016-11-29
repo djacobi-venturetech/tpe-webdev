@@ -1,0 +1,451 @@
+@import "../../config/base-vars";
+
+.prop-header-actions {
+  display: none;
+}
+
+.prop-wrapper {
+  width: 100% !important;
+  max-width: none;
+
+  .persistence-actions.bottom {
+    text-align: right;
+    margin-top: 5rem;
+  }
+
+}
+
+.prop-body {
+  display: flex;
+  flex-flow: column nowrap;
+
+  .prop-group {
+    flex: 1;
+    padding: 0;
+  }
+
+}
+
+.prop-editor {
+
+  .product-details,
+  .freight-details,
+  .seller-details,
+  .interval-props {
+    margin-bottom: 2rem;
+
+    > section > .props {
+      background: $color-white;
+      border: 1px solid $color-light-grey;
+      padding: 1.5rem;
+    }
+
+    > section > .prop-group-title {
+      h1 {
+        font-size: 1.75rem;
+        border-bottom: 2px solid $color-tpe-light-grey;
+      }
+      .hint {
+        font-size: 1rem;
+        font-weight: 300;
+        font-style: italic;
+        color: $color-tpe-grey;
+      }
+    }
+
+    .props .prop-group .prop-group-title {
+      display: block;
+      width: 100%;
+
+      h1 {
+        font-size: 1rem;
+        text-transform: none;
+        font-weight: 300;
+        font-family: $font-open-sans;
+        &::after {
+          content: '*';
+          color: red;
+        }
+      }
+    }
+
+  }
+
+  section.packaging {
+    .props {
+      display: inline-block;
+      vertical-align: top;
+      width: 100%;
+      background: transparent;
+      border: none;
+      padding: 0;
+
+      .props {
+        width: 100%;
+      }
+
+      .prop .select2-container {
+        width: 100% !important;
+      }
+      .pre-packaged, .single-packaging {
+        margin-bottom: 0;
+      }
+      .allow-select {
+        margin-top: 1rem;
+      }
+      .pre-packaged, .allow-select {
+        display: block;
+        width: 100%;
+        padding: 0;
+        label.tbl {
+          font-size: .9rem;
+        }
+      }
+    }
+    &.packaging {
+      .val {
+        width: 100%;
+      }
+
+      .packaging .price label {
+        font-weight: 300;
+        margin-top: .25rem;
+        padding-left: 3px;
+        text-transform: none;
+      }
+
+    }
+  }
+
+  .prop-group.freshness {
+    .prop.freshness {
+      padding-left: 0;
+      margin-top: 0;
+      span.label-after {
+        margin-right: 1rem;
+      }
+    }
+    .fresh, .frozen {
+      padding-left: 0;
+      .prop {
+        padding: 0;
+      }
+    }
+  }
+
+  .prop {
+    padding-left: 0;
+
+    input[type="text"], textarea, .select2-container {
+      min-width: 0;
+      width: 100% !important;
+    }
+
+    .miwt-calendar input[type="text"] {
+      width: 40% !important;
+    }
+
+    > label {
+      width: 100%;
+      display: block;
+    }
+
+    label {
+      text-transform: none;
+      font-weight: 300;
+
+      &.tbl {
+        padding-left: 5px;
+        text-transform: none;
+        display: inline;
+      }
+
+    }
+
+    &.type {
+
+      .custom-type {
+        margin-top: 1rem;
+        padding-left: 0;
+
+        label {
+          display: block;
+          margin-bottom: 0;
+        }
+
+      }
+
+    }
+
+    &.specialty-labels {
+      div.val {
+        width: 100%;
+        span.label-after {
+          display: block;
+          width: 100%;
+        }
+      }
+    }
+
+    &.lot-number, &.volume, &.weight {
+      label {
+        margin-bottom: 0;
+      }
+    }
+
+    &.single-package-other-name {
+      margin-bottom: 0;
+
+      label {
+        display: block;
+        width: 100%;
+        margin-bottom: 0;
+      }
+
+      input.val {
+        width: 100% !important;
+      }
+
+    }
+
+  }
+
+  .prop-group.single-package {
+    display: block;
+    padding-left: 0;
+    width: 100%;
+    .single-packaging label {
+      display:none;
+    }
+  }
+
+  span.hint {
+    padding: 0 0 5px;
+    font-size: .85rem;
+    font-style: italic;
+    margin-top: .25rem;
+    color: $color-tpe-grey;
+    display: block;
+  }
+
+  .picture-editor {
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: .5rem;
+    text-align: left;
+
+    .drop-zone {
+      margin-top: .25rem;
+      text-align: center;
+      position: relative;
+    }
+
+    &.no-image-selected.mode-view {
+      .drop-zone {
+        background-color: lighten($color-tpe-lightest-grey, 20%);
+        min-height: 8rem;
+        border: 1px solid $color-tpe-grey;
+
+        &::after {
+          content: 'No image selected.';
+          color: $color-tpe-grey;
+          position: absolute;
+          font-size: .85rem;
+          top: 45%;
+          width: 100%;
+          left: 0;
+          font-weight: 300;
+          font-style: italic;
+        }
+
+      }
+    }
+
+    input[type="file"] {
+      font-size: .85rem;
+    }
+
+    .actions.bottom {
+      .btn {
+        padding: .375rem .75rem;
+        font-size: .75rem;
+        line-height: 1;
+      }
+    }
+
+  }
+
+
+
+  .multiple-packaging {
+    display: block;
+    padding-left: 0;
+    width: 100%;
+    > div {
+      border-top: 1px solid $color-tpe-light-grey;
+      padding-top: .5rem;
+      margin-top: .5rem;
+
+      label {
+        margin-bottom: 0;
+      }
+
+      label:not(.tbl) {
+        font-weight: 700;
+      }
+
+      .prop {
+        padding: 0;
+      }
+
+    }
+  }
+
+  .interval-props {
+    margin-bottom: 0;
+
+    .prop {
+      > label {
+        display: block;
+      }
+      .select2-container {
+        width: 19.5rem !important;
+      }
+      .miwt-calendar input[type="text"] {
+        width: 11rem !important;
+      }
+      &.duration {
+        margin-top: 1rem;
+        input.val {
+          width: 11rem !important;
+        }
+        label {
+          margin-bottom: 0;
+        }
+        span.hint {
+          padding-left: 0;
+        }
+      }
+    }
+  }
+
+  .prop-group.packaging,
+  .prop-group.freshness,
+  .specialty-labels {
+    border-bottom: 1px solid $color-light-grey;
+    margin-bottom: 1rem;
+  }
+
+  .specialty-labels {
+    padding-bottom: 1rem;
+  }
+
+}
+
+@media (min-width: 768px) {
+  #column1 > .miwt {
+    //width: 75%;
+  }
+
+  .prop-editor {
+
+    .freight-details,
+    .product-details,
+    .seller-details,
+    .interval-props {
+      .props .prop-group .prop-group-title {
+        display: inline-block;
+        width: 40%;
+      }
+    }
+
+    section.packaging .props {
+      width: 50%;
+    }
+
+    .prop-group.single-package {
+      padding-left: 1.35rem;
+    }
+
+    .prop.multiple-packaging {
+      margin-top: -1rem;
+      padding-left: 1.35rem;
+
+      > div {
+        display: inline-block;
+        font-size: .9rem;
+        vertical-align: top;
+        width: 50%;
+        padding: 0 .5rem 0 0;
+        border-top: none;
+        margin-top: 0;
+      }
+    }
+
+    .prop-group.freshness {
+      .prop.freshness {
+        padding-left: 40%;
+        margin-top: -3rem;
+      }
+      .fresh, .frozen {
+        padding-left: 42.25%;
+        .prop {
+          padding: 0;
+          label {
+            width: 28%;
+          }
+          textarea.val {
+            width: 60% !important;
+            margin-left: 7px;
+          }
+        }
+      }
+    }
+
+    .prop {
+
+      input[type="text"], textarea, .select2-container {
+        min-width: 0;
+        width: 58% !important;
+      }
+
+      .miwt-calendar input[type="text"] {
+        width: 50% !important;
+      }
+
+      > label {
+        width: 40%;
+        display: inline-block;
+        vertical-align: top;
+      }
+
+      &.specialty-labels {
+        div.val {
+          width: 58%;
+          span.label-after {
+            display: inline-block;
+            font-size: .9rem;
+            width: 49%;
+            padding-right: 1rem;
+          }
+        }
+      }
+
+      &.type {
+        .custom-type {
+          padding-left: 42.25%;
+          input.val {
+            width: 82% !important;
+          }
+        }
+      }
+
+    }
+
+    span.hint {
+      padding: 0 0 5px 40%;
+    }
+
+  }
+
+}

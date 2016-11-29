@@ -1,0 +1,190 @@
+@import "../../../config/base-vars";
+@import "../../../../../../bower_components/bootstrap/scss/variables";
+@import "../../../../../../bower_components/bootstrap/scss/mixins";
+@import "../../../../../../bower_components/bootstrap/scss/buttons";
+@import "../../components/listing-details-viewer";
+@import "../../components/help-center";
+@import "../../components/conversation";
+
+
+.listing-detail-container {
+  display: block;
+  width: 100%;
+}
+
+.listing-detail-viewer {
+  padding-top: 1rem;
+  margin-bottom: 1rem;
+
+  .prop-header-actions {
+	position: absolute;
+	right: 0;
+	top: -28px;
+  }
+
+  .prop-footer {
+	.bottom.actions {
+	  display: none;
+	}
+  }
+
+}
+
+.listing-buyer-offer,
+.help-center-container {
+  display: block;
+
+  @include breakpoint($bp-tablets-portrait) {
+	display: inline-block;
+	vertical-align: top;
+  }
+
+}
+
+.help-center-container {
+  width: 100%;
+  margin-top: 2rem;
+
+  @include breakpoint($bp-tablets-portrait) {
+	width: 260px;
+	margin-top: 0;
+  }
+
+}
+
+.listing-buyer-offer {
+  width: 100%;
+
+  @include breakpoint($bp-tablets-portrait) {
+	width: calc(100% - 260px);
+	padding-right: 2rem;
+  }
+
+}
+
+section.offer {
+  background: $color-white;
+  border: 2px solid $color-tpe-beige;
+  padding: 1rem 1rem 1rem 2rem;
+  margin-left: -2px;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 2rem;
+
+  .header {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-between;
+	border-bottom: 2px solid $color-tpe-beige;
+	padding-bottom: .5rem;
+	margin-bottom: 2rem;
+	position: relative;
+	min-height: 4.5rem;
+
+	h2 {
+	  flex: 1 0 auto;
+	  //width: 100%;
+	}
+
+  }
+
+  .current-offer-info {
+	//order: 2;
+	color: $color-tpe-green;
+	font-size: 1.15rem;
+	text-transform: uppercase;
+	//align-self: flex-end;
+	font-weight: 600;
+	position: absolute;
+	left: 0;
+	bottom: 10px;
+  }
+
+  div.buyer-warning {
+	//order: 3;
+	font-size: .75rem;
+	color: $color-tpe-grey;
+	font-style: italic;
+	width: 32%;
+
+	div.warning {
+	  padding: 0 .5rem .5rem;
+	  //margin-top: -2.75rem;
+
+	  .warn-message {
+		font-weight: 600;
+	  }
+
+	}
+
+	ul {
+	  margin-bottom: 0;
+	}
+
+  }
+
+  .offer-entry {
+	display: flex;
+	flex-flow: row wrap;
+	//justify-content: space-between;
+
+	.bid-labels {
+	  flex: 1 0 auto;
+	  width: 100%;
+	  font-weight: 600;
+	  margin-bottom: .5rem;
+	}
+
+	.amount-entry {
+	  .symbol-usd {
+		font-weight: 600;
+		margin-right: .5rem;
+	  }
+	}
+
+	.duation  {
+	  margin: -2rem 2rem 0;
+
+	  > label {
+		display: block;
+		font-weight: 600;
+	  }
+
+	  span.select2-container {
+		width: 9rem !important;
+	  }
+
+	}
+
+	input.val {
+	  border: 2px solid $color-tpe-lightest-grey;
+	}
+
+	button.submit-offer {
+	  @include button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-border);
+	  //@include button-size($btn-padding-y-sm, $btn-padding-x-sm, $font-size-sm, $line-height-sm, $btn-border-radius-sm);
+	  border-bottom-width: 3px;
+	  margin-top: -.4rem;
+	}
+
+  }
+
+}
+
+.conversation {
+  padding: 2rem;
+
+  div.instructions {
+	font-style: italic;
+	color: $color-tpe-grey;
+	margin-bottom: .5rem;
+  }
+
+  .send-message {
+
+	textarea, button {
+	  vertical-align: top;
+	}
+
+  }
+}

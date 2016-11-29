@@ -1,0 +1,200 @@
+@import "../../../config/base-vars";
+@import "../../../../../../bower_components/bootstrap/scss/variables";
+@import "../../../../../../bower_components/bootstrap/scss/mixins";
+@import "../../../../../../bower_components/bootstrap/scss/buttons";
+@import "../../components/listing-details-viewer";
+@import "../../components/help-center";
+@import "../../components/conversation";
+
+.seller-listing-manage,
+.help-center-container {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.listing-offer {
+  margin-top: 2rem;
+  display: flex;
+  flex-flow: column nowrap;
+
+  @include breakpoint($bp-tablets-portrait) {
+	flex-direction: row;
+  }
+
+  > div:not(.conversation-list) {
+	width: 100%;
+
+	@include breakpoint($bp-tablets-portrait) {
+	  width: calc(100% - 12rem);
+	}
+
+  }
+
+}
+
+.conversation-list {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+
+  @include breakpoint($bp-tablets-portrait) {
+	width: 12rem;
+  }
+
+  h2 {
+	font-size: 1.5rem;
+  }
+
+  .richlist {
+
+	.element {
+	  border-top: 2px solid transparent;
+	  border-left: 2px solid transparent;
+	  border-bottom: 2px solid $color-tpe-beige;
+	  padding: .75rem;
+	  position: relative;
+	  cursor: pointer;
+	  margin-top: -2px;
+
+	  input.selector {
+		/*width: 100%;
+		height: 100%;
+		opacity: 0;
+		cursor: pointer;*/
+		top: 0;
+		left: 0;
+		position: absolute;
+		visibility: collapse;
+	  }
+
+	  .btn.select {
+		position: absolute;
+		top: 0;
+		left: 0;
+		padding: 0;
+		width: 100%;
+		height: 100%;
+		border: none;
+		background: transparent;
+		color: transparent;
+	  }
+
+	  &.checked {
+		background: $color-white;
+		border-left-color: $color-tpe-beige;
+		border-top-color: $color-tpe-beige;
+	  }
+
+	  .unread {
+		.offer-amount {
+		  &::after {
+			content: '\f27a';
+			font-family: $font-glyph-lib;
+			color: $color-tpe-green;
+			display: inline-block;
+			position: absolute;
+			right: 10px;
+			top: 50%;
+			margin-top: -11px;
+			font-size: 1.15rem;
+			font-weight: 300;
+		  }
+		}
+	  }
+
+	  > div {
+		span {
+		  display: block;
+		}
+		.company {
+		  display: none;
+		}
+		.name {
+		  font-weight: 600;
+		}
+		.offer-amount {
+		  font-weight: 600;
+		  font-size: 1.75rem;
+		}
+		.offer-expires {
+		  color: $color-tpe-grey;
+		  font-size: .85rem;
+		  font-style: italic;
+		}
+	  }
+
+	}
+
+  }
+
+}
+
+.conversation {
+
+  .header {
+	padding-bottom: 1rem;
+	@include clearfix();
+
+	.company {
+	  font-weight: 600;
+	  font-size: 1.25rem;
+	}
+
+	.name {
+	  padding-left: 1rem;
+	}
+
+	.company, .name {
+	  vertical-align: baseline;
+	}
+
+	.btn.accept {
+	  float: right;
+	  @include button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-border);
+	  border-bottom-width: 3px;
+	  width: 100%;
+	  margin-top: .5rem;
+
+	  @include breakpoint($bp-tablets-portrait) {
+		width: auto;
+		margin-top: 0;
+	  }
+
+	}
+
+  }
+
+  .offer-info {
+	border-bottom: 2px solid $color-tpe-beige;
+	margin-bottom: .85rem;
+	padding-bottom: .5rem;
+
+	label {
+	  display: block;
+	  text-transform: uppercase;
+	  font-size: .75rem;
+	  font-weight: 600;
+	  margin-bottom: 0;
+	}
+
+	.amt, .expires {
+	  vertical-align: baseline;
+	}
+
+	.amt {
+	  font-size: 1.35rem;
+	  color: $color-tpe-green;
+	  padding-right: 1rem;
+	  line-height: 1;
+	  font-weight: 600;
+	}
+
+	.expires {
+	  font-size: .85rem;
+	  font-style: italic;
+	  color: $color-tpe-grey;
+	}
+
+  }
+
+}

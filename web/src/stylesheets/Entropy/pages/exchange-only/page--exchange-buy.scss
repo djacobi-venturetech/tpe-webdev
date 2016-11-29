@@ -1,4 +1,6 @@
 @import "../../../config/base-vars";
+@import "../../../../../../bower_components/bootstrap/scss/mixins";
+@import "../../../../../../bower_components/bootstrap/scss/buttons";
 @import "../../components/exchange-search-filters";
 //@import "../../components/help-center";
 
@@ -415,6 +417,58 @@
   border-left: 2px solid $color-tpe-beige;
   padding: 1rem 0 1rem .5rem;
   justify-content: center;
+  position: relative;
+
+  span.listing-type {
+	position: absolute;
+	top: 8px;
+	left: 8px;
+	padding: .5rem .25rem .5rem 1.15rem;
+	text-transform: uppercase;
+	color: $color-white;
+	font-weight: 600;
+	font-size: .85rem;
+	width: 100%;
+	line-height: 1;
+
+	&::before {
+	  content: '';
+	  position: absolute;
+	  left: 0;
+	  top: 1px;
+	  border-left: 10px solid $color-white;
+	  border-top: 14px solid transparent;
+	  border-bottom: 14px solid transparent;
+	}
+
+	&::after {
+	  content: '';
+	  position: absolute;
+	  right: 0;
+	  bottom:-10px;
+	  border-bottom: 10px solid transparent;
+	  border-left: 7px solid transparent;
+	  display: inline-block;
+	}
+
+	&.auction-type {
+	  background-color: $color-tpe-auction;
+	  &::after {
+		border-left-color: darken($color-tpe-auction, 10%);
+	  }
+	}
+
+	&.offer-type {
+	  background-color: $color-tpe-best-offer;
+	  &::after {
+		border-left-color: darken($color-tpe-best-offer, 10%);
+	  }
+	  + .prevailing-price {
+		display: none;
+	  }
+	}
+
+  }
 
   > div {
 	align-self: flex-start;
@@ -442,6 +496,11 @@
 
 	  + span.fob.message {
 		margin-top: .5rem;
+	  }
+
+	  .btn.bid {
+		@include button-variant($btn-secondary-color, $btn-secondary-bg, $btn-secondary-border);
+		width: 7.5rem;
 	  }
 
 	}
