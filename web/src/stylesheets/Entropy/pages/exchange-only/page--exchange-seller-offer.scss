@@ -6,6 +6,50 @@
 @import "../../components/help-center";
 @import "../../components/conversation";
 
+.listing-detail-viewer {
+  padding: .5rem 0;
+
+  .prop-body {
+	overflow: hidden;
+	max-height: 1.1rem;
+	transition: all .75s ease-in-out;
+
+	&.shown {
+	  max-height: 50rem;
+	  transition: all .75s ease-in-out;
+	  .trigger::after {
+		content: '\f106';
+	  }
+	}
+
+	.trigger {
+	  cursor: pointer;
+	  flex: 1 0 auto;
+	  width: 100%;
+	  color: $color-tpe-brand;
+	  text-decoration: underline;
+	  padding-left: 5px;
+	  margin-top: -5px;
+	  &:hover {
+		text-decoration: none;
+	  }
+	  &::after {
+		content: '\f107';
+		font-family: $font-glyph-lib;
+		display: inline-block;
+		vertical-align: middle;
+		padding-left: 3px;
+	  }
+	}
+
+	@include breakpoint($bp-tablets-portrait) {
+	  flex-flow: row wrap;
+	}
+
+  }
+
+}
+
 .seller-listing-manage,
 .help-center-container {
   display: inline-block;
@@ -16,6 +60,7 @@
   margin-top: 2rem;
   display: flex;
   flex-flow: column nowrap;
+  overflow: hidden;
 
   @include breakpoint($bp-tablets-portrait) {
 	flex-direction: row;
@@ -23,29 +68,94 @@
 
   > div:not(.conversation-list) {
 	width: 100%;
+	transition: right .5s ease-in-out;
+	position: relative;
+	right: 0;
 
 	@include breakpoint($bp-tablets-portrait) {
 	  width: calc(100% - 12rem);
+	  right: auto;
 	}
 
   }
 
+  &.buyers-open {
+	> div:not(.conversation-list) {
+	  right: -12rem;
+	  transition: right .5s ease-in-out;
+
+	  @include breakpoint($bp-tablets-portrait) {
+		right: auto;
+	  }
+
+	}
+  }
+
+}
+
+.heading h2 {
+  margin-top: 2.5rem;
+  padding-bottom: .25rem;
+  border-bottom: 2px solid $color-tpe-beige;
 }
 
 .conversation-list {
   position: relative;
   z-index: 10;
-  width: 100%;
+  //width: 100%;
+  width: 12rem;
 
   @include breakpoint($bp-tablets-portrait) {
-	width: 12rem;
+	//width: 12rem;
+	position: relative;
   }
 
   h2 {
 	font-size: 1.5rem;
+	cursor: pointer;
+
+	&::after {
+	  content: '\f067';
+	  font-family: $font-glyph-lib;
+	  display: inline-block;
+	  vertical-align: middle;
+	  padding-left: 5px;
+	  font-size: 1rem;
+
+	  .buyers-open & {
+		content: '\f068';
+
+		@include breakpoint($bp-tablets-portrait) {
+		  display: none;
+		}
+
+	  }
+
+	  @include breakpoint($bp-tablets-portrait) {
+		display: none;
+	  }
+
+	}
+
   }
 
   .richlist {
+	position: absolute;
+	left: -12rem;
+	transition: left .5s ease-in-out;
+	top: 36px;
+	width: 100%;
+
+	.buyers-open & {
+	  left: 0;
+	  transition: left .5s ease-in-out;
+	}
+
+	@include breakpoint($bp-tablets-portrait) {
+	  position: relative;
+	  left: auto;
+	  top: auto;
+	}
 
 	.element {
 	  border-top: 2px solid transparent;
@@ -57,10 +167,6 @@
 	  margin-top: -2px;
 
 	  input.selector {
-		/*width: 100%;
-		height: 100%;
-		opacity: 0;
-		cursor: pointer;*/
 		top: 0;
 		left: 0;
 		position: absolute;
