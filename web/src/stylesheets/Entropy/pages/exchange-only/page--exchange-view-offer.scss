@@ -65,7 +65,7 @@
 section.offer {
   background: $color-white;
   border: 2px solid $color-tpe-beige;
-  padding: 1rem 1rem 1rem 2rem;
+  padding: 1rem;
   margin-left: -2px;
   width: 100%;
   box-sizing: border-box;
@@ -77,13 +77,18 @@ section.offer {
 	justify-content: space-between;
 	border-bottom: 2px solid $color-tpe-beige;
 	padding-bottom: .5rem;
-	margin-bottom: 2rem;
+	margin-bottom: 1.25rem;
 	position: relative;
 	min-height: 4.5rem;
 
 	h2 {
 	  flex: 1 0 auto;
-	  //width: 100%;
+	  width: 100%;
+
+	  @include breakpoint($bp-tablets-landscape) {
+		width: auto;
+	  }
+
 	}
 
   }
@@ -93,23 +98,33 @@ section.offer {
 	color: $color-tpe-green;
 	font-size: 1.15rem;
 	text-transform: uppercase;
-	//align-self: flex-end;
 	font-weight: 600;
-	position: absolute;
-	left: 0;
-	bottom: 10px;
+	position: relative;
+
+	@include breakpoint($bp-tablets-landscape) {
+	  position: absolute;
+	  left: 0;
+	  bottom: 5px;
+	}
+
   }
 
   div.buyer-warning {
-	//order: 3;
 	font-size: .75rem;
 	color: $color-tpe-grey;
 	font-style: italic;
-	width: 32%;
+	width: 100%;
+
+	@include breakpoint($bp-tablets-landscape) {
+	  width: 32%;
+	}
 
 	div.warning {
-	  padding: 0 .5rem .5rem;
-	  //margin-top: -2.75rem;
+	  padding: 0 0 .5rem;
+
+	  @include breakpoint($bp-tablets-landscape) {
+		padding: 0 .5rem .5rem;
+	  }
 
 	  .warn-message {
 		font-weight: 600;
@@ -125,8 +140,18 @@ section.offer {
 
   .offer-entry {
 	display: flex;
-	flex-flow: row wrap;
-	//justify-content: space-between;
+	flex-flow: column wrap;
+	justify-content: space-between;
+	padding: 0;
+
+	@include breakpoint($bp-tablets-portrait) {
+	  padding: 0 1rem;
+	  flex-flow: row wrap;
+	}
+
+	@include breakpoint($bp-tablets-landscape) {
+	  padding: 0;
+	}
 
 	.bid-labels {
 	  flex: 1 0 auto;
@@ -140,10 +165,13 @@ section.offer {
 		font-weight: 600;
 		margin-right: .5rem;
 	  }
+	  input.val {
+		width: 8rem;
+	  }
 	}
 
-	.duation  {
-	  margin: -2rem 2rem 0;
+	.duration, .pricing  {
+	  margin: .5rem 0 0;
 
 	  > label {
 		display: block;
@@ -156,6 +184,20 @@ section.offer {
 
 	}
 
+	.duration {
+	  @include breakpoint($bp-tablets-portrait) {
+		margin: -2rem 0 0;
+	  }
+	}
+
+	.pricing {
+
+	  @include breakpoint($bp-tablets-landscape) {
+		margin: -2rem 0 0;
+	  }
+
+	}
+
 	input.val {
 	  border: 2px solid $color-tpe-lightest-grey;
 	}
@@ -164,7 +206,10 @@ section.offer {
 	  @include button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-border);
 	  //@include button-size($btn-padding-y-sm, $btn-padding-x-sm, $font-size-sm, $line-height-sm, $btn-border-radius-sm);
 	  border-bottom-width: 3px;
-	  margin-top: -.4rem;
+	  margin-top: 2rem;
+	  @include breakpoint($bp-tablets-landscape) {
+		margin-top: -.4rem;
+	  }
 	}
 
   }
@@ -172,7 +217,7 @@ section.offer {
 }
 
 .conversation {
-  padding: 2rem;
+  padding: 1rem;
 
   div.instructions {
 	font-style: italic;
@@ -186,5 +231,14 @@ section.offer {
 	  vertical-align: top;
 	}
 
+  }
+}
+
+@media (min-width: 835px) and (max-width: 1023px) {
+  section.offer .offer-entry .pricing {
+	margin-top: -2rem;
+  }
+  section.offer .offer-entry button.submit-offer {
+	margin-top: -.4rem;
   }
 }
