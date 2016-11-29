@@ -1,5 +1,10 @@
 @import "../../../config/base-vars";
 
+.exchange-btn.add-listing {
+  float: right;
+  margin-top: 5px;
+}
+
 .header {
   display: flex;
   align-items: center;
@@ -208,6 +213,11 @@
 }
 
 @media (min-width: 768px) {
+
+  .exchange-btn.add-listing {
+	margin-top: 1.15rem;
+  }
+
   .header {
 
 	.title {
