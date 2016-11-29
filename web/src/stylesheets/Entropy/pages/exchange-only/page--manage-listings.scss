@@ -1,7 +1,30 @@
 @import "../../../config/base-vars";
 
+.text.title {
+  float: left;
+  width: 75%;
+}
+
+.exchange-btn.add-listing {
+  float: right;
+  margin-top: 5px;
+}
+
+#column1 > .miwt {
+  clear: both;
+}
+
 .listing-search .miwt-table {
   th.last-column {
 	min-width: 8.25rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .text.title {
+	width: auto;
+  }
+  .exchange-btn.add-listing {
+	margin-top: 1.15rem;
   }
 }
