@@ -273,7 +273,7 @@
 
 	  @include breakpoint($bp-tablets-landscape) {
 		display: inline-block;
-		width: calc(100% - 256px);
+		width: calc(100% - 280px);
 		margin-bottom: 0;
 	  }
 
@@ -283,6 +283,12 @@
 	  font-size: 1.75rem;
 	  color: $color-tpe-black;
 	  font-weight: 600;
+
+	  &::after {
+		content: '/lb';
+		font-size: 1rem;
+	  }
+
 	}
 
 	button.btn {
