@@ -236,6 +236,15 @@
 }
 
 .conversation {
+  margin-left: 0;
+
+  @include breakpoint($bp-tablets-portrait) {
+	margin-left: -2px;
+  }
+
+  .buyers-open & {
+	margin-left: -2px;
+  }
 
   .header {
 	padding-bottom: 1rem;
