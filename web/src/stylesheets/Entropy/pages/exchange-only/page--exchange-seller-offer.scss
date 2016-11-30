@@ -30,6 +30,10 @@
 	  text-decoration: underline;
 	  padding-left: 5px;
 	  margin-top: -5px;
+	  margin-bottom: 1rem;
+	  @include breakpoint($bp-tablets-portrait) {
+		margin-bottom: 0;
+	  }
 	  &:hover {
 		text-decoration: none;
 	  }
@@ -70,7 +74,7 @@
 	width: 100%;
 	transition: right .5s ease-in-out;
 	position: relative;
-	right: 0;
+	right: -12rem;
 
 	@include breakpoint($bp-tablets-portrait) {
 	  width: calc(100% - 12rem);
@@ -79,9 +83,9 @@
 
   }
 
-  &.buyers-open {
+  &.buyers-closed {
 	> div:not(.conversation-list) {
-	  right: -12rem;
+	  right: 0;
 	  transition: right .5s ease-in-out;
 
 	  @include breakpoint($bp-tablets-portrait) {
@@ -115,15 +119,15 @@
 	cursor: pointer;
 
 	&::after {
-	  content: '\f067';
+	  content: '\f068';
 	  font-family: $font-glyph-lib;
 	  display: inline-block;
 	  vertical-align: middle;
 	  padding-left: 5px;
 	  font-size: 1rem;
 
-	  .buyers-open & {
-		content: '\f068';
+	  .buyers-closed & {
+		content: '\f067';
 
 		@include breakpoint($bp-tablets-portrait) {
 		  display: none;
@@ -141,14 +145,21 @@
 
   .richlist {
 	position: absolute;
-	left: -12rem;
+	left: 0;
 	transition: left .5s ease-in-out;
 	top: 36px;
 	width: 100%;
 
-	.buyers-open & {
-	  left: 0;
+	.buyers-closed & {
+	  left: -12rem;
 	  transition: left .5s ease-in-out;
+
+	  @include breakpoint($bp-tablets-portrait) {
+		position: relative;
+		left: auto;
+		top: auto;
+	  }
+
 	}
 
 	@include breakpoint($bp-tablets-portrait) {
@@ -239,14 +250,15 @@
 }
 
 .conversation {
-  margin-left: 0;
+  margin-left: -2px;
 
-  @include breakpoint($bp-tablets-portrait) {
-	margin-left: -2px;
-  }
+  .buyers-closed & {
+	margin-left: 0;
 
-  .buyers-open & {
-	margin-left: -2px;
+	@include breakpoint($bp-tablets-portrait) {
+	  margin-left: -2px;
+	}
+
   }
 
   .header {
