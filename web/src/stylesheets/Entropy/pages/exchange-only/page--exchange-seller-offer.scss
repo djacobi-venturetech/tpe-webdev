@@ -213,10 +213,13 @@
 		  display: block;
 		}
 		.company {
-		  display: none;
+		  font-weight: 600;
+		  line-height: 1.25;
 		}
 		.name {
-		  font-weight: 600;
+		  display: none;
+		  //line-height: 1.25;
+		  //font-weight: 600;
 		}
 		.offer-amount {
 		  font-weight: 600;
