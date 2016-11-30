@@ -7,7 +7,6 @@ $color-message-received: #f3f3f3;
   background: $color-white;
   border: 2px solid $color-tpe-beige;
   padding: 1rem;
-  margin-left: -2px;
   width: 100%;
   box-sizing: border-box;
 
@@ -24,13 +23,11 @@ $color-message-received: #f3f3f3;
     textarea {
       border: 1px solid $color-tpe-light-grey;
       height: 5.5rem;
-      margin-right: 0;
       width: 100%;
       padding: 0 .25rem .25rem;
 
-      @include breakpoint($bp-tablets-portrait) {
-        width: 87%;
-        margin-right: 1rem;
+      @include breakpoint($bp-tablets-landscape) {
+        width: calc(100% - 85px);
       }
 
     }
@@ -41,9 +38,10 @@ $color-message-received: #f3f3f3;
       width: 100%;
       margin-top: .5rem;
 
-      @include breakpoint($bp-tablets-portrait) {
+      @include breakpoint($bp-tablets-landscape) {
         width: auto;
         margin-top: 0;
+        float: right;
       }
 
     }
@@ -53,7 +51,7 @@ $color-message-received: #f3f3f3;
   .conversation-viewer {
     width: 100%;
 
-    @include breakpoint($bp-tablets-portrait) {
+    @include breakpoint($bp-tablets-landscape) {
       width: 87%;
     }
 
@@ -81,10 +79,10 @@ $color-message-received: #f3f3f3;
         }
 
         .message-body {
-          background-color: $color-message-sent;
-          border-color: darken($color-message-sent, 5%);
+          background-color: darken($color-message-sent, 5%);
+          border-color: darken($color-message-sent, 10%);
           &::after {
-            border-left: 10px solid $color-message-sent;
+            border-left: 10px solid darken($color-message-sent, 5%);
             right: -10px;
             //transform: rotate(-25deg);
           }
@@ -102,10 +100,10 @@ $color-message-received: #f3f3f3;
 
         .message-body {
           order: 3;
-          background-color: $color-message-received;
-          border-color: darken($color-message-received, 5%);
+          background-color: darken($color-message-received, 5%);
+          border-color: darken($color-message-received, 10%);
           &::after {
-            border-right: 10px solid $color-message-received;
+            border-right: 10px solid darken($color-message-received, 5%);
             left: -10px;
             //transform: rotate(25deg);
           }
@@ -120,32 +118,15 @@ $color-message-received: #f3f3f3;
       &.made-offer, &.accepted-offer {
 
         .sent-time {
-          width: auto;
-          flex: 0 0 auto;
-          align-self: center;
-          margin-bottom: 0;
-        }
-
-        &.sent {
-          .sent-time {
-            order: 2;
-            padding-right: 0;
-          }
-          .message-body {
-            order: 1;
+          margin-bottom: -5px;
+          @include breakpoint($bp-tablets-landscape) {
+            margin-bottom: -10px;
           }
         }
 
         &.received {
-          .name {
-            order: 1;
-          }
-          .sent-time {
-            order: 2;
-            padding-left: 0;
-          }
           .message-body {
-            order: 3;
+            text-align: left;
           }
         }
 
@@ -155,6 +136,13 @@ $color-message-received: #f3f3f3;
           font-size: 1rem;
           font-weight: 600;
           color: $color-tpe-green;
+          padding: 0 1rem;
+          text-align: right;
+
+          @include breakpoint($bp-tablets-landscape) {
+            text-align: left;
+          }
+
           &::after {
             display: none;
           }
@@ -164,9 +152,9 @@ $color-message-received: #f3f3f3;
       .name {
         font-weight: 600;
         align-self: center;
-        font-size: .85rem;
+        font-size: .7rem;
         flex: 0 1 auto;
-        width: 6.5ch;
+        width: 3rem;
         text-align: center;
         &::before {
           content: '\f007';

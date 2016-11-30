@@ -499,7 +499,7 @@
 	  }
 
 	  .btn.bid {
-		@include button-variant($btn-secondary-color, $btn-secondary-bg, $btn-secondary-border);
+		@include button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-border);
 		width: 7.5rem;
 	  }
 

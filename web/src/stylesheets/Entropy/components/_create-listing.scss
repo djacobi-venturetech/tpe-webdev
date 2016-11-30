@@ -131,6 +131,31 @@
         padding: 0;
       }
     }
+    .prop.kill-date {
+      padding-left: 0;
+      label {
+        width: auto;
+        margin-right: 8px;
+        margin-bottom: 0;
+        vertical-align: middle;
+      }
+      .val {
+        span.select2-container {
+          width: 6.5rem !important;
+        }
+        .date1, .date2 {
+          display: inline-block;
+          vertical-align: middle;
+          margin-top: .5rem;
+        }
+        .miwt-calendar {
+          input[type="text"] {
+            width: 6.5rem !important;
+            font-size: .9rem;
+          }
+        }
+      }
+    }
   }
 
   .prop {
@@ -160,6 +185,12 @@
         display: inline;
       }
 
+    }
+
+    &.label-before {
+      label.tbl {
+        padding-left: 0;
+      }
     }
 
     &.type {
@@ -228,6 +259,26 @@
     display: block;
   }
 
+  .prop.ship-date {
+    .val {
+      width: 100%;
+      span.select2-container {
+        width: 6.5rem !important;
+      }
+      .date1, .date2 {
+        display: inline-block;
+        vertical-align: middle;
+        margin-top: .5rem;
+      }
+      .miwt-calendar {
+        input[type="text"] {
+          width: 6.5rem !important;
+          font-size: .9rem;
+        }
+      }
+    }
+  }
+
   .picture-editor {
     font-weight: 700;
     text-transform: uppercase;
@@ -288,14 +339,19 @@
 
       label {
         margin-bottom: 0;
+        font-size: .85rem;
       }
 
-      label:not(.tbl) {
-        font-weight: 700;
+      .name, .price {
+        padding-left: 23px;
+        input {
+          width: 100% !important;
+        }
       }
 
       .prop {
         padding: 0;
+        margin-bottom: .5rem;
       }
 
     }
@@ -309,7 +365,8 @@
         display: block;
       }
       .select2-container {
-        width: 19.5rem !important;
+        width: 100% !important;
+        margin-top: .5rem;
       }
       .miwt-calendar input[type="text"] {
         width: 11rem !important;
@@ -359,6 +416,13 @@
       }
     }
 
+    .interval-props {
+      .prop .select2-container {
+        width: 19.5rem !important;
+        margin-top: 0;
+      }
+    }
+
     section.packaging .props {
       width: 50%;
     }
@@ -400,9 +464,26 @@
           }
         }
       }
+      .prop.kill-date {
+        padding-left: 42.5%;
+        .val {
+          .date1, .date2 {
+            margin-top: 0;
+          }
+        }
+      }
     }
 
     .prop {
+
+      &.ship-date {
+        .val {
+          width: 60%;
+          .date1, .date2 {
+            margin-top: 0;
+          }
+        }
+      }
 
       input[type="text"], textarea, .select2-container {
         min-width: 0;

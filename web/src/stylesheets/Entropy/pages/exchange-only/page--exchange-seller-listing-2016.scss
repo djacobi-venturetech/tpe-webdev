@@ -12,7 +12,7 @@
 }
 
 .listing-detail-container {
-  margin-bottom: 3rem;
+  margin-bottom: 1rem;
 }
 
 .seller-listing-manage {
@@ -40,7 +40,42 @@
 .listing-detail-viewer {
 
   .prop-body {
-	margin-top: 0;
+	overflow: hidden;
+	max-height: 1.1rem;
+	transition: all .75s ease-in-out;
+
+	&.shown {
+	  max-height: 50rem;
+	  transition: all .75s ease-in-out;
+	  .trigger::after {
+		content: '\f106';
+	  }
+	}
+
+	.trigger {
+	  cursor: pointer;
+	  flex: 1 0 auto;
+	  width: 100%;
+	  color: $color-tpe-brand;
+	  text-decoration: underline;
+	  padding-left: 5px;
+	  margin-top: -5px;
+	  &:hover {
+		text-decoration: none;
+	  }
+	  &::after {
+		content: '\f107';
+		font-family: $font-glyph-lib;
+		display: inline-block;
+		vertical-align: middle;
+		padding-left: 3px;
+	  }
+	}
+
+	@include breakpoint($bp-tablets-portrait) {
+	  flex-flow: row wrap;
+	}
+
   }
 
   .prop-header {
@@ -480,12 +515,13 @@ div.bids {
 		> .title {
 		  font-weight: 600;
 		  font-size: 1.1rem;
-		  flex: 1 0 100%;
+		  flex: 1 0 auto;
+		  width: 100%;
 		  padding-left: 5px;
 		}
 
 		.prop {
-		  flex: 1;
+		  flex: 1 0 auto;
 
 		  &.buyers {
 			.element {
@@ -496,6 +532,12 @@ div.bids {
 		  input[type="text"], .select2-container {
 			max-width: 100%;
 			width: 100%;
+		  }
+
+		  &.duration {
+			input.val {
+			  display: block;
+			}
 		  }
 
 		}
@@ -562,14 +604,14 @@ div.bids {
 		  max-width: 60%;
 
 		  .prop {
-			flex: 1 0 0;
+			flex: 1 0 auto;
 		  }
 
 		  .prop.buyers {
 			label {
 			  display: block;
 			  text-transform: uppercase;
-			  font-weight: 700;
+			  font-weight: 300;
 			}
 			.select2-container {
 			  width: 100% !important;
@@ -821,7 +863,6 @@ div.window.dialog {
 			max-width: none;
 
 			.prop {
-			  flex: 1 0 40%;
 
 			  .selec2-container, input[type="text"] {
 				width: 11.4rem;
@@ -846,4 +887,31 @@ div.window.dialog {
 
   }
 
+}
+
+@media (min-width: 1024px) {
+  .intervals {
+
+	> div {
+
+	  div.interval {
+
+		&.editor {
+
+		  .interval-props {
+
+			.prop {
+			  flex: 1 0 40%;
+
+			}
+
+		  }
+
+		}
+
+	  }
+
+	}
+
+  }
 }
