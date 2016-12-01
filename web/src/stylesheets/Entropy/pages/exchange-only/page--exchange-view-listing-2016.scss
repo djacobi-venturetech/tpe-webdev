@@ -293,8 +293,6 @@
 	button.btn {
 	  vertical-align: middle;
 	  margin-left: 1rem;
-	  @include button-variant($color-white, $color-tpe-black, darken($color-tpe-black, 5%));
-	  border-bottom: 3px solid darken($color-tpe-black, 5%);
 	}
 
   }
