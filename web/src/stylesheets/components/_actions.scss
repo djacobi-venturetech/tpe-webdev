@@ -29,14 +29,6 @@
 	  @include button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-border);
 	  border-bottom: 3px solid $btn-primary-border;
 	  height: auto;
-	  &::before {
-		content: '\f067';
-		font-family: FontAwesome;
-		padding-right: 5px;
-		font-weight: 300;
-		font-size: 85%;
-		color: $color-white;
-	  }
 	}
 
 	&.save, &.copy {
