@@ -26,8 +26,8 @@
 
 	&.add {
 	  @include button-size($btn-padding-y-sm, $btn-padding-x-sm, $font-size-root, $line-height-sm, $btn-border-radius-sm);
-	  @include button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-border);
-	  border-bottom: 3px solid $btn-primary-border;
+	  @include button-variant($btn-secondary-color, $btn-secondary-bg, $btn-secondary-border);
+	  border-bottom: 3px solid $btn-secondary-border;
 	  height: auto;
 	}
 
@@ -56,8 +56,8 @@
 
 .purchase-now {
   button.btn {
-	@include button-variant($color-white, $color-tpe-black, darken($color-tpe-black, 5%));
-	border-bottom: 3px solid darken($color-tpe-black, 5%);
+	@include button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-border);
+	border-bottom-width: 3px;
   }
 }
 
