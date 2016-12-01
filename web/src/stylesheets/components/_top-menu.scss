@@ -86,7 +86,7 @@
 		  font-weight: 600;
 		  margin-right: 5px;
 		  > .menuitemlabel {
-			@include button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-border);
+			@include button-variant($btn-secondary-color, $btn-secondary-bg, $btn-secondary-border);
 			@include button-size($btn-padding-y-sm, $btn-padding-x-sm, $font-size-sm, $line-height-sm, $border-radius-sm);
 			border-bottom-width: 3px;
 		  }
