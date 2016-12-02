@@ -5,7 +5,6 @@
 }
 
 .prop-wrapper {
-  width: 100% !important;
   max-width: none;
 
   .persistence-actions.bottom {
@@ -34,12 +33,6 @@
   .interval-props {
     margin-bottom: 2rem;
 
-    > section > .props {
-      background: $color-white;
-      border: 1px solid $color-light-grey;
-      padding: 1.5rem;
-    }
-
     > section > .prop-group-title {
       h1 {
         font-size: 1.75rem;
@@ -56,12 +49,14 @@
     .props .prop-group .prop-group-title {
       display: block;
       width: 100%;
+      margin-bottom: 0;
 
       h1 {
         font-size: 1rem;
         text-transform: none;
-        font-weight: 300;
+        font-weight: 600;
         font-family: $font-open-sans;
+        margin-bottom: 0;
         &::after {
           content: '*';
           color: red;
@@ -71,7 +66,7 @@
 
   }
 
-  section.packaging {
+  div.packaging {
     .props {
       display: inline-block;
       vertical-align: top;
@@ -84,15 +79,24 @@
         width: 100%;
       }
 
-      .prop .select2-container {
-        width: 100% !important;
-      }
       .pre-packaged, .single-packaging {
         margin-bottom: 0;
       }
+
       .allow-select {
         margin-top: 1rem;
+        &::before {
+          content: '- or -';
+          text-transform: uppercase;
+          color: $color-tpe-black;
+          display: block;
+          font-size: .85rem;
+          font-weight: 600;
+          margin-bottom: 3px;
+          margin-top: -12px;
+        }
       }
+
       .pre-packaged, .allow-select {
         display: block;
         width: 100%;
@@ -103,9 +107,6 @@
       }
     }
     &.packaging {
-      .val {
-        width: 100%;
-      }
 
       .packaging .price label {
         font-weight: 300;
@@ -114,6 +115,14 @@
         text-transform: none;
       }
 
+    }
+    .prop-group.single-package {
+      display: block;
+      padding-left: 0;
+      width: 100%;
+      .single-packaging label {
+        display:none;
+      }
     }
   }
 
@@ -143,14 +152,16 @@
         span.select2-container {
           width: 6.5rem !important;
         }
+        span.between-and {
+          padding-left: 5rem;
+        }
         .date1, .date2 {
           display: inline-block;
           vertical-align: middle;
-          margin-top: .5rem;
         }
         .miwt-calendar {
           input[type="text"] {
-            width: 6.5rem !important;
+            width: 7rem;
             font-size: .9rem;
           }
         }
@@ -161,13 +172,19 @@
   .prop {
     padding-left: 0;
 
-    input[type="text"], textarea, .select2-container {
+    input[type="text"], textarea {
       min-width: 0;
-      width: 100% !important;
+      width: 100%;
+      max-width: 23rem;
+    }
+
+    .select2-container {
+      width: 100%;
+      max-width: 23rem !important;
     }
 
     .miwt-calendar input[type="text"] {
-      width: 40% !important;
+      width: 40%;
     }
 
     > label {
@@ -177,12 +194,14 @@
 
     label {
       text-transform: none;
-      font-weight: 300;
+      font-weight: 600;
+      margin-bottom: 0;
 
       &.tbl {
         padding-left: 5px;
         text-transform: none;
         display: inline;
+        font-weight: 300;
       }
 
     }
@@ -194,6 +213,10 @@
     }
 
     &.type {
+
+      .select2-container {
+        width: 100% !important;
+      }
 
       .custom-type {
         margin-top: 1rem;
@@ -212,8 +235,16 @@
       div.val {
         width: 100%;
         span.label-after {
-          display: block;
-          width: 100%;
+          display: inline-block;
+          vertical-align: top;
+          width: 8.75rem;
+          margin-right: 10px;
+          margin-bottom: .5rem;
+          label > span {
+            display: inline-block;
+            vertical-align: top;
+            width: calc(100% - 25px);
+          }
         }
       }
     }
@@ -234,20 +265,17 @@
       }
 
       input.val {
-        width: 100% !important;
+        width: 100%;
       }
 
     }
 
-  }
-
-  .prop-group.single-package {
-    display: block;
-    padding-left: 0;
-    width: 100%;
-    .single-packaging label {
-      display:none;
+    &.location, &.grade {
+      .select2-container {
+        width: 100% !important;
+      }
     }
+
   }
 
   span.hint {
@@ -257,6 +285,8 @@
     margin-top: .25rem;
     color: $color-tpe-grey;
     display: block;
+    max-width: 23rem;
+    width: 100%;
   }
 
   .prop.ship-date {
@@ -265,77 +295,30 @@
       span.select2-container {
         width: 6.5rem !important;
       }
+      span.between-and {
+        padding-left: 5rem;
+      }
       .date1, .date2 {
         display: inline-block;
         vertical-align: middle;
-        margin-top: .5rem;
       }
       .miwt-calendar {
         input[type="text"] {
-          width: 6.5rem !important;
+          width: 7rem;
           font-size: .9rem;
         }
       }
     }
   }
 
-  .picture-editor {
-    font-weight: 700;
-    text-transform: uppercase;
-    padding: .5rem;
-    text-align: left;
-
-    .drop-zone {
-      margin-top: .25rem;
-      text-align: center;
-      position: relative;
-    }
-
-    &.no-image-selected.mode-view {
-      .drop-zone {
-        background-color: lighten($color-tpe-lightest-grey, 20%);
-        min-height: 8rem;
-        border: 1px solid $color-tpe-grey;
-
-        &::after {
-          content: 'No image selected.';
-          color: $color-tpe-grey;
-          position: absolute;
-          font-size: .85rem;
-          top: 45%;
-          width: 100%;
-          left: 0;
-          font-weight: 300;
-          font-style: italic;
-        }
-
-      }
-    }
-
-    input[type="file"] {
-      font-size: .85rem;
-    }
-
-    .actions.bottom {
-      .btn {
-        padding: .375rem .75rem;
-        font-size: .75rem;
-        line-height: 1;
-      }
-    }
-
-  }
-
-
-
   .multiple-packaging {
     display: block;
     padding-left: 0;
     width: 100%;
+    margin-top: -1.75rem;
     > div {
-      border-top: 1px solid $color-tpe-light-grey;
-      padding-top: .5rem;
-      margin-top: .5rem;
+      padding-top: .25rem;
+      margin-top: .25rem;
 
       label {
         margin-bottom: 0;
@@ -345,13 +328,16 @@
       .name, .price {
         padding-left: 23px;
         input {
-          width: 100% !important;
+          width: 95%;
         }
       }
 
       .prop {
         padding: 0;
-        margin-bottom: .5rem;
+        margin-bottom: 0;
+        input.val {
+          width: 95%;
+        }
       }
 
     }
@@ -366,15 +352,21 @@
       }
       .select2-container {
         width: 100% !important;
-        margin-top: .5rem;
       }
-      .miwt-calendar input[type="text"] {
-        width: 11rem !important;
+
+      .miwt-calendar {
+        .select2-container {
+          margin-top: .5rem;
+          width: 19rem !important;
+        }
+        input[type="text"] {
+          width: 11rem;
+        }
       }
       &.duration {
         margin-top: 1rem;
         input.val {
-          width: 11rem !important;
+          //width: 11rem;
         }
         label {
           margin-bottom: 0;
@@ -386,13 +378,6 @@
     }
   }
 
-  .prop-group.packaging,
-  .prop-group.freshness,
-  .specialty-labels {
-    border-bottom: 1px solid $color-light-grey;
-    margin-bottom: 1rem;
-  }
-
   .specialty-labels {
     padding-bottom: 1rem;
   }
@@ -400,133 +385,78 @@
 }
 
 @media (min-width: 768px) {
-  #column1 > .miwt {
-    //width: 75%;
-  }
 
   .prop-editor {
+    width: 75%;
 
-    .freight-details,
-    .product-details,
-    .seller-details,
-    .interval-props {
-      .props .prop-group .prop-group-title {
-        display: inline-block;
-        width: 40%;
-      }
-    }
-
-    .interval-props {
-      .prop .select2-container {
-        width: 19.5rem !important;
-        margin-top: 0;
-      }
-    }
-
-    section.packaging .props {
-      width: 50%;
-    }
-
-    .prop-group.single-package {
-      padding-left: 1.35rem;
-    }
-
-    .prop.multiple-packaging {
-      margin-top: -1rem;
-      padding-left: 1.35rem;
+    .multiple-packaging {
+      width: 60%;
+      padding-left: 18px;
 
       > div {
         display: inline-block;
-        font-size: .9rem;
         vertical-align: top;
         width: 50%;
-        padding: 0 .5rem 0 0;
-        border-top: none;
-        margin-top: 0;
       }
+
     }
 
     .prop-group.freshness {
-      .prop.freshness {
-        padding-left: 40%;
-        margin-top: -3rem;
-      }
-      .fresh, .frozen {
-        padding-left: 42.25%;
-        .prop {
-          padding: 0;
-          label {
-            width: 28%;
-          }
-          textarea.val {
-            width: 60% !important;
-            margin-left: 7px;
-          }
-        }
-      }
-      .prop.kill-date {
-        padding-left: 42.5%;
-        .val {
-          .date1, .date2 {
-            margin-top: 0;
-          }
+      .prop.kill-date .val {
+        span.between-and {
+          padding-left: 0;
         }
       }
     }
 
-    .prop {
-
-      &.ship-date {
-        .val {
-          width: 60%;
-          .date1, .date2 {
-            margin-top: 0;
-          }
+    .prop.ship-date {
+      .val {
+        span.between-and {
+          padding-left: 0;
         }
       }
+    }
 
-      input[type="text"], textarea, .select2-container {
-        min-width: 0;
-        width: 58% !important;
+    .interval-props .prop {
+      .miwt-calendar {
+        .select2-container {
+          margin-top: .5rem;
+          width: 19rem !important;
+        }
       }
+    }
 
-      .miwt-calendar input[type="text"] {
-        width: 50% !important;
+  }
+
+}
+
+@media (min-width: 1024px) {
+
+  .prop-editor {
+    .prop-group.freshness {
+      .prop.kill-date .val {
+        span.between-and {
+          padding-left: 0;
+        }
+        .miwt-calendar input[type="text"] {
+          width: 12.75rem;
+        }
       }
+    }
 
-      > label {
-        width: 40%;
-        display: inline-block;
-        vertical-align: top;
-      }
-
-      &.specialty-labels {
-        div.val {
-          width: 58%;
-          span.label-after {
-            display: inline-block;
+    .prop.ship-date {
+      .val {
+        span.between-and {
+          padding-left: 0;
+        }
+        .miwt-calendar {
+          input[type="text"] {
+            width: 12.75rem;
             font-size: .9rem;
-            width: 49%;
-            padding-right: 1rem;
           }
         }
       }
-
-      &.type {
-        .custom-type {
-          padding-left: 42.25%;
-          input.val {
-            width: 82% !important;
-          }
-        }
-      }
-
     }
-
-    span.hint {
-      padding: 0 0 5px 40%;
-    }
-
   }
 
 }
