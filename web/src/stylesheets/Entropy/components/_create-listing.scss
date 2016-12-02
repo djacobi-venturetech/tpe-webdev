@@ -120,8 +120,21 @@
       display: block;
       padding-left: 0;
       width: 100%;
-      .single-packaging label {
-        display:none;
+      .single-packaging {
+        padding-left: 20px;
+        span.select2-container {
+          width: 100% !important;
+          max-width: 22rem !important;
+        }
+        label {
+          display:none;
+        }
+      }
+      .single-package-other-name {
+        padding-left: 20px;
+        input.val {
+          max-width: 21.75rem;
+        }
       }
     }
   }
@@ -365,14 +378,16 @@
       }
       &.duration {
         margin-top: 1rem;
-        input.val {
-          //width: 11rem;
-        }
+        display: flex;
+        flex-direction: column;
+
         label {
           margin-bottom: 0;
         }
         span.hint {
           padding-left: 0;
+          order: 3;
+          margin-top: 0;
         }
       }
     }
@@ -457,6 +472,11 @@
         }
       }
     }
+
+    .interval-props .prop .miwt-calendar .select2-container {
+      margin-top: 0;
+    }
+
   }
 
 }
