@@ -202,6 +202,33 @@ section.offer {
 	  border: 2px solid $color-tpe-lightest-grey;
 	}
 
+	.destination {
+	  display: block;
+	  margin: .5rem 0 0;
+	  padding: 0;
+	  width: 100%;
+
+	  @include breakpoint($bp-tablets-landscape) {
+		padding: 0;
+		width: 60%;
+	  }
+
+	  > label {
+		display: block;
+		font-weight: 600;
+	  }
+
+	  input.val {
+		border: 2px solid $color-tpe-lightest-grey;
+		width: 100%;
+	  }
+
+	  + button.submit-offer {
+		margin-top: 1.75rem;
+	  }
+
+	}
+
 	button.submit-offer {
 	  @include button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-border);
 	  border-bottom-width: 3px;
@@ -209,31 +236,6 @@ section.offer {
 	  @include breakpoint($bp-tablets-landscape) {
 		margin-top: -.4rem;
 	  }
-	}
-
-  }
-
-  .destination {
-	display: block;
-	margin: .5rem 0 0;
-	padding: 0;
-
-	@include breakpoint($bp-tablets-portrait) {
-	  padding: 0 1rem;
-	}
-
-	@include breakpoint($bp-tablets-landscape) {
-	  padding: 0;
-	}
-
-	> label {
-	  display: block;
-	  font-weight: 600;
-	}
-
-	input.val {
-	  border: 2px solid $color-tpe-lightest-grey;
-	  width: 47%;
 	}
 
   }
