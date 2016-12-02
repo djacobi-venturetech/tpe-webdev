@@ -414,7 +414,7 @@
 		width: 100%;
 		@include breakpoint($bp-tablets-landscape) {
 		  width: 48%;
-		  display: inline;
+		  display: inline-block;
 		  padding-left: 3px;
 		}
 	  }
