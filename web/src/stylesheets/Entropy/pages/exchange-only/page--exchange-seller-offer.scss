@@ -15,7 +15,7 @@
 	transition: all .75s ease-in-out;
 
 	&.shown {
-	  max-height: 50rem;
+	  max-height: 70rem;
 	  transition: all .75s ease-in-out;
 	  .trigger::after {
 		content: '\f106';
@@ -76,9 +76,17 @@
 	position: relative;
 	right: -12rem;
 
+	> div {
+	  height: 100%;
+	  > .conversation {
+		height: 100%;
+	  }
+	}
+
 	@include breakpoint($bp-tablets-portrait) {
 	  width: calc(100% - 12rem);
 	  right: auto;
+	  flex: 1 0 auto;
 	}
 
   }
@@ -112,6 +120,7 @@
   @include breakpoint($bp-tablets-portrait) {
 	//width: 12rem;
 	position: relative;
+	flex: 1 0 auto;
   }
 
   h2 {
@@ -237,9 +246,15 @@
 		  font-size: 1.75rem;
 		}
 		.offer-expires {
-		  color: $color-tpe-grey;
+		  color: $color-tpe-light-grey;
 		  font-size: .85rem;
 		  font-style: italic;
+		}
+	  }
+
+	  .status-active {
+		.offer-expires {
+		  color: $color-tpe-yellow;
 		}
 	  }
 
