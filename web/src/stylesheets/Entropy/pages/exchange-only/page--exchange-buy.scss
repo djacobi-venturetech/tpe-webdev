@@ -177,7 +177,8 @@
 }
 
 .listing-main-wrapper {
-  flex: 1 0 50%;
+  flex: 1 0 auto;
+  width: 50%;
   flex-flow: column nowrap;
   padding: 0 .75rem .5rem;
 
@@ -213,7 +214,7 @@
 		text-transform: uppercase;
 		font-family: $font-raleway;
 		font-weight: 700;
-		font-size: 1.45rem;
+		font-size: 1.25rem;
 	  }
 
 	}
@@ -305,6 +306,10 @@
 	  &.right.logo-wrapper {
 		padding-top: .5rem;
 
+		.company-logo {
+		  max-width: 60%;
+		}
+
 	  }
 
 	}
@@ -395,6 +400,11 @@
   }
 
   .certifications {
+	flex-direction: column;
+	label {
+	  display: block;
+	  width: 100%;
+	}
 	span.certification {
 	  &::after {
 		content: ',';
@@ -412,10 +422,11 @@
 }
 
 .listing-bid-wrapper {
-  flex: 1 0 30%;
+  flex: 1 0 auto;
+  width: 30%;
   flex-flow: column nowrap;
   border-left: 2px solid $color-tpe-beige;
-  padding: 1rem 0 1rem .5rem;
+  padding: 3rem 0 1rem .5rem;
   justify-content: center;
   position: relative;
 
@@ -499,7 +510,7 @@
 	  }
 
 	  .btn.bid {
-		@include button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-border);
+		@include button-variant($btn-secondary-color, $btn-secondary-bg, $btn-secondary-border);
 		width: 7.5rem;
 	  }
 
@@ -659,6 +670,18 @@ div.window.dialog {
   .listing-main-wrapper {
 	padding: 0 1.5rem .5rem 1.75rem;
 
+	.listing-title {
+
+	  .listing-name {
+
+		.val {
+		  font-size: 1.45rem;
+		}
+
+	  }
+
+	}
+
 	.body-con {
 	  flex-flow: row wrap;
 
@@ -682,6 +705,14 @@ div.window.dialog {
 	.warehouse-location, .pick-up-time {
 	  flex: 1 0 auto;
 	  width: 100%;
+	}
+
+	.certifications {
+	  flex-direction: row;
+	  label {
+		display: inline-block;
+		width: auto;
+	  }
 	}
 
   }
