@@ -14,6 +14,7 @@
 	flex: 1 0 auto;
 	width: auto;
 	padding-left: 1.5rem;
+	margin-bottom: 1.5rem;
 
 	@include breakpoint($bp-tablets-portrait) {
 	  width: 100%;
@@ -77,7 +78,7 @@
 	  margin: 1.25rem 0;
 
 	  .btn.create {
-		@include button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-border);
+		@include button-variant($btn-secondary-color, $btn-secondary-bg, $btn-secondary-border);
 		padding: .5rem 1.5rem;
 	  }
 
