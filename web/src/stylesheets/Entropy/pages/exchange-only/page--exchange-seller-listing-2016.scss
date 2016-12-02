@@ -45,7 +45,7 @@
 	transition: all .75s ease-in-out;
 
 	&.shown {
-	  max-height: 50rem;
+	  max-height: 70rem;
 	  transition: all .75s ease-in-out;
 	  .trigger::after {
 		content: '\f106';
@@ -352,12 +352,14 @@ div.bids {
 
 	> span {
 	  flex: 1;
+	  margin-bottom: .5rem;
 	}
 
 	label {
 	  display: block;
 	  font-weight: 700;
 	  text-transform: uppercase;
+	  margin-bottom: 0;
 	  &::after {
 		content: ':';
 	  }
@@ -804,11 +806,6 @@ div.window.dialog {
 
   div.bids {
 
-	div.winner {
-	  display: flex;
-	  flex-flow: row nowrap;
-	}
-
 	.bids {
 	  div.bid {
 		span.time {
@@ -914,4 +911,29 @@ div.window.dialog {
 	}
 
   }
+
+  div.bids {
+
+	div.winner {
+	  display: flex;
+	  flex-flow: row wrap;
+
+	  > span {
+		flex: 1 0 auto;
+	  }
+
+	  .name, .email {
+		width: 50%;
+		max-width: 50%;
+	  }
+	  .amont, .company {
+		width: 25%;
+		word-wrap: break-word;
+		white-space: normal;
+		padding-right: 10px;
+	  }
+
+	}
+  }
+
 }
