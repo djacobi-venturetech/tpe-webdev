@@ -44,6 +44,11 @@
 		vertical-align: middle;
 		padding-left: 3px;
 	  }
+
+	  + .trigger {
+		display: none;
+	  }
+
 	}
 
 	@include breakpoint($bp-tablets-portrait) {

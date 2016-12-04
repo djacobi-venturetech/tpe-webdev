@@ -70,6 +70,9 @@
 		vertical-align: middle;
 		padding-left: 3px;
 	  }
+	  + .trigger {
+		display: none;
+	  }
 	}
 
 	@include breakpoint($bp-tablets-portrait) {
@@ -540,6 +543,10 @@ div.bids {
 			input.val {
 			  display: block;
 			}
+		  }
+
+		  &.has-error {
+			margin-right: 5px;
 		  }
 
 		}
