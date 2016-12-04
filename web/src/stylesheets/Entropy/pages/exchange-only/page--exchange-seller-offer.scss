@@ -212,14 +212,29 @@
 	  }
 
 	  .unread {
+		&::after {
+		  content: '\f075';
+		  font-family: $font-glyph-lib;
+		  color: $color-tpe-green;
+		  display: inline-block;
+		  position: absolute;
+		  right: 10px;
+		  top: 50%;
+		  margin-top: -11px;
+		  font-size: 1.15rem;
+		  font-weight: 300;
+		}
+	  }
+
+	  .unread-offer {
 		.offer-amount {
 		  &::after {
-			content: '\f27a';
+			content: '\f155';
 			font-family: $font-glyph-lib;
 			color: $color-tpe-green;
 			display: inline-block;
 			position: absolute;
-			right: 10px;
+			right: 35px;
 			top: 50%;
 			margin-top: -11px;
 			font-size: 1.15rem;
