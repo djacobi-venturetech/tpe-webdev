@@ -83,11 +83,17 @@
 	  width: 35px;
 	  overflow: hidden;
 
-	  &:hover {
+	  &:hover, &:focus {
 		color: transparent;
 	  }
 
 	  &::before {
+		content: '\f067';
+		font-weight: 300;
+		margin-left: -1px;
+		display: inline-block;
+		padding-top: 3px;
+		font-family: $font-glyph-lib;
 		color: $color-white !important;
 	  }
 
