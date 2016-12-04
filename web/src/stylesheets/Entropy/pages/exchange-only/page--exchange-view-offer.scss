@@ -160,6 +160,13 @@ section.offer {
 	  margin-bottom: .5rem;
 	}
 
+	.bid-labels > span, label:not(.symbol-usd) {
+	  &::after {
+		content: '*';
+		color: $color-tpe-red;
+	  }
+	}
+
 	.amount-entry {
 	  .symbol-usd {
 		font-weight: 600;
@@ -227,15 +234,33 @@ section.offer {
 		margin-top: 1.75rem;
 	  }
 
+	  &.has-error {
+		display: flex;
+		flex-direction: column;
+		max-width: 60%;
+	  }
+
+	}
+
+	span:not(.destination):last-child {
+	  + button.submit-offer {
+		margin-top: 0;
+	  }
 	}
 
 	button.submit-offer {
 	  @include button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-border);
 	  border-bottom-width: 3px;
 	  margin-top: 2rem;
+	  height: 2.75rem;
 	  @include breakpoint($bp-tablets-landscape) {
 		margin-top: -.4rem;
 	  }
+	}
+
+	.has-error {
+	  max-width: 14rem;
+	  display: inline-block;
 	}
 
   }
