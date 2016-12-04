@@ -273,6 +273,13 @@
 		}
 	  }
 
+	  .status-accepted {
+		.offer-expires {
+		  color: $color-tpe-green;
+		  font-weight: 600;
+		}
+	  }
+
 	}
 
   }
