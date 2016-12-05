@@ -115,12 +115,12 @@ $color-message-received: #f3f3f3;
 
       }
 
-      &.made-offer, &.accepted-offer {
+      &.made-offer, &.accepted-offer, &.expired-offer, &.declined-offer {
 
         .sent-time {
           margin-bottom: -5px;
           @include breakpoint($bp-tablets-landscape) {
-            margin-bottom: -10px;
+            //margin-bottom: -10px;
           }
         }
 
@@ -138,6 +138,8 @@ $color-message-received: #f3f3f3;
           color: $color-tpe-green;
           padding: 0 1rem;
           text-align: right;
+          max-width: calc(100% - 3.5rem);
+          line-height: 1.15;
 
           @include breakpoint($bp-tablets-landscape) {
             text-align: left;
@@ -147,6 +149,36 @@ $color-message-received: #f3f3f3;
             display: none;
           }
         }
+
+        &.sent {
+          .message-body {
+            text-align: right;
+          }
+        }
+
+      }
+
+      &.expired-offer, &.declined-offer {
+        padding-left: 3.5rem;
+        .sent-time {
+          margin-bottom: 0;
+          padding: 0 .75rem;
+        }
+        .message-body {
+          color: $color-tpe-red;
+          text-align: left;
+        }
+      }
+
+      &.declined-offer {
+        padding-left: 0;
+
+        &.sent {
+          .sent-time {
+            padding-right: 4.125rem;
+          }
+        }
+
       }
 
       .name {

@@ -245,6 +245,13 @@
     }
 
     &.specialty-labels {
+      padding-bottom: 1rem;
+      display: flex;
+      flex-direction: column;
+      span.hint {
+        order: 3;
+        margin-top: -.25rem;
+      }
       div.val {
         width: 100%;
         span.label-after {
@@ -289,9 +296,17 @@
       }
     }
 
+    &.note {
+      display: flex;
+      flex-direction: column;
+      span.hint {
+        order: 3;
+      }
+    }
+
   }
 
-  span.hint {
+  span.hint, div.hint {
     padding: 0 0 5px;
     font-size: .85rem;
     font-style: italic;
@@ -300,6 +315,7 @@
     display: block;
     max-width: 23rem;
     width: 100%;
+    font-weight: 300;
   }
 
   .prop.ship-date {
@@ -359,6 +375,12 @@
   .interval-props {
     margin-bottom: 0;
 
+    .prop-group-title {
+      div.hint {
+        max-width: none;
+      }
+    }
+
     .prop {
       > label {
         display: block;
@@ -391,10 +413,6 @@
         }
       }
     }
-  }
-
-  .specialty-labels {
-    padding-bottom: 1rem;
   }
 
 }

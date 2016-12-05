@@ -44,6 +44,11 @@
 		vertical-align: middle;
 		padding-left: 3px;
 	  }
+
+	  + .trigger {
+		display: none;
+	  }
+
 	}
 
 	@include breakpoint($bp-tablets-portrait) {
@@ -212,14 +217,29 @@
 	  }
 
 	  .unread {
+		&::after {
+		  content: '\f075';
+		  font-family: $font-glyph-lib;
+		  color: $color-tpe-green;
+		  display: inline-block;
+		  position: absolute;
+		  right: 10px;
+		  top: 50%;
+		  margin-top: -11px;
+		  font-size: 1.15rem;
+		  font-weight: 300;
+		}
+	  }
+
+	  .unread-offer {
 		.offer-amount {
 		  &::after {
-			content: '\f27a';
+			content: '\f155';
 			font-family: $font-glyph-lib;
 			color: $color-tpe-green;
 			display: inline-block;
 			position: absolute;
-			right: 10px;
+			right: 35px;
 			top: 50%;
 			margin-top: -11px;
 			font-size: 1.15rem;
@@ -255,6 +275,13 @@
 	  .status-active {
 		.offer-expires {
 		  color: $color-tpe-yellow;
+		}
+	  }
+
+	  .status-accepted {
+		.offer-expires {
+		  color: $color-tpe-green;
+		  font-weight: 600;
 		}
 	  }
 
