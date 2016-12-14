@@ -1,0 +1,274 @@
+@import "../../../config/base-vars";
+@import "../../../../../../bower_components/bootstrap/scss/variables";
+@import "../../../../../../bower_components/bootstrap/scss/mixins";
+@import "../../../../../../bower_components/bootstrap/scss/buttons";
+@import "../../components/listing-details-viewer";
+@import "../../components/help-center";
+@import "../../components/conversation";
+
+
+/*.listing-detail-container {
+  display: block;
+  width: 100%;
+}*/
+
+.listing-detail-viewer {
+  padding-top: 1rem;
+  margin-bottom: 1rem;
+
+  .prop-header-actions {
+	position: absolute;
+	right: 0;
+	top: -28px;
+  }
+
+  .prop-footer {
+	.bottom.actions {
+	  display: none;
+	}
+  }
+
+}
+
+.listing-buyer-offer,
+.help-center-container {
+  display: block;
+
+  @include breakpoint($bp-tablets-portrait) {
+	display: inline-block;
+	vertical-align: top;
+  }
+
+}
+
+.help-center-container {
+  width: 100%;
+  margin-top: 2rem;
+
+  @include breakpoint($bp-tablets-portrait) {
+	width: 260px;
+	margin-top: 0;
+  }
+
+}
+
+.listing-buyer-offer {
+  width: 100%;
+
+  @include breakpoint($bp-tablets-portrait) {
+	width: calc(100% - 260px);
+	padding-right: 2rem;
+  }
+
+}
+
+section.offer {
+  background: $color-white;
+  border: 2px solid $color-tpe-beige;
+  padding: 1rem;
+  margin-left: -2px;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 2rem;
+
+  .header {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-between;
+	border-bottom: 2px solid $color-tpe-beige;
+	padding-bottom: .5rem;
+	margin-bottom: 1.25rem;
+	position: relative;
+	min-height: 4.5rem;
+
+	h2 {
+	  flex: 1 0 auto;
+	  width: 100%;
+
+	  @include breakpoint($bp-tablets-landscape) {
+		width: auto;
+	  }
+
+	}
+
+  }
+
+  .current-offer-info {
+	//order: 2;
+	color: $color-tpe-green;
+	font-size: 1.15rem;
+	text-transform: uppercase;
+	font-weight: 600;
+	position: relative;
+
+	@include breakpoint($bp-tablets-landscape) {
+	  position: absolute;
+	  left: 0;
+	  bottom: 5px;
+	}
+
+  }
+
+  div.buyer-warning {
+	font-size: .75rem;
+	color: $color-tpe-grey;
+	font-style: italic;
+	width: 100%;
+
+	@include breakpoint($bp-tablets-landscape) {
+	  width: 32%;
+	}
+
+	div.warning {
+	  padding: 0 0 .5rem;
+
+	  @include breakpoint($bp-tablets-landscape) {
+		padding: 0 .5rem .5rem;
+	  }
+
+	  .warn-message {
+		font-weight: 600;
+	  }
+
+	}
+
+	ul {
+	  margin-bottom: 0;
+	}
+
+  }
+
+  .offer-entry {
+	display: flex;
+	flex-flow: column wrap;
+	justify-content: space-between;
+	padding: 0;
+
+	@include breakpoint($bp-tablets-portrait) {
+	  padding: 0 1rem;
+	  flex-flow: row wrap;
+	}
+
+	@include breakpoint($bp-tablets-landscape) {
+	  padding: 0;
+	}
+
+	.bid-labels {
+	  display: none;
+	  /*flex: 1 0 auto;
+	  width: 100%;
+	  font-weight: 600;
+	  margin-bottom: .5rem;*/
+	}
+
+	label:not(.symbol-usd) {
+	  &::after {
+		content: '*';
+		color: $color-tpe-red;
+	  }
+	}
+
+	.amount-entry, .duration, .pricing, .terms  {
+	  margin-bottom: .5rem;
+
+	  > label {
+		display: block;
+		font-weight: 600;
+	  }
+
+	  span.select2-container {
+		width: 10rem !important;
+	  }
+
+	}
+
+	.amount-entry {
+	  .symbol-usd {
+		margin-right: .5rem;
+	  }
+	  input.val {
+		width: 8rem;
+	  }
+	}
+
+	.duration {
+
+	}
+
+	.pricing {
+
+	}
+
+	input.val, textarea {
+	  border: 2px solid $color-tpe-lightest-grey;
+	}
+
+	textarea {
+	  height: 5rem;
+	  max-width: 100%;
+	}
+
+	.terms {
+
+	}
+
+	span:not(.destination):last-child {
+	  + button.submit-offer {
+		margin-top: 0;
+	  }
+	}
+
+	button.submit-offer {
+	  @include button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-border);
+	  border-bottom-width: 3px;
+	  margin-top: 2rem;
+	  height: 2.75rem;
+	}
+
+	.has-error {
+	  max-width: 20rem;
+	  display: inline-block;
+	  .error-message {
+		display: block;
+	  }
+	}
+
+  }
+
+}
+
+.conversation {
+  padding: 1rem;
+
+  div.instructions {
+	font-style: italic;
+	color: $color-tpe-grey;
+	margin-bottom: .5rem;
+  }
+
+  .send-message {
+
+	textarea, button {
+	  vertical-align: top;
+	}
+
+  }
+}
+
+/*@media (min-width: 769px) and (max-width: 834px) {
+  section.offer .offer-entry button.submit-offer {
+	margin-top: 2rem;
+  }
+}
+
+@media (min-width: 835px) and (max-width: 964px) {
+  section.offer .offer-entry button.submit-offer {
+	margin-top: .5rem;
+  }
+}
+
+@media (min-width: 965px) and (max-width: 1023px) {
+  section.offer .offer-entry button.submit-offer {
+	margin-top: -.4rem;
+  }
+}*/
