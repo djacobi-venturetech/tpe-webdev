@@ -246,6 +246,9 @@
 			font-weight: 300;
 		  }
 		}
+		&.status-expired .offer-amount::after {
+		  content: '';
+		}
 	  }
 
 	  > div {
