@@ -61,14 +61,26 @@
   }
 }
 
-.exchange-btn.request-product {
-  .btn {
-	font-family: $font-open-sans;
-	font-weight: 600;
-	text-transform: uppercase;
-	@include button-size($btn-padding-y-sm, $btn-padding-x-sm, $font-size-root, $line-height-sm, $btn-border-radius-sm);
-	@include button-variant($color-white, $color-tpe-light-grey, darken($color-tpe-light-grey, 5%));
-	border-bottom: 3px solid darken($color-tpe-light-grey, 5%);
+.exchange-btn {
+  &.request-product {
+	.btn {
+	  font-family: $font-open-sans;
+	  font-weight: 600;
+	  text-transform: uppercase;
+	  @include button-size($btn-padding-y-sm, $btn-padding-x-sm, $font-size-root, $line-height-sm, $btn-border-radius-sm);
+	  @include button-variant($btn-secondary-color, $btn-secondary-bg, $btn-secondary-border);
+	  border-bottom-width: 3px;
+	}
+  }
+  &.invite-seller {
+	.btn {
+	  font-family: $font-open-sans;
+	  font-weight: 600;
+	  text-transform: uppercase;
+	  @include button-size($btn-padding-y-sm, $btn-padding-x-sm, $font-size-root, $line-height-sm, $btn-border-radius-sm);
+	  @include button-variant($color-white, $color-tpe-light-grey, darken($color-tpe-light-grey, 5%));
+	  border-bottom-width: 3px;
+	}
   }
 }
 
@@ -77,7 +89,7 @@
 }
 
 @media (max-width: 600px) {
-  .actions, .add-listing {
+  .actions, .add-listing:not(.exchange-btn) {
 	.btn.add {
 	  color: transparent;
 	  width: 35px;
