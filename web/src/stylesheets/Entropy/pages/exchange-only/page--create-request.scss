@@ -1,0 +1,15 @@
+@import "../../components/create-listing";
+
+.prop-editor .multiple-packaging {
+  margin-top: -.5rem;
+}
+
+.prop-editor .product-details {
+  .prop.grade + .prop.ctb.label-before {
+    label {
+      font-weight: 600;
+      font-family: $font-raleway;
+      text-transform: uppercase;
+    }
+  }
+}
