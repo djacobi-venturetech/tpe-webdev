@@ -12,6 +12,9 @@ $color-tpe-lighter-grey: #a7a7a7;
 $color-tpe-lightest-grey: #a9a7aa;
 $color-tpe-beige: #dbd5cb;
 $color-tpe-canceled: rgba(214, 14, 255, 0.66);
+$color-tpe-best-offer: #7daedb;
+$color-tpe-auction: #3da5a5;
+$color-tpe-product-request: #f5a36f;
 
 $tpe-page-bg: #ebeae6;
 
@@ -71,6 +74,7 @@ $bp-mobile-landscape: (min-width 480px);
 $bp-tablets-portrait: (min-width 768px);
 $bp-tablets-only: (min-width 768px) (min-width 1024px);
 $bp-tablets-landscape: (min-width 1024px);
+$bp-in-between-tablet-desktop: (min-width 1050px);
 $bp-desktop: (min-width 1280px);
 $bp-desktop-wide: (min-width: 1400px);
 
