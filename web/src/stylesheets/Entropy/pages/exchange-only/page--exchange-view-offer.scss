@@ -154,31 +154,22 @@ section.offer {
 	}
 
 	.bid-labels {
-	  flex: 1 0 auto;
+	  display: none;
+	  /*flex: 1 0 auto;
 	  width: 100%;
 	  font-weight: 600;
-	  margin-bottom: .5rem;
+	  margin-bottom: .5rem;*/
 	}
 
-	.bid-labels > span, label:not(.symbol-usd) {
+	label:not(.symbol-usd) {
 	  &::after {
 		content: '*';
 		color: $color-tpe-red;
 	  }
 	}
 
-	.amount-entry {
-	  .symbol-usd {
-		font-weight: 600;
-		margin-right: .5rem;
-	  }
-	  input.val {
-		width: 8rem;
-	  }
-	}
-
-	.duration, .pricing  {
-	  margin: .5rem 0 0;
+	.duration, .pricing, .amount-entry {
+	  margin-bottom: .5rem;
 
 	  > label {
 		display: block;
@@ -191,17 +182,20 @@ section.offer {
 
 	}
 
-	.duration {
-	  @include breakpoint($bp-tablets-portrait) {
-		margin: -2rem 0 0;
+	.amount-entry {
+	  .symbol-usd {
+		margin-right: .5rem;
+	  }
+	  input.val {
+		width: 8rem;
 	  }
 	}
 
-	.pricing {
+	.duration {
 
-	  @include breakpoint($bp-tablets-landscape) {
-		margin: -2rem 0 0;
-	  }
+	}
+
+	.pricing {
 
 	}
 
@@ -253,14 +247,14 @@ section.offer {
 	  border-bottom-width: 3px;
 	  margin-top: 2rem;
 	  height: 2.75rem;
-	  @include breakpoint($bp-tablets-landscape) {
-		margin-top: -.4rem;
-	  }
 	}
 
 	.has-error {
-	  max-width: 14rem;
+	  max-width: 20rem;
 	  display: inline-block;
+	  .error-message {
+		display: block;
+	  }
 	}
 
   }
@@ -285,7 +279,7 @@ section.offer {
   }
 }
 
-@media (min-width: 769px) and (max-width: 834px) {
+/*@media (min-width: 769px) and (max-width: 834px) {
   section.offer .offer-entry button.submit-offer {
 	margin-top: 2rem;
   }
@@ -307,4 +301,4 @@ section.offer {
   section.offer .offer-entry button.submit-offer {
 	margin-top: -.4rem;
   }
-}
+}*/
