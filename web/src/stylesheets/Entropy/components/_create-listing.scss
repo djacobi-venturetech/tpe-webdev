@@ -37,6 +37,7 @@
       h1 {
         font-size: 1.75rem;
         border-bottom: 2px solid $color-tpe-light-grey;
+        color: $color-tpe-dark-grey;
       }
       .hint {
         font-size: 1rem;
@@ -52,10 +53,10 @@
       margin-bottom: 0;
 
       h1 {
+        font-family: $font-raleway;
+        text-transform: uppercase;
         font-size: 1rem;
-        text-transform: none;
         font-weight: 600;
-        font-family: $font-open-sans;
         margin-bottom: 0;
         &::after {
           content: '*';
@@ -206,7 +207,8 @@
     }
 
     label {
-      text-transform: none;
+      font-family: $font-raleway;
+      text-transform: uppercase;
       font-weight: 600;
       margin-bottom: 0;
 
@@ -215,6 +217,7 @@
         text-transform: none;
         display: inline;
         font-weight: 300;
+        font-family: $font-open-sans;
       }
 
     }
@@ -242,6 +245,28 @@
 
       }
 
+    }
+
+    &.file.specs {
+      display: flex;
+      flex: 1 0 auto;
+      flex-flow: row wrap;
+      height: auto;
+      label {
+        flex: 1 0 auto;
+        width: 100%;
+      }
+      span.hint {
+        order: 3;
+        flex: 3 0 auto;
+        width: 100%;
+        max-width: none;
+      }
+      .file-name, span.actions {
+        flex: 0 0 auto;
+        margin-right: 8px;
+        align-self: center;
+      }
     }
 
     &.specialty-labels {
@@ -461,6 +486,44 @@
 
   }
 
+}
+
+div.window.dialog {
+  &.file-dialog {
+    max-width: 50rem !important;
+
+    .file_chooser td.actions-con {
+
+      .upload {
+        margin-bottom: 1rem;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid $color-tpe-light-grey;
+
+        label {
+          display: block;
+        }
+
+        input {
+          font-size: .9rem;
+        }
+        .btn {
+          margin-left: 10px;
+        }
+      }
+
+      input[type="text"] {
+        border: 2px solid $color-tpe-light-grey;
+        vertical-align: middle;
+        font-size: .9rem;
+        margin-right: .5rem;
+        padding: 3px 4px;
+      }
+
+      label {
+        font-size: .9rem;
+      }
+    }
+  }
 }
 
 @media (min-width: 1024px) {
