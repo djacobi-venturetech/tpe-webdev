@@ -1,0 +1,48 @@
+@import "../../../config/base-vars";
+@import "../../../../../../bower_components/bootstrap/scss/mixins";
+@import "../../../../../../bower_components/bootstrap/scss/buttons";
+@import "../../components/exchange-search-filters";
+@import "../../components/exchange";
+//@import "../../components/help-center";
+
+.title {
+  margin-bottom: 1rem;
+}
+
+.search-bar {
+  display: none;
+}
+
+.listing-main-wrapper {
+  .title > div:first-child {
+	flex: 1 0 100%;
+	margin-top: 10px;
+  }
+}
+
+.flag {
+  display: inline-block;
+  font-size: .85rem;
+  text-transform: uppercase;
+  line-height: 1;
+  margin-right: 1rem;
+  font-weight: 700;
+
+  &.new-flag, &.sold {
+	color: $color-tpe-brand;
+  }
+  &.leading-flag, &.live {
+	color: $color-tpe-green;
+  }
+  &.losing-flag {
+	color: $color-tpe-yellow;
+  }
+  &.ending-flag, &.not_sold {
+	color: $color-tpe-red;
+  }
+  &.ready {
+	color: $color-tpe-grey;
+  }
+
+}
+
