@@ -133,12 +133,12 @@
 	margin: 0 .25rem;
 	flex-flow: column nowrap;
 	position: relative;
-	min-width: 5rem;
-	max-width: 5rem;
+	min-width: 3.75rem;
+	max-width: 3.75rem;
 
 	.btn {
 	  background: transparent;
-	  font-size: .8rem;
+	  font-size: .7rem;
 	  text-transform: uppercase;
 	  font-family: $font-raleway;
 	  font-weight: 500;
@@ -210,6 +210,21 @@
 	}
   }
 
+  .enclosing #column1 {
+	position: relative;
+  }
+
+  .exchange-btn.add-listing {
+	position: absolute;
+	left: 0;
+	top: 2.75rem;
+	float: none;
+  }
+
+  .filter-bar {
+	margin-top: 2.5rem;
+  }
+
 }
 
 @media (min-width: 768px) {
@@ -268,11 +283,11 @@
   .search-bar {
 	> span {
 	  flex: 0 0 10%;
-	  margin: 0 1rem;
 	  min-width: 8rem;
 	  max-width: 8rem;
 
 	  .btn {
+		font-size: .8rem;
 		padding: .375rem 1rem;
 		white-space: nowrap;
 	  }
@@ -305,6 +320,11 @@
   .miwt-table > tbody > tr {
 	> td.strike-price, > td.reserve-price, > td.current-bid {
 	  font-size: 1.5rem;
+	}
+  }
+  .search-bar {
+	> span {
+	  margin: 0 1rem;
 	}
   }
 }
