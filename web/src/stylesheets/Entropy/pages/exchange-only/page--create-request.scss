@@ -13,3 +13,62 @@
     }
   }
 }
+
+.prop-editor .freight-details {
+
+  .prop.delivery-date,
+  .prop.pickup-date {
+    margin-top: -1.25rem;
+    .val {
+      width: 100%;
+      span.select2-container {
+        width: 6.5rem !important;
+      }
+      span.between-and {
+        padding-left: 5rem;
+      }
+      .date1, .date2 {
+        display: inline-block;
+        vertical-align: middle;
+      }
+      .miwt-calendar {
+        input[type="text"] {
+          width: 7rem;
+          font-size: .9rem;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .prop-editor .freight-details {
+    .prop.delivery-date,
+    .prop.pickup-date {
+      .val {
+        span.between-and {
+          padding-left: 0;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .prop-editor .freight-details {
+    .prop.delivery-date,
+    .prop.pickup-date {
+      .val {
+        span.between-and {
+          padding-left: 0;
+        }
+        .miwt-calendar {
+          input[type="text"] {
+            width: 12.75rem;
+            font-size: .9rem;
+          }
+        }
+      }
+    }
+  }
+}
