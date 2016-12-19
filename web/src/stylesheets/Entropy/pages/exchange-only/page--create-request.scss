@@ -16,6 +16,19 @@
 
 .prop-editor .freight-details {
 
+  .prop.specialty-labels {
+    label {
+      order: 1;
+    }
+    span.hint {
+      order: 2;
+      margin-top: -3px;
+    }
+    div.val {
+      order: 3;
+    }
+  }
+
   .prop.delivery-date,
   .prop.pickup-date {
     margin-top: -1.25rem;
