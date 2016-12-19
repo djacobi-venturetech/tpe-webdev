@@ -85,7 +85,7 @@
   flex: 1 0 auto;
   width: 50%;
   flex-flow: column nowrap;
-  padding: 0 .75rem .5rem;
+  padding: .5rem .75rem .5rem;
 
   > div {
 	display: flex;
@@ -354,6 +354,7 @@
   padding: 3rem 0 1rem .5rem;
   justify-content: center;
   position: relative;
+  overflow: hidden;
 
   span.listing-type {
 	position: absolute;
@@ -366,6 +367,7 @@
 	font-size: .85rem;
 	width: 100%;
 	line-height: 1;
+	background-color: $color-tpe-brand;
 
 	&::before {
 	  content: '';
@@ -383,7 +385,7 @@
 	  right: 0;
 	  bottom:-10px;
 	  border-bottom: 10px solid transparent;
-	  border-left: 7px solid transparent;
+	  border-left: 7px solid $color-tpe-brand;
 	  display: inline-block;
 	}
 
@@ -401,6 +403,17 @@
 	  }
 	  + .prevailing-price {
 		display: none;
+	  }
+	}
+
+	&.product-request {
+	  background-color: $color-tpe-product-request;
+	  &::before {
+		border-top: 21px solid transparent;
+		border-bottom: 21px solid transparent;
+	  }
+	  &::after {
+		border-left-color: darken($color-tpe-product-request, 10%);
 	  }
 	}
 
@@ -481,7 +494,7 @@
   }
 
   .listing-main-wrapper {
-	padding: 0 1.5rem .5rem 1.75rem;
+	padding: 0 1.5rem .5rem 1rem;
 
 	.listing-title {
 
@@ -545,6 +558,7 @@
   .listing-bid-wrapper {
 	flex: 1 0 17%;
 	padding: 1rem 0;
+	overflow: visible;
 
 	> div {
 	  align-self: center;
@@ -561,6 +575,13 @@
 		}
 	  }
 
+	}
+
+	span.listing-type {
+	  &.product-request::before {
+		  border-top: 14px solid transparent;
+		  border-bottom: 14px solid transparent;
+	  }
 	}
 
   }
