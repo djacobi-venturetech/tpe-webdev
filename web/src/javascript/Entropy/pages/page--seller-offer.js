@@ -33,10 +33,9 @@ jQuery(function () {
 	});
 
 	$('.richlist .element').each(function () {
-		//noinspection JSUnusedGlobalSymbols
 		$('.conversation-container .miwt-form')[0].submit_options = {
 			postProcessNode: function (data) {
-				$.each(data, function (idx, ctx) {
+				$.each(data, function () {
 					$el.addClass('buyers-closed');
 				});
 			}
