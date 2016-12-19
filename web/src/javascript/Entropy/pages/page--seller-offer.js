@@ -3,7 +3,7 @@ jQuery(function () {
 	var $el = $('.seller.listing-offer');
 
 	function showDetails() {
-		$('.listing-detail-container .listing-detail-viewer .prop-body').prepend('<span class="trigger">See all details</span>');
+		$('.listing-detail-container .listing-detail-viewer .prop-body').prepend('<span class="trigger"></span>');
 
 		var trigger = $('span.trigger');
 
