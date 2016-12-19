@@ -206,6 +206,10 @@ section.offer {
 	textarea {
 	  height: 5rem;
 	  max-width: 100%;
+	  width: 100%;
+	  @include breakpoint($bp-tablets-portrait) {
+		width: auto;
+	  }
 	}
 
 	.terms {
@@ -221,8 +225,11 @@ section.offer {
 	button.submit-offer {
 	  @include button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-border);
 	  border-bottom-width: 3px;
-	  margin-top: 2rem;
+	  margin-top: 0;
 	  height: 2.75rem;
+	  @include breakpoint($bp-tablets-portrait) {
+		margin-top: 2rem;
+	  }
 	}
 
 	.has-error {
