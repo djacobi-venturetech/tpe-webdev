@@ -13,11 +13,8 @@
   display: none;
 }
 
-.listing-main-wrapper {
-  .title > div:first-child {
-	flex: 1 0 100%;
-	margin-top: 10px;
-  }
+.listing-main-wrapper .id-time .listing-time::before {
+  content: 'Requested at:';
 }
 
 .flag {
@@ -44,5 +41,14 @@
 	color: $color-tpe-grey;
   }
 
+}
+
+@media (min-width: 768px) {
+  .listing-main-wrapper {
+	.title > div:first-child {
+	  flex: 1 0 100%;
+	  margin-top: 10px;
+	}
+  }
 }
 
