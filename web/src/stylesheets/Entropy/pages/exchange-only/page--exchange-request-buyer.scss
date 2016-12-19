@@ -20,6 +20,10 @@
 
 }
 
+.listing-main-wrapper .id-time .listing-time::before {
+  content: 'Requested at:';
+}
+
 .listing-bid-wrapper {
 
   .prop.offer-count {
