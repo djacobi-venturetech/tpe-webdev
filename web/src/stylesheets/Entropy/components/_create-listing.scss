@@ -220,6 +220,10 @@
         font-family: $font-open-sans;
       }
 
+      + span.hint {
+        margin-top: -4px;
+      }
+
     }
 
     &.label-before {
@@ -275,7 +279,6 @@
       flex-direction: column;
       span.hint {
         order: 3;
-        margin-top: -.25rem;
       }
       div.val {
         width: 100%;
@@ -324,7 +327,14 @@
     &.note {
       display: flex;
       flex-direction: column;
+      label {
+        order: 1;
+      }
       span.hint {
+        order: 2;
+        margin-top: -3px;
+      }
+      span.localizable {
         order: 3;
       }
     }
@@ -335,7 +345,7 @@
     padding: 0 0 5px;
     font-size: .85rem;
     font-style: italic;
-    margin-top: .25rem;
+    margin-top: 0;
     color: $color-tpe-grey;
     display: block;
     max-width: 23rem;
@@ -431,7 +441,7 @@
         label {
           margin-bottom: 0;
         }
-        span.hint {
+        span.hint.duration {
           padding-left: 0;
           order: 3;
           margin-top: 0;
