@@ -1,0 +1,375 @@
+@import "../../../config/base-vars";
+@import "../../../../../../bower_components/bootstrap/scss/variables";
+@import "../../../../../../bower_components/bootstrap/scss/mixins";
+@import "../../../../../../bower_components/bootstrap/scss/buttons";
+@import "../../components/listing-details-viewer";
+@import "../../components/help-center";
+@import "../../components/conversation";
+
+.listing-detail-viewer {
+  padding: .5rem 0;
+
+  .prop-body {
+	overflow: hidden;
+	max-height: 1.1rem;
+	transition: all .75s ease-in-out;
+
+	&.shown {
+	  max-height: 70rem;
+	  transition: all .75s ease-in-out;
+	  .trigger::after {
+		content: '\f106';
+	  }
+	}
+
+	.trigger {
+	  cursor: pointer;
+	  flex: 1 0 auto;
+	  width: 100%;
+	  color: $color-tpe-brand;
+	  text-decoration: underline;
+	  padding-left: 5px;
+	  margin-top: -5px;
+	  margin-bottom: 1rem;
+	  @include breakpoint($bp-tablets-portrait) {
+		margin-bottom: 0;
+	  }
+	  &:hover {
+		text-decoration: none;
+	  }
+	  &::after {
+		content: '\f107';
+		font-family: $font-glyph-lib;
+		display: inline-block;
+		vertical-align: middle;
+		padding-left: 3px;
+	  }
+
+	  + .trigger {
+		display: none;
+	  }
+
+	}
+
+	@include breakpoint($bp-tablets-portrait) {
+	  flex-flow: row wrap;
+	}
+
+  }
+
+}
+
+.seller-listing-manage,
+.help-center-container {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.listing-offer {
+  margin-top: 2rem;
+  display: flex;
+  flex-flow: column nowrap;
+  overflow: hidden;
+
+  @include breakpoint($bp-tablets-portrait) {
+	flex-direction: row;
+  }
+
+  > div:not(.conversation-list) {
+	width: 100%;
+	transition: right .5s ease-in-out;
+	position: relative;
+	right: -12rem;
+
+	> div {
+	  height: 100%;
+	  > .conversation {
+		height: 100%;
+	  }
+	}
+
+	@include breakpoint($bp-tablets-portrait) {
+	  width: calc(100% - 12rem);
+	  right: auto;
+	  flex: 1 0 auto;
+	}
+
+  }
+
+  &.buyers-closed {
+	> div:not(.conversation-list) {
+	  right: 0;
+	  transition: right .5s ease-in-out;
+
+	  @include breakpoint($bp-tablets-portrait) {
+		right: auto;
+	  }
+
+	}
+  }
+
+}
+
+.heading h2 {
+  margin-top: 2.5rem;
+  padding-bottom: .25rem;
+  border-bottom: 2px solid $color-tpe-beige;
+}
+
+.conversation-list {
+  position: relative;
+  z-index: 10;
+  //width: 100%;
+  width: 12rem;
+
+  @include breakpoint($bp-tablets-portrait) {
+	//width: 12rem;
+	position: relative;
+	flex: 1 0 auto;
+  }
+
+  h2 {
+	font-size: 1.5rem;
+	cursor: pointer;
+
+	&::after {
+	  content: '\f068';
+	  font-family: $font-glyph-lib;
+	  display: inline-block;
+	  vertical-align: middle;
+	  padding-left: 5px;
+	  font-size: 1rem;
+
+	  .buyers-closed & {
+		content: '\f067';
+
+		@include breakpoint($bp-tablets-portrait) {
+		  display: none;
+		}
+
+	  }
+
+	  @include breakpoint($bp-tablets-portrait) {
+		display: none;
+	  }
+
+	}
+
+  }
+
+  .richlist {
+	position: absolute;
+	left: 0;
+	transition: left .5s ease-in-out;
+	top: 36px;
+	width: 100%;
+
+	.buyers-closed & {
+	  left: -12rem;
+	  transition: left .5s ease-in-out;
+
+	  @include breakpoint($bp-tablets-portrait) {
+		position: relative;
+		left: auto;
+		top: auto;
+	  }
+
+	}
+
+	@include breakpoint($bp-tablets-portrait) {
+	  position: relative;
+	  left: auto;
+	  top: auto;
+	}
+
+	.element {
+	  border-top: 2px solid transparent;
+	  border-left: 2px solid transparent;
+	  border-bottom: 2px solid $color-tpe-beige;
+	  padding: .75rem;
+	  position: relative;
+	  cursor: pointer;
+	  margin-top: -2px;
+
+	  input.selector {
+		top: 0;
+		left: 0;
+		position: absolute;
+		visibility: collapse;
+	  }
+
+	  .btn.select {
+		position: absolute;
+		top: 0;
+		left: 0;
+		padding: 0;
+		width: 100%;
+		height: 100%;
+		border: none;
+		background: transparent;
+		color: transparent;
+	  }
+
+	  &.checked {
+		background: $color-white;
+		border-left-color: $color-tpe-beige;
+		border-top-color: $color-tpe-beige;
+	  }
+
+	  .unread {
+		&::after {
+		  content: '\f075';
+		  font-family: $font-glyph-lib;
+		  color: $color-tpe-green;
+		  display: inline-block;
+		  position: absolute;
+		  right: 10px;
+		  top: 50%;
+		  margin-top: -11px;
+		  font-size: 1.15rem;
+		  font-weight: 300;
+		}
+	  }
+
+	  .unread-offer {
+		.offer-amount {
+		  &::after {
+			content: '\f155';
+			font-family: $font-glyph-lib;
+			color: $color-tpe-green;
+			display: inline-block;
+			position: absolute;
+			right: 35px;
+			top: 50%;
+			margin-top: -11px;
+			font-size: 1.15rem;
+			font-weight: 300;
+		  }
+		}
+		&.status-expired .offer-amount::after {
+		  content: '';
+		}
+	  }
+
+	  > div {
+		span {
+		  display: block;
+		}
+		.company {
+		  font-weight: 600;
+		  line-height: 1.25;
+		}
+		.name {
+		  display: none;
+		  //line-height: 1.25;
+		  //font-weight: 600;
+		}
+		.offer-amount {
+		  font-weight: 600;
+		  font-size: 1.75rem;
+		}
+		.offer-expires {
+		  color: $color-tpe-light-grey;
+		  font-size: .85rem;
+		  font-style: italic;
+		}
+	  }
+
+	  .status-active {
+		.offer-expires {
+		  color: $color-tpe-yellow;
+		}
+	  }
+
+	  .status-accepted {
+		.offer-expires {
+		  color: $color-tpe-green;
+		  font-weight: 600;
+		}
+	  }
+
+	}
+
+  }
+
+}
+
+.conversation {
+  margin-left: -2px;
+
+  .buyers-closed & {
+	margin-left: 0;
+
+	@include breakpoint($bp-tablets-portrait) {
+	  margin-left: -2px;
+	}
+
+  }
+
+  .header {
+	padding-bottom: 1rem;
+	@include clearfix();
+
+	.company {
+	  font-weight: 600;
+	  font-size: 1.25rem;
+	}
+
+	.name {
+	  padding-left: 1rem;
+	}
+
+	.company, .name {
+	  vertical-align: baseline;
+	}
+
+	.btn.accept {
+	  float: right;
+	  @include button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-border);
+	  border-bottom-width: 3px;
+	  width: 100%;
+	  margin-top: .5rem;
+
+	  @include breakpoint($bp-tablets-portrait) {
+		width: auto;
+		margin-top: 0;
+	  }
+
+	}
+
+  }
+
+  .offer-info {
+	border-bottom: 2px solid $color-tpe-beige;
+	margin-bottom: .85rem;
+	padding-bottom: .5rem;
+
+	label {
+	  display: block;
+	  text-transform: uppercase;
+	  font-size: .75rem;
+	  font-weight: 600;
+	  margin-bottom: 0;
+	}
+
+	.amt, .expires {
+	  vertical-align: baseline;
+	}
+
+	.amt {
+	  font-size: 1.35rem;
+	  color: $color-tpe-green;
+	  padding-right: 1rem;
+	  line-height: 1;
+	  font-weight: 600;
+	}
+
+	.expires {
+	  font-size: .85rem;
+	  font-style: italic;
+	  color: $color-tpe-grey;
+	}
+
+  }
+
+}
