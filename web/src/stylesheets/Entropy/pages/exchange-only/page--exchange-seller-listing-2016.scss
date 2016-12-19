@@ -47,8 +47,13 @@
 	&.shown {
 	  max-height: 70rem;
 	  transition: all .75s ease-in-out;
-	  .trigger::after {
-		content: '\f106';
+	  .trigger {
+		&::before {
+		  content: 'Hide details';
+		}
+		&::after {
+		  content: '\f106';
+		}
 	  }
 	}
 
@@ -62,6 +67,9 @@
 	  margin-top: -5px;
 	  &:hover {
 		text-decoration: none;
+	  }
+	  &::before {
+		content: 'See all details';
 	  }
 	  &::after {
 		content: '\f107';
