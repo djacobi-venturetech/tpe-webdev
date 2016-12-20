@@ -19,8 +19,9 @@
 
 	a {
 	  display: block;
-	  min-width: 12rem;
+	  min-width: auto;
 	  max-width: 14rem;
+	  align-self: center;
 	}
 
 	.fa.fa-bars {
@@ -178,6 +179,9 @@
 
 @media (max-width: 768px) {
   #header {
+	.logo-con a {
+	  min-width: auto;
+	}
 	.nav-profile-con {
 	  .sidebar-open & {
 		width: auto;
@@ -195,7 +199,7 @@
 	.logo-con {
 	  flex: 1 0 auto;
 	  justify-content: flex-start;
-	  margin-right: 5rem;
+	  margin-right: 3rem;
 	  max-width: 11rem;
 
 	  a {
@@ -237,7 +241,7 @@
 		  width: auto;
 
 		  + li {
-			margin-left: 2.5rem;
+			margin-left: 1.5rem;
 		  }
 
 		  &.create-listing {
@@ -248,8 +252,9 @@
 
 		  > .menuitemlabel {
 			padding: 0;
-			font-size: 1rem;
+			font-size: .9rem;
 			font-weight: 400;
+			text-align: center;
 		  }
 
 		  &.mi-active > a, > a:hover {
@@ -292,7 +297,40 @@
 
 }
 
-@media (min-width: 1150px) {
+@media (min-width: 1280px) {
+
+  #header {
+
+	.logo-con {
+	  max-width: 16rem;
+	  margin-right: 5rem;
+	}
+
+	div.menu {
+
+	  > ul.menu {
+
+		> li {
+
+		  + li {
+			margin-left: 2.25rem;
+		  }
+
+		  > .menuitemlabel {
+			font-size: 1rem;
+		  }
+
+		}
+
+	  }
+
+	}
+
+  }
+
+}
+
+@media (min-width: 1300px) {
 
   #header {
 
@@ -308,34 +346,6 @@
 
 		  + li {
 			margin-left: 3.5rem;
-		  }
-
-		}
-
-	  }
-
-	}
-
-  }
-
-}
-
-@media (min-width: 1285px) {
-
-  #header {
-
-	.logo-con {
-	  max-width: 16rem;
-	}
-
-	div.menu {
-
-	  > ul.menu {
-
-		> li {
-
-		  + li {
-			margin-left: 5.5rem;
 		  }
 
 		}
