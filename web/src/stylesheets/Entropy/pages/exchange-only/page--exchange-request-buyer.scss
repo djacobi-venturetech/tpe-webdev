@@ -5,6 +5,14 @@
 @import "../../components/exchange";
 //@import "../../components/help-center";
 
+.title {
+  margin-bottom: 1rem;
+
+  p {
+	color: $color-tpe-grey;
+  }
+}
+
 .create-request-button {
   float: right;
   @include clearfix();
