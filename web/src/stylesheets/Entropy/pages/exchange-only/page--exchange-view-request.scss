@@ -6,12 +6,6 @@
 @import "../../components/help-center";
 @import "../../components/conversation";
 
-
-/*.listing-detail-container {
-  display: block;
-  width: 100%;
-}*/
-
 .listing-detail-viewer {
   padding-top: 1rem;
   margin-bottom: 1rem;
@@ -30,11 +24,11 @@
 
 }
 
-.listing-buyer-offer,
+.request-listing-container,
 .help-center-container {
   display: block;
 
-  @include breakpoint($bp-tablets-portrait) {
+  @include breakpoint($bp-tablets-landscape) {
 	display: inline-block;
 	vertical-align: top;
   }
@@ -45,17 +39,17 @@
   width: 100%;
   margin-top: 2rem;
 
-  @include breakpoint($bp-tablets-portrait) {
+  @include breakpoint($bp-tablets-landscape) {
 	width: 260px;
 	margin-top: 0;
   }
 
 }
 
-.listing-buyer-offer {
+.request-listing-container {
   width: 100%;
 
-  @include breakpoint($bp-tablets-portrait) {
+  @include breakpoint($bp-tablets-landscape) {
 	width: calc(100% - 260px);
 	padding-right: 2rem;
   }
@@ -207,13 +201,15 @@ section.offer {
 	  height: 5rem;
 	  max-width: 100%;
 	  width: 100%;
-	  @include breakpoint($bp-tablets-portrait) {
+	  @include breakpoint($bp-tablets-landscape) {
 		width: auto;
 	  }
 	}
 
 	.terms {
-
+	  @include breakpoint($bp-tablets-portrait) {
+		max-width: 18rem;
+	  }
 	}
 
 	span:not(.destination):last-child {
