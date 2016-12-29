@@ -97,7 +97,8 @@ div.message {
 	padding-left: 1.5rem;
 	color: $color-error-dark;
 	position: relative;
-	font-size: .75rem;
+	font-size: .85rem;
+	font-weight: 600;
 
 	&::before {
 	  content: '\f071';

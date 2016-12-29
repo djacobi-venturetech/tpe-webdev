@@ -67,10 +67,35 @@
 
 }
 
-.seller-listing-manage,
+.conversation-container,
 .help-center-container {
-  display: inline-block;
-  vertical-align: top;
+  display: block;
+
+  @include breakpoint($bp-tablets-landscape) {
+	display: inline-block;
+	vertical-align: top;
+  }
+
+}
+
+.help-center-container {
+  width: 100%;
+  margin-top: 2rem;
+
+  @include breakpoint($bp-tablets-landscape) {
+	width: 260px;
+  }
+
+}
+
+.conversation-container {
+  width: 100%;
+
+  @include breakpoint($bp-tablets-landscape) {
+	width: calc(100% - 260px);
+	padding-right: 2rem;
+  }
+
 }
 
 .listing-offer {

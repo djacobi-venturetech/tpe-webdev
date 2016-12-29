@@ -3,7 +3,7 @@ jQuery(function () {
 	var $el = $('.seller.listing-offer');
 
 	function showDetails() {
-		$('.listing-detail-container .listing-detail-viewer .prop-body').prepend('<span class="trigger">See all details</span>');
+		$('.listing-detail-container .listing-detail-viewer .prop-body').prepend('<span class="trigger"></span>');
 
 		var trigger = $('span.trigger');
 
@@ -33,10 +33,9 @@ jQuery(function () {
 	});
 
 	$('.richlist .element').each(function () {
-		//noinspection JSUnusedGlobalSymbols
 		$('.conversation-container .miwt-form')[0].submit_options = {
 			postProcessNode: function (data) {
-				$.each(data, function (idx, ctx) {
+				$.each(data, function () {
 					$el.addClass('buyers-closed');
 				});
 			}

@@ -1,0 +1,58 @@
+@import "../../../config/base-vars";
+@import "../../../../../../bower_components/bootstrap/scss/mixins";
+@import "../../../../../../bower_components/bootstrap/scss/buttons";
+@import "../../components/exchange-search-filters";
+@import "../../components/exchange";
+//@import "../../components/help-center";
+
+.title {
+  margin-bottom: 1rem;
+
+  p {
+	color: $color-tpe-grey;
+  }
+}
+
+.create-request-button {
+  float: right;
+  @include clearfix();
+
+  .btn.add {
+	@include button-size($btn-padding-y-sm, $btn-padding-x-sm, $font-size-root, $line-height-sm, $btn-border-radius-sm);
+	@include button-variant($btn-secondary-color, $btn-secondary-bg, $btn-secondary-border);
+	border-bottom: 3px solid $btn-secondary-border;
+	text-transform: uppercase;
+	font-weight: 600;
+	height: auto;
+  }
+
+}
+
+.listing-main-wrapper .id-time .listing-time::before {
+  content: 'Requested at:';
+}
+
+.listing-bid-wrapper {
+  padding: 2.75rem 0 1rem;
+
+  .prop.offer-count {
+	text-align: center;
+	width: 100%;
+	padding: 5px 1rem;
+	margin-bottom: .35rem;
+  }
+
+  .prop.last-message-time,
+  .prop.last-offer-time {
+	width:100%;
+	padding: 5px 1rem;
+
+	.val {
+	  font-size: .75rem;
+	  line-height: 1.25;
+	}
+
+  }
+
+}
+

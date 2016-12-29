@@ -6,12 +6,6 @@
 @import "../../components/help-center";
 @import "../../components/conversation";
 
-
-/*.listing-detail-container {
-  display: block;
-  width: 100%;
-}*/
-
 .listing-detail-viewer {
   padding-top: 1rem;
   margin-bottom: 1rem;
@@ -30,11 +24,11 @@
 
 }
 
-.listing-buyer-offer,
+.request-listing-container,
 .help-center-container {
   display: block;
 
-  @include breakpoint($bp-tablets-portrait) {
+  @include breakpoint($bp-tablets-landscape) {
 	display: inline-block;
 	vertical-align: top;
   }
@@ -45,17 +39,17 @@
   width: 100%;
   margin-top: 2rem;
 
-  @include breakpoint($bp-tablets-portrait) {
+  @include breakpoint($bp-tablets-landscape) {
 	width: 260px;
 	margin-top: 0;
   }
 
 }
 
-.listing-buyer-offer {
+.request-listing-container {
   width: 100%;
 
-  @include breakpoint($bp-tablets-portrait) {
+  @include breakpoint($bp-tablets-landscape) {
 	width: calc(100% - 260px);
 	padding-right: 2rem;
   }
@@ -168,7 +162,7 @@ section.offer {
 	  }
 	}
 
-	.duration, .pricing, .amount-entry {
+	.amount-entry, .duration, .pricing, .terms  {
 	  margin-bottom: .5rem;
 
 	  > label {
@@ -177,7 +171,7 @@ section.offer {
 	  }
 
 	  span.select2-container {
-		width: 9rem !important;
+		width: 10rem !important;
 	  }
 
 	}
@@ -199,41 +193,23 @@ section.offer {
 
 	}
 
-	input.val {
+	input.val, textarea {
 	  border: 2px solid $color-tpe-lightest-grey;
 	}
 
-	.destination {
-	  display: block;
-	  margin: .5rem 0 0;
-	  padding: 0;
+	textarea {
+	  height: 5rem;
+	  max-width: 100%;
 	  width: 100%;
-
 	  @include breakpoint($bp-tablets-landscape) {
-		padding: 0;
-		width: 60%;
+		width: auto;
 	  }
+	}
 
-	  > label {
-		display: block;
-		font-weight: 600;
+	.terms {
+	  @include breakpoint($bp-tablets-portrait) {
+		max-width: 18rem;
 	  }
-
-	  input.val {
-		border: 2px solid $color-tpe-lightest-grey;
-		width: 100%;
-	  }
-
-	  + button.submit-offer {
-		margin-top: 1.75rem;
-	  }
-
-	  &.has-error {
-		display: flex;
-		flex-direction: column;
-		max-width: 60%;
-	  }
-
 	}
 
 	span:not(.destination):last-child {
@@ -245,8 +221,11 @@ section.offer {
 	button.submit-offer {
 	  @include button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-border);
 	  border-bottom-width: 3px;
-	  margin-top: 2rem;
+	  margin-top: 0;
 	  height: 2.75rem;
+	  @include breakpoint($bp-tablets-portrait) {
+		margin-top: 2rem;
+	  }
 	}
 
 	.has-error {
@@ -286,18 +265,12 @@ section.offer {
 }
 
 @media (min-width: 835px) and (max-width: 964px) {
-  section.offer .offer-entry .pricing {
-	margin-top: -2rem;
-  }
   section.offer .offer-entry button.submit-offer {
 	margin-top: .5rem;
   }
 }
 
 @media (min-width: 965px) and (max-width: 1023px) {
-  section.offer .offer-entry .pricing {
-	margin-top: -2rem;
-  }
   section.offer .offer-entry button.submit-offer {
 	margin-top: -.4rem;
   }
