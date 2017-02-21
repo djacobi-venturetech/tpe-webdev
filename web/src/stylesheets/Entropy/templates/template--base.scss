@@ -244,6 +244,12 @@ img {
 
 }
 
+.approved-locations-viewer {
+  .miwt-table > tbody > tr > td.allow-supplier {
+	width: 8.5rem;
+  }
+}
+
 /* ---- THIS WILL EVENTUALLY GET REMOVED/CHANGED */
 #footer {
   display: block;
