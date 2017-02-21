@@ -11,6 +11,6 @@
   ],
   "dependencies": {
     "breakpoint-sass": "~2.5.0",
-    "bootstrap": "~4.0.0"
+    "bootstrap": "4.0.0-alpha.2"
   }
 }
