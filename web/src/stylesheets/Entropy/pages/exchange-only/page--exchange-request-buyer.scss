@@ -33,6 +33,14 @@
   content: 'Requested at:';
 }
 
+.listing-main-wrapper .body-con {
+  .volume, .weight {
+	span::after {
+	  content: '';
+	}
+  }
+}
+
 .listing-bid-wrapper {
   padding: 2.75rem 0 1rem;
 

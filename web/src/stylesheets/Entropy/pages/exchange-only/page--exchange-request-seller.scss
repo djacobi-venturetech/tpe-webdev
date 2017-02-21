@@ -22,6 +22,14 @@
   content: 'Requested at:';
 }
 
+.listing-main-wrapper .body-con {
+  .volume, .weight {
+	span::after {
+	  content: '';
+	}
+  }
+}
+
 .flag {
   display: inline-block;
   font-size: .85rem;
