@@ -1,0 +1,57 @@
+@import "../../../../../bower_components/breakpoint-sass/stylesheets/breakpoint";
+@import "../../../../../bower_components/bootstrap/scss/mixins/clearfix";
+
+.usda-container {
+  display: flex;
+  width: 100%;
+  margin-bottom: 1.5rem;
+  flex-flow: row wrap;
+  justify-content: space-between;
+
+  .usda-heading, .price {
+	box-sizing: border-box;
+	width: calc(100% / 6);
+
+  	p {
+	  margin: 0;
+	  font-family: $font-raleway;
+	  font-size: .85rem;
+	  color: $color-tpe-grey;
+	}
+  }
+
+  .usda-heading {
+	flex: 1 0 100%;
+
+	a {
+	  font-size: .75rem;
+	}
+
+	@include breakpoint($bp-tablets-portrait) {
+	  flex: 1 0 auto;
+	}
+  }
+
+  .price {
+	padding: 0 .75rem 0 0;
+	flex: 1 0 50%;
+	margin-bottom: .5rem;
+
+	@include breakpoint($bp-tablets-portrait) {
+	  padding: 0 0 0 .75rem;
+	  flex: 1 0 auto;
+	}
+
+	p {
+	  strong {
+		display: block;
+		font-family: $font-open-sans;
+	  }
+
+	  img {
+		max-width: 12px;
+		height: auto;
+	  }
+	}
+  }
+}
