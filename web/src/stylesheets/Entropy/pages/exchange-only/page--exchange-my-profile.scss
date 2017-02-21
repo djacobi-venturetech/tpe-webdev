@@ -7,8 +7,8 @@ ul.tab-items {
   padding: 0;
 }
 .tab-items li {
-  background: transparent;
-  border-top: 1px solid $color-tpe-beige;
+  background: rgba(255,255,255, 0.2);
+  border-top: 3px solid $color-tpe-yellow;
   border-left: 1px solid $color-tpe-beige;
   border-right: 1px solid $color-tpe-beige;
   display: inline-block;
@@ -16,6 +16,10 @@ ul.tab-items {
   border-bottom: 0;
   margin-bottom: -1px;
   cursor: pointer;
+
+  &:hover {
+    background: $color-white;
+  }
 
   &.tab-selected {
 	border-top: 3px solid $color-tpe-yellow;
@@ -34,6 +38,20 @@ ul.tab-items {
 
 .ctb.label-after {
   input[type="checkbox"] {
-    margin-right: 8px;
+    margin-right: 5px;
+  }
+}
+
+.freshness {
+  margin: 1rem 0;
+
+  .rtb.label-after {
+    input {
+      margin-right: 5px;
+    }
+
+    + .rtb.label-after {
+      margin-left: 15px;
+    }
   }
 }
