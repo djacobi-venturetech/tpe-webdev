@@ -245,6 +245,11 @@ img {
 }
 
 .approved-locations-viewer {
+  .miwt-table > tbody > tr > td.allow-supplier,
+  .miwt-table > thead > tr > th.allow-supplier {
+	text-align: center;
+  }
+
   .miwt-table > tbody > tr > td.allow-supplier {
 	width: 8.5rem;
   }
